@@ -9,7 +9,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#013440"
+        android:background="@color/verdeZup"
         android:gravity="center"
         android:orientation="vertical">
 
@@ -26,10 +26,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:backgroundTint="#F2CB05"
+            android:backgroundTint="@color/amareloZup"
             android:hint="@string/usuario"
             android:padding="16dp"
-            android:textColorHint="#F2CB05" />
+            android:textColorHint="@color/amareloZup" />
 
 
         <EditText
@@ -37,11 +37,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:backgroundTint="#F2CB05"
+            android:backgroundTint="@color/amareloZup"
             android:hint="@string/senha"
             android:inputType="textPassword"
             android:padding="16dp"
-            android:textColorHint="#F2CB05" />
+            android:textColorHint="@color/amareloZup" />
 
 
         <LinearLayout
@@ -59,7 +59,7 @@
                 android:layout_weight="1"
                 android:gravity="start"
                 android:text="Cadastrar"
-                android:textColor="#F2CB05" />
+                android:textColor="@color/amareloZup" />
 
 
             <TextView
@@ -70,7 +70,7 @@
                 android:layout_weight="1"
                 android:gravity="end"
                 android:text="Esqueci minha senha"
-                android:textColor="#F2CB05" />
+                android:textColor="@color/amareloZup" />
 
         </LinearLayout>
 
@@ -79,9 +79,9 @@
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
-            android:backgroundTint="#F2CB05"
+            android:backgroundTint="@color/amareloZup"
             android:text="Login"
-            android:textColor="#013440" />
+            android:textColor="@color/verdeZup" />
 
     </LinearLayout>
 

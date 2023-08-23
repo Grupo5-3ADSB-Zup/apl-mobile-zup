@@ -6,7 +6,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#013440"
+        android:background="@color/verdeZup"
         android:gravity="center"
         android:orientation="vertical">
 
@@ -22,42 +22,42 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:backgroundTint="#F2CB05"
+            android:backgroundTint="@color/amareloZup"
             android:hint="@string/usuario"
             android:padding="16dp"
-            android:textColorHint="#F2CB05" />
+            android:textColorHint="@color/amareloZup" />
 
         <EditText
             android:id="@+id/etSenha"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:backgroundTint="#F2CB05"
+            android:backgroundTint="@color/amareloZup"
             android:hint="@string/senha"
             android:inputType="textPassword"
             android:padding="16dp"
-            android:textColorHint="#F2CB05" />
+            android:textColorHint="@color/amareloZup" />
 
         <EditText
             android:id="@+id/etInfluencer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:backgroundTint="#F2CB05"
+            android:backgroundTint="@color/amareloZup"
             android:hint="Influencer"
             android:padding="16dp"
-            android:textColorHint="#F2CB05" />
+            android:textColorHint="@color/amareloZup" />
 
         <EditText
             android:id="@+id/etFoto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:backgroundTint="#F2CB05"
+            android:backgroundTint="@color/amareloZup"
             android:hint="Foto de perfil"
             android:inputType="text"
             android:padding="16dp"
-            android:textColorHint="#F2CB05" />
+            android:textColorHint="@color/amareloZup" />
 
         <CheckBox
             android:id="@+id/aceitarCheckBox"
@@ -65,16 +65,16 @@
             android:layout_height="wrap_content"
             android:checked="false"
             android:text="Aceitar os termos e condições"
-            android:textColor="#F2CB05" />
+            android:textColor="@color/amareloZup" />
 
         <Button
             android:id="@+id/cadastrarButton"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
-            android:backgroundTint="#F2CB05"
+            android:backgroundTint="@color/amareloZup"
             android:text="Cadastrar"
-            android:textColor="#013440" />
+            android:textColor="@color/verdeZup" />
 
     </LinearLayout>
 
