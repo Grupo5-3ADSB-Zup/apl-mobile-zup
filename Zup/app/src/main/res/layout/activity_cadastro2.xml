@@ -14,8 +14,8 @@
             android:layout_width="150dp"
             android:layout_height="175dp"
             android:layout_gravity="center"
-            android:src="@mipmap/logo_da_zup"
-            android:contentDescription="@string/logo_da_zup" />
+            android:contentDescription="@string/logo_da_zup"
+            android:src="@mipmap/logo_da_zup" />
 
         <EditText
             android:id="@+id/etUsuario"
