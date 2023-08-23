@@ -3,12 +3,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#013440"
         android:gravity="center"
         android:orientation="vertical">
+
 
         <ImageView
             android:layout_width="150dp"
@@ -16,14 +17,18 @@
             android:layout_gravity="center"
             android:src="@mipmap/zup" />
 
+
         <EditText
             android:id="@+id/etNome"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
+            android:autofillHints="Luiz"
             android:backgroundTint="#F2CB05"
             android:hint="Nome"
-            android:padding="16dp" />
+            android:padding="16dp"
+            android:textColorHint="#F2CB05" />
+
 
         <EditText
             android:id="@+id/etSobrenome"
@@ -32,7 +37,9 @@
             android:layout_marginTop="16dp"
             android:backgroundTint="#F2CB05"
             android:hint="Sobrenome"
-            android:padding="16dp" />
+            android:padding="16dp"
+            android:textColorHint="#F2CB05" />
+
 
         <EditText
             android:id="@+id/etCpf"
@@ -42,7 +49,9 @@
             android:backgroundTint="#F2CB05"
             android:hint="CPF"
             android:inputType="number"
-            android:padding="16dp" />
+            android:padding="16dp"
+            android:textColorHint="#F2CB05" />
+
 
         <EditText
             android:id="@+id/etCnpj"
@@ -52,27 +61,22 @@
             android:backgroundTint="#F2CB05"
             android:hint="CNPJ"
             android:inputType="number"
-            android:padding="16dp" />
+            android:padding="16dp"
+            android:textColorHint="#F2CB05" />
 
-        <EditText
-            android:id="@+id/etFoto"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:backgroundTint="#F2CB05"
-            android:hint="Foto"
-            android:inputType=""
-            android:padding="16dp" />
+
+
 
 
         <Button
+            android:id="@+id/avancarCadastroButton"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
             android:backgroundTint="#F2CB05"
             android:text="Avançar"
-            android:textColor="#013440"></Button>
-
+            android:textColor="#013440" />
     </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

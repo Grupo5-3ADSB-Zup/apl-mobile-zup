@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#013440"
@@ -23,8 +23,8 @@
             android:layout_marginTop="16dp"
             android:backgroundTint="#F2CB05"
             android:hint="Usuário"
-            android:padding="16dp" />
-
+            android:padding="16dp"
+            android:textColorHint="#F2CB05" />
 
         <EditText
             android:id="@+id/etSenha"
@@ -34,8 +34,8 @@
             android:backgroundTint="#F2CB05"
             android:hint="Senha"
             android:inputType="textPassword"
-            android:padding="16dp" />
-
+            android:padding="16dp"
+            android:textColorHint="#F2CB05" />
 
         <EditText
             android:id="@+id/etInfluencer"
@@ -44,17 +44,30 @@
             android:layout_marginTop="16dp"
             android:backgroundTint="#F2CB05"
             android:hint="Influencer"
-            android:padding="16dp" />
+            android:padding="16dp"
+            android:textColorHint="#F2CB05" />
 
+        <EditText
+            android:id="@+id/etFoto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="#F2CB05"
+            android:hint="Foto de perfil"
+            android:inputType="text"
+            android:padding="16dp"
+            android:textColorHint="#F2CB05" />
 
         <Button
+            android:id="@+id/cadastrarButton"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
             android:backgroundTint="#F2CB05"
             android:text="Cadastrar"
-            android:textColor="#013440"></Button>
+            android:textColor="#013440" />
 
     </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
