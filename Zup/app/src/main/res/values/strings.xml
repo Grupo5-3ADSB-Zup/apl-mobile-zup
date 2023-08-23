@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Zup</string>
+    <string name="logo_da_zup">Logo da Zup</string>
+    <string name="usuario">Usuário</string>
+    <string name="senha">Senha</string>
+    <string name="nomeUsuario">Nome</string>
+    <string name="sobrenomeUsuario">Sobrenome</string>
 </resources>

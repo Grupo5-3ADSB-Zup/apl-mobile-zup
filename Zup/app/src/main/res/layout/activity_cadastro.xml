@@ -15,7 +15,7 @@
             android:layout_width="150dp"
             android:layout_height="175dp"
             android:layout_gravity="center"
-            android:src="@mipmap/zup" />
+            android:src="@mipmap/logo_da_zup" />
 
 
         <EditText
@@ -23,9 +23,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:autofillHints="Luiz"
             android:backgroundTint="#F2CB05"
-            android:hint="Nome"
+            android:hint="@string/nomeUsuario"
             android:padding="16dp"
             android:textColorHint="#F2CB05" />
 
@@ -36,7 +35,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:backgroundTint="#F2CB05"
-            android:hint="Sobrenome"
+            android:hint="@string/sobrenomeUsuario"
             android:padding="16dp"
             android:textColorHint="#F2CB05" />
 

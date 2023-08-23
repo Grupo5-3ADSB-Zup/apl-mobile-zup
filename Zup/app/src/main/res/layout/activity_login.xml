@@ -18,7 +18,7 @@
             android:layout_width="150dp"
             android:layout_height="175dp"
             android:layout_gravity="center"
-            android:src="@mipmap/zup" />
+            android:src="@mipmap/logo_da_zup" />
 
 
         <EditText
@@ -27,7 +27,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:backgroundTint="#F2CB05"
-            android:hint="Usuário"
+            android:hint="@string/usuario"
             android:padding="16dp"
             android:textColorHint="#F2CB05" />
 
@@ -38,7 +38,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:backgroundTint="#F2CB05"
-            android:hint="Senha"
+            android:hint="@string/senha"
             android:inputType="textPassword"
             android:padding="16dp"
             android:textColorHint="#F2CB05" />

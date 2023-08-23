@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Zup</string>
+    <string name="logo_da_zup">The logo of Zup</string>
+    <string name="usuario">User</string>
+    <string name="senha">Password</string>
+    <string name="nomeUsuario">First Name</string>
+    <string name="sobrenomeUsuario">Last Name</string>
+</resources>
