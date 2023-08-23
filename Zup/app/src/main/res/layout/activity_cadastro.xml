@@ -65,9 +65,6 @@
             android:textColorHint="#F2CB05" />
 
 
-
-
-
         <Button
             android:id="@+id/avancarCadastroButton"
             android:layout_width="200dp"
