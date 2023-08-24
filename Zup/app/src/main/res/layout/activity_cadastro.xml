@@ -26,7 +26,8 @@
             android:backgroundTint="@color/amareloZup"
             android:hint="@string/nomeUsuario"
             android:padding="16dp"
-            android:textColorHint="@color/amareloZup" />
+            android:textColorHint="@color/amareloZup"
+            android:inputType="text" />
 
 
         <EditText
@@ -71,7 +72,8 @@
             android:layout_marginTop="50dp"
             android:backgroundTint="@color/amareloZup"
             android:text="Avançar"
-            android:textColor="@color/verdeZup" />
+            android:textColor="@color/verdeZup"
+            android:onClick="avancarCadastro"/>
     </LinearLayout>
 
 
