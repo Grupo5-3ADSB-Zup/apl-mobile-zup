@@ -71,7 +71,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
             android:backgroundTint="@color/amareloZup"
-            android:text="Avançar"
+            android:text="@string/avancar"
             android:textColor="@color/verdeZup"
             android:onClick="avancarCadastro"/>
     </LinearLayout>

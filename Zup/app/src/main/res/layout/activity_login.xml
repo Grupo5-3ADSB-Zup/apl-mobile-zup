@@ -58,7 +58,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_weight="1"
                 android:gravity="start"
-                android:text="Cadastrar"
+                android:text="@string/cadastrar"
                 android:textColor="@color/amareloZup" />
 
 
@@ -69,7 +69,7 @@
                 android:layout_marginEnd="10dp"
                 android:layout_weight="1"
                 android:gravity="end"
-                android:text="Esqueci minha senha"
+                android:text="@string/esqueci_minha_senha"
                 android:textColor="@color/amareloZup" />
 
         </LinearLayout>

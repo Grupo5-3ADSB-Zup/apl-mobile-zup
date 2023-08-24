@@ -5,4 +5,12 @@
     <string name="senha">Senha</string>
     <string name="nomeUsuario">Nome</string>
     <string name="sobrenomeUsuario">Sobrenome</string>
+    <string name="avancar">Avançar</string>
+    <string name="influencer">Influencer</string>
+    <string name="foto_de_perfil">Foto de perfil</string>
+    <string name="aceitar_termos">Aceitar os termos e condições</string>
+    <string name="cadastrar">Cadastrar</string>
+    <string name="esqueci_minha_senha">Esqueci minha senha</string>
+    <string name="gerenciar_usuario">Gerenciar Usuários</string>
+    <string name="extrair_usuarios">Extrair Usuários</string>
 </resources>

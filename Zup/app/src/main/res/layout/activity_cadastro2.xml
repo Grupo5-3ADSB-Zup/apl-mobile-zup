@@ -44,7 +44,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:backgroundTint="@color/amareloZup"
-            android:hint="Influencer"
+            android:hint="@string/influencer"
             android:padding="16dp"
             android:textColorHint="@color/amareloZup" />
 
@@ -54,7 +54,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:backgroundTint="@color/amareloZup"
-            android:hint="Foto de perfil"
+            android:hint="@string/foto_de_perfil"
             android:inputType="text"
             android:padding="16dp"
             android:textColorHint="@color/amareloZup" />
@@ -64,7 +64,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="false"
-            android:text="Aceitar os termos e condições"
+            android:text="@string/aceitar_termos"
             android:textColor="@color/amareloZup" />
 
         <Button
@@ -73,7 +73,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
             android:backgroundTint="@color/amareloZup"
-            android:text="Cadastrar"
+            android:text="@string/cadastrar"
             android:textColor="@color/verdeZup" />
 
     </LinearLayout>

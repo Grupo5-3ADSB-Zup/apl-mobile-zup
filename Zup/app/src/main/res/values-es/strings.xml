@@ -6,4 +6,12 @@
     <string name="senha">Senha</string>
     <string name="nomeUsuario">Nombre</string>
     <string name="sobrenomeUsuario">Apellido</string>
+    <string name="avancar">Navegar</string>
+    <string name="influencer">Influencer</string>
+    <string name="foto_de_perfil">Foto de perfil</string>
+    <string name="aceitar_termos">Aceptar los términos y condiciones</string>
+    <string name="cadastrar">Registrarse</string>
+    <string name="esqueci_minha_senha">Olvidé mi contraseña</string>
+    <string name="gerenciar_usuario">Administrar Usuarios</string>
+    <string name="extrair_usuarios">Extraer Usuarios</string>
 </resources>
