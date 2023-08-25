@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 
-class activity_cadastro : AppCompatActivity() {
+class CadastroActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -13,7 +13,7 @@ class activity_cadastro : AppCompatActivity() {
     }
 
     fun avancarCadastro(view: View) {
-        val intent = Intent(this, activity_cadastro2::class.java)
+        val intent = Intent(this, Cadastro2Activity::class.java)
         startActivity(intent)
     }
 }
