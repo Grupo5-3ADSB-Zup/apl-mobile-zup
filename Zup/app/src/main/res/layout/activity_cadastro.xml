@@ -15,7 +15,7 @@
             android:layout_width="150dp"
             android:layout_height="175dp"
             android:layout_gravity="center"
-            android:src="@mipmap/logo_da_zup" />
+            android:src="" />
 
 
         <EditText
@@ -24,7 +24,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:backgroundTint="@color/amareloZup"
-            android:hint="@string/nomeUsuario"
+            android:hint=""
             android:padding="16dp"
             android:textColorHint="@color/amareloZup"
             android:inputType="text" />
@@ -36,7 +36,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:backgroundTint="@color/amareloZup"
-            android:hint="@string/sobrenomeUsuario"
+            android:hint=""
             android:padding="16dp"
             android:textColorHint="@color/amareloZup" />
 
@@ -71,7 +71,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
             android:backgroundTint="@color/amareloZup"
-            android:text="@string/avancar"
+            android:text=""
             android:textColor="@color/verdeZup"
             android:onClick="avancarCadastro"/>
     </LinearLayout>
