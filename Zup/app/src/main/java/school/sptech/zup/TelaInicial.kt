@@ -3,9 +3,9 @@ package school.sptech.zup
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
-class GerenciarUsuario : AppCompatActivity() {
+class TelaInicial : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_gerenciar_usuario)
+        setContentView(R.layout.activity_tela_inicial)
     }
 }

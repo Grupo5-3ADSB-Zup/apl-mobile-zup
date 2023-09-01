@@ -13,7 +13,7 @@
         android:theme="@style/Theme.Zup"
         tools:targetApi="31">
         <activity
-            android:name=".GerenciarUsuario"
+            android:name=".LoginEmail"
             android:exported="false" />
         <activity
             android:name=".LoginVelho"
@@ -25,10 +25,10 @@
             android:name=".TelaCadastro1"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".TelaInicial"
             android:exported="false" />
         <activity
-            android:name=".TelaInicial"
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
