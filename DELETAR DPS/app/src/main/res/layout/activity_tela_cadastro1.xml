@@ -23,7 +23,7 @@
 
         <EditText
             android:id="@+id/etNome"
-            style="@style/campo"
+            style="@style/campoDeEntrada"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/nomeUsuario" />
@@ -31,7 +31,7 @@
 
         <EditText
             android:id="@+id/etSobrenome"
-            style="@style/campo"
+            style="@style/campoDeEntrada"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/sobrenomeUsuario" />
@@ -39,7 +39,7 @@
 
         <EditText
             android:id="@+id/etCpf"
-            style="@style/campo"
+            style="@style/campoDeEntrada"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="CPF"
@@ -48,7 +48,7 @@
 
         <EditText
             android:id="@+id/etCnpj"
-            style="@style/campo"
+            style="@style/campoDeEntrada"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="CNPJ"

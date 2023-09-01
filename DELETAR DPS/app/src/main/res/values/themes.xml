@@ -7,7 +7,7 @@
 
     <style name="Theme.Zup" parent="Base.Theme.Zup" />
 
-    <style name="campo">
+    <style name="campoDeEntrada">
         <item name="android:layout_marginTop">16dp</item>
         <item name="backgroundTint">@color/amareloZup</item>
         <item name="android:padding">20dp</item>

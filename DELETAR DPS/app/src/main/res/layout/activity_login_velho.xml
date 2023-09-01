@@ -23,7 +23,7 @@
 
         <EditText
             android:id="@+id/etUsername"
-            style="@style/campo"
+            style="@style/campoDeEntrada"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/usuario"
@@ -33,7 +33,7 @@
 
         <EditText
             android:id="@+id/etPassword"
-            style="@style/campo"
+            style="@style/campoDeEntrada"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/senha"

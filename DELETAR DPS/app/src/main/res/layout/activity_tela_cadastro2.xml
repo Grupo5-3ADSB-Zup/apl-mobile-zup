@@ -22,14 +22,14 @@
 
         <EditText
             android:id="@+id/etUsuario"
-            style="@style/campo"
+            style="@style/campoDeEntrada"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/usuario" />
 
         <EditText
             android:id="@+id/etSenha"
-            style="@style/campo"
+            style="@style/campoDeEntrada"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/senha"
@@ -38,7 +38,7 @@
 
         <EditText
             android:id="@+id/etFoto"
-            style="@style/campo"
+            style="@style/campoDeEntrada"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/foto_de_perfil"
