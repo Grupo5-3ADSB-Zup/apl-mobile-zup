@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/verdeZup"
-    tools:context=".Onboarding2">
+    tools:context=".Onboarding1">
+
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -53,9 +54,7 @@
                     android:layout_width="235dp"
                     android:layout_height="245dp"
                     android:layout_gravity="center"
-                    android:layout_marginTop="75dp"
-
-                    android:src="@mipmap/onboarding2">
+                    android:layout_marginTop="75dp">
 
                 </ImageView>
 
@@ -65,7 +64,7 @@
                     android:layout_marginTop="180dp"
                     android:gravity="center"
                     android:textColor="@color/amareloZup"
-                    android:text="Rede Social onde você pode começar"
+                    android:text="Comunidade com especialistas dando sua opinião"
                     android:textSize="25dp">
 
                 </TextView>
@@ -76,7 +75,7 @@
                     android:layout_marginTop="30dp"
                     android:gravity="center"
                     android:textColor="@color/amareloZup"
-                    android:text="O cadastro é grátis. Comece agora o seu primeiro passo para o mercado financeiro"
+                    android:text="Influenciadores presentes na rede, auxiliando na sua escolha"
                     android:textSize="18dp">
 
                 </TextView>
@@ -94,6 +93,5 @@
 
         </LinearLayout>
     </RelativeLayout>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
