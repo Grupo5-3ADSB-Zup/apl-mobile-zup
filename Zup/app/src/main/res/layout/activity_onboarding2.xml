@@ -37,6 +37,7 @@
                     android:layout_marginRight="16dp"
                     android:layout_weight="1"
                     android:gravity="end"
+                    android:onClick="pularOnboarding"
                     android:text="Pular"
                     android:textColor="@color/amareloZup"
                     android:textSize="15sp" />
@@ -96,12 +97,10 @@
                 android:layout_height="72dp"
                 android:background="@color/amareloZup"
                 android:gravity="center"
-                android:onClick="avancarCadastro"
+                android:onClick="proximoOnboarding3"
                 android:text="Continuar"
                 android:textColor="@color/verdeZup"
                 android:textStyle="bold" />
-
-
         </LinearLayout>
     </RelativeLayout>
 
