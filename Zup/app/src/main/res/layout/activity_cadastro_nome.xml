@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#D7EAF0"
-    tools:context=".LoginEmail">
+    tools:context=".CadastroNome">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -51,18 +51,66 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
-                    android:text="Seu Email"
+                    android:text="Nome"
                     android:textColor="@color/verdeZup"
                     android:textSize="25sp" />
 
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="25dp"
                     android:backgroundTint="#D7EAF0"
                     android:hint="|"
                     android:shadowColor="@color/verdeZup"
                     android:textColor="@color/verdeZup"
                     android:textColorHint="#013440" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:text="Sobrenome"
+                    android:textColor="@color/verdeZup"
+                    android:textSize="25sp" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="25dp"
+                    android:backgroundTint="#D7EAF0"
+                    android:hint="|"
+                    android:shadowColor="@color/verdeZup"
+                    android:textColor="@color/verdeZup"
+                    android:textColorHint="#013440" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:text="Username"
+                    android:textColor="@color/verdeZup"
+                    android:textSize="25sp" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="25dp"
+                    android:backgroundTint="#D7EAF0"
+                    android:hint="|"
+                    android:shadowColor="@color/verdeZup"
+                    android:textColor="@color/verdeZup"
+                    android:textColorHint="#013440" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <CheckBox
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Influencer"
+                        android:textColor="@color/verdeZup"
+                        android:textSize="25sp" />
+
+                </LinearLayout>
 
 
             </LinearLayout>
