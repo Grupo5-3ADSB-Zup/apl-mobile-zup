@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/verdeZup"
-    tools:context=".Onboarding2">
+    tools:context=".Onboarding3">
+
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -53,9 +54,7 @@
                     android:layout_width="235dp"
                     android:layout_height="245dp"
                     android:layout_gravity="center"
-                    android:layout_marginTop="75dp"
-
-                    android:src="@mipmap/onboarding2">
+                    android:layout_marginTop="75dp">
 
                 </ImageView>
 
@@ -65,7 +64,7 @@
                     android:layout_marginTop="180dp"
                     android:gravity="center"
                     android:textColor="@color/amareloZup"
-                    android:text="Rede Social onde você pode começar"
+                    android:text="Comece agora a aprender sobre o mercado"
                     android:textSize="25dp">
 
                 </TextView>
@@ -76,7 +75,7 @@
                     android:layout_marginTop="30dp"
                     android:gravity="center"
                     android:textColor="@color/amareloZup"
-                    android:text="O cadastro é grátis. Comece agora o seu primeiro passo para o mercado financeiro"
+                    android:text="Tire suas dúvidas, acesse as melhores notícias voltadas para quem está começando, amplie seu conhecimento do assunto e não tenha mais dúvidas"
                     android:textSize="18dp">
 
                 </TextView>
@@ -91,9 +90,21 @@
             android:layout_alignParentBottom="true"
             android:orientation="vertical">
 
+            <TextView
+                android:id="@+id/buttonCadastrar"
+                android:layout_width="match_parent"
+                android:layout_height="72dp"
+                android:background="@color/amareloZup"
+                android:gravity="center"
+                android:onClick="avancarCadastro"
+                android:text="Continuar"
+                android:textColor="@color/verdeZup"
+                android:textStyle="bold" />
+
 
         </LinearLayout>
     </RelativeLayout>
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
