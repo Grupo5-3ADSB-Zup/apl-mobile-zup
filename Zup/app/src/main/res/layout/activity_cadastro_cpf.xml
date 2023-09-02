@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#D7EAF0"
-    tools:context=".CadastroNome">
+    tools:context=".CadastroCPF">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -51,7 +51,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
-                    android:text="Nome"
+                    android:text="CPF"
                     android:textColor="@color/verdeZup"
                     android:textSize="25sp" />
 
@@ -61,6 +61,7 @@
                     android:layout_marginBottom="25dp"
                     android:backgroundTint="#D7EAF0"
                     android:hint="|"
+                    android:inputType="number"
                     android:shadowColor="@color/verdeZup"
                     android:textColor="@color/verdeZup"
                     android:textColorHint="#013440" />
@@ -68,7 +69,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
-                    android:text="Sobrenome"
+                    android:text="CNPJ (caso empresa)"
                     android:textColor="@color/verdeZup"
                     android:textSize="25sp" />
 
@@ -78,57 +79,19 @@
                     android:layout_marginBottom="25dp"
                     android:backgroundTint="#D7EAF0"
                     android:hint="|"
+                    android:inputType="number"
                     android:shadowColor="@color/verdeZup"
                     android:textColor="@color/verdeZup"
                     android:textColorHint="#013440" />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:text="Username"
-                    android:textColor="@color/verdeZup"
-                    android:textSize="25sp" />
-
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="25dp"
-                    android:backgroundTint="#D7EAF0"
-                    android:hint="|"
-                    android:shadowColor="@color/verdeZup"
-                    android:textColor="@color/verdeZup"
-                    android:textColorHint="#013440" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:text="Foto de perfil"
-                    android:textColor="@color/verdeZup"
-                    android:textSize="25sp" />
-
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="25dp"
-                    android:backgroundTint="#D7EAF0"
-                    android:hint="|"
-                    android:shadowColor="@color/verdeZup"
-                    android:textColor="@color/verdeZup"
-                    android:textColorHint="#013440" />
-
-                <LinearLayout
+                <CheckBox
+                    android:id="@+id/aceitarCheckBox"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-
-                    <CheckBox
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:text="Influencer"
-                        android:textColor="@color/verdeZup"
-                        android:textSize="25sp" />
-
-                </LinearLayout>
-
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="@string/aceitar_termos"
+                    android:textColor="@color/verdeZup"
+                    android:layout_gravity="center_horizontal"/>
 
             </LinearLayout>
 
@@ -147,7 +110,7 @@
                 android:background="@color/amareloZup"
                 android:gravity="center"
                 android:onClick="avancarContinuar"
-                android:text="Continuar"
+                android:text="Finalizar cadastro"
                 android:textColor="@color/verdeZup"
                 android:textStyle="bold" />
         </LinearLayout>

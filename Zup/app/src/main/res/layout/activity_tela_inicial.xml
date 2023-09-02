@@ -39,7 +39,7 @@
                 android:layout_height="72dp"
                 android:background="#D7EAF0"
                 android:gravity="center"
-                android:onClick="avancarLogin"
+                android:onClick="entrarLogin"
                 android:text="Login"
                 android:textColor="@color/verdeZup"
                 android:textStyle="bold" />
@@ -51,7 +51,7 @@
                 android:layout_height="72dp"
                 android:background="@color/amareloZup"
                 android:gravity="center"
-                android:onClick="avancarCadastro"
+                android:onClick="entrarCadastro"
                 android:text="Cadastra-se"
                 android:textColor="@color/verdeZup"
                 android:textStyle="bold" />

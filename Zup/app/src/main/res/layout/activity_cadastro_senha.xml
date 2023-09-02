@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#D7EAF0"
-    tools:context=".CadastroNome">
+    tools:context=".CadastroSenha">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -51,7 +51,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
-                    android:text="Nome"
+                    android:text="Senha"
                     android:textColor="@color/verdeZup"
                     android:textSize="25sp" />
 
@@ -61,6 +61,7 @@
                     android:layout_marginBottom="25dp"
                     android:backgroundTint="#D7EAF0"
                     android:hint="|"
+                    android:inputType="textPassword"
                     android:shadowColor="@color/verdeZup"
                     android:textColor="@color/verdeZup"
                     android:textColorHint="#013440" />
@@ -68,7 +69,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
-                    android:text="Sobrenome"
+                    android:text="Confirmar senha"
                     android:textColor="@color/verdeZup"
                     android:textSize="25sp" />
 
@@ -78,56 +79,10 @@
                     android:layout_marginBottom="25dp"
                     android:backgroundTint="#D7EAF0"
                     android:hint="|"
+                    android:inputType="textPassword"
                     android:shadowColor="@color/verdeZup"
                     android:textColor="@color/verdeZup"
                     android:textColorHint="#013440" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:text="Username"
-                    android:textColor="@color/verdeZup"
-                    android:textSize="25sp" />
-
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="25dp"
-                    android:backgroundTint="#D7EAF0"
-                    android:hint="|"
-                    android:shadowColor="@color/verdeZup"
-                    android:textColor="@color/verdeZup"
-                    android:textColorHint="#013440" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:text="Foto de perfil"
-                    android:textColor="@color/verdeZup"
-                    android:textSize="25sp" />
-
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="25dp"
-                    android:backgroundTint="#D7EAF0"
-                    android:hint="|"
-                    android:shadowColor="@color/verdeZup"
-                    android:textColor="@color/verdeZup"
-                    android:textColorHint="#013440" />
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-
-                    <CheckBox
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:text="Influencer"
-                        android:textColor="@color/verdeZup"
-                        android:textSize="25sp" />
-
-                </LinearLayout>
 
 
             </LinearLayout>

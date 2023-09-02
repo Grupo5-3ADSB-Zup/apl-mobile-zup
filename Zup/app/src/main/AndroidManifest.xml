@@ -13,6 +13,12 @@
         android:theme="@style/Theme.Zup"
         tools:targetApi="31">
         <activity
+            android:name=".CadastroCPF"
+            android:exported="false" />
+        <activity
+            android:name=".CadastroSenha"
+            android:exported="false" />
+        <activity
             android:name=".CadastroNome"
             android:exported="false" />
         <activity
@@ -28,16 +34,10 @@
             android:name=".LoginSenha"
             android:exported="false" />
         <activity
-            android:name=".TelaCadastro2"
-            android:exported="false" />
-        <activity
-            android:name=".TelaCadastro1"
+            android:name=".LoginEmail"
             android:exported="false" />
         <activity
             android:name=".TelaInicial"
-            android:exported="false" />
-        <activity
-            android:name=".LoginEmail"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
