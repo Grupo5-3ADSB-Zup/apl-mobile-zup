@@ -4,9 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#D7EAF0"
-    tools:context=".LoginEmail">
-
+    tools:context=".LoginSenha"
+    android:background="#D7EAF0">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -52,7 +51,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
-                    android:text="Seu Email"
+                    android:text="Sua senha"
                     android:textColor="@color/verdeZup"
                     android:textSize="25sp" />
 
@@ -62,6 +61,7 @@
                     android:hint="|"
                     android:textColorHint="#013440"
                     android:backgroundTint="#D7EAF0"
+                    android:inputType="textPassword"
                     android:textColor="@color/verdeZup"
                     android:shadowColor="@color/verdeZup"/>
 
