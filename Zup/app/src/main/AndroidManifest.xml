@@ -13,6 +13,9 @@
         android:theme="@style/Theme.Zup"
         tools:targetApi="31">
         <activity
+            android:name="school.sptech.zup.Onboarding2"
+            android:exported="false" />
+        <activity
             android:name=".LoginEmail"
             android:exported="false" />
         <activity
