@@ -29,7 +29,7 @@
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:layout_gravity="center"
-                    android:src="@mipmap/voltar" />
+                    android:src="@mipmap/voltar_preto" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -59,11 +59,11 @@
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="|"
-                    android:textColorHint="#013440"
                     android:backgroundTint="#D7EAF0"
+                    android:hint="|"
+                    android:shadowColor="@color/verdeZup"
                     android:textColor="@color/verdeZup"
-                    android:shadowColor="@color/verdeZup"/>
+                    android:textColorHint="#013440" />
 
 
             </LinearLayout>

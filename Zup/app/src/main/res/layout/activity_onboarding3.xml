@@ -29,18 +29,18 @@
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:layout_gravity="center"
-                    android:src="@mipmap/voltar" />
+                    android:src="@mipmap/voltar_amarelo" />
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
                     android:layout_gravity="center_vertical"
                     android:layout_marginRight="16dp"
+                    android:layout_weight="1"
                     android:gravity="end"
                     android:text="Pular"
                     android:textColor="@color/amareloZup"
-                    android:textSize="15sp"/>
+                    android:textSize="15sp" />
 
             </LinearLayout>
 
@@ -54,17 +54,18 @@
                     android:layout_width="235dp"
                     android:layout_height="245dp"
                     android:layout_gravity="center"
-                    android:layout_marginTop="75dp">
+                    android:layout_marginTop="75dp"
+                    android:src="@mipmap/onboarding3">
 
                 </ImageView>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="180dp"
+                    android:layout_marginTop="150dp"
                     android:gravity="center"
-                    android:textColor="@color/amareloZup"
                     android:text="Comece agora a aprender sobre o mercado"
+                    android:textColor="@color/amareloZup"
                     android:textSize="25dp">
 
                 </TextView>
@@ -72,10 +73,10 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="30dp"
+                    android:layout_marginBottom="25dp"
                     android:gravity="center"
-                    android:textColor="@color/amareloZup"
                     android:text="Tire suas dúvidas, acesse as melhores notícias voltadas para quem está começando, amplie seu conhecimento do assunto e não tenha mais dúvidas"
+                    android:textColor="@color/amareloZup"
                     android:textSize="18dp">
 
                 </TextView>
@@ -104,7 +105,6 @@
 
         </LinearLayout>
     </RelativeLayout>
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
