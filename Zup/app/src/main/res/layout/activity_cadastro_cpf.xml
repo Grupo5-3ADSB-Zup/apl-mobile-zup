@@ -88,10 +88,10 @@
                     android:id="@+id/aceitarCheckBox"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
                     android:checked="false"
                     android:text="@string/aceitar_termos"
-                    android:textColor="@color/verdeZup"
-                    android:layout_gravity="center_horizontal"/>
+                    android:textColor="@color/verdeZup" />
 
             </LinearLayout>
 

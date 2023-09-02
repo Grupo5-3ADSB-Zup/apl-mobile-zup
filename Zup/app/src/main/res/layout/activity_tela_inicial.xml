@@ -51,7 +51,7 @@
                 android:layout_height="72dp"
                 android:background="@color/amareloZup"
                 android:gravity="center"
-                android:onClick="entrarCadastro"
+                android:onClick="entrarOnboarding"
                 android:text="Cadastra-se"
                 android:textColor="@color/verdeZup"
                 android:textStyle="bold" />

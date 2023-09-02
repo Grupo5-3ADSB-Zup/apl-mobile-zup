@@ -2,7 +2,6 @@ package school.sptech.zup
 
 import android.content.Intent
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 
@@ -17,8 +16,8 @@ class TelaInicial : AppCompatActivity() {
         startActivity(intent)
     }
 
-    fun entrarCadastro(view: View) {
-        val intent = Intent(this, CadastroNome::class.java)
+    fun entrarOnboarding(view: View) {
+        val intent = Intent(this, Onboarding1::class.java)
         startActivity(intent)
     }
 

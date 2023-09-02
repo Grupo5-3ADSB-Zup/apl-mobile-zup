@@ -64,10 +64,7 @@
                     android:shadowColor="@color/verdeZup"
                     android:textColor="@color/verdeZup"
                     android:textColorHint="#013440" />
-
-
             </LinearLayout>
-
         </LinearLayout>
 
         <LinearLayout
@@ -83,7 +80,7 @@
                 android:background="@color/amareloZup"
                 android:gravity="center"
                 android:onClick="avancarContinuar"
-                android:text="Continuar"
+                android:text="Logar"
                 android:textColor="@color/verdeZup"
                 android:textStyle="bold" />
         </LinearLayout>
