@@ -4,9 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#D7EAF0"
-    tools:context=".LoginEmail">
-
+    android:background="@color/verdeZup"
+    tools:context="school.sptech.zup.Onboarding2">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -38,8 +37,8 @@
                     android:layout_gravity="center_vertical"
                     android:layout_marginRight="16dp"
                     android:gravity="end"
-                    android:text="Cancelar"
-                    android:textColor="@color/verdeZup"
+                    android:text="Pular"
+                    android:textColor="@color/amareloZup"
                     android:textSize="15sp"/>
 
             </LinearLayout>
@@ -50,19 +49,37 @@
                 android:layout_marginHorizontal="16dp"
                 android:orientation="vertical">
 
+                <ImageView
+                    android:layout_width="235dp"
+                    android:layout_height="245dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="75dp"
+
+                    android:src="@mipmap/onboarding2">
+
+                </ImageView>
+
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="180dp"
+                    android:gravity="center"
+                    android:textColor="@color/amareloZup"
+                    android:text="Rede Social onde você pode começar"
+                    android:textSize="25dp">
 
-                    android:text="Seu Email"
-                    android:textColor="@color/verdeZup"
-                    android:textSize="25sp" />
+                </TextView>
 
-                <EditText
+                <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Olá"
-                    android:textColorHint="@color/verdeZup" />
+                    android:layout_marginTop="30dp"
+                    android:gravity="center"
+                    android:textColor="@color/amareloZup"
+                    android:text="O cadastro é grátis. Comece agora o seu primeiro passo para o mercado financeiro"
+                    android:textSize="18dp">
+
+                </TextView>
 
             </LinearLayout>
 
@@ -74,17 +91,9 @@
             android:layout_alignParentBottom="true"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/buttonContinuar"
-                android:layout_width="match_parent"
-                android:layout_height="72dp"
-                android:background="@color/amareloZup"
-                android:gravity="center"
-                android:onClick="avancarContinuar"
-                android:text="Continuar"
-                android:textColor="@color/verdeZup"
-                android:textStyle="bold" />
+
         </LinearLayout>
     </RelativeLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
