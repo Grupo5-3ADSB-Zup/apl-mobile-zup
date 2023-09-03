@@ -13,6 +13,18 @@
         android:theme="@style/Theme.Zup"
         tools:targetApi="31">
         <activity
+            android:name=".ProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SettigsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SearchActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Feed"
+            android:exported="false" />
+        <activity
             android:name=".CadastroCPF"
             android:exported="false" />
         <activity
