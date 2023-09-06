@@ -61,13 +61,8 @@
                 </ImageView>
 
                 <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="150dp"
-                    android:gravity="center"
-                    android:text="Comunidade com especialistas dando sua opinião"
-                    android:textColor="@color/amareloZup"
-                    android:textSize="25dp">
+                    style="@style/tituloOnboarding"
+                    android:text="Comunidade com especialistas dando sua opinião">
 
                 </TextView>
 

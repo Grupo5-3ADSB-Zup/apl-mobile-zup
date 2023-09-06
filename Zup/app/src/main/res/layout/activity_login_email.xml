@@ -49,11 +49,8 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:text="Seu Email"
-                    android:textColor="@color/verdeZup"
-                    android:textSize="25sp" />
+                    style="@style/tituloLoginCadastro"
+                    android:text="Seu Email" />
 
                 <EditText
                     android:layout_width="match_parent"

@@ -49,11 +49,8 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:text="Senha"
-                    android:textColor="@color/verdeZup"
-                    android:textSize="25sp" />
+                    style="@style/tituloLoginCadastro"
+                    android:text="Senha" />
 
                 <EditText
                     android:layout_width="match_parent"
@@ -67,11 +64,8 @@
                     android:textColorHint="#013440" />
 
                 <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:text="Confirmar senha"
-                    android:textColor="@color/verdeZup"
-                    android:textSize="25sp" />
+                    style="@style/tituloLoginCadastro"
+                    android:text="Confirmar senha" />
 
                 <EditText
                     android:layout_width="match_parent"
