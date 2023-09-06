@@ -5,12 +5,37 @@
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 
+
+    <!--    TÍTULO LOGIN E CADASTRO-->
+
+    <style name="tituloLoginCadastro">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">30dp</item>
+        <item name="android:textColor">@color/verdeZup</item>
+        <item name="android:textSize">25sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!--    TÍTULO ONBOARDING-->
+
+
+    <style name="tituloOnboarding">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">150dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/amareloZup</item>
+        <item name="android:textSize">25sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
     <style name="campoDeEntrada">
         <item name="android:layout_marginTop">16dp</item>
         <item name="backgroundTint">@color/amareloZup</item>
         <item name="android:padding">20dp</item>
         <item name="android:textColorHint">@color/amareloZup</item>
     </style>
+
 
     <style name="Theme.Zup" parent="Base.Theme.Zup" />
 </resources>

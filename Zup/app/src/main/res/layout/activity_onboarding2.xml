@@ -55,18 +55,13 @@
                     android:layout_height="245dp"
                     android:layout_gravity="center"
                     android:layout_marginTop="75dp"
-                    android:src="@mipmap/onboarding3">
+                    android:src="@mipmap/onboarding2">
 
                 </ImageView>
 
                 <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="150dp"
-                    android:gravity="center"
-                    android:text="Rede Social onde você pode começar"
-                    android:textColor="@color/amareloZup"
-                    android:textSize="25dp">
+                    style="@style/tituloOnboarding"
+                    android:text="Rede Social onde você pode começar">
 
                 </TextView>
 

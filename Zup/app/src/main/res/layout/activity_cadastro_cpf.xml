@@ -49,11 +49,8 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:text="CPF"
-                    android:textColor="@color/verdeZup"
-                    android:textSize="25sp" />
+                    style="@style/tituloLoginCadastro"
+                    android:text="CPF" />
 
                 <EditText
                     android:layout_width="match_parent"
@@ -67,11 +64,8 @@
                     android:textColorHint="#013440" />
 
                 <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:text="CNPJ (caso empresa)"
-                    android:textColor="@color/verdeZup"
-                    android:textSize="25sp" />
+                    style="@style/tituloLoginCadastro"
+                    android:text="CNPJ (caso empresa)" />
 
                 <EditText
                     android:layout_width="match_parent"
@@ -91,7 +85,8 @@
                     android:layout_gravity="center_horizontal"
                     android:checked="false"
                     android:text="@string/aceitar_termos"
-                    android:textColor="@color/verdeZup" />
+                    android:textColor="@color/verdeZup"
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
