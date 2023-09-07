@@ -29,6 +29,29 @@
         <item name="android:textStyle">bold</item>
     </style>
 
+
+    <!--    IMAGEM ONBOARDING-->
+
+    <style name="imagemOnboarding">
+        <item name="android:layout_width">235dp</item>
+        <item name="android:layout_height">245dp</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_marginTop">75dp</item>
+    </style>
+
+
+    <!--    TEXTO EXPLICATIVO ONBOARDING-->
+
+    <style name="textoOnboarding">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginBottom">25dp</item>
+        <item name="android:textColor">@color/amareloZup</item>
+        <item name="android:textSize">18dp</item>
+    </style>
+
+
     <style name="campoDeEntrada">
         <item name="android:layout_marginTop">16dp</item>
         <item name="backgroundTint">@color/amareloZup</item>

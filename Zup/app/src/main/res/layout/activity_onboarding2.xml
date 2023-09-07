@@ -51,13 +51,9 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:layout_width="235dp"
-                    android:layout_height="245dp"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="75dp"
-                    android:src="@mipmap/onboarding2">
+                    style="@style/imagemOnboarding"
+                    android:src="@mipmap/onboarding2" />
 
-                </ImageView>
 
                 <TextView
                     style="@style/tituloOnboarding"
@@ -66,13 +62,8 @@
                 </TextView>
 
                 <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="25dp"
-                    android:gravity="center"
-                    android:text="O cadastro é grátis. Comece agora o seu primeiro passo para o mercado financeiro"
-                    android:textColor="@color/amareloZup"
-                    android:textSize="18dp">
+                    style="@style/textoOnboarding"
+                    android:text="O cadastro é grátis. Comece agora o seu primeiro passo para o mercado financeiro">
 
                 </TextView>
 
