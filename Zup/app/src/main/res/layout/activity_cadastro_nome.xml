@@ -90,19 +90,6 @@
                     android:textColor="@color/verdeZup"
                     android:textColorHint="#013440" />
 
-                <TextView
-                    style="@style/tituloLoginCadastro"
-                    android:text="Foto de perfil" />
-
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="25dp"
-                    android:backgroundTint="#D7EAF0"
-                    android:hint="|"
-                    android:shadowColor="@color/verdeZup"
-                    android:textColor="@color/verdeZup"
-                    android:textColorHint="#013440" />
 
                 <LinearLayout
                     android:layout_width="wrap_content"
