@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/botao_like"
+        android:icon="@drawable/baseline_thumb_up_alt_24"
+        android:title=""/>
+    <item
+        android:id="@+id/botao_comentario"
+        android:icon="@drawable/baseline_textsms_24"
+        android:title="" />
+
+</menu>

@@ -7,18 +7,110 @@
     android:layout_height="match_parent"
     tools:context=".Feed">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="15dp"
+            android:gravity="center_horizontal"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="15dp"
+                android:gravity="center_horizontal">
+
+                <LinearLayout
+                    android:layout_width="350dp"
+                    android:layout_height="300dp"
+                    android:background="@drawable/botao_backgroud"
+                    android:orientation="horizontal">
+
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginLeft="15dp">
+
+                        <TextView
+                            android:id="@+id/nameTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Gazeta"
+                            android:textSize="30sp" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:layout_gravity="center"
+                            android:background="@color/black" />
+
+
+                        <ImageView
+                            android:id="@+id/descricaoImageView"
+                            android:layout_width="match_parent"
+                            android:layout_height="120dp"
+                            android:src="@mipmap/Dinheiro"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:text="Image"
+                            android:textSize="30sp" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:layout_gravity="center"
+                            android:background="@color/black" />
+
+                        <com.google.android.material.bottomnavigation.BottomNavigationView
+                             android:layout_height="40dp"
+                             android:layout_width="wrap_content"
+
+                            app:menu="@menu/post_menu"
+                            android:background="@drawable/botao_backgroud"
+                            app:itemIconSize="20dp"
+                            />
+
+                        <TextView
+                            android:id="@+id/descricaoTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Descrição"
+                            android:textSize="15sp" />
+
+
+
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+
+
+
+        </LinearLayout>
+
+
+
+    </ScrollView>
+
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Home"
-        android:textSize="36sp"
+        android:layout_centerInParent="true"
         android:textColor="@color/amareloZup"
-        android:layout_centerInParent="true"/>
+        android:textSize="36sp" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/BotaoView"
         android:layout_alignParentBottom="true"
         android:background="@drawable/botao_backgroud"
         android:layout_marginEnd="20dp"
