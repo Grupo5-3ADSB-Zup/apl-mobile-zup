@@ -89,66 +89,64 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
+            android:background="@color/amareloZup"
             android:orientation="horizontal">
 
             <LinearLayout
-                android:layout_width="10dp"
-                android:layout_height="wrap_content"
+                android:layout_width="100dp"
+                android:layout_height="72dp"
                 android:layout_alignParentBottom="true"
-                android:orientation="horizontal">
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="72dp"
-                    android:background="@color/amareloZup"
+                android:gravity="center"
+                android:orientation="vertical">
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
                     android:gravity="center"
                     android:onClick="pularOnboarding"
-                    android:text="Continuar"
-                    android:textColor="@color/verdeZup"
+                    android:src="@mipmap/icone_casa"
                     android:textStyle="bold" />
             </LinearLayout>
             <LinearLayout
-                android:layout_width="10dp"
-                android:layout_height="wrap_content"
+                android:layout_width="100dp"
+                android:layout_height="72dp"
                 android:layout_alignParentBottom="true"
-                android:orientation="horizontal">
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="72dp"
-                    android:background="@color/amareloZup"
+                android:gravity="center"
+                android:orientation="vertical">
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
                     android:gravity="center"
                     android:onClick="pularOnboarding"
-                    android:text="Continuar"
-                    android:textColor="@color/verdeZup"
+                    android:src="@mipmap/icone_influencers"
                     android:textStyle="bold" />
             </LinearLayout>
             <LinearLayout
-                android:layout_width="10dp"
-                android:layout_height="wrap_content"
+                android:layout_width="100dp"
+                android:layout_height="72dp"
                 android:layout_alignParentBottom="true"
-                android:orientation="horizontal">
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="72dp"
+                android:gravity="center"
+                android:orientation="vertical">
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
                     android:background="@color/amareloZup"
                     android:gravity="center"
                     android:onClick="pularOnboarding"
-                    android:text="Continuar"
-                    android:textColor="@color/verdeZup"
+                    android:src="@mipmap/icone_notificacao"
                     android:textStyle="bold" />
             </LinearLayout>
             <LinearLayout
-                android:layout_width="10dp"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="72dp"
                 android:layout_alignParentBottom="true"
-                android:orientation="horizontal">
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="72dp"
-                    android:background="@color/amareloZup"
+                android:gravity="center"
+                android:orientation="vertical">
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
                     android:gravity="center"
                     android:onClick="pularOnboarding"
-                    android:text="Continuar"
-                    android:textColor="@color/verdeZup"
+                    android:src="@mipmap/icone_config"
                     android:textStyle="bold" />
             </LinearLayout>
 
