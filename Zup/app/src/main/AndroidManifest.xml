@@ -14,6 +14,7 @@
         tools:targetApi="31">
         <activity
 <<<<<<< HEAD
+<<<<<<< HEAD
             android:name=".BuscarInfluenciadores"
 =======
             android:name=".TelaChatUsuario"
@@ -21,6 +22,9 @@
         <activity
             android:name=".TelaChatUsuariosComuns"
 >>>>>>> remotes/origin/feature/process_chat
+=======
+            android:name=".TelaConfiguracoes"
+>>>>>>> remotes/origin/feature/process_tela_configuracoes
             android:exported="false" />
         <activity
             android:name=".TelaEditarPerfilInfluencer"
