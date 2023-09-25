@@ -64,23 +64,120 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="664dp"
-                android:layout_marginHorizontal="16dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="30dp"
+                android:paddingTop="50dp"
                 android:orientation="vertical">
 
-                <ImageView
-                    style="@style/imagemOnboarding"
-                    android:src="@mipmap/onboarding3" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
 
-                <TextView
-                    style="@style/tituloOnboarding"
-                    android:text="Comece agora a aprender sobre o mercado">
+                    <ImageView
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:background="@color/cinzaClaroZup"
+                        android:src="@mipmap/icone_perfil_usuario">
+                    </ImageView>
 
-                </TextView>
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginLeft="200dp"
+                        android:src="@mipmap/lapis_editar">
 
-                <TextView
-                    style="@style/textoOnboarding"
-                    android:text="Tire suas dúvidas, acesse as melhores notícias voltadas para quem está começando, amplie seu conhecimento do assunto e não tenha mais dúvidas" />
+                    </ImageView>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Nome Usuario"
+                        android:textSize="25dp"
+                        android:textColor="@color/amareloZup">
+                    </TextView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="5dp"
+                        android:text="Nome e sobrenome"
+                        android:textSize="16dp"
+                        android:textColor="@color/amareloZup">
+                    </TextView>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="30dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:background="@color/cinzaClaroZup"
+                        android:text="Seguindo"
+                        android:gravity="center"
+                        android:layout_weight="1">
+
+                    </TextView>
+
+                    <TextView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:gravity="center"
+                        android:background="@color/cinzaClaroZup"
+                        android:text="Seguidores"
+                        android:layout_weight="1">
+                    </TextView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="475dp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="200dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:textColor="@color/cinzaClaroZup"
+                            android:textSize="40dp"
+                            android:textStyle="bold"
+                            android:text="Descubra agora o seu tipo de perfil">
+                        </TextView>
+
+                        <TextView
+                            android:layout_width="200dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:padding="10dp"
+                            android:textSize="30dp"
+                            android:gravity="center"
+                            android:background="@color/amareloZup"
+                            android:text="Vamos Lá">
+                        </TextView>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
             </LinearLayout>
 
         </LinearLayout>
