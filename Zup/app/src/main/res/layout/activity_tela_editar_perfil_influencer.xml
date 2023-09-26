@@ -24,12 +24,12 @@
                 <ImageView
                     android:layout_width="18dp"
                     android:layout_height="18dp"
-                    android:layout_marginLeft="10dp"
                     android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
                     android:src="@mipmap/voltar_preto_sem_traco" />
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="22dp"
+                    android:layout_height="30dp"
                     android:layout_alignParentTop="true"
                     android:background="@color/cinzaClaroZup"
                     android:layout_marginRight="20dp"
@@ -39,15 +39,21 @@
                     <ImageView
                         android:layout_width="15dp"
                         android:layout_height="15dp"
-                        android:layout_marginTop="3dp"
+                        android:layout_marginTop="7dp"
                         android:layout_marginLeft="5dp"
                         android:src="@mipmap/pesquisar">
                     </ImageView>
+                    <EditText
+                        android:layout_width="280dp"
+                        android:layout_height="40dp"
+                        android:hint="|"
+                        android:inputType="textPassword">
+                    </EditText>
                     <ImageView
                         android:layout_width="15dp"
                         android:layout_height="15dp"
-                        android:layout_marginTop="3dp"
-                        android:layout_marginLeft="300dp"
+                        android:layout_marginTop="7dp"
+                        android:layout_marginLeft="25dp"
                         android:src="@mipmap/close">
                     </ImageView>
                 </LinearLayout>
