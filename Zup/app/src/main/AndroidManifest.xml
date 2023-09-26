@@ -12,11 +12,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Zup"
         tools:targetApi="31">
-        <activity android:name=".TelaNotificacoes"
-            android:exported="false"/>
+        <activity
+            android:name=".TelaHomePesquisa2"
+            android:exported="false" />
+        <activity
+            android:name=".TelaHomePesquisa"
+            android:exported="false" />
+        <activity
+            android:name=".TelaNotificacoes"
+            android:exported="false" />
         <activity
             android:name=".TelaChatUsuario"
-            android:exported = "false"/>
+            android:exported="false" />
         <activity
             android:name=".BuscarInfluenciadores"
             android:exported="false" />
