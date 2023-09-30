@@ -5,7 +5,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import school.sptech.zup.R
+
 
 class Feed : AppCompatActivity() {
 
@@ -26,7 +26,7 @@ class Feed : AppCompatActivity() {
     private fun getPosts(): List<Post> {
         // Substitua com a lógica real para obter os posts do seu aplicativo
         return listOf(
-            Post("https://i.pinimg.com/1200x/a3/ca/6b/a3ca6b435178de159748226fab372dfe.jpg", "Toma Toma safadinha"),
+            Post("", "Toma Toma safadinha"),
             Post("url_da_imagem2", "Descrição do Post 2"),
             // Adicione mais posts conforme necessário
         )

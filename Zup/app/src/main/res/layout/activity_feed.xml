@@ -7,20 +7,59 @@
     android:layout_height="match_parent"
     tools:context=".Feed">
 
-<!--    <LinearLayout-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content">-->
-<!--        <EditText-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="30dp"-->
-<!--            android:background="@drawable/botao_backgroud"/>-->
 
-<!--    </LinearLayout>-->
 
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/verdeZup"
+        android:orientation="vertical"
+
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/amareloZup"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingVertical="3dp"
+            >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/baseline_person_24"
+                android:layout_weight="1"
+            />
+
+            <EditText
+                android:layout_width="300dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/backgroud_pesquisar_interface"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="3dp"
+                android:layout_gravity="center"
+                android:drawableStart="@drawable/baseline_search_24"
+                android:paddingStart="8dp"
+
+            />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icon__chat"
+                android:layout_weight="1"
+            />
+
+        </LinearLayout>
+
+
+
+        <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
         >
         <RelativeLayout
             android:layout_width="match_parent"
@@ -29,52 +68,45 @@
             >
 
             <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical"
-                        android:layout_centerHorizontal="true">
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
-                        <TextView
-                            android:id="@+id/nameTextView"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Gazeta"
-                            android:textSize="30sp"
-                            android:textColor="@color/amareloZup"/>
-
+                <TextView
+                    android:id="@+id/nameTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Gazeta"
+                    android:textColor="@color/amareloZup"
+                    android:textSize="30sp" />
 
 
-
-                        <ImageView
-                            android:id="@+id/descricaoImageView"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:src="@mipmap/Dinheiro"
-                            android:layout_marginTop="5dp"
-                            android:layout_marginBottom="5dp"
-                            android:text="Image"
-                            android:textSize="30sp" />
+                <ImageView
+                    android:id="@+id/descricaoImageView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:src="@mipmap/dinheiro"
+                    android:text="Image"
+                    android:textSize="30sp" />
 
                 <TextView
                     android:id="@+id/descricaoTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
                     android:text="Descrição"
                     android:textSize="15sp" />
 
 
-
-
-
-                        <com.google.android.material.bottomnavigation.BottomNavigationView
-                             android:layout_height="40dp"
-                             android:layout_width="match_parent"
-                            app:menu="@menu/post_menu"
-                            android:background="@drawable/backgroud_menu_interacao"
-                            app:itemIconTint="@drawable/item_deslizar"
-                            app:itemIconSize="18dp"
-                            />
-
+                <com.google.android.material.bottomnavigation.BottomNavigationView
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@drawable/backgroud_menu_interacao"
+                    app:itemIconSize="18dp"
+                    app:itemIconTint="@drawable/item_deslizar"
+                    app:menu="@menu/post_menu" />
 
 
             </LinearLayout>
@@ -85,6 +117,8 @@
 
 
     </ScrollView>
+
+    </LinearLayout>
 
 
     <!-- TextView "Home" -->
