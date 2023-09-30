@@ -7,100 +7,87 @@
     android:layout_height="match_parent"
     tools:context=".Feed">
 
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content">-->
+<!--        <EditText-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="30dp"-->
+<!--            android:background="@drawable/botao_backgroud"/>-->
+
+<!--    </LinearLayout>-->
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-
+        android:background="@color/verdeZup"
         >
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="15dp"
-            android:gravity="center_horizontal"
+            android:background="@color/verdeZup"
             >
+
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:padding="15dp"
-                android:gravity="center_horizontal">
-
-                <LinearLayout
-                    android:layout_width="350dp"
-                    android:layout_height="300dp"
-                    android:background="@drawable/botao_backgroud"
-                    android:orientation="horizontal">
-
-
-
-                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:orientation="vertical"
-                        android:layout_marginTop="15dp"
-                        android:layout_marginLeft="15dp">
+                        android:layout_centerHorizontal="true">
 
                         <TextView
                             android:id="@+id/nameTextView"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Gazeta"
-                            android:textSize="30sp" />
+                            android:textSize="30sp"
+                            android:textColor="@color/amareloZup"/>
 
-                        <View
-                            android:layout_width="match_parent"
-                            android:layout_height="2dp"
-                            android:layout_gravity="center"
-                            android:background="@color/black" />
+
 
 
                         <ImageView
                             android:id="@+id/descricaoImageView"
                             android:layout_width="match_parent"
-                            android:layout_height="120dp"
+                            android:layout_height="match_parent"
                             android:src="@mipmap/Dinheiro"
                             android:layout_marginTop="5dp"
                             android:layout_marginBottom="5dp"
                             android:text="Image"
                             android:textSize="30sp" />
 
-                        <View
-                            android:layout_width="match_parent"
-                            android:layout_height="2dp"
-                            android:layout_gravity="center"
-                            android:background="@color/black" />
+                <TextView
+                    android:id="@+id/descricaoTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Descrição"
+                    android:textSize="15sp" />
+
+
+
+
 
                         <com.google.android.material.bottomnavigation.BottomNavigationView
                              android:layout_height="40dp"
-                             android:layout_width="wrap_content"
-
+                             android:layout_width="match_parent"
                             app:menu="@menu/post_menu"
-                            android:background="@drawable/botao_backgroud"
-                            app:itemIconSize="20dp"
+                            android:background="@drawable/backgroud_menu_interacao"
+                            app:itemIconTint="@drawable/item_deslizar"
+                            app:itemIconSize="18dp"
                             />
 
-                        <TextView
-                            android:id="@+id/descricaoTextView"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Descrição"
-                            android:textSize="15sp" />
 
 
-
-                    </LinearLayout>
-                </LinearLayout>
             </LinearLayout>
 
 
-
-
-        </LinearLayout>
+        </RelativeLayout>
 
 
 
     </ScrollView>
 
 
+    <!-- TextView "Home" -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -108,22 +95,19 @@
         android:textColor="@color/amareloZup"
         android:textSize="36sp" />
 
+    <!-- RecyclerView -->
+
+    <!-- BottomNavigationView -->
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:background="@drawable/botao_backgroud"
-        android:layout_marginEnd="20dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginBottom="30dp"
-        android:layout_marginTop="30dp"
         android:elevation="2dp"
         app:menu="@menu/botao_menu"
         app:itemIconSize="30dp"
         app:itemIconTint="@drawable/item_deslizar"
         app:itemRippleColor="@android:color/transparent"
         app:labelVisibilityMode="unlabeled"/>
-
-
 
 </RelativeLayout>

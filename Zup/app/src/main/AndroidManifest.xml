@@ -22,7 +22,7 @@
             android:name=".SearchActivity"
             android:exported="false" />
         <activity
-            android:name=".Feed"
+            android:name="TelaInicial"
             android:exported="false" />
         <activity
             android:name=".CadastroCPF"
@@ -49,7 +49,7 @@
             android:name=".LoginEmail"
             android:exported="false" />
         <activity
-            android:name=".TelaInicial"
+            android:name=".Feed"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

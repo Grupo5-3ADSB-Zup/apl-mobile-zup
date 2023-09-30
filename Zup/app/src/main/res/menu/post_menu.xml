@@ -8,5 +8,9 @@
         android:id="@+id/botao_comentario"
         android:icon="@drawable/baseline_textsms_24"
         android:title="" />
+    <item
+        android:id="@+id/botao_compartlihar"
+        android:icon="@drawable/baseline_ios_share_24"
+        android:title="" />
 
 </menu>
