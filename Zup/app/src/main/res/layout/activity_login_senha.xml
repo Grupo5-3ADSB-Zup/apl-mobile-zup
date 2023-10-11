@@ -36,7 +36,7 @@
                     android:layout_gravity="center_vertical"
                     android:layout_weight="1"
                     android:gravity="end"
-                    android:text="Cancelar"
+                    android:text="@string/cancelar"
                     android:textColor="@color/verdeZup"
                     android:textSize="15sp" />
 
@@ -50,7 +50,7 @@
 
                 <TextView
                     style="@style/tituloLoginCadastro"
-                    android:text="Sua senha"
+                    android:text="@string/sua_senha"
                     />
 
                 <EditText

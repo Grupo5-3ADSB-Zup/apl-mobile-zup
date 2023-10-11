@@ -84,7 +84,7 @@
                 android:background="@color/amareloZup"
                 android:gravity="center"
                 android:onClick="proximoOnboarding3"
-                android:text="Continuar"
+                android:text="@string/continuar"
                 android:textColor="@color/verdeZup"
                 android:textStyle="bold" />
         </LinearLayout>

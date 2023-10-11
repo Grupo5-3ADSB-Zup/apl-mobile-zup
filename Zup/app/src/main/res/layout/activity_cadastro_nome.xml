@@ -36,7 +36,7 @@
                     android:layout_gravity="center_vertical"
                     android:layout_weight="1"
                     android:gravity="end"
-                    android:text="Cancelar"
+                    android:text="@string/cancelar"
                     android:textColor="@color/verdeZup"
                     android:textSize="15sp" />
 
@@ -50,7 +50,7 @@
 
                 <TextView
                     style="@style/tituloLoginCadastro"
-                    android:text="Nome" />
+                    android:text="@string/nomeUsuario" />
 
                 <EditText
                     android:layout_width="match_parent"
@@ -64,7 +64,7 @@
 
                 <TextView
                     style="@style/tituloLoginCadastro"
-                    android:text="Sobrenome" />
+                    android:text="@string/sobrenomeUsuario" />
 
                 <EditText
                     android:layout_width="match_parent"
@@ -78,7 +78,7 @@
 
                 <TextView
                     style="@style/tituloLoginCadastro"
-                    android:text="Username" />
+                    android:text="@string/username" />
 
                 <EditText
                     android:layout_width="match_parent"
@@ -97,7 +97,7 @@
 
                     <CheckBox
                         style="@style/tituloLoginCadastro"
-                        android:text="Influencer" />
+                        android:text="@string/influencer" />
 
                 </LinearLayout>
 
@@ -119,7 +119,7 @@
                 android:background="@color/amareloZup"
                 android:gravity="center"
                 android:onClick="avancarContinuar"
-                android:text="Continuar"
+                android:text="@string/continuar"
                 android:textColor="@color/verdeZup"
                 android:textStyle="bold" />
         </LinearLayout>

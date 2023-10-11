@@ -81,7 +81,7 @@
                 android:background="@color/amareloZup"
                 android:gravity="center"
                 android:onClick="pularOnboarding"
-                android:text="Continuar"
+                android:text="@string/continuar"
                 android:textColor="@color/verdeZup"
                 android:textStyle="bold" />
 

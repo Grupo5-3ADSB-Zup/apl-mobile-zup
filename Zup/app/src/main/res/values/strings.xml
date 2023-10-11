@@ -13,4 +13,13 @@
     <string name="esqueci_minha_senha">Esqueci minha senha</string>
     <string name="gerenciar_usuario">Gerenciar Usuários</string>
     <string name="extrair_usuarios">Extrair Usuários</string>
+    <string name="username">Username</string>
+    <string name="continuar">Continuar</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="finalizar_cadastro">Finalizar cadastro</string>
+    <string name="confirmar_senha">Confirmar senha</string>
+    <string name="login">Login</string>
+    <string name="cadastra_se">Cadastra-se</string>
+    <string name="seu_email">Seu Email</string>
+    <string name="sua_senha">Sua senha</string>
 </resources>

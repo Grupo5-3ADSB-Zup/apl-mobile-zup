@@ -40,7 +40,7 @@
                 android:background="#D7EAF0"
                 android:gravity="center"
                 android:onClick="entrarLogin"
-                android:text="Login"
+                android:text="@string/login"
                 android:textColor="@color/verdeZup"
                 android:textStyle="bold" />
 
@@ -52,7 +52,7 @@
                 android:background="@color/amareloZup"
                 android:gravity="center"
                 android:onClick="entrarOnboarding"
-                android:text="Cadastra-se"
+                android:text="@string/cadastra_se"
                 android:textColor="@color/verdeZup"
                 android:textStyle="bold" />
         </LinearLayout>
