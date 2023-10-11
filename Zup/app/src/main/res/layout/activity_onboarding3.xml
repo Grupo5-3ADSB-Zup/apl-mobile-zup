@@ -39,7 +39,7 @@
                     android:layout_weight="1"
                     android:gravity="end"
                     android:onClick="pularOnboarding"
-                    android:text="Pular"
+                    android:text="@string/pular"
                     android:textColor="@color/amareloZup"
                     android:textSize="15sp" />
 
@@ -49,7 +49,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="664dp"
                 android:layout_marginHorizontal="16dp"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:layout_marginBottom="20dp">
 
                 <ImageView
                     style="@style/imagemOnboarding"
@@ -57,13 +58,13 @@
 
                 <TextView
                     style="@style/tituloOnboarding"
-                    android:text="Comece agora a aprender sobre o mercado">
+                    android:text="@string/comece_agora_a_aprender_sobre_o_mercado">
 
                 </TextView>
 
                 <TextView
                     style="@style/textoOnboarding"
-                    android:text="Tire suas dúvidas, acesse as melhores notícias voltadas para quem está começando, amplie seu conhecimento do assunto e não tenha mais dúvidas" />
+                    android:text="@string/tire_suas_d_vidas_acesse_as_melhores_not_cias_voltadas_para_quem_est_come_ando_amplie_seu_conhecimento_do_assunto_e_n_o_tenha_mais_d_vidas" />
             </LinearLayout>
 
         </LinearLayout>
@@ -81,13 +82,17 @@
                 android:background="@color/amareloZup"
                 android:gravity="center"
                 android:onClick="pularOnboarding"
-                android:text="Continuar"
+                android:text="@string/continuar"
                 android:textColor="@color/verdeZup"
                 android:textStyle="bold" />
 
 
         </LinearLayout>
+
+
     </RelativeLayout>
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -36,7 +36,7 @@
                     android:layout_gravity="center_vertical"
                     android:layout_weight="1"
                     android:gravity="end"
-                    android:text="Cancelar"
+                    android:text="@string/cancelar"
                     android:textColor="@color/verdeZup"
                     android:textSize="15sp" />
 
@@ -65,7 +65,7 @@
 
                 <TextView
                     style="@style/tituloLoginCadastro"
-                    android:text="CNPJ (caso empresa)" />
+                    android:text="@string/cnpj_caso_empresa" />
 
                 <EditText
                     android:layout_width="match_parent"
@@ -105,7 +105,7 @@
                 android:background="@color/amareloZup"
                 android:gravity="center"
                 android:onClick="avancarContinuar"
-                android:text="Finalizar cadastro"
+                android:text="@string/finalizar_cadastro"
                 android:textColor="@color/verdeZup"
                 android:textStyle="bold" />
         </LinearLayout>

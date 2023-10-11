@@ -14,4 +14,21 @@
     <string name="esqueci_minha_senha">Olvidé mi contraseña</string>
     <string name="gerenciar_usuario">Administrar Usuarios</string>
     <string name="extrair_usuarios">Extraer Usuarios</string>
+    <string name="username">Nombre de usuario</string>
+    <string name="continuar">Continuar</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="finalizar_cadastro">Finalizar registro</string>
+    <string name="confirmar_senha">Confirmar senha</string>
+    <string name="login">Login</string>
+    <string name="cadastra_se">Registrarse</string>
+    <string name="seu_email">Tu correo electrónico</string>
+    <string name="sua_senha">Tu contraseña</string>
+    <string name="cnpj_caso_empresa">CNPJ (in case of a company)</string>
+    <string name="comunidade_com_especialistas_dando_sua_opini_o">Comunidad con expertos dando su opinión.</string>
+    <string name="influenciadores_presentes_na_rede_auxiliando_na_sua_escolha">Influencers presentes en la red, ayudando en tu elección.</string>
+    <string name="pular">Saltar</string>
+    <string name="rede_social_onde_voc_pode_come_ar">Red social donde puedes comenzar.</string>
+    <string name="o_cadastro_gr_tis_comece_agora_o_seu_primeiro_passo_para_o_mercado_financeiro">El registro es gratuito. Comienza ahora tu primer paso en el mercado financiero.</string>
+    <string name="comece_agora_a_aprender_sobre_o_mercado">Comienza a aprender sobre el mercado ahora.</string>
+    <string name="tire_suas_d_vidas_acesse_as_melhores_not_cias_voltadas_para_quem_est_come_ando_amplie_seu_conhecimento_do_assunto_e_n_o_tenha_mais_d_vidas">Aclara tus dudas, accede a las mejores noticias dirigidas a quienes están empezando, amplía tu conocimiento del tema y no tengas más dudas.</string>
 </resources>
