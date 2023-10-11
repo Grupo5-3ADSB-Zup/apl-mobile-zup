@@ -65,7 +65,7 @@
 
                 <TextView
                     style="@style/tituloLoginCadastro"
-                    android:text="CNPJ (caso empresa)" />
+                    android:text="@string/cnpj_caso_empresa" />
 
                 <EditText
                     android:layout_width="match_parent"

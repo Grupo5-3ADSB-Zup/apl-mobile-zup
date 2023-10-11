@@ -22,4 +22,12 @@
     <string name="cadastra_se">Cadastra-se</string>
     <string name="seu_email">Seu Email</string>
     <string name="sua_senha">Sua senha</string>
+    <string name="cnpj_caso_empresa">CNPJ (caso empresa)</string>
+    <string name="comunidade_com_especialistas_dando_sua_opini_o">Comunidade com especialistas dando sua opinião</string>
+    <string name="influenciadores_presentes_na_rede_auxiliando_na_sua_escolha">Influenciadores presentes na rede, auxiliando na sua escolha</string>
+    <string name="pular">Pular</string>
+    <string name="rede_social_onde_voc_pode_come_ar">Rede Social onde você pode começar</string>
+    <string name="o_cadastro_gr_tis_comece_agora_o_seu_primeiro_passo_para_o_mercado_financeiro">O cadastro é grátis. Comece agora o seu primeiro passo para o mercado financeiro</string>
+    <string name="comece_agora_a_aprender_sobre_o_mercado">Comece agora a aprender sobre o mercado</string>
+    <string name="tire_suas_d_vidas_acesse_as_melhores_not_cias_voltadas_para_quem_est_come_ando_amplie_seu_conhecimento_do_assunto_e_n_o_tenha_mais_d_vidas">Tire suas dúvidas, acesse as melhores notícias voltadas para quem está começando, amplie seu conhecimento do assunto e não tenha mais dúvidas</string>
 </resources>

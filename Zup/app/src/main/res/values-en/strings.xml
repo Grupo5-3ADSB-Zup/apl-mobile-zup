@@ -23,4 +23,12 @@
     <string name="cadastra_se">Register</string>
     <string name="seu_email">Your email</string>
     <string name="sua_senha">Your password</string>
+    <string name="cnpj_caso_empresa">CNPJ (for companies)</string>
+    <string name="comunidade_com_especialistas_dando_sua_opini_o">Community with experts sharing their opinions.</string>
+    <string name="influenciadores_presentes_na_rede_auxiliando_na_sua_escolha">Influencers present on the network, assisting in your choice.</string>
+    <string name="pular">Skip</string>
+    <string name="rede_social_onde_voc_pode_come_ar">Social network where you can start.</string>
+    <string name="o_cadastro_gr_tis_comece_agora_o_seu_primeiro_passo_para_o_mercado_financeiro">Registration is free. Start now your first step into the financial market.</string>
+    <string name="comece_agora_a_aprender_sobre_o_mercado">Start learning about the market now.</string>
+    <string name="tire_suas_d_vidas_acesse_as_melhores_not_cias_voltadas_para_quem_est_come_ando_amplie_seu_conhecimento_do_assunto_e_n_o_tenha_mais_d_vidas">Clear your doubts, access the best news for beginners, expand your knowledge of the subject, and have no more questions.</string>
 </resources>
