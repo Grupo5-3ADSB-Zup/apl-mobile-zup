@@ -32,6 +32,7 @@
                     android:src="@mipmap/voltar_amarelo" />
 
                 <TextView
+                    android:id="@+id/tv_skip"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
@@ -49,8 +50,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="664dp"
                 android:layout_marginHorizontal="16dp"
-                android:orientation="vertical"
-                android:layout_marginBottom="20dp">
+                android:layout_marginBottom="20dp"
+                android:orientation="vertical">
 
                 <ImageView
                     style="@style/imagemOnboarding"
@@ -76,23 +77,18 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/buttonCadastrar"
+                android:id="@+id/proximoOnboarding3"
                 android:layout_width="match_parent"
                 android:layout_height="72dp"
                 android:background="@color/amareloZup"
                 android:gravity="center"
-                android:onClick="pularOnboarding"
                 android:text="@string/continuar"
                 android:textColor="@color/verdeZup"
                 android:textStyle="bold" />
 
-
         </LinearLayout>
 
-
     </RelativeLayout>
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
