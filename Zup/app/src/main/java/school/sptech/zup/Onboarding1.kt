@@ -4,23 +4,33 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import school.sptech.zup.databinding.ActivityOnboarding1Binding
+import school.sptech.zup.databinding.ActivityTelaInicialBinding
 
 class Onboarding1 : AppCompatActivity() {
+
+    val binding by lazy {
+
+        ActivityOnboarding1Binding.inflate(layoutInflater)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_onboarding1)
+        setContentView(binding.root)
+
+        binding.proximoOnboarding1.setOnClickListener {
+
+            val onboarding2 = Intent(this, Onboarding2::class.java)
+
+            startActivity(onboarding2)
+        }
+
+        binding.tvSkip.setOnClickListener {
+
+            val telaCadastroNome = Intent(this, CadastroNome::class.java)
+
+            startActivity(telaCadastroNome)
+        }
     }
-
-    fun pularOnboarding(view: View) {
-        val intent = Intent(this, CadastroNome::class.java)
-        startActivity(intent)
-    }
-
-    fun proximoOnboarding2(view: View) {
-        val intent = Intent(this, Onboarding2::class.java)
-        startActivity(intent)
-    }
-
-
 
 }

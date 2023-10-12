@@ -27,9 +27,9 @@ class TelaInicial : AppCompatActivity() {
 
         binding.buttonCadastrar.setOnClickListener {
 
-            val telaCadastro = Intent(this, CadastroNome::class.java)
+            val onboarding1 = Intent(this, Onboarding1::class.java)
 
-            startActivity(telaCadastro)
+            startActivity(onboarding1)
         }
     }
 
