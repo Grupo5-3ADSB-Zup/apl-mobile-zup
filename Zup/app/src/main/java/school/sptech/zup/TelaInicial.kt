@@ -19,7 +19,6 @@ class TelaInicial : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.buttonLogin.setOnClickListener {
-//            Toast.makeText(baseContext, "Mudando de tela", Toast.LENGTH_SHORT).show()
 
             val telaLogin = Intent(this, LoginEmail::class.java)
 
@@ -27,7 +26,6 @@ class TelaInicial : AppCompatActivity() {
         }
 
         binding.buttonCadastrar.setOnClickListener {
-//            Toast.makeText(baseContext, "Mudando de tela", Toast.LENGTH_SHORT).show()
 
             val telaCadastro = Intent(this, CadastroNome::class.java)
 
