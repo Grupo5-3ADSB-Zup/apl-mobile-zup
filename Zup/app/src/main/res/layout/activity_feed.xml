@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Feed">
+    tools:context=".ui.Feed">
 
 
 
@@ -59,8 +59,8 @@
         <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-
         >
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -72,50 +72,19 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/nameTextView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Gazeta"
-                    android:textColor="@color/amareloZup"
-                    android:textSize="30sp" />
-
-
-                <ImageView
-                    android:id="@+id/descricaoImageView"
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewFeed"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp"
-                    android:src="@mipmap/dinheiro"
-                    android:text="Image"
-                    android:textSize="30sp" />
-
-                <TextView
-                    android:id="@+id/descricaoTextView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:text="Descrição"
-                    android:textSize="15sp" />
-
-
-                <com.google.android.material.bottomnavigation.BottomNavigationView
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:background="@drawable/backgroud_menu_interacao"
-                    app:itemIconSize="18dp"
-                    app:itemIconTint="@drawable/item_deslizar"
-                    app:menu="@menu/post_menu" />
-
+                    android:padding="8dp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
 
             </LinearLayout>
-
-
         </RelativeLayout>
-
-
-
     </ScrollView>
 
     </LinearLayout>

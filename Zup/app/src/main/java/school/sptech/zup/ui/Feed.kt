@@ -1,10 +1,13 @@
-package school.sptech.zup
+package school.sptech.zup.ui
 
 import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import school.sptech.zup.R
+import school.sptech.zup.adapter.PostAdapter
+import school.sptech.zup.model.EventoFeed
 
 
 class Feed : AppCompatActivity() {
@@ -23,11 +26,11 @@ class Feed : AppCompatActivity() {
     }
 
     // Função fictícia para obter uma lista de posts
-    private fun getPosts(): List<Post> {
+    private fun getPosts(): List<EventoFeed> {
         // Substitua com a lógica real para obter os posts do seu aplicativo
         return listOf(
-            Post("", "Toma Toma safadinha"),
-            Post("url_da_imagem2", "Descrição do Post 2"),
+            EventoFeed("", "Toma Toma safadinha"),
+            EventoFeed("url_da_imagem2", "Descrição do Post 2"),
             // Adicione mais posts conforme necessário
         )
     }

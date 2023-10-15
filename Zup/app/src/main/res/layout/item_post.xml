@@ -1,30 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="16dp">
+        android:padding="16dp"
+        tools:ignore="MissingConstraints">
 
-        <!-- Exibir a imagem do post -->
-        <ImageView
-            android:id="@+id/postImage"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:scaleType="centerCrop" />
-
-        <!-- Exibir a descrição do post -->
         <TextView
-            android:id="@+id/postDescription"
-            android:layout_width="match_parent"
+            android:id="@+id/PostTitulo"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingTop="8dp" />
+            android:textColor="@color/amareloZup"
+            android:textSize="30sp" />
 
-        <!-- Outros elementos do post (likes, comentários, etc.) -->
+
+        <ImageView
+            android:id="@+id/PostImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:src="@mipmap/dinheiro"
+            android:text="Image"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/PostDescricao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:textSize="15sp" />
+
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/backgroud_menu_interacao"
+            app:itemIconSize="18dp"
+            app:itemIconTint="@drawable/item_deslizar"
+            app:menu="@menu/post_menu" />
 
     </LinearLayout>
 

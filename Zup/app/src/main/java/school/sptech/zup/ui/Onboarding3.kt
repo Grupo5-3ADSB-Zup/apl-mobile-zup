@@ -1,9 +1,10 @@
-package school.sptech.zup
+package school.sptech.zup.ui
 
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import school.sptech.zup.R
 
 class Onboarding3 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

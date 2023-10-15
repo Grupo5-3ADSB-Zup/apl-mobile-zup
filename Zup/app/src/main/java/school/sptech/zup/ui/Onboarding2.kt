@@ -1,14 +1,15 @@
-package school.sptech.zup
+package school.sptech.zup.ui
 
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import school.sptech.zup.R
 
-class Onboarding1 : AppCompatActivity() {
+class Onboarding2 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_onboarding1)
+        setContentView(R.layout.activity_onboarding2)
     }
 
     fun pularOnboarding(view: View) {
@@ -16,11 +17,8 @@ class Onboarding1 : AppCompatActivity() {
         startActivity(intent)
     }
 
-    fun proximoOnboarding2(view: View) {
-        val intent = Intent(this, Onboarding2::class.java)
+    fun proximoOnboarding3(view: View) {
+        val intent = Intent(this, Onboarding3::class.java)
         startActivity(intent)
     }
-
-
-
 }
