@@ -15,23 +15,22 @@ class Feed : AppCompatActivity() {
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_feed) // Substitua com o nome do layout da sua tela de feed
+        setContentView(R.layout.activity_feed)
 
-        // Configurar o RecyclerView
+
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerViewFeed)
-        val postsList = getPosts() // Substitua com a lista real de posts
+        val postsList = getPosts()
         val adapter = PostAdapter(postsList)
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(this)
     }
 
-    // Função fictícia para obter uma lista de posts
     private fun getPosts(): List<EventoFeed> {
-        // Substitua com a lógica real para obter os posts do seu aplicativo
+
         return listOf(
-            EventoFeed("", "Toma Toma safadinha"),
-            EventoFeed("url_da_imagem2", "Descrição do Post 2"),
-            // Adicione mais posts conforme necessário
+            EventoFeed("Gazeta", 1, "tudo uma farça"),
+            EventoFeed("", 2,""),
+
         )
     }
 }

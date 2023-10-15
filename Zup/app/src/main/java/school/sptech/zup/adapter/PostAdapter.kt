@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.squareup.picasso.Picasso
 import school.sptech.zup.R
 import school.sptech.zup.model.EventoFeed
 
@@ -22,9 +23,10 @@ class PostAdapter(private val eventoFeeds: List<EventoFeed>) : RecyclerView.Adap
         // Preencher os elementos do layout com os dados do post
         holder.postDescription.text = post.Descricao
         holder.postTitulo.text = post.Titulo
-        // Carregar a imagem do post usando alguma biblioteca de carregamento de imagem
-        // Exemplo: Picasso, Glide, etc.
-        holder.postImage.setImageUrl(post.imageUrl)
+
+        Picasso.get()
+            .load(post.Image)
+            .into(holder.postImage)
     }
 
     override fun getItemCount(): Int {
