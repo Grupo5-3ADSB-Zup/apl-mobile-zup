@@ -6,6 +6,7 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import school.sptech.zup.databinding.ActivityOnboarding1Binding
 import school.sptech.zup.databinding.ActivityTelaInicialBinding
+import school.sptech.zup.ui.CadastroNome
 
 class Onboarding1 : AppCompatActivity() {
 

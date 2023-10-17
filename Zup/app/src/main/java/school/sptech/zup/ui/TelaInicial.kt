@@ -6,6 +6,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import school.sptech.zup.databinding.ActivityTelaInicialBinding
+import school.sptech.zup.ui.LoginEmail
 
 class TelaInicial : AppCompatActivity() {
 

@@ -1,11 +1,12 @@
-package school.sptech.zup
+package school.sptech.zup.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import school.sptech.zup.R
 
-class CadastroSenha : AppCompatActivity() {
+class ProfileActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_cadastro_senha)
+        setContentView(R.layout.activity_profile)
     }
 }

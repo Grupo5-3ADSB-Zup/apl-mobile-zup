@@ -4,25 +4,25 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import school.sptech.zup.databinding.ActivityOnboarding1Binding
 import school.sptech.zup.databinding.ActivityOnboarding2Binding
+import school.sptech.zup.databinding.ActivityOnboarding3Binding
+import school.sptech.zup.ui.CadastroNome
 
-class Onboarding2 : AppCompatActivity() {
-
+class Onboarding3 : AppCompatActivity() {
     val binding by lazy {
 
-        ActivityOnboarding2Binding.inflate(layoutInflater)
+        ActivityOnboarding3Binding.inflate(layoutInflater)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        binding.proximoOnboarding2.setOnClickListener {
+        binding.proximoOnboarding3.setOnClickListener {
 
-            val onboarding2 = Intent(this, Onboarding3::class.java)
+            val onboarding3 = Intent(this, CadastroNome::class.java)
 
-            startActivity(onboarding2)
+            startActivity(onboarding3)
         }
 
         binding.tvSkip.setOnClickListener {
@@ -32,4 +32,5 @@ class Onboarding2 : AppCompatActivity() {
             startActivity(telaCadastroNome)
         }
     }
+
 }
