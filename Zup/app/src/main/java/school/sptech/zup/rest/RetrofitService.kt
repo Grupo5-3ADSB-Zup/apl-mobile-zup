@@ -7,6 +7,6 @@ import school.sptech.zup.model.EventoRegistro
 
 interface RetrofitService {
 
-    @POST
+    @POST("")
     fun saveEvent(@Body event: EventoRegistro): Call<EventoRegistro>
 }

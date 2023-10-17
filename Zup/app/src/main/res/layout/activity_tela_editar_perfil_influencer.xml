@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/verdeZup"
-    tools:context=".TelaEditarPerfilInfluencer">
+    tools:context=".ui.TelaEditarPerfilInfluencer">
 
     <RelativeLayout
         android:layout_width="match_parent"

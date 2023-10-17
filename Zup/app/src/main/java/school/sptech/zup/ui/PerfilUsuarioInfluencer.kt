@@ -1,11 +1,12 @@
-package school.sptech.zup
+package school.sptech.zup.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import school.sptech.zup.R
 
-class TelaNotificacoes : AppCompatActivity() {
+class PerfilUsuarioInfluencer : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_tela_notificacoes)
+        setContentView(R.layout.activity_perfil_usuario_influencer)
     }
 }
