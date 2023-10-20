@@ -13,61 +13,61 @@
         android:theme="@style/Theme.Zup"
         tools:targetApi="31">
         <activity
-            android:name=".FormularioPerfil3"
+            android:name=".ui.FormularioPerfil3"
             android:exported="false" />
         <activity
-            android:name=".FormularioPerfil2"
+            android:name=".ui.FormularioPerfil2"
             android:exported="false" />
         <activity
-            android:name=".FormularioPerfil1"
+            android:name=".ui.FormularioPerfil1"
             android:exported="false" />
         <activity
-            android:name=".TelaHomePesquisa2"
+            android:name=".ui.TelaHomePesquisa2"
             android:exported="false" />
         <activity
-            android:name=".TelaHomePesquisa"
+            android:name=".ui.TelaHomePesquisa"
             android:exported="false" />
         <activity
-            android:name=".TelaNotificacoes"
+            android:name=".ui.TelaNotificacoes"
             android:exported="false" />
         <activity
-            android:name=".TelaChatUsuario"
+            android:name=".ui.TelaChatUsuario"
             android:exported="false" />
         <activity
-            android:name=".BuscarInfluenciadores"
+            android:name=".ui.BuscarInfluenciadores"
             android:exported="false" />
         <activity
-            android:name=".TelaChatUsuariosComuns"
+            android:name=".ui.TelaChatUsuariosComuns"
             android:exported="false" />
         <activity
-            android:name=".TelaEditarPerfilInfluencer"
+            android:name=".ui.TelaEditarPerfilInfluencer"
             android:exported="false" />
         <activity
-            android:name=".TelaEditarPerfilUsuarioComum"
+            android:name=".ui.TelaEditarPerfilUsuarioComum"
             android:exported="false" />
         <activity
-            android:name=".TelaSeguir"
+            android:name=".ui.TelaSeguir"
             android:exported="false" />
         <activity
-            android:name=".TelaSeguindo"
+            android:name=".ui.TelaSeguindo"
             android:exported="false" />
         <activity
-            android:name=".PerfilUsuarioSemFormulario"
+            android:name=".ui.PerfilUsuarioSemFormulario"
             android:exported="false" />
         <activity
-            android:name=".PerfilUsuarioInfluencer"
+            android:name=".ui.PerfilUsuarioInfluencer"
             android:exported="false" />
         <activity
-            android:name=".PerfilUsuarioComum"
+            android:name=".ui.PerfilUsuarioComum"
             android:exported="false" />
         <activity
-            android:name=".CadastroCPF"
+            android:name=".ui.CadastroCPF"
             android:exported="false" />
         <activity
-            android:name=".CadastroSenha"
+            android:name=".ui.CadastroSenha"
             android:exported="false" />
         <activity
-            android:name=".CadastroNome"
+            android:name=".ui.CadastroNome"
             android:exported="false" />
         <activity
             android:name=".Onboarding3"
@@ -79,10 +79,10 @@
             android:name=".Onboarding2"
             android:exported="false" />
         <activity
-            android:name=".LoginSenha"
+            android:name=".ui.LoginSenha"
             android:exported="false" />
         <activity
-            android:name=".LoginEmail"
+            android:name=".ui.LoginEmail"
             android:exported="false" />
         <activity
             android:name=".TelaInicial"
