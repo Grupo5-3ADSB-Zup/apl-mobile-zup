@@ -8,9 +8,9 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import school.sptech.zup.R
-import school.sptech.zup.model.EventoFeed
+import school.sptech.zup.model.EventoFeedRequest
 
-class PostAdapter(private val eventoFeeds: List<EventoFeed>) : RecyclerView.Adapter<PostAdapter.ViewHolder>() {
+class PostAdapter(private val eventoFeeds: List<EventoFeedRequest>) : RecyclerView.Adapter<PostAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_post, parent, false)

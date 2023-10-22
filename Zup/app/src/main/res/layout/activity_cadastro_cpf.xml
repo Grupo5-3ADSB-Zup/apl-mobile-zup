@@ -104,7 +104,6 @@
                 android:layout_height="72dp"
                 android:background="@color/amareloZup"
                 android:gravity="center"
-                android:onClick="avancarContinuar"
                 android:text="@string/finalizar_cadastro"
                 android:textColor="@color/verdeZup"
                 android:textStyle="bold" />

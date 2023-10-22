@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import school.sptech.zup.R
 import school.sptech.zup.adapter.PostAdapter
-import school.sptech.zup.model.EventoFeed
+import school.sptech.zup.model.EventoFeedRequest
 
 
 class Feed : AppCompatActivity() {
@@ -25,11 +25,11 @@ class Feed : AppCompatActivity() {
         recyclerView.layoutManager = LinearLayoutManager(this)
     }
 
-    private fun getPosts(): List<EventoFeed> {
+    private fun getPosts(): List<EventoFeedRequest> {
 
         return listOf(
-            EventoFeed("Gazeta", 1, "tudo uma farça"),
-            EventoFeed("", 2,""),
+            EventoFeedRequest("Gazeta", 1, "tudo uma farça"),
+            EventoFeedRequest("", 2,""),
 
         )
     }
