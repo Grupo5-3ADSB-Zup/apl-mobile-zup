@@ -1,6 +1,6 @@
-package school.sptech.zup.model
+package school.sptech.zup.data.model
 
-data class EventoRegistroResquest(
+data class RegisterResponse(
     val nome: String,
     val email: String,
     val username: String,
