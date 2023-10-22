@@ -2,6 +2,8 @@ package school.sptech.zup.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import android.view.View
 import com.google.gson.Gson
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.RequestBody.Companion.toRequestBody
@@ -13,11 +15,11 @@ import school.sptech.zup.R
 import school.sptech.zup.model.EventoFeedRequest
 import school.sptech.zup.model.EventoRegistroResponse
 import school.sptech.zup.model.EventoRegistroResquest
+import school.sptech.zup.rest.NetworkManager
 import school.sptech.zup.rest.RetrofitService
 
 class CadastroCPF : AppCompatActivity() {
 
-    private val retrofitService: RetrofitService = TODO();
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,26 +27,23 @@ class CadastroCPF : AppCompatActivity() {
         setContentView(R.layout.activity_cadastro_cpf)
     }
 
-    fun saveEvent(addRequest: EventoRegistroResquest, onResponse: (EventoRegistroResponse?, Throwable?) -> Unit){
-        val body = Gson().toJson(addRequest)
-            .toRequestBody("application/json; charset=UTF-8".toMediaType())
+    private val networkManager = NetworkManager()
+    fun onClickButtonContinuar(view: View) {
+        val eventoRequest = EventoRegistroResquest()
 
-        retrofitService.saveEvent(body).enqueue(object : Callback<ResponseBody> {
-            override fun onResponse(call: Call<ResponseBody>?, response: Response<ResponseBody>?) {
-                if (response?.isSuccessful!!){
-                    val message = response.body()?.string()
-                    val res = Gson().fromJson(message, EventoRegistroResponse::class.java)
-                    onResponse(res, null)
-                }else{
-                    val message = response.errorBody()?.string()
-                    val res = Gson().fromJson(message, EventoRegistroResponse::class.java)
-                }
+        networkManager.saveEvent(eventoRequest) { response, error ->
+            if (error != null) {
+                // Tratar erro
+                Log.e("Erro na requisição", error.message ?: "Erro desconhecido")
+            } else if (response != null) {
+                // Tratar a resposta bem-sucedida
+                // A variável 'response' contém a resposta da API
+                val nomeDoCampo = response.nomeCampo
+                // Faça o que for necessário com os dados da resposta
+            } else {
+                // Tratar outros cenários, se necessário
             }
-
-            override fun onFailure(call: Call<ResponseBody>?, t: Throwable?) {
-                onResponse(null, t)
-            }
-
-        })
+        }
     }
+}
 }
