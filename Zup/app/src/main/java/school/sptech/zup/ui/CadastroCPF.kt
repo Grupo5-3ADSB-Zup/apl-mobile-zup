@@ -33,15 +33,9 @@ class CadastroCPF : AppCompatActivity() {
 
         networkManager.saveEvent(eventoRequest) { response, error ->
             if (error != null) {
-                // Tratar erro
                 Log.e("Erro na requisição", error.message ?: "Erro desconhecido")
             } else if (response != null) {
-                // Tratar a resposta bem-sucedida
-                // A variável 'response' contém a resposta da API
-                val nomeDoCampo = response.nomeCampo
-                // Faça o que for necessário com os dados da resposta
             } else {
-                // Tratar outros cenários, se necessário
             }
         }
     }
