@@ -61,13 +61,13 @@
             android:name=".ui.PerfilUsuarioComum"
             android:exported="false" />
         <activity
-            android:name=".ui.CadastroCPF"
+            android:name=".presenter.register.CadastroCPF"
             android:exported="false" />
         <activity
-            android:name=".ui.CadastroSenha"
+            android:name=".presenter.register.CadastroSenha"
             android:exported="false" />
         <activity
-            android:name=".ui.CadastroNome"
+            android:name=".presenter.register.CadastroNome"
             android:exported="false" />
         <activity
             android:name=".Onboarding3"

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#D7EAF0"
-    tools:context=".ui.CadastroCPF">
+    tools:context=".presenter.register.CadastroCPF">
 
     <RelativeLayout
         android:layout_width="match_parent"

@@ -2,11 +2,9 @@ package school.sptech.zup
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import school.sptech.zup.databinding.ActivityOnboarding1Binding
 import school.sptech.zup.databinding.ActivityOnboarding2Binding
-import school.sptech.zup.ui.CadastroNome
+import school.sptech.zup.presenter.register.CadastroNome
 
 class Onboarding2 : AppCompatActivity() {
 
