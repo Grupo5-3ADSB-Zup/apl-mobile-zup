@@ -6,6 +6,7 @@ import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class Feed(
+    val id: Long,
     val titulo: String,
     val descricao: String,
     val emissora: String,

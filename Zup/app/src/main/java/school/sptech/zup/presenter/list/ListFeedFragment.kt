@@ -1,63 +1,55 @@
 package school.sptech.zup.presenter.list
 
+import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import school.sptech.zup.presenter.list.adapter.MyListFeedRecyclerViewAdapter
+import androidx.fragment.app.viewModels
 import school.sptech.zup.R
-import school.sptech.zup.placeholder.PlaceholderContent
+import school.sptech.zup.databinding.FragmentListFeedBinding
+import school.sptech.zup.presenter.list.adapter.FeedAdapter
 
-/**
- * A fragment representing a list of Items.
- */
 class ListFeedFragment : Fragment() {
 
-    private var columnCount = 1
+    private val viewModel: ListFeedViewModel by viewModels()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    private var _binding: FragmentListFeedBinding? = null
+    private val binding get() = _binding!!
 
-        arguments?.let {
-            columnCount = it.getInt(ARG_COLUMN_COUNT)
-        }
-    }
+    private lateinit var feedAdapter: FeedAdapter
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        val view = inflater.inflate(R.layout.fragment_item_list, container, false)
+    ): View {
+        _binding = FragmentListFeedBinding.inflate(inflater, container, false)
+        return binding.root
+    }
 
-        // Set the adapter
-        if (view is RecyclerView) {
-            with(view) {
-                layoutManager = when {
-                    columnCount <= 1 -> LinearLayoutManager(context)
-                    else -> GridLayoutManager(context, columnCount)
-                }
-                adapter = MyListFeedRecyclerViewAdapter(PlaceholderContent.ITEMS)
-            }
+    private fun initObservers(){
+        viewModel.currentScrambledWord.observe((viewLifecycleOwner)){
+            feed ->
+
+            initRecycler()
         }
-        return view
     }
 
-    companion object {
+    private fun initRecycler() {
+        feedAdapter = FeedAdapter()
 
-        // TODO: Customize parameter argument names
-        const val ARG_COLUMN_COUNT = "column-count"
 
-        // TODO: Customize parameter initialization
-        @JvmStatic
-        fun newInstance(columnCount: Int) =
-            ListFeedFragment().apply {
-                arguments = Bundle().apply {
-                    putInt(ARG_COLUMN_COUNT, columnCount)
-                }
-            }
+
+        with(binding.recyclerFeed) {
+            adapter = feedAdapter
+        }
     }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+
 }

@@ -5,6 +5,7 @@ import school.sptech.zup.domain.model.Feed
 
 fun FeedResponse.toDomain(): Feed{
     return Feed(
+        id = id,
         titulo = titulo,
         descricao = descricao,
         emissora = emissora,
