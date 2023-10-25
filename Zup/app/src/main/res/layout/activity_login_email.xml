@@ -28,7 +28,8 @@
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:layout_gravity="center"
-                    android:src="@mipmap/voltar_preto" />
+                    android:src="@mipmap/voltar_preto"
+                    android:id="@+id/buttonVoltar"/>
 
                 <TextView
                     android:layout_width="0dp"
@@ -37,6 +38,7 @@
                     android:layout_weight="1"
                     android:gravity="end"
                     android:text="@string/cancelar"
+                    android:id="@+id/buttonCancel"
                     android:textColor="@color/verdeZup"
                     android:textSize="15sp" />
 
@@ -57,6 +59,23 @@
                     android:layout_height="wrap_content"
                     android:backgroundTint="#D7EAF0"
                     android:hint="|"
+                    android:id="@+id/editTextEmail"
+                    android:shadowColor="@color/verdeZup"
+                    android:textColor="@color/verdeZup"
+                    android:textColorHint="#013440" />
+
+                <TextView
+                    style="@style/tituloLoginCadastro"
+                    android:text="@string/sua_senha"
+                    />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#D7EAF0"
+                    android:hint="|"
+                    android:id="@+id/editTextSenha"
+                    android:inputType="textPassword"
                     android:shadowColor="@color/verdeZup"
                     android:textColor="@color/verdeZup"
                     android:textColorHint="#013440" />
