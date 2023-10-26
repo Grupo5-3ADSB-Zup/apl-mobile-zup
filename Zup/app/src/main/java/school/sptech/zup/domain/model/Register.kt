@@ -1,6 +1,6 @@
-package school.sptech.zup.data.model
+package school.sptech.zup.domain.model
 
-data class RegisterResponse(
+data class Register(
     val id: Long,
     val nome: String,
     val email: String,
