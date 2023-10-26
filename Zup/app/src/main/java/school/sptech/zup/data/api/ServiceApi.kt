@@ -10,7 +10,7 @@ import school.sptech.zup.domain.model.Register
 
 interface ServiceApi {
 
-    @GET("/noticias/feed")
+    @GET("noticias/feed")
     suspend fun getPost(): Call<List<FeedResponse>>
 
     @POST("cadastro/user/comum")
