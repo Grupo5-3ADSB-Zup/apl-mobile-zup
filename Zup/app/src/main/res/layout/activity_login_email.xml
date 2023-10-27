@@ -25,20 +25,20 @@
                 android:orientation="horizontal">
 
                 <ImageView
+                    android:id="@+id/buttonVoltar"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:layout_gravity="center"
-                    android:src="@mipmap/voltar_preto"
-                    android:id="@+id/buttonVoltar"/>
+                    android:src="@mipmap/voltar_preto" />
 
                 <TextView
+                    android:id="@+id/buttonCancel"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:layout_weight="1"
                     android:gravity="end"
                     android:text="@string/cancelar"
-                    android:id="@+id/buttonCancel"
                     android:textColor="@color/verdeZup"
                     android:textSize="15sp" />
 
@@ -55,26 +55,26 @@
                     android:text="@string/seu_email" />
 
                 <EditText
+                    android:id="@+id/editTextEmail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:backgroundTint="#D7EAF0"
                     android:hint="|"
-                    android:id="@+id/editTextEmail"
                     android:shadowColor="@color/verdeZup"
                     android:textColor="@color/verdeZup"
                     android:textColorHint="#013440" />
 
                 <TextView
                     style="@style/tituloLoginCadastro"
-                    android:text="@string/sua_senha"
-                    />
+                    android:layout_marginTop="20dp"
+                    android:text="@string/sua_senha" />
 
                 <EditText
+                    android:id="@+id/editTextSenha"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:backgroundTint="#D7EAF0"
                     android:hint="|"
-                    android:id="@+id/editTextSenha"
                     android:inputType="textPassword"
                     android:shadowColor="@color/verdeZup"
                     android:textColor="@color/verdeZup"
