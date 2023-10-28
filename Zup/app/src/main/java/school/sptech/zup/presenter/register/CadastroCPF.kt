@@ -59,23 +59,23 @@ class CadastroCPF : AppCompatActivity() {
                 1
             )
 
-            val call = apiService.saveUser(registroUser)
-            call.enqueue(object : Callback<RegisterResponse> {
-                override fun onResponse(call: Call<RegisterResponse>, response: Response<RegisterResponse>) {
-                    if (response.isSuccessful) {
-                        // Sucesso, faça algo com a resposta do servidor
-                        val resposta = response.body()
-                    } else {
-                        // Trate erros aqui
-                        Log.e("TAG", "Erro na requisição POST: ${response.message()}")
-                    }
-                }
-
-                override fun onFailure(call: Call<RegisterResponse>, t: Throwable) {
-                    // Trate erros de rede aqui
-                    Log.e("TAG", "Erro na requisição POST: ${t.message}")
-                }
-            })
+            //val call = apiService.saveUser(registroUser)
+            //call.enqueue(object : Callback<RegisterResponse> {
+//                override fun onResponse(call: Call<RegisterResponse>, response: Response<RegisterResponse>) {
+//                    if (response.isSuccessful) {
+//                        // Sucesso, faça algo com a resposta do servidor
+//                        val resposta = response.body()
+//                    } else {
+//                        // Trate erros aqui
+//                        Log.e("TAG", "Erro na requisição POST: ${response.message()}")
+//                    }
+//                }
+//
+//                override fun onFailure(call: Call<RegisterResponse>, t: Throwable) {
+//                    // Trate erros de rede aqui
+//                    Log.e("TAG", "Erro na requisição POST: ${t.message}")
+//                }
+//            })
 
         }
     }
