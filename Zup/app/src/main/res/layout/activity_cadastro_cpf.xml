@@ -31,6 +31,7 @@
                     android:src="@mipmap/voltar_preto" />
 
                 <TextView
+                    android:id="@+id/buttonCancel"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
