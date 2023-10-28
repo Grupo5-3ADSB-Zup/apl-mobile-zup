@@ -11,7 +11,7 @@ import school.sptech.zup.domain.model.Register
 interface ServiceApi {
 
     @GET("noticias/feed")
-    suspend fun getPost(): Call<List<FeedResponse>>
+    suspend fun getPost(): FeedResponse
 
     @POST("cadastro/user/comum")
     fun saveUser(@Body registerUser: Register ): Call<RegisterResponse>

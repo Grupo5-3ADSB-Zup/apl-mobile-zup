@@ -13,7 +13,7 @@ fun RegisterResponse.toDomain(): Register{
         influencer = influencer,
         cpf =  cpf,
         cnpj = cnpj,
-        Admin = Admin,
+        admin = Admin,
         foto = foto
     )
 }
