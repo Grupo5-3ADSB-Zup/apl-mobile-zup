@@ -3,21 +3,9 @@ package school.sptech.zup.presenter.register
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import okhttp3.ResponseBody
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
-import school.sptech.zup.R
-import school.sptech.zup.TelaInicial
-import school.sptech.zup.data.model.RegisterResponse
 import school.sptech.zup.databinding.ActivityCadastroCpfBinding
-import school.sptech.zup.databinding.ActivityCadastroNomeBinding
-import school.sptech.zup.databinding.ActivityCadastroSenhaBinding
 import school.sptech.zup.di.DataModule
-import school.sptech.zup.domain.model.Register
+import school.sptech.zup.domain.model.RegisterRequest
 import school.sptech.zup.network.ServiceProvider
 import school.sptech.zup.ui.PerfilUsuarioSemFormulario
 
@@ -46,7 +34,7 @@ class CadastroCPF : AppCompatActivity() {
             startActivity(PerfilUsuarioSemFormulario)
 
 
-            val registroUser = Register(
+            val registroUser = RegisterRequest(
                 1,
                 "Matheus",
                 "matheusss@gmail.com",

@@ -5,7 +5,7 @@ import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
-data class Feed(
+data class FeedRequest(
     val id: Long,
     val titulo: String,
     val descricao: String,

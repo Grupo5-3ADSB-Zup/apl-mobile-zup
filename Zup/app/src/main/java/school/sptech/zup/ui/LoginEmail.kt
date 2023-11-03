@@ -1,5 +1,6 @@
 package school.sptech.zup.ui
 
+import Feed
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -76,7 +77,7 @@ class LoginEmail : AppCompatActivity() {
     }
 
     private fun iniciarLogin() {
-        val intent = Intent(this, PerfilUsuarioComum::class.java)
+        val intent = Intent(this, Feed::class.java)
         startActivity(intent)
     }
 

@@ -87,7 +87,7 @@
             android:name=".ui.LoginEmail"
             android:exported="false" />
         <activity
-            android:name=".TelaInicial"
+            android:name="."
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
