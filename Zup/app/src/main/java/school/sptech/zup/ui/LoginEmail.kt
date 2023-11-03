@@ -31,9 +31,9 @@ class LoginEmail : AppCompatActivity() {
 
             var login = LoginRequest(emailInput, senhaInput)
 
-            val get = ServiceApi.loginUser(login)
+            val post = ServiceApi.loginUser(login)
 
-            ServiceApi.client.newCall(get).enqueue(object : okhttp3.Callback {
+            ServiceApi.client.newCall(post).enqueue(object : okhttp3.Callback {
                 override fun onResponse(call: okhttp3.Call, response: okhttp3.Response) {
                     if (response.isSuccessful) {
                         val responseBody = response.body?.string()

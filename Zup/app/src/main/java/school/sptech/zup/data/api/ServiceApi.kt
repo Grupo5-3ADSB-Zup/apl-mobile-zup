@@ -11,12 +11,13 @@ import school.sptech.zup.data.model.request.LoginRequest
 import school.sptech.zup.domain.model.RegisterRequest
 import com.google.gson.Gson
 import okhttp3.logging.HttpLoggingInterceptor
+import school.sptech.zup.domain.model.DadosTelaFormularioPerfil5Request
 import java.util.concurrent.TimeUnit
 
 public interface ServiceApi {
         companion object {
              //const val BASE_URL = "https://44.219.155.152:8443/"
-             const val BASE_URL = "http://44.201.73.105:8080/"
+             const val BASE_URL = "http://44.212.21.162:8080/"
             //const val BASE_URL = "http://localhost:8080/"
 
 
@@ -64,6 +65,18 @@ public interface ServiceApi {
 
                 val request = Request.Builder()
                     .url(BASE_URL + "login/logar")
+                    .post(requestBody)
+                    .build()
+
+                return request
+            }
+
+            fun cadastroPerfilUsuarioCoumu(dadosTelaFormularioPerfil5Request: DadosTelaFormularioPerfil5Request): Request {
+                val jsonMediaType = "application/json; charset=utf-8".toMediaType()
+                val requestBody = gson.toJson(dadosTelaFormularioPerfil5Request).toRequestBody(jsonMediaType)
+
+                val request = Request.Builder()
+                    .url(BASE_URL + "cadastro/perfil/usuario/comum")
                     .post(requestBody)
                     .build()
 

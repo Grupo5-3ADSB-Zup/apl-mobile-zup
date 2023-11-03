@@ -31,6 +31,7 @@
                     android:orientation="horizontal">
 
                     <ImageView
+                        android:id="@+id/buttonVoltar"
                         android:layout_width="18dp"
                         android:layout_height="18dp"
                         android:layout_gravity="center"
@@ -125,9 +126,8 @@
                             android:id="@+id/buttonPassarProximaEtapaFormulario4"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:paddingTop="300dp"
-                            android:src="@mipmap/icone_passar_formulario">
-                        </ImageView>
+                            android:paddingTop="100dp"
+                            android:src="@mipmap/icone_passar_formulario"></ImageView>
 
                     </LinearLayout>
 

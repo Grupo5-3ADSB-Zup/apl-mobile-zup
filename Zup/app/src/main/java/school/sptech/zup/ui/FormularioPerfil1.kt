@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.RadioButton
 import android.widget.RadioGroup
 import school.sptech.zup.R
+import school.sptech.zup.TelaInicial
 import school.sptech.zup.databinding.ActivityFormularioPerfil1Binding
 import school.sptech.zup.domain.model.DadosTelaFormularioPerfil1Request
 
@@ -20,30 +21,39 @@ class FormularioPerfil1 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        binding.buttonPassarProximaEtapaFormulario2.setOnClickListener{
+        binding.buttonVoltar.setOnClickListener{
+            telaInicio()
+        }
 
-            val radioGroup = findViewById<RadioGroup>(R.id.meuRadioGroup)
+        val radioGroup = findViewById<RadioGroup>(R.id.meuRadioGroup)
 
-            radioGroup.setOnCheckedChangeListener {group, checkedId ->
-                var selecao = ""
-                 when (checkedId){
-                    R.id.meu_RadioButton_sim -> {
-                        val radioButton1 = findViewById<RadioButton>(R.id.meu_RadioButton_sim)
-                        val textoRadioButton1 = radioButton1.text.toString()
-                        selecao = textoRadioButton1
-                    }
-                    R.id.meu_RadioButton_nao -> {
-                        val radioButton2 = findViewById<RadioButton>(R.id.meu_RadioButton_nao)
-                        val textoRadioButton2 = radioButton2.text.toString()
-                        selecao = textoRadioButton2
-                    }
-                    else -> {
-                    }
+        radioGroup.setOnCheckedChangeListener {group, checkedId ->
+            var selecao = ""
+            when (checkedId){
+                R.id.meu_RadioButton_sim -> {
+                    val radioButton1 = findViewById<RadioButton>(R.id.meu_RadioButton_sim)
+                    val textoRadioButton1 = radioButton1.text.toString()
+                    selecao = textoRadioButton1
                 }
-                val dados = DadosTelaFormularioPerfil1Request(selecao)
+                R.id.meu_RadioButton_nao -> {
+                    val radioButton2 = findViewById<RadioButton>(R.id.meu_RadioButton_nao)
+                    val textoRadioButton2 = radioButton2.text.toString()
+                    selecao = textoRadioButton2
+                }
+                else -> {
+                }
+            }
+            val dados = DadosTelaFormularioPerfil1Request(selecao)
+
+            binding.buttonPassarProximaEtapaFormulario2.setOnClickListener{
                 formularioParte2(dados)
             }
         }
+    }
+
+    private fun telaInicio() {
+        val intent = Intent(this, FormularioPerfil1::class.java)
+        startActivity(intent)
     }
 
     private fun formularioParte2(dados: DadosTelaFormularioPerfil1Request) {
