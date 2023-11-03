@@ -5,16 +5,13 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.google.gson.Gson
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 import school.sptech.zup.TelaInicial
 import school.sptech.zup.data.api.ServiceApi
 import school.sptech.zup.data.model.request.LoginRequest
 import school.sptech.zup.data.model.response.LoginResponse
 import school.sptech.zup.databinding.ActivityLoginEmailBinding
-import school.sptech.zup.di.DataModule
-import school.sptech.zup.network.ServiceProvider
+import school.sptech.zup.domain.model.FeedRequest
+import school.sptech.zup.presenter.feed.Feed
 import java.io.IOException
 
 class LoginEmail : AppCompatActivity() {
@@ -76,7 +73,7 @@ class LoginEmail : AppCompatActivity() {
     }
 
     private fun iniciarLogin() {
-        val intent = Intent(this, PerfilUsuarioComum::class.java)
+        val intent = Intent(this, Feed::class.java)
         startActivity(intent)
     }
 

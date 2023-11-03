@@ -8,19 +8,15 @@ import okhttp3.Response
 import school.sptech.zup.data.model.FeedResponse
 import school.sptech.zup.data.model.RegisterResponse
 import school.sptech.zup.data.model.request.LoginRequest
-import school.sptech.zup.data.model.response.LoginResponse
-import school.sptech.zup.domain.model.Register
+import school.sptech.zup.domain.model.RegisterRequest
 import com.google.gson.Gson
-import okhttp3.Call
-import okhttp3.Callback
 import okhttp3.logging.HttpLoggingInterceptor
-import java.io.IOException
 import java.util.concurrent.TimeUnit
 
 public interface ServiceApi {
         companion object {
              //const val BASE_URL = "https://44.219.155.152:8443/"
-             const val BASE_URL = "http://54.210.203.189:8080/"
+             const val BASE_URL = "http://35.170.249.76:8080/"
             //const val BASE_URL = "http://localhost:8080/"
 
 
@@ -46,7 +42,7 @@ public interface ServiceApi {
                 return gson.fromJson(responseBody, FeedResponse::class.java)
             }
 
-            suspend fun saveUser(registerUser: Register): RegisterResponse {
+            suspend fun saveUser(registerUser: RegisterRequest): RegisterResponse {
                 val jsonMediaType = "application/json; charset=utf-8".toMediaType()
                 val requestBody = gson.toJson(registerUser).toRequestBody(jsonMediaType)
 

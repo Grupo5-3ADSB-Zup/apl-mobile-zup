@@ -1,10 +1,10 @@
 package school.sptech.zup.data.mapper
 
 import school.sptech.zup.data.model.RegisterResponse
-import school.sptech.zup.domain.model.Register
+import school.sptech.zup.domain.model.RegisterRequest
 
-fun RegisterResponse.toDomain(): Register{
-    return Register(
+fun RegisterResponse.toDomain(): RegisterRequest{
+    return RegisterRequest(
         id = id,
         nome = nome,
         email = email,

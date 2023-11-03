@@ -1,10 +1,10 @@
 package school.sptech.zup.data.mapper
 
 import school.sptech.zup.data.model.FeedResponse
-import school.sptech.zup.domain.model.Feed
+import school.sptech.zup.domain.model.FeedRequest
 
-fun FeedResponse.toDomain(): Feed{
-    return Feed(
+fun FeedResponse.toDomain(): FeedRequest{
+    return FeedRequest(
         id = id,
         titulo = titulo,
         descricao = descricao,

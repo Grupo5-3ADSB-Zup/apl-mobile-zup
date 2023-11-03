@@ -1,35 +1,27 @@
 package school.sptech.zup.presenter.list.adapter
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.squareup.picasso.Picasso
-import school.sptech.zup.R
 import school.sptech.zup.databinding.ItemFeedBinding
-import school.sptech.zup.domain.model.Feed
-import java.io.File
-import java.io.FileOutputStream
-import java.io.IOException
+import school.sptech.zup.domain.model.FeedRequest
 
-class FeedAdapter :  ListAdapter<Feed, FeedAdapter.ViewHolder>(DIFF_CALLBACK) {
+class FeedAdapter :  ListAdapter<FeedRequest, FeedAdapter.ViewHolder>(DIFF_CALLBACK) {
 
     companion object {
-        private val DIFF_CALLBACK = object : DiffUtil.ItemCallback<Feed>() {
+        private val DIFF_CALLBACK = object : DiffUtil.ItemCallback<FeedRequest>() {
             override fun areItemsTheSame(
-                oldItem: Feed,
-                newItem: Feed
+                oldItem: FeedRequest,
+                newItem: FeedRequest
             ): Boolean {
                 return oldItem.id == newItem.id
             }
 
             override fun areContentsTheSame(
-                oldItem: Feed,
-                newItem: Feed
+                oldItem: FeedRequest,
+                newItem: FeedRequest
             ): Boolean {
                 return oldItem == newItem
             }
