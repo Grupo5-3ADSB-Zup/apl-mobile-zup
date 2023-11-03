@@ -77,7 +77,7 @@ public interface ServiceApi {
                 val requestBody = gson.toJson(dadosEnvioApiFormularioPerfil).toRequestBody(jsonMediaType)
 
                 val request = Request.Builder()
-                    .url(BASE_URL + "mobile/cadastro/perfil/usuario/comum")
+                    .url(BASE_URL + "mobile/usuarios/perfil")
                     .post(requestBody)
                     .build()
 
