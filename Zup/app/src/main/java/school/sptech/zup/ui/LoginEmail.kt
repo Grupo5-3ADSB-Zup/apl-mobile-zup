@@ -41,7 +41,9 @@ class LoginEmail : AppCompatActivity() {
                         val gson = Gson()
                         val loginResponse = gson.fromJson(responseBody, LoginResponse::class.java)
 
-                        iniciarLogin()
+                        val dados = loginResponse
+
+                        iniciarLogin(dados)
 
                     } else {
                     }
@@ -68,14 +70,20 @@ class LoginEmail : AppCompatActivity() {
         }
     }
 
+    private fun iniciarLogin(dados: LoginResponse?) {
+        val intent = Intent(this, PerfilUsuarioComum::class.java)
+        intent.putExtra("dados", dados)
+        startActivity(intent)
+    }
+
     private fun credencial(email: String, senha: String): Boolean {
         return (email == "joao@email.com" && senha == "123123") || (email == "monteiro@email.com" && senha == "123")
     }
 
-    private fun iniciarLogin() {
-        val intent = Intent(this, Feed::class.java)
-        startActivity(intent)
-    }
+    //private fun iniciarLogin(this, ) {
+    //    val intent = Intent(this, PerfilUsuarioComum::class.java)
+    //    startActivity(intent)
+    //}
 
     private fun mostrarErroMensagem(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()

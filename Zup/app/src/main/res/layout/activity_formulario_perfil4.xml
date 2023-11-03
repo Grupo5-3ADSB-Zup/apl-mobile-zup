@@ -5,14 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/verdeZup"
-    tools:context=".ui.FormularioPerfil1">
+    tools:context=".ui.FormularioPerfil3">
 
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-
 
         <ScrollView
             android:layout_width="match_parent"
@@ -74,7 +73,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Você é um investidor?"
+                            android:text="Você gostaria de saber sua valorização a longo prazo (Especificamente) ?"
                             android:textColor="#D7EAF0"
                             android:textSize="30dp" />
 
@@ -85,7 +84,7 @@
                             android:orientation="vertical">
 
                             <RadioButton
-                                android:id="@+id/meu_RadioButton_sim"
+                                android:id="@+id/meu_RadioButton_valor1"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:checked="false"
@@ -94,16 +93,24 @@
                                 android:textSize="20sp" />
 
                             <RadioButton
-                                android:id="@+id/meu_RadioButton_nao"
+                                android:id="@+id/meu_RadioButton_valor2"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:checked="false"
-                                android:text="Não"
+                                android:text="Não, acredito muito na variação de mercado"
+                                android:textColor="@color/amareloZup"
+                                android:textSize="20sp" />
+
+                            <RadioButton
+                                android:id="@+id/meu_RadioButton_valor3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:checked="false"
+                                android:text="Não, acredito na variável do mercado"
                                 android:textColor="@color/amareloZup"
                                 android:textSize="20sp" />
 
                         </RadioGroup>
-
 
                     </LinearLayout>
 
@@ -113,10 +120,10 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:id="@+id/buttonPassarProximaEtapaFormulario2"
+                            android:id="@+id/buttonPassarProximaEtapaFormulario4"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:paddingTop="50dp"
+                            android:paddingTop="300dp"
                             android:src="@mipmap/icone_passar_formulario">
                         </ImageView>
 
@@ -201,4 +208,5 @@
             </LinearLayout>
         </LinearLayout>
     </RelativeLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

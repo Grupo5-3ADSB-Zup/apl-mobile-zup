@@ -13,99 +13,129 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-
-        <LinearLayout
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="match_parent">
 
-            <!--        INICIO-->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_alignParentTop="true"
-                android:background="@color/amareloZup"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:layout_width="18dp"
-                    android:layout_height="18dp"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="10dp"
-                    android:src="@mipmap/voltar_preto_sem_traco" />
-
-
-            </LinearLayout>
-            <!--MEIO-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="20dp"
-                    android:background="#D7EAF0"
-                    android:text="Questionario"
-                    android:textSize="30sp" />
-
-                <View
-                    android:id="@+id/line_3"
-                    android:layout_width="390dp"
-                    android:layout_height="2dp"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:background="@drawable/line_3" />
-
+                <!--        INICIO-->
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="20dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentTop="true"
+                    android:background="@color/amareloZup"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="10dp"
+                        android:src="@mipmap/voltar_preto_sem_traco" />
+
+
+                </LinearLayout>
+                <!--MEIO-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:orientation="vertical">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Imagine que você comprou uma ação, e ela caiu 20%, o que você faria a respeito?"
-                        android:textColor="#D7EAF0"
-                        android:textSize="30dp" />
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="20dp"
+                        android:background="#D7EAF0"
+                        android:text="Questionario"
+                        android:textSize="30sp" />
 
-                    <CheckBox
-                        android:id="@+id/meu_checkbox_valor1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:checked="false"
-                        android:text="Venderia na hora"
-                        android:textColor="@color/amareloZup"
-                        android:textSize="20sp" />
+                    <View
+                        android:id="@+id/line_3"
+                        android:layout_width="390dp"
+                        android:layout_height="2dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/line_3" />
 
-                    <CheckBox
-                        android:id="@+id/meu_checkbox_valor2"
-                        android:layout_width="wrap_content"
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:checked="false"
-                        android:text="Esperaria recuperar o valor perdido e venderia"
-                        android:textColor="@color/amareloZup"
-                        android:textSize="20sp" />
+                        android:layout_marginHorizontal="20dp"
+                        android:orientation="vertical">
 
-                    <CheckBox
-                        android:id="@+id/meu_checkbox_valor3"
-                        android:layout_width="wrap_content"
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Imagine que você comprou uma ação, e ela caiu 20%, o que você faria a respeito?"
+                            android:textColor="#D7EAF0"
+                            android:textSize="30dp" />
+
+
+                        <RadioGroup
+                            android:id="@+id/meuRadioGroup"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <RadioButton
+                                android:id="@+id/meu_RadioButton_valor1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:checked="false"
+                                android:text="Venderia na hora"
+                                android:textColor="@color/amareloZup"
+                                android:textSize="20sp" />
+
+                            <RadioButton
+                                android:id="@+id/meu_RadioButton_valor2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:checked="false"
+                                android:text="Esperaria recuperar o valor perdido e venderia"
+                                android:textColor="@color/amareloZup"
+                                android:textSize="20sp" />
+
+                            <RadioButton
+                                android:id="@+id/meu_RadioButton_valor3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:checked="false"
+                                android:text="Compraria mais"
+                                android:textColor="@color/amareloZup"
+                                android:textSize="20sp" />
+
+                        </RadioGroup>
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:checked="false"
-                        android:text="Compraria mais"
-                        android:textColor="@color/amareloZup"
-                        android:textSize="20sp" />
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/buttonPassarProximaEtapaFormulario4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="300dp"
+                            android:src="@mipmap/icone_passar_formulario">
+                        </ImageView>
+
+                    </LinearLayout>
+
 
                 </LinearLayout>
-
-
             </LinearLayout>
-        </LinearLayout>
+
+        </ScrollView>
         <!--FIM-->
         <LinearLayout
             android:layout_width="match_parent"
