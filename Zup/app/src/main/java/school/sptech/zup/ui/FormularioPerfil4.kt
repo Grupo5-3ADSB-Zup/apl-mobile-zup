@@ -58,7 +58,12 @@ class FormularioPerfil4 : AppCompatActivity() {
                 else -> {
                 }
             }
-            val dados = DadosTelaFormularioPerfil4Request(dadosFormularioParte3, selecao)
+            val dados = DadosTelaFormularioPerfil4Request(
+                radioButtonTelaFormulario1 = dadosFormularioParte3?.radioButtonTelaFormulario1.toString(),
+                radioButtonTelaFormulario2 = dadosFormularioParte3?.radioButtonTelaFormulario2.toString(),
+                radioButtonTelaFormulario3 = dadosFormularioParte3?.radioButtonTelaFormulario3.toString(),
+                selecao
+            )
 
             binding.buttonPassarProximaEtapaFormulario5.setOnClickListener{
                 formularioParte5(dados)

@@ -13,6 +13,7 @@ import school.sptech.zup.data.api.ServiceApi
 import school.sptech.zup.data.model.response.LoginResponse
 import school.sptech.zup.databinding.ActivityFormularioPerfil3Binding
 import school.sptech.zup.databinding.ActivityFormularioPerfil5Binding
+import school.sptech.zup.domain.model.DadosEnvioApiFormularioPerfil
 import school.sptech.zup.domain.model.DadosTelaFormularioPerfil1Request
 import school.sptech.zup.domain.model.DadosTelaFormularioPerfil2Request
 import school.sptech.zup.domain.model.DadosTelaFormularioPerfil3Request
@@ -62,10 +63,17 @@ class FormularioPerfil5 : AppCompatActivity() {
                 else -> {
                 }
             }
-            val dados = DadosTelaFormularioPerfil5Request(dadosFormularioParte4, selecao)
+
+            val dadosEnvioApiFormularioPerfil = DadosEnvioApiFormularioPerfil(
+                tela1 = dadosFormularioParte4?.radioButtonTelaFormulario1.toString(),
+                tela2 = dadosFormularioParte4?.radioButtonTelaFormulario2.toString(),
+                tela3 = dadosFormularioParte4?.radioButtonTelaFormulario4.toString(),
+                tela4 = dadosFormularioParte4?.radioButtonTelaFormulario4.toString(),
+                tela5 = selecao
+            )
 
             binding.buttonConcluir.setOnClickListener{
-                envioBaseDados(dados)
+                envioBaseDados(dadosEnvioApiFormularioPerfil)
             }
         }
     }
@@ -75,9 +83,9 @@ class FormularioPerfil5 : AppCompatActivity() {
         startActivity(intent)
     }
 
-    private fun envioBaseDados(dados: DadosTelaFormularioPerfil5Request) {
+    private fun envioBaseDados(dadosEnvioApiFormularioPerfil: DadosEnvioApiFormularioPerfil) {
 
-        val post = ServiceApi.cadastroPerfilUsuarioCoumu(dados)
+        val post = ServiceApi.cadastroPerfilUsuarioCoumu(dadosEnvioApiFormularioPerfil)
 
         ServiceApi.client.newCall(post).enqueue(object : okhttp3.Callback {
             override fun onResponse(call: okhttp3.Call, response: okhttp3.Response) {

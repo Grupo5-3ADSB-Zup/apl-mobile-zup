@@ -11,6 +11,7 @@ import school.sptech.zup.data.model.request.LoginRequest
 import school.sptech.zup.domain.model.RegisterRequest
 import com.google.gson.Gson
 import okhttp3.logging.HttpLoggingInterceptor
+import school.sptech.zup.domain.model.DadosEnvioApiFormularioPerfil
 import school.sptech.zup.domain.model.DadosTelaFormularioPerfil5Request
 import java.util.concurrent.TimeUnit
 
@@ -71,12 +72,12 @@ public interface ServiceApi {
                 return request
             }
 
-            fun cadastroPerfilUsuarioCoumu(dadosTelaFormularioPerfil5Request: DadosTelaFormularioPerfil5Request): Request {
+            fun cadastroPerfilUsuarioCoumu(dadosEnvioApiFormularioPerfil: DadosEnvioApiFormularioPerfil): Request {
                 val jsonMediaType = "application/json; charset=utf-8".toMediaType()
-                val requestBody = gson.toJson(dadosTelaFormularioPerfil5Request).toRequestBody(jsonMediaType)
+                val requestBody = gson.toJson(dadosEnvioApiFormularioPerfil).toRequestBody(jsonMediaType)
 
                 val request = Request.Builder()
-                    .url(BASE_URL + "cadastro/perfil/usuario/comum")
+                    .url(BASE_URL + "mobile/cadastro/perfil/usuario/comum")
                     .post(requestBody)
                     .build()
 

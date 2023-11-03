@@ -8,7 +8,6 @@ import android.widget.RadioButton
 import android.widget.RadioGroup
 import androidx.annotation.RequiresApi
 import school.sptech.zup.R
-import school.sptech.zup.data.model.response.LoginResponse
 import school.sptech.zup.databinding.ActivityFormularioPerfil2Binding
 import school.sptech.zup.domain.model.DadosTelaFormularioPerfil1Request
 import school.sptech.zup.domain.model.DadosTelaFormularioPerfil2Request
@@ -57,7 +56,10 @@ class FormularioPerfil2 : AppCompatActivity() {
                 else -> {
                 }
             }
-            val dados = DadosTelaFormularioPerfil2Request(dadosFormularioParte1, selecao)
+            val dados = DadosTelaFormularioPerfil2Request(
+                radioButtonTelaFormulario1 = dadosFormularioParte1?.radioButtonTelaFormulario1.toString(),
+                selecao
+            )
 
             binding.buttonPassarProximaEtapaFormulario3.setOnClickListener{
                 formularioParte3(dados)
