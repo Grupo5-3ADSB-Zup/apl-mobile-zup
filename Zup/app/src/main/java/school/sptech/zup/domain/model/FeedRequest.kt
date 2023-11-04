@@ -10,5 +10,7 @@ data class FeedRequest(
     val titulo: String,
     val descricao: String,
     val emissora: String,
-    val fotoNoticia: ByteArray
+    val link: String,
+    val dtNoticia: String,
+    val fotoNoticia: Byte
 ): Parcelable

@@ -15,6 +15,9 @@
         android:theme="@style/Theme.Zup"
         tools:targetApi="31">
         <activity
+            android:name="Feed"
+            android:exported="false" />
+        <activity
             android:name=".ui.FormularioPerfil3"
             android:exported="false" />
         <activity
@@ -87,7 +90,7 @@
             android:name=".ui.LoginEmail"
             android:exported="false" />
         <activity
-            android:name="."
+            android:name=".TelaInicial"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

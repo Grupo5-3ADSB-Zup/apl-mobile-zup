@@ -61,6 +61,10 @@ dependencies {
     implementation 'androidx.navigation:navigation-fragment:2.5.3'
     annotationProcessor "com.google.dagger:hilt-android-compiler:2.37"
 
+// Recyclerview
+    implementation 'androidx.recyclerview:recyclerview:1.2.0'
+
+
 // Navigation
     implementation 'androidx.fragment:fragment-ktx:1.6.0'
 

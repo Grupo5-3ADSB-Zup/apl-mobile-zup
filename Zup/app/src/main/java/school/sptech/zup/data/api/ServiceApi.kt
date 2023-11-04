@@ -16,7 +16,7 @@ import java.util.concurrent.TimeUnit
 public interface ServiceApi {
         companion object {
              //const val BASE_URL = "https://44.219.155.152:8443/"
-             const val BASE_URL = "http://52.91.153.64:8080/"
+             const val BASE_URL = "http://54.165.43.158:8080/"
             //const val BASE_URL = "http://localhost:8080/"
 
 
@@ -30,17 +30,17 @@ public interface ServiceApi {
             val gson: Gson
                 get() = Gson()
 
-            fun getPost(): FeedResponse {
-                val request = Request.Builder()
-                    .url(BASE_URL + "noticias/feed")
-                    .build()
+                fun getPost(): FeedResponse {
+                    val request = Request.Builder()
+                        .url(BASE_URL + "noticias/feed")
+                        .build()
 
-                val response: Response = client.newCall(request).execute()
-                val responseBody = response.body?.string()
+                    val response: Response = client.newCall(request).execute()
+                    val responseBody = response.body?.string()
 
-                // Use o Gson para desserializar a resposta JSON em um objeto FeedResponse
-                return gson.fromJson(responseBody, FeedResponse::class.java)
-            }
+                    // Use o Gson para desserializar a resposta JSON em um objeto FeedResponse
+                    return gson.fromJson(responseBody, FeedResponse::class.java)
+                }
 
             fun saveUser(registerRequestUser: RegisterRequest): RegisterResponse {
                 val jsonMediaType = "application/json; charset=utf-8".toMediaType()
