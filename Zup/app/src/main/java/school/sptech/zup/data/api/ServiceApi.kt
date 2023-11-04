@@ -8,9 +8,13 @@ import okhttp3.Response
 import school.sptech.zup.data.model.FeedResponse
 import school.sptech.zup.data.model.RegisterResponse
 import school.sptech.zup.data.model.request.LoginRequest
-import school.sptech.zup.domain.model.RegisterRequest
+import school.sptech.zup.data.model.response.LoginResponse
+import school.sptech.zup.domain.model.Register
 import com.google.gson.Gson
+import okhttp3.Call
+import okhttp3.Callback
 import okhttp3.logging.HttpLoggingInterceptor
+import java.io.IOException
 import java.util.concurrent.TimeUnit
 
 public interface ServiceApi {
@@ -30,21 +34,21 @@ public interface ServiceApi {
             val gson: Gson
                 get() = Gson()
 
-                fun getPost(): FeedResponse {
-                    val request = Request.Builder()
-                        .url(BASE_URL + "noticias/feed")
-                        .build()
+            suspend fun getPost(): FeedResponse {
+                val request = Request.Builder()
+                    .url(BASE_URL + "noticias/feed")
+                    .build()
 
-                    val response: Response = client.newCall(request).execute()
-                    val responseBody = response.body?.string()
+                val response: Response = client.newCall(request).execute()
+                val responseBody = response.body?.string()
 
-                    // Use o Gson para desserializar a resposta JSON em um objeto FeedResponse
-                    return gson.fromJson(responseBody, FeedResponse::class.java)
-                }
+                // Use o Gson para desserializar a resposta JSON em um objeto FeedResponse
+                return gson.fromJson(responseBody, FeedResponse::class.java)
+            }
 
-            fun saveUser(registerRequestUser: RegisterRequest): RegisterResponse {
+            suspend fun saveUser(registerUser: Register): RegisterResponse {
                 val jsonMediaType = "application/json; charset=utf-8".toMediaType()
-                val requestBody = gson.toJson(registerRequestUser).toRequestBody(jsonMediaType)
+                val requestBody = gson.toJson(registerUser).toRequestBody(jsonMediaType)
 
                 val request = Request.Builder()
                     .url(BASE_URL + "cadastro/user/comum")
