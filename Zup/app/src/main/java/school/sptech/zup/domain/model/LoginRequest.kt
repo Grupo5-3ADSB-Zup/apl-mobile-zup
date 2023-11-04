@@ -1,4 +1,4 @@
-package school.sptech.zup.data.model.request
+package school.sptech.zup.domain.model
 
 data class LoginRequest(
     val username: String,

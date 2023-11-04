@@ -54,6 +54,7 @@
                     android:text="@string/senha" />
 
                 <EditText
+                    android:id="@+id/senhaEditText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="25dp"
@@ -69,6 +70,7 @@
                     android:text="@string/confirmar_senha" />
 
                 <EditText
+                    android:id="@+id/confirmarSenhaEditText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="25dp"

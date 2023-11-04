@@ -1,14 +1,9 @@
 package school.sptech.zup.data.model
 
 data class RegisterResponse(
-    val id: Long,
     val nome: String,
-    val email: String,
-    val username: String,
-    val senha: String,
-    val influencer: Boolean,
+    val username: String?,
+    val senha: String?,
     val cpf: String,
     val cnpj: String,
-    val Admin: Int,
-    val foto: Byte
 )

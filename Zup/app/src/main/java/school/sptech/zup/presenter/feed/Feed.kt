@@ -14,6 +14,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
 import school.sptech.zup.R
 import school.sptech.zup.domain.model.FeedRequest
+import school.sptech.zup.network.ServiceProvider.service
 
 
 class Feed : AppCompatActivity() {
@@ -30,16 +31,6 @@ class Feed : AppCompatActivity() {
         adapter = FeedAdapter(emptyList())
         recyclerView.adapter = adapter
 
-        // Inicializa o Retrofit
-        val retrofit = Retrofit.Builder()
-            .baseUrl("http://54.172.32.189:8080") // Substitua pela URL real
-            .addConverterFactory(GsonConverterFactory.create())
-            .client(OkHttpClient())
-            .build()
-
-        val service = retrofit.create(FeedService::class.java)
-
-        // Faz a solicitação de rede usando Retrofit
         val call = service.getFeed()
         call.enqueue(object : retrofit2.Callback<List<FeedRequest>> {
             override fun onResponse(call: Call<List<FeedRequest>>, response: retrofit2.Response<List<FeedRequest>>) {
@@ -55,10 +46,5 @@ class Feed : AppCompatActivity() {
                 // Lidar com falhas de rede
             }
         })
-    }
-
-    interface FeedService {
-        @GET("/noticia/rss/forbes")
-        fun getFeed(): Call<List<FeedRequest>>
     }
 }

@@ -1,5 +1,6 @@
 package school.sptech.zup.data.model
 
+import androidx.annotation.IdRes
 import school.sptech.zup.domain.model.FeedRequest
 
 data class FeedResponse(

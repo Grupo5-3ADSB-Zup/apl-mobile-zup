@@ -1,4 +1,4 @@
-package school.sptech.zup.data.model.response
+package school.sptech.zup.data.model
 
 data class LoginResponse(
     val id: Long,
@@ -6,3 +6,4 @@ data class LoginResponse(
     val email: String,
     val token: String,
 )
+
