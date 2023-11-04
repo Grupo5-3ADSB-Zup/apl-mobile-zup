@@ -1,6 +1,6 @@
 package school.sptech.zup.ui
 
-import Feed
+import school.sptech.zup.presenter.feed.Feed
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

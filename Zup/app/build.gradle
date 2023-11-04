@@ -53,7 +53,7 @@ dependencies {
 
 // OKHttp
     implementation(platform("com.squareup.okhttp3:okhttp-bom:4.11.0"))
-    implementation("com.squareup.okhttp3:okhttp")
+    implementation("com.squareup.okhttp3:okhttp:4.9.0")
     implementation("com.squareup.okhttp3:logging-interceptor")
 
 // Dagger hilt
@@ -63,7 +63,6 @@ dependencies {
 
 // Recyclerview
     implementation 'androidx.recyclerview:recyclerview:1.2.0'
-
 
 // Navigation
     implementation 'androidx.fragment:fragment-ktx:1.6.0'
@@ -83,5 +82,5 @@ dependencies {
     implementation 'com.squareup.picasso:picasso:2.71828'
 
     //Google
-    implementation 'com.google.code.gson:gson:2.8.9'
+    implementation("com.google.code.gson:gson:2.8.9")
 }
