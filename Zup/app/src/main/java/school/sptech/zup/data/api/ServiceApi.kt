@@ -83,5 +83,16 @@ public interface ServiceApi {
 
                 return request
             }
+
+            fun buscarInfluenciadores(): Request {
+                val jsonMediaType = "application/json; charset=utf-8".toMediaType()
+
+                val request = Request.Builder()
+                    .url(BASE_URL + "mobile/usuarios/perfil/influenciadores")
+                    .build()
+
+                return request
+
+            }
         }
 }
