@@ -1,19 +1,14 @@
 package school.sptech.zup.data.api
 
-import okhttp3.MediaType.Companion.toMediaType
-import okhttp3.OkHttpClient
-import okhttp3.Request
-import okhttp3.RequestBody.Companion.toRequestBody
-import okhttp3.Response
-import school.sptech.zup.data.model.FeedResponse
+import school.sptech.zup.domain.model.LoginRequest
+import school.sptech.zup.data.model.LoginResponse
+
+import retrofit2.Call
+import retrofit2.http.Body
+import retrofit2.http.GET
+import retrofit2.http.POST
+import school.sptech.zup.domain.model.FeedRequest
 import school.sptech.zup.data.model.RegisterResponse
-import school.sptech.zup.data.model.request.LoginRequest
-import school.sptech.zup.domain.model.RegisterRequest
-import com.google.gson.Gson
-import okhttp3.logging.HttpLoggingInterceptor
-import school.sptech.zup.domain.model.DadosEnvioApiFormularioPerfil
-import school.sptech.zup.domain.model.DadosTelaFormularioPerfil5Request
-import java.util.concurrent.TimeUnit
 
 public interface ServiceApi {
         companion object {
@@ -53,16 +48,14 @@ public interface ServiceApi {
                     .post(requestBody)
                     .build()
 
-                val response: Response = client.newCall(request).execute()
-                val responseBody = response.body?.string()
+    @GET("/noticia/rss/forbes")
+    fun getFeed(): Call<List<FeedRequest>>
 
-                // Use o Gson para desserializar a resposta JSON em um objeto RegisterResponse
-                return gson.fromJson(responseBody, RegisterResponse::class.java)
-            }
+    @POST("/cadastro/user/comum")
+    fun saveUser(@Body registerUser: RegisterResponse): Call<RegisterResponse>
 
-            fun loginUser(loginUser: LoginRequest): Request {
-                val jsonMediaType = "application/json; charset=utf-8".toMediaType()
-                val requestBody = gson.toJson(loginUser).toRequestBody(jsonMediaType)
+    @POST("/login/logar")
+    fun login(@Body loginRequest: LoginRequest): Call<LoginResponse>
 
                 val request = Request.Builder()
                     .url(BASE_URL + "login/logar")

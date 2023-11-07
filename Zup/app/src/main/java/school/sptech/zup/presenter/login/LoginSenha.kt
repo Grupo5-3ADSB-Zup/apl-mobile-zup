@@ -1,4 +1,4 @@
-package school.sptech.zup.ui
+package school.sptech.zup.presenter.login
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

@@ -5,6 +5,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        android:usesCleartextTraffic="true"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -20,6 +21,9 @@
             android:exported="false" />
         <activity
             android:name=".ui.FormularioPerfil4"
+            android:exported="false" />
+        <activity
+            android:name=".presenter.feed.Feed"
             android:exported="false" />
         <activity
             android:name=".ui.FormularioPerfil3"
@@ -88,10 +92,10 @@
             android:name=".Onboarding2"
             android:exported="false" />
         <activity
-            android:name=".ui.LoginSenha"
+            android:name=".presenter.login.LoginSenha"
             android:exported="false" />
         <activity
-            android:name=".ui.LoginEmail"
+            android:name=".presenter.login.LoginEmail"
             android:exported="false" />
         <activity
             android:name=".TelaInicial"

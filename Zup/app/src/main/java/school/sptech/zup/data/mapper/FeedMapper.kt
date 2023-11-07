@@ -9,6 +9,9 @@ fun FeedResponse.toDomain(): FeedRequest{
         titulo = titulo,
         descricao = descricao,
         emissora = emissora,
+        link = link,
+        dtNoticia = dtNoticia,
         fotoNoticia = fotoNoticia
+
     )
 }

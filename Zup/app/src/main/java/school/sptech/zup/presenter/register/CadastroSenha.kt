@@ -20,9 +20,15 @@ class CadastroSenha : AppCompatActivity() {
 
         binding.buttonContinuar.setOnClickListener {
 
-            val CadastroCPF = Intent(this, CadastroCPF::class.java)
+            val cadastroCPF = Intent(this, CadastroCPF::class.java)
 
-            startActivity(CadastroCPF)
+            val senha = binding.senhaEditText.text.toString()
+            val confirmarSenha = binding.senhaEditText.text.toString()
+
+            cadastroCPF.putExtra("senha", senha)
+            cadastroCPF.putExtra("confirmarSenha", confirmarSenha)
+
+            startActivity(cadastroCPF)
         }
 
         binding.buttonCancel.setOnClickListener {

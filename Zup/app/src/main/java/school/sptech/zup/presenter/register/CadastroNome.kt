@@ -22,9 +22,17 @@ class CadastroNome : AppCompatActivity() {
 
         binding.buttonContinuar.setOnClickListener {
 
-            val CadastroSenha = Intent(this, CadastroSenha::class.java)
+            val cadastroSenha = Intent(this, CadastroSenha::class.java)
 
-            startActivity(CadastroSenha)
+            val nome = binding.nomeEditText.text.toString()
+            val sobrenome = binding.sobrenomeEditText.text.toString()
+            val username = binding.usernameEditText.text.toString()
+
+            cadastroSenha.putExtra("nome", nome)
+            cadastroSenha.putExtra("sobrenome", sobrenome)
+            cadastroSenha.putExtra("username", username)
+
+            startActivity(cadastroSenha)
         }
 
         binding.buttonCancel.setOnClickListener {

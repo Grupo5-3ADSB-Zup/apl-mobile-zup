@@ -54,6 +54,7 @@
                     android:text="CPF" />
 
                 <EditText
+                    android:id="@+id/cpfEditText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="25dp"
@@ -69,6 +70,7 @@
                     android:text="@string/cnpj_caso_empresa" />
 
                 <EditText
+                    android:id="@+id/cnpjEditText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="25dp"

@@ -4,13 +4,15 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import school.sptech.zup.data.api.ServiceApi
+import school.sptech.zup.presenter.feed.Feed
 import java.util.concurrent.TimeUnit
 
 
 object ServiceProvider {
-    private const val BASE_URL = "http://localhost:8080/"
+    const val BASE_URL = "http://54.172.32.189:8080"
 
-    private val client = OkHttpClient.Builder()
+    val client = OkHttpClient.Builder()
         .connectTimeout(60, TimeUnit.SECONDS)
         .readTimeout(60, TimeUnit.SECONDS)
         .addInterceptor(HttpLoggingInterceptor().apply {
@@ -18,12 +20,14 @@ object ServiceProvider {
         })
         .build()
 
-    private val retrofit = Retrofit.Builder()
+    val retrofit = Retrofit.Builder()
         .baseUrl(BASE_URL)
         .addConverterFactory(GsonConverterFactory.create())
         .client(client)
         .build()
 
-    fun <API> createService(apiClass: Class<API>): API = retrofit.create(apiClass)
-
+    val service = retrofit.create(ServiceApi::class.java)
 }
+
+
+

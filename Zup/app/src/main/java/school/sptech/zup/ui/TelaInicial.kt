@@ -2,11 +2,9 @@ package school.sptech.zup
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import school.sptech.zup.databinding.ActivityTelaInicialBinding
-import school.sptech.zup.ui.LoginEmail
+import school.sptech.zup.presenter.login.LoginEmail
 
 class TelaInicial : AppCompatActivity() {
 

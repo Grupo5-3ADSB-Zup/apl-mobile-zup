@@ -48,18 +48,21 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
 
 // Retrofit
-    implementation "com.squareup.retrofit2:retrofit:2.9.0"
-    implementation "com.squareup.retrofit2:converter-gson:2.9.0"
+    implementation "com.squareup.retrofit2:retrofit:2.1.0"
+    implementation "com.squareup.retrofit2:converter-gson:2.1.0"
 
 // OKHttp
     implementation(platform("com.squareup.okhttp3:okhttp-bom:4.11.0"))
-    implementation("com.squareup.okhttp3:okhttp")
+    implementation("com.squareup.okhttp3:okhttp:4.9.0")
     implementation("com.squareup.okhttp3:logging-interceptor")
 
 // Dagger hilt
     implementation "com.google.dagger:hilt-android:2.40.5"
     implementation 'androidx.navigation:navigation-fragment:2.5.3'
     annotationProcessor "com.google.dagger:hilt-android-compiler:2.37"
+
+// Recyclerview
+    implementation 'androidx.recyclerview:recyclerview:1.2.0'
 
 // Navigation
     implementation 'androidx.fragment:fragment-ktx:1.6.0'
@@ -79,5 +82,5 @@ dependencies {
     implementation 'com.squareup.picasso:picasso:2.71828'
 
     //Google
-    implementation 'com.google.code.gson:gson:2.8.9'
+    implementation("com.google.code.gson:gson:2.8.9")
 }

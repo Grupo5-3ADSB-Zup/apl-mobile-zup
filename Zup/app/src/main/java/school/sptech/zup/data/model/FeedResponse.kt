@@ -1,5 +1,8 @@
 package school.sptech.zup.data.model
 
+import androidx.annotation.IdRes
+import school.sptech.zup.domain.model.FeedRequest
+
 data class FeedResponse(
     val id: Long,
     val titulo: String,
@@ -7,5 +10,6 @@ data class FeedResponse(
     val link: String,
     val emissora: String,
     val dtNoticia: String,
-    val fotoNoticia: ByteArray
+    val fotoNoticia: Byte,
 )
+

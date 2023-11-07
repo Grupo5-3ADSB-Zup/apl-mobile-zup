@@ -54,6 +54,7 @@
                     android:text="@string/nomeUsuario" />
 
                 <EditText
+                    android:id="@+id/nomeEditText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="25dp"
@@ -68,6 +69,7 @@
                     android:text="@string/sobrenomeUsuario" />
 
                 <EditText
+                    android:id="@+id/sobrenomeEditText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="25dp"
@@ -82,6 +84,7 @@
                     android:text="@string/username" />
 
                 <EditText
+                    android:id="@+id/usernameEditText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="25dp"

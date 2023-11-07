@@ -1,55 +1,40 @@
-package school.sptech.zup.presenter.list.adapter
-
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
-import androidx.recyclerview.widget.DiffUtil
-import androidx.recyclerview.widget.ListAdapter
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import school.sptech.zup.databinding.ItemFeedBinding
+import school.sptech.zup.R
 import school.sptech.zup.domain.model.FeedRequest
 
-class FeedAdapter :  ListAdapter<FeedRequest, FeedAdapter.ViewHolder>(DIFF_CALLBACK) {
-
-    companion object {
-        private val DIFF_CALLBACK = object : DiffUtil.ItemCallback<FeedRequest>() {
-            override fun areItemsTheSame(
-                oldItem: FeedRequest,
-                newItem: FeedRequest
-            ): Boolean {
-                return oldItem.id == newItem.id
-            }
-
-            override fun areContentsTheSame(
-                oldItem: FeedRequest,
-                newItem: FeedRequest
-            ): Boolean {
-                return oldItem == newItem
-            }
-        }
-    }
+class FeedAdapter(private var feedItems: List<FeedRequest>) : RecyclerView.Adapter<FeedAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        return ViewHolder(
-            ItemFeedBinding.inflate(
-                LayoutInflater.from(parent.context),
-                parent,
-                false
-            )
-        )
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_feed, parent, false)
+        return ViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val address = getItem(position)
+        val post = feedItems[position]
 
-
-        holder.binding.PostDescricao.text
-        holder.binding.PostTitulo.text
-        holder.binding.PostImage
-
+        // Preencher os elementos do layout com os dados do post
+        holder.postDescription.text = post.descricao
+        holder.postTitulo.text = post.titulo
+        // Você pode adicionar o código para carregar a imagem do post aqui, usando alguma biblioteca de carregamento de imagem como Picasso, Glide, etc.
     }
 
-    inner class ViewHolder(val binding: ItemFeedBinding) :
-        RecyclerView.ViewHolder(binding.root)
+    override fun getItemCount(): Int {
+        return feedItems.size
+    }
 
+    // Função para atualizar os dados do adaptador
+    fun updateData(newData: List<FeedRequest>) {
+        feedItems = newData
+        notifyDataSetChanged()
+    }
+
+    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val postTitulo: TextView = itemView.findViewById(R.id.PostTitulo)
+        val postDescription: TextView = itemView.findViewById(R.id.PostDescricao)
+        // Adicione outros elementos do layout, se necessário
+    }
 }
-
