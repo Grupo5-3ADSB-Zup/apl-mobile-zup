@@ -7,6 +7,7 @@ import android.widget.RadioButton
 import android.widget.RadioGroup
 import school.sptech.zup.R
 import school.sptech.zup.TelaInicial
+import school.sptech.zup.data.model.response.LoginResponse
 import school.sptech.zup.databinding.ActivityFormularioPerfil1Binding
 import school.sptech.zup.domain.model.DadosTelaFormularioPerfil1Request
 
@@ -20,6 +21,8 @@ class FormularioPerfil1 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+
+        val dadosLogin = intent.getSerializableExtra("dados") as? LoginResponse
 
         binding.buttonVoltar.setOnClickListener{
             telaInicio()
@@ -43,7 +46,7 @@ class FormularioPerfil1 : AppCompatActivity() {
                 else -> {
                 }
             }
-            val dados = DadosTelaFormularioPerfil1Request(selecao)
+            val dados = DadosTelaFormularioPerfil1Request(dadosLogin?.id.toString(), selecao)
 
             binding.buttonPassarProximaEtapaFormulario2.setOnClickListener{
                 formularioParte2(dados)

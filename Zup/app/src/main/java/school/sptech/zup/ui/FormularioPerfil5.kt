@@ -65,6 +65,7 @@ class FormularioPerfil5 : AppCompatActivity() {
             }
 
             val dadosEnvioApiFormularioPerfil = DadosEnvioApiFormularioPerfil(
+                idUsuario = dadosFormularioParte4?.idUsuario.toString(),
                 tela1 = dadosFormularioParte4?.radioButtonTelaFormulario1.toString(),
                 tela2 = dadosFormularioParte4?.radioButtonTelaFormulario2.toString(),
                 tela3 = dadosFormularioParte4?.radioButtonTelaFormulario4.toString(),

@@ -33,12 +33,13 @@ class PerfilUsuarioComum : AppCompatActivity() {
 
 
         binding.buttonToFormularioPerfil.setOnClickListener{
-            iniciarFormulario()
+            iniciarFormulario(dadosLogin)
         }
     }
 
-    private fun iniciarFormulario(){
+    private fun iniciarFormulario(dadosLogin: LoginResponse?) {
         val intent = Intent(this, FormularioPerfil1::class.java)
+        intent.putExtra("dadosLogin", dadosLogin)
         startActivity(intent)
     }
 }

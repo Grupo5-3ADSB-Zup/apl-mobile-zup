@@ -18,7 +18,7 @@ import java.util.concurrent.TimeUnit
 public interface ServiceApi {
         companion object {
              //const val BASE_URL = "https://44.219.155.152:8443/"
-             const val BASE_URL = "http://44.212.21.162:8080/"
+             const val BASE_URL = "http://67.202.17.158:8080/"
             //const val BASE_URL = "http://localhost:8080/"
 
 

@@ -98,7 +98,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:checked="false"
-                                android:text="Não, acredito muito na variação de mercado"
+                                android:text="Não acredito muito na variação de mercado"
                                 android:textColor="@color/amareloZup"
                                 android:textSize="20sp" />
 

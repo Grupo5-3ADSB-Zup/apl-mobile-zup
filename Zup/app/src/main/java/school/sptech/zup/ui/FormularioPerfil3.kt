@@ -58,6 +58,7 @@ class FormularioPerfil3 : AppCompatActivity() {
                 }
             }
             val dados = DadosTelaFormularioPerfil3Request(
+                idUsuario = dadosFormularioParte2?.idUsuario.toString(),
                 radioButtonTelaFormulario1 = dadosFormularioParte2?.radioButtonTelaFormulario1.toString(),
                 radioButtonTelaFormulario2 = dadosFormularioParte2?.radioButtonTelaFormulario2.toString(),
                 selecao)
