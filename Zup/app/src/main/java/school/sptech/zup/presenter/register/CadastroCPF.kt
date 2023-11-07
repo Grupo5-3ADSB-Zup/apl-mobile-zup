@@ -7,7 +7,6 @@ import android.widget.Toast
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import school.sptech.zup.data.model.LoginResponse
 import school.sptech.zup.data.model.RegisterResponse
 import school.sptech.zup.databinding.ActivityCadastroCpfBinding
 import school.sptech.zup.network.ServiceProvider.service

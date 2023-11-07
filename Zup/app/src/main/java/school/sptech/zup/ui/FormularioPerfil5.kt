@@ -85,26 +85,6 @@ class FormularioPerfil5 : AppCompatActivity() {
     }
 
     private fun envioBaseDados(dadosEnvioApiFormularioPerfil: DadosEnvioApiFormularioPerfil) {
-
-        val post = ServiceApi.cadastroPerfilUsuarioCoumu(dadosEnvioApiFormularioPerfil)
-
-        ServiceApi.client.newCall(post).enqueue(object : okhttp3.Callback {
-            override fun onResponse(call: okhttp3.Call, response: okhttp3.Response) {
-                if (response.isSuccessful) {
-                    val responseBody = response.body?.string()
-
-                    val gson = Gson()
-                    val cadastroPerfilResponse = gson.fromJson(responseBody,
-                        LoginResponse::class.java)
-
-                } else {
-                }
-            }
-
-            override fun onFailure(call: okhttp3.Call, e: IOException) {
-                e.printStackTrace()
-            }
-        })
-
+        // fazer nova chamada
     }
 }

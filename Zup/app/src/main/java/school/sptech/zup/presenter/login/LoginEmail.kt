@@ -9,8 +9,8 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import school.sptech.zup.TelaInicial
+import school.sptech.zup.data.model.response.LoginResponse
 import school.sptech.zup.domain.model.LoginRequest
-import school.sptech.zup.data.model.LoginResponse
 import school.sptech.zup.databinding.ActivityLoginEmailBinding
 import school.sptech.zup.network.ServiceProvider.service
 
