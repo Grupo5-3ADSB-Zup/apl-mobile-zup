@@ -22,33 +22,7 @@ class BuscarInfluenciadores : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        val get = ServiceApi.buscarInfluenciadores()
-
-        ServiceApi.client.newCall(get).enqueue(object : okhttp3.Callback {
-            override fun onResponse(call: okhttp3.Call, response: okhttp3.Response) {
-                if (response.isSuccessful) {
-                    val responseBody = response.body?.string()
-
-                    val gson = Gson()
-                    val influenciadoresResponse =
-                        gson.fromJson(responseBody, InfluenciadoresResponse::class.java)
-
-                    val dados = influenciadoresResponse
-
-                    if (dados != null) {
-                        binding.nomeInfluenciador.text = dados.nome.toString()
-//                        binding.fotoInfluenciador.text = dados.foto.toString()
-                    }
-
-
-                } else {
-                }
-            }
-
-            override fun onFailure(call: okhttp3.Call, e: IOException) {
-                e.printStackTrace()
-            }
-        })
+        //val get = ServiceApi.buscarInfluenciadores()
     }
 
 
