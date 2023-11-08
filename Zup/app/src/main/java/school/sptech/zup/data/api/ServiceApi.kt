@@ -12,12 +12,12 @@ import school.sptech.zup.data.model.response.LoginResponse
 
 public interface ServiceApi {
 
-    @GET("/noticia/rss/forbes")
+    @GET("/noticia/rss")
     fun getFeed(): Call<List<FeedRequest>>
 
     @POST("/cadastro/user/comum")
     fun saveUser(@Body registerUser: RegisterResponse): Call<RegisterResponse>
 
-    @POST("/login/logar")
+    @POST("login/logar")
     fun login(@Body loginRequest: LoginRequest): Call<LoginResponse>
 }
