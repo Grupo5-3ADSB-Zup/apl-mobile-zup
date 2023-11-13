@@ -2,6 +2,7 @@ package school.sptech.zup.data.model
 
 import androidx.annotation.IdRes
 import school.sptech.zup.domain.model.FeedRequest
+import java.io.Serializable
 
 data class FeedResponse(
     val id: Long,
@@ -11,5 +12,5 @@ data class FeedResponse(
     val emissora: String,
     val dtNoticia: String,
     val fotoNoticia: Byte,
-)
+) : Serializable
 

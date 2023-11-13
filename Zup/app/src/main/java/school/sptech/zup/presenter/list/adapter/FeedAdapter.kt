@@ -4,9 +4,10 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import school.sptech.zup.R
+import school.sptech.zup.data.model.FeedResponse
 import school.sptech.zup.domain.model.FeedRequest
 
-class FeedAdapter(private var feedItems: List<FeedRequest>) : RecyclerView.Adapter<FeedAdapter.ViewHolder>() {
+class FeedAdapter(private var feedItems: List<FeedResponse>) : RecyclerView.Adapter<FeedAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_feed, parent, false)
@@ -53,7 +54,7 @@ class FeedAdapter(private var feedItems: List<FeedRequest>) : RecyclerView.Adapt
     }
 
     // Função para atualizar os dados do adaptador
-    fun updateData(newData: List<FeedRequest>) {
+    fun updateData(newData: List<FeedResponse>) {
         feedItems = newData
         notifyDataSetChanged()
     }

@@ -6,14 +6,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
-import okhttp3.OkHttpClient
-
 import retrofit2.Call
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.http.GET
 import school.sptech.zup.R
-import school.sptech.zup.domain.model.FeedRequest
+import school.sptech.zup.data.model.FeedResponse
 import school.sptech.zup.network.ServiceProvider.service
 
 
@@ -28,12 +23,18 @@ class Feed : AppCompatActivity() {
 
         recyclerView = findViewById(R.id.recyclerViewFeed)
         recyclerView.layoutManager = LinearLayoutManager(this)
+
+        //Testar amanhã
+        //val layoutManager = LinearLayoutManager(this)
+        //layoutManager.orientation = LinearLayoutManager.VERTICAL
+        //recyclerView.layoutManager = layoutManager
+
         adapter = FeedAdapter(emptyList())
         recyclerView.adapter = adapter
 
         val call = service.getFeed()
-        call.enqueue(object : retrofit2.Callback<List<FeedRequest>> {
-            override fun onResponse(call: Call<List<FeedRequest>>, response: retrofit2.Response<List<FeedRequest>>) {
+        call.enqueue(object : retrofit2.Callback<List<FeedResponse>> {
+            override fun onResponse(call: Call<List<FeedResponse>>, response: retrofit2.Response<List<FeedResponse>>) {
                 if (response.isSuccessful) {
                     val posts = response.body() ?: emptyList()
                     adapter.updateData(posts)
@@ -42,7 +43,7 @@ class Feed : AppCompatActivity() {
                 }
             }
 
-            override fun onFailure(call: Call<List<FeedRequest>>, t: Throwable) {
+            override fun onFailure(call: Call<List<FeedResponse>>, t: Throwable) {
                 // Lidar com falhas de rede
             }
         })
