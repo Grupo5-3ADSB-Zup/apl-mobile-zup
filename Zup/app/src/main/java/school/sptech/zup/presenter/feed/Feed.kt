@@ -46,5 +46,10 @@ class Feed : AppCompatActivity() {
                 // Lidar com falhas de rede
             }
         })
+
+        // Colocar chamadas de outras Views Aqui
+        // Tanto para Refazer a chamada ao clicar na casinha, quanto as outras
+        // Colocar as outras chamadas
+        //TESTAR CHAMADA DE NOTICIAS DO MOBILE
     }
 }
