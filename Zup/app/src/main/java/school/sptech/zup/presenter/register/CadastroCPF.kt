@@ -37,6 +37,10 @@ class CadastroCPF : AppCompatActivity() {
             val dadosCadastroNome =
                 intent.getSerializableExtra("dados") as? DadosTelaCadastroCPF
 
+            if (binding.aceitarCheckBox.isChecked == false){
+                mostrarErroMensagem("Não é possível prosseguir sem aceitar os termos")
+            }
+
                 val extras = intent.extras
                 if (extras != null) {
                 val nome = dadosCadastroNome?.nome.toString()
@@ -47,10 +51,6 @@ class CadastroCPF : AppCompatActivity() {
                 val cpf = binding.cpfEditText.text.toString()
                 val cnpj = binding.cnpjEditText.text.toString()
                 val nomeInteiro = "$nome  $sobrenome"
-
-                if (binding.aceitarCheckBox.isChecked == false){
-                    mostrarErroMensagem("Não é possível prosseguir sem aceitar os termos")
-                }
 
                     val registerUser = RegisterRequest(nomeInteiro, null, username,senha,
                         influencer, false,
