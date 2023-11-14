@@ -11,7 +11,6 @@ import school.sptech.zup.data.model.PerfilUsuarioResponse
 import school.sptech.zup.data.model.RegisterResponse
 import school.sptech.zup.data.model.response.LoginResponse
 import school.sptech.zup.domain.model.DadosEnvioApiFormularioPerfil
-import school.sptech.zup.domain.model.PerguntasPerfilRequest
 import school.sptech.zup.domain.model.RegisterRequest
 
 public interface ServiceApi {

@@ -5,7 +5,6 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import school.sptech.zup.R
 import school.sptech.zup.data.model.FeedResponse
-import school.sptech.zup.domain.model.FeedRequest
 
 class FeedAdapter(private var feedItems: List<FeedResponse>) : RecyclerView.Adapter<FeedAdapter.ViewHolder>() {
 

@@ -8,26 +8,16 @@ import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.Toast
 import androidx.annotation.RequiresApi
-import com.google.gson.Gson
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import school.sptech.zup.R
-import school.sptech.zup.data.api.ServiceApi
 import school.sptech.zup.data.model.PerfilUsuarioResponse
-import school.sptech.zup.data.model.response.LoginResponse
-import school.sptech.zup.databinding.ActivityFormularioPerfil3Binding
 import school.sptech.zup.databinding.ActivityFormularioPerfil5Binding
 import school.sptech.zup.domain.model.DadosEnvioApiFormularioPerfil
-import school.sptech.zup.domain.model.DadosTelaFormularioPerfil1Request
-import school.sptech.zup.domain.model.DadosTelaFormularioPerfil2Request
-import school.sptech.zup.domain.model.DadosTelaFormularioPerfil3Request
 import school.sptech.zup.domain.model.DadosTelaFormularioPerfil4Request
-import school.sptech.zup.domain.model.DadosTelaFormularioPerfil5Request
-import school.sptech.zup.domain.model.Sessao
 import school.sptech.zup.network.ServiceProvider
 import school.sptech.zup.presenter.feed.Feed
-import java.io.IOException
 
 @Suppress("DEPRECATION")
 class FormularioPerfil5 : AppCompatActivity() {

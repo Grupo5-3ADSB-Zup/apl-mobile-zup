@@ -8,9 +8,7 @@ import android.widget.RadioButton
 import android.widget.RadioGroup
 import androidx.annotation.RequiresApi
 import school.sptech.zup.R
-import school.sptech.zup.databinding.ActivityFormularioPerfil2Binding
 import school.sptech.zup.databinding.ActivityFormularioPerfil3Binding
-import school.sptech.zup.domain.model.DadosTelaFormularioPerfil1Request
 import school.sptech.zup.domain.model.DadosTelaFormularioPerfil2Request
 import school.sptech.zup.domain.model.DadosTelaFormularioPerfil3Request
 

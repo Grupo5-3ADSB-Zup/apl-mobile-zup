@@ -9,10 +9,8 @@ import androidx.recyclerview.widget.RecyclerView
 
 import retrofit2.Call
 import school.sptech.zup.R
-import school.sptech.zup.TelaInicial
 import school.sptech.zup.data.model.FeedResponse
 import school.sptech.zup.databinding.ActivityFeedBinding
-import school.sptech.zup.databinding.ActivityLoginEmailBinding
 import school.sptech.zup.network.ServiceProvider.service
 import school.sptech.zup.ui.BuscarInfluenciadores
 import school.sptech.zup.ui.TelaConfiguracoes

@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.widget.RadioButton
 import android.widget.RadioGroup
 import school.sptech.zup.R
-import school.sptech.zup.TelaInicial
 import school.sptech.zup.data.model.response.LoginResponse
 import school.sptech.zup.databinding.ActivityFormularioPerfil1Binding
 import school.sptech.zup.domain.model.DadosTelaFormularioPerfil1Request
