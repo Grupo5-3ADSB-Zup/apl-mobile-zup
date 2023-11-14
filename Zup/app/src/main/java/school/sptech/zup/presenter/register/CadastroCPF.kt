@@ -11,6 +11,7 @@ import school.sptech.zup.data.model.RegisterResponse
 import school.sptech.zup.databinding.ActivityCadastroCpfBinding
 import school.sptech.zup.domain.model.DadosTelaCadastroCPF
 import school.sptech.zup.domain.model.RegisterRequest
+import school.sptech.zup.domain.model.Sessao
 import school.sptech.zup.network.ServiceProvider.service
 import school.sptech.zup.ui.PerfilUsuarioComum
 import school.sptech.zup.ui.PerfilUsuarioSemFormulario
@@ -63,6 +64,11 @@ class CadastroCPF : AppCompatActivity() {
                                 val loginResponse = response.body()
 
                                 if (loginResponse != null) {
+
+                                    val sessao = Sessao
+
+                                    sessao.nome = nomeInteiro
+                                    sessao.username = username
 
                                     paginaProfile()
                                 } else {

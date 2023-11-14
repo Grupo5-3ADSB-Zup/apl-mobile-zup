@@ -1,6 +1,7 @@
 package school.sptech.zup.presenter.feed
 
 import FeedAdapter
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -8,8 +9,13 @@ import androidx.recyclerview.widget.RecyclerView
 
 import retrofit2.Call
 import school.sptech.zup.R
+import school.sptech.zup.TelaInicial
 import school.sptech.zup.data.model.FeedResponse
+import school.sptech.zup.databinding.ActivityFeedBinding
+import school.sptech.zup.databinding.ActivityLoginEmailBinding
 import school.sptech.zup.network.ServiceProvider.service
+import school.sptech.zup.ui.BuscarInfluenciadores
+import school.sptech.zup.ui.TelaConfiguracoes
 
 
 class Feed : AppCompatActivity() {
@@ -20,10 +26,15 @@ class Feed : AppCompatActivity() {
     private lateinit var adapter: FeedAdapter
 
 
+    private val binding by lazy {
+        ActivityFeedBinding.inflate(layoutInflater)
+    }
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_feed)
+        setContentView(binding.root)
 
         recyclerView = findViewById(R.id.recyclerViewFeed)
         recyclerView.layoutManager = LinearLayoutManager(this)
@@ -52,9 +63,18 @@ class Feed : AppCompatActivity() {
             }
         })
 
-        // Colocar chamadas de outras Views Aqui
-        // Tanto para Refazer a chamada ao clicar na casinha, quanto as outras
-        // Colocar as outras chamadas
-        //TESTAR CHAMADA DE NOTICIAS DO MOBILE
+        binding.buttonHome.setOnClickListener{
+            call
+        }
+
+        binding.buttonPesquisarInfluencers.setOnClickListener{
+            val intent = Intent(this, BuscarInfluenciadores::class.java)
+            startActivity(intent)
+        }
+
+        binding.buttonConfiguracoes.setOnClickListener{
+            val intent = Intent(this, TelaConfiguracoes::class.java)
+            startActivity(intent)
+        }
     }
 }

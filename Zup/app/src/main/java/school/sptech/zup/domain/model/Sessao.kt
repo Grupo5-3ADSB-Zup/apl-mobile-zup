@@ -1,6 +1,9 @@
 package school.sptech.zup.domain.model
 
-object Sessao {
-    val idUsuario: String = ""
-    val idTpPerfil:Long = 0
+public object Sessao {
+    var idUsuario: String = ""
+    var nome: String = ""
+    var username:String = ""
+    var idTpPerfil:Long = 0
+    var primeiroAcesso:Boolean = true
 }

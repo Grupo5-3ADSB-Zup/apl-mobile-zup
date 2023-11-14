@@ -11,6 +11,7 @@ import school.sptech.zup.data.model.response.LoginResponse
 import school.sptech.zup.databinding.ActivityLoginEmailBinding
 import school.sptech.zup.databinding.ActivityPerfilUsuarioComumBinding
 import school.sptech.zup.domain.model.DadosTelaFormularioPerfil1Request
+import school.sptech.zup.domain.model.Sessao
 import school.sptech.zup.presenter.feed.Feed
 
 
@@ -26,11 +27,15 @@ class PerfilUsuarioComum : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
+        val sessao = Sessao
+
         val dadosLogin = intent.getSerializableExtra("dados") as? LoginResponse
-        if (dadosLogin != null) {
-            binding.nomeUsuario.text = dadosLogin.nome.toString()
+
+        if (sessao.nome == null){
+            binding.nomeUsuario.text = dadosLogin?.nome.toString()
         }
 
+        else binding.nomeUsuario.text = sessao?.nome.toString()
 
         binding.buttonToFormularioPerfil.setOnClickListener{
             iniciarFormulario(dadosLogin)

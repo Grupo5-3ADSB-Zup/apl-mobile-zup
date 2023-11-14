@@ -95,6 +95,7 @@
         android:orientation="horizontal">
 
         <LinearLayout
+            android:id="@+id/button_home"
             android:layout_width="100dp"
             android:layout_height="72dp"
             android:layout_alignParentBottom="true"
@@ -111,6 +112,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/button_pesquisar_influencers"
             android:layout_width="100dp"
             android:layout_height="72dp"
             android:layout_alignParentBottom="true"
@@ -144,6 +146,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/button_configuracoes"
             android:layout_width="match_parent"
             android:layout_height="72dp"
             android:layout_alignParentBottom="true"
