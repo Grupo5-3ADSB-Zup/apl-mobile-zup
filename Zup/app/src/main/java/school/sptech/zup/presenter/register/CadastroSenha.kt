@@ -35,6 +35,7 @@ class CadastroSenha : AppCompatActivity() {
                     nome = dadosCadastroNome?.nome.toString(),
                     sobrenome = dadosCadastroNome?.sobrenome.toString(),
                     username = dadosCadastroNome?.username.toString(),
+                    influencer = dadosCadastroNome?.influencer,
                     senha = senha
                 )
                 cadastroCPF.putExtra("dados", dados)

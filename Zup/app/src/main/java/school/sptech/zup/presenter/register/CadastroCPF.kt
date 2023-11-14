@@ -13,6 +13,7 @@ import school.sptech.zup.domain.model.DadosTelaCadastroCPF
 import school.sptech.zup.domain.model.RegisterRequest
 import school.sptech.zup.domain.model.Sessao
 import school.sptech.zup.network.ServiceProvider.service
+import school.sptech.zup.presenter.feed.Feed
 import school.sptech.zup.ui.PerfilUsuarioComum
 import school.sptech.zup.ui.PerfilUsuarioSemFormulario
 
@@ -36,22 +37,23 @@ class CadastroCPF : AppCompatActivity() {
             val dadosCadastroNome =
                 intent.getSerializableExtra("dados") as? DadosTelaCadastroCPF
 
-            val PerfilUsuarioSemFormulario = Intent(this, PerfilUsuarioSemFormulario::class.java)
-
-            startActivity(PerfilUsuarioSemFormulario)
-
                 val extras = intent.extras
                 if (extras != null) {
                 val nome = dadosCadastroNome?.nome.toString()
                 val sobrenome = dadosCadastroNome?.sobrenome.toString()
                 val username = dadosCadastroNome?.username.toString()
                 val senha = dadosCadastroNome?.senha.toString()
+                val influencer = dadosCadastroNome?.influencer
                 val cpf = binding.cpfEditText.text.toString()
                 val cnpj = binding.cnpjEditText.text.toString()
-                val nomeInteiro = "$nome + $sobrenome"
+                val nomeInteiro = "$nome  $sobrenome"
+
+                if (binding.aceitarCheckBox.isChecked == false){
+                    mostrarErroMensagem("Não é possível prosseguir sem aceitar os termos")
+                }
 
                     val registerUser = RegisterRequest(nomeInteiro, null, username,senha,
-                        false, false,
+                        influencer, false,
                         null, cpf, cnpj)
 
                     val call = service.saveUser(registerUser)
@@ -70,7 +72,7 @@ class CadastroCPF : AppCompatActivity() {
                                     sessao.nome = nomeInteiro
                                     sessao.username = username
 
-                                    paginaProfile()
+                                    feed()
                                 } else {
                                     mostrarErroMensagem("Credenciais inválidas")
                                 }
@@ -78,18 +80,16 @@ class CadastroCPF : AppCompatActivity() {
                                 mostrarErroMensagem("Erro na solicitação")
                             }
                         }
-
                         override fun onFailure(call: Call<RegisterResponse>?, t: Throwable?) {
                             mostrarErroMensagem("Erro na rede: ${t?.message}")
                         }
                     })
             } else {
-
             }
         }
     }
-    private fun paginaProfile() {
-        val intent = Intent(this, PerfilUsuarioComum::class.java)
+    private fun feed() {
+        val intent = Intent(this, Feed::class.java)
         startActivity(intent)
     }
 

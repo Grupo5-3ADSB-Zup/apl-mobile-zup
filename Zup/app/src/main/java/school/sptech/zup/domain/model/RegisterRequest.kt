@@ -7,7 +7,7 @@ data class RegisterRequest(
     val email: String? = null,
     val username: String?,
     val senha: String?,
-    val influencer: Boolean,
+    val influencer: Boolean?,
     val autenticado: Boolean = false,
     val foto: Byte? = null,
     val cpf: String,

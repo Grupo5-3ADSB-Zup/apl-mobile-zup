@@ -29,11 +29,13 @@ class CadastroNome : AppCompatActivity() {
             val nome = binding.nomeEditText.text.toString()
             val sobrenome = binding.sobrenomeEditText.text.toString()
             val username = binding.usernameEditText.text.toString()
+            val checkBoxInfluencer = binding.checkBoxInfluencer.isChecked
 
             val dados = DadosTelaCadastroNomeRequest(
                 nome = nome,
                 sobrenome = sobrenome,
-                username = username
+                username = username,
+                influencer = checkBoxInfluencer
             )
 
             cadastroSenha.putExtra("dados", dados)
