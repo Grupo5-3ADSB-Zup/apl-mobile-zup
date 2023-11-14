@@ -72,7 +72,7 @@ class CadastroCPF : AppCompatActivity() {
                                     sessao.nome = nomeInteiro
                                     sessao.username = username
 
-                                    feed()
+                                    perfilUsuarioComum()
                                 } else {
                                     mostrarErroMensagem("Credenciais inválidas")
                                 }
@@ -88,8 +88,8 @@ class CadastroCPF : AppCompatActivity() {
             }
         }
     }
-    private fun feed() {
-        val intent = Intent(this, Feed::class.java)
+    private fun perfilUsuarioComum() {
+        val intent = Intent(this, PerfilUsuarioComum::class.java)
         startActivity(intent)
     }
 
