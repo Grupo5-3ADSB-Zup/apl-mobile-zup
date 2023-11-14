@@ -4,15 +4,10 @@ import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import androidx.annotation.RequiresApi
-import school.sptech.zup.R
 import school.sptech.zup.data.model.response.LoginResponse
-import school.sptech.zup.databinding.ActivityLoginEmailBinding
 import school.sptech.zup.databinding.ActivityPerfilUsuarioComumBinding
-import school.sptech.zup.domain.model.DadosTelaFormularioPerfil1Request
 import school.sptech.zup.domain.model.Sessao
-import school.sptech.zup.presenter.feed.Feed
 
 
 @Suppress("DEPRECATION")
