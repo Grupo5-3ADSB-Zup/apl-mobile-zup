@@ -14,8 +14,12 @@ import school.sptech.zup.network.ServiceProvider.service
 
 class Feed : AppCompatActivity() {
 
+
+
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: FeedAdapter
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

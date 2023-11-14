@@ -5,7 +5,7 @@ import school.sptech.zup.domain.model.FeedRequest
 import java.io.Serializable
 
 data class FeedResponse(
-    val id: Long,
+    val id: Integer,
     val titulo: String,
     val descricao: String,
     val link: String,
