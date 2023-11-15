@@ -17,6 +17,7 @@ import school.sptech.zup.databinding.ActivityFormularioPerfil5Binding
 import school.sptech.zup.domain.model.DadosEnvioApiFormularioPerfil
 import school.sptech.zup.domain.model.DadosTelaFormularioPerfil4Request
 import school.sptech.zup.network.ServiceProvider
+import school.sptech.zup.network.ServiceProvider.service
 import school.sptech.zup.presenter.feed.Feed
 
 @Suppress("DEPRECATION")
@@ -62,7 +63,7 @@ class FormularioPerfil5 : AppCompatActivity() {
                 }
             }
 
-            val dadosEnvioApiFormularioPerfil = DadosEnvioApiFormularioPerfil(
+            val perfilRequest = DadosEnvioApiFormularioPerfil(
                 idUsuario = dadosFormularioParte4?.idUsuario.toString(),
                 tela1 = dadosFormularioParte4?.radioButtonTelaFormulario1.toString(),
                 tela2 = dadosFormularioParte4?.radioButtonTelaFormulario2.toString(),
@@ -72,7 +73,7 @@ class FormularioPerfil5 : AppCompatActivity() {
             )
 
             binding.buttonConcluir.setOnClickListener{
-                envioBaseDados(dadosEnvioApiFormularioPerfil)
+                envioBaseDados(perfilRequest)
             }
         }
     }
@@ -82,9 +83,9 @@ class FormularioPerfil5 : AppCompatActivity() {
         startActivity(intent)
     }
 
-    private fun envioBaseDados(dadosEnvioApiFormularioPerfil: DadosEnvioApiFormularioPerfil) {
+    private fun envioBaseDados(perfilRequest: DadosEnvioApiFormularioPerfil) {
 
-        val call = ServiceProvider.service.SalvarPerfilUsuario(dadosEnvioApiFormularioPerfil)
+        val call = service.SalvarPerfilUsuario(perfilRequest)
 
         call.enqueue(object : Callback<PerfilUsuarioResponse> {
             override fun onResponse(

@@ -5,6 +5,7 @@ import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.annotation.RequiresApi
+import androidx.lifecycle.ReportFragment.Companion.reportFragment
 import school.sptech.zup.data.model.response.LoginResponse
 import school.sptech.zup.databinding.ActivityPerfilUsuarioComumBinding
 import school.sptech.zup.domain.model.Sessao
@@ -24,15 +25,15 @@ class PerfilUsuarioComum : AppCompatActivity() {
 
         val sessao = Sessao
 
-        val dadosLogin = intent.getSerializableExtra("dados") as? LoginResponse
+        var dadosLogin = intent.getSerializableExtra("dados") as? LoginResponse
 
         if (sessao.nome == null){
             binding.nomeUsuario.text = dadosLogin?.nome.toString()
         }
-
         else binding.nomeUsuario.text = sessao?.nome.toString()
 
         binding.buttonToFormularioPerfil.setOnClickListener{
+
             iniciarFormulario(dadosLogin)
         }
     }

@@ -15,15 +15,15 @@ import school.sptech.zup.domain.model.RegisterRequest
 
 public interface ServiceApi {
 
-    @GET("/noticia/rss")
+    @GET("noticia/rss")
     fun getFeed(): Call<List<FeedResponse>>
 
-    @POST("/cadastro/user/comum")
+    @POST("cadastro/user/comum")
     fun saveUser(@Body registerUser: RegisterRequest): Call<RegisterResponse>
 
     @POST("login/logar")
     fun login(@Body loginRequest: LoginRequest): Call<LoginResponse>
 
-    @POST("/mobile/usuarios/perfil")
+    @POST("mobile/usuarios/perfil")
     fun SalvarPerfilUsuario(@Body perfilRequest: DadosEnvioApiFormularioPerfil) : Call<PerfilUsuarioResponse>
 }

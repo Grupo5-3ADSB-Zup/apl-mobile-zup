@@ -39,6 +39,8 @@ class CadastroCPF : AppCompatActivity() {
 
             if (binding.aceitarCheckBox.isChecked == false){
                 mostrarErroMensagem("Não é possível prosseguir sem aceitar os termos")
+
+                reiniciarCadastroCPF()
             }
 
                 val extras = intent.extras
@@ -63,14 +65,15 @@ class CadastroCPF : AppCompatActivity() {
                             response: Response<RegisterResponse>
                         ) {
                             if (response.isSuccessful) {
-                                val loginResponse = response.body()
+                                val cadastroResponse = response.body()
 
-                                if (loginResponse != null) {
+                                if (cadastroResponse != null) {
 
                                     val sessao = Sessao
 
                                     sessao.nome = nomeInteiro
                                     sessao.username = username
+                                    sessao.idUsuario = cadastroResponse?.id.toString()
 
                                     perfilUsuarioComum()
                                 } else {
@@ -88,6 +91,12 @@ class CadastroCPF : AppCompatActivity() {
             }
         }
     }
+
+    private fun reiniciarCadastroCPF() {
+        val intent = Intent(this, CadastroCPF::class.java)
+        startActivity(intent)
+    }
+
     private fun perfilUsuarioComum() {
         val intent = Intent(this, PerfilUsuarioComum::class.java)
         startActivity(intent)

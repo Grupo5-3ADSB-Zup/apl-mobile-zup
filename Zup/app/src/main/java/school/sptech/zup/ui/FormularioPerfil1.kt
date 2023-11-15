@@ -9,6 +9,7 @@ import school.sptech.zup.R
 import school.sptech.zup.data.model.response.LoginResponse
 import school.sptech.zup.databinding.ActivityFormularioPerfil1Binding
 import school.sptech.zup.domain.model.DadosTelaFormularioPerfil1Request
+import school.sptech.zup.domain.model.Sessao
 
 @Suppress("DEPRECATION")
 class FormularioPerfil1 : AppCompatActivity() {
@@ -26,6 +27,8 @@ class FormularioPerfil1 : AppCompatActivity() {
         binding.buttonVoltar.setOnClickListener{
             telaInicio()
         }
+
+        val sessao = Sessao
 
         val radioGroup = findViewById<RadioGroup>(R.id.meuRadioGroup)
 
@@ -45,7 +48,9 @@ class FormularioPerfil1 : AppCompatActivity() {
                 else -> {
                 }
             }
-            val dados = DadosTelaFormularioPerfil1Request(dadosLogin?.id.toString(), selecao)
+            val dados = DadosTelaFormularioPerfil1Request(
+                if (dadosLogin == null) sessao?.idUsuario.toString() else dadosLogin?.id.toString(),
+                selecao)
 
             binding.buttonPassarProximaEtapaFormulario2.setOnClickListener{
                 formularioParte2(dados)
