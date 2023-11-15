@@ -21,10 +21,7 @@ import school.sptech.zup.ui.PerfilUsuarioSemFormulario
 @Suppress("DEPRECATION")
 class CadastroCPF : AppCompatActivity() {
 
-
-
     val binding by lazy {
-
         ActivityCadastroCpfBinding.inflate(layoutInflater)
     }
 
@@ -37,14 +34,8 @@ class CadastroCPF : AppCompatActivity() {
             val dadosCadastroNome =
                 intent.getSerializableExtra("dados") as? DadosTelaCadastroCPF
 
-            if (binding.aceitarCheckBox.isChecked == false){
-                mostrarErroMensagem("Não é possível prosseguir sem aceitar os termos")
-
-                reiniciarCadastroCPF()
-            }
-
                 val extras = intent.extras
-                if (extras != null) {
+                if (extras != null && binding.aceitarCheckBox.isChecked) {
                 val nome = dadosCadastroNome?.nome.toString()
                 val sobrenome = dadosCadastroNome?.sobrenome.toString()
                 val username = dadosCadastroNome?.username.toString()
@@ -65,15 +56,15 @@ class CadastroCPF : AppCompatActivity() {
                             response: Response<RegisterResponse>
                         ) {
                             if (response.isSuccessful) {
-                                val cadastroResponse = response.body()
+                                val RegistroResponse = response.body()
 
-                                if (cadastroResponse != null) {
+                                if (RegistroResponse != null) {
 
                                     val sessao = Sessao
 
                                     sessao.nome = nomeInteiro
                                     sessao.username = username
-                                    sessao.idUsuario = cadastroResponse?.id.toString()
+                                    sessao.idUsuario = RegistroResponse?.id.toString()
 
                                     perfilUsuarioComum()
                                 } else {
@@ -88,15 +79,10 @@ class CadastroCPF : AppCompatActivity() {
                         }
                     })
             } else {
+                mostrarErroMensagem("Não é possível prosseguir sem aceitar os termos")
             }
         }
     }
-
-    private fun reiniciarCadastroCPF() {
-        val intent = Intent(this, CadastroCPF::class.java)
-        startActivity(intent)
-    }
-
     private fun perfilUsuarioComum() {
         val intent = Intent(this, PerfilUsuarioComum::class.java)
         startActivity(intent)
