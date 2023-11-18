@@ -119,14 +119,6 @@
                             android:layout_marginLeft="5dp"
                             android:layout_marginTop="15dp"
                             android:src="@mipmap/icone_verficado_influenciadores"></ImageView>
-
-                        <TextView
-                            android:layout_width="90dp"
-                            android:layout_height="40dp"
-                            android:layout_marginLeft="43dp"
-                            android:background="@color/cinzaClaroZup"
-                            android:gravity="center"
-                            android:text="Seguir"></TextView>
                     </LinearLayout>
 
                     <LinearLayout
@@ -155,14 +147,6 @@
                             android:layout_marginLeft="5dp"
                             android:layout_marginTop="15dp"
                             android:src="@mipmap/icone_verficado_influenciadores"></ImageView>
-
-                        <TextView
-                            android:layout_width="90dp"
-                            android:layout_height="40dp"
-                            android:layout_marginLeft="43dp"
-                            android:background="@color/cinzaClaroZup"
-                            android:gravity="center"
-                            android:text="Seguir"></TextView>
                     </LinearLayout>
 
                     <LinearLayout
@@ -191,14 +175,6 @@
                             android:layout_marginLeft="5dp"
                             android:layout_marginTop="15dp"
                             android:src="@mipmap/icone_verficado_influenciadores"></ImageView>
-
-                        <TextView
-                            android:layout_width="90dp"
-                            android:layout_height="40dp"
-                            android:layout_marginLeft="43dp"
-                            android:background="@color/cinzaClaroZup"
-                            android:gravity="center"
-                            android:text="Seguir"></TextView>
                     </LinearLayout>
 
                     <LinearLayout
@@ -227,14 +203,6 @@
                             android:layout_marginLeft="5dp"
                             android:layout_marginTop="15dp"
                             android:src="@mipmap/icone_verficado_influenciadores"></ImageView>
-
-                        <TextView
-                            android:layout_width="90dp"
-                            android:layout_height="40dp"
-                            android:layout_marginLeft="43dp"
-                            android:background="@color/cinzaClaroZup"
-                            android:gravity="center"
-                            android:text="Seguir"></TextView>
                     </LinearLayout>
 
                     <LinearLayout
@@ -263,14 +231,6 @@
                             android:layout_marginLeft="5dp"
                             android:layout_marginTop="15dp"
                             android:src="@mipmap/icone_verficado_influenciadores"></ImageView>
-
-                        <TextView
-                            android:layout_width="90dp"
-                            android:layout_height="40dp"
-                            android:layout_marginLeft="43dp"
-                            android:background="@color/cinzaClaroZup"
-                            android:gravity="center"
-                            android:text="Seguir"></TextView>
                     </LinearLayout>
 
                     <LinearLayout
@@ -299,14 +259,6 @@
                             android:layout_marginLeft="5dp"
                             android:layout_marginTop="15dp"
                             android:src="@mipmap/icone_verficado_influenciadores"></ImageView>
-
-                        <TextView
-                            android:layout_width="90dp"
-                            android:layout_height="40dp"
-                            android:layout_marginLeft="43dp"
-                            android:background="@color/cinzaClaroZup"
-                            android:gravity="center"
-                            android:text="Seguir"></TextView>
                     </LinearLayout>
 
                     <LinearLayout
@@ -335,14 +287,6 @@
                             android:layout_marginLeft="5dp"
                             android:layout_marginTop="15dp"
                             android:src="@mipmap/icone_verficado_influenciadores"></ImageView>
-
-                        <TextView
-                            android:layout_width="90dp"
-                            android:layout_height="40dp"
-                            android:layout_marginLeft="43dp"
-                            android:background="@color/cinzaClaroZup"
-                            android:gravity="center"
-                            android:text="Seguir"></TextView>
                     </LinearLayout>
 
                     <LinearLayout
@@ -371,14 +315,6 @@
                             android:layout_marginLeft="5dp"
                             android:layout_marginTop="15dp"
                             android:src="@mipmap/icone_verficado_influenciadores"></ImageView>
-
-                        <TextView
-                            android:layout_width="90dp"
-                            android:layout_height="40dp"
-                            android:layout_marginLeft="43dp"
-                            android:background="@color/cinzaClaroZup"
-                            android:gravity="center"
-                            android:text="Seguir"></TextView>
                     </LinearLayout>
 
                     <LinearLayout
@@ -407,14 +343,6 @@
                             android:layout_marginLeft="5dp"
                             android:layout_marginTop="15dp"
                             android:src="@mipmap/icone_verficado_influenciadores"></ImageView>
-
-                        <TextView
-                            android:layout_width="90dp"
-                            android:layout_height="40dp"
-                            android:layout_marginLeft="43dp"
-                            android:background="@color/cinzaClaroZup"
-                            android:gravity="center"
-                            android:text="Seguir"></TextView>
                     </LinearLayout>
                 </LinearLayout>
 
