@@ -1,7 +1,6 @@
 package school.sptech.zup.data.api
 
 import school.sptech.zup.domain.model.LoginRequest
-
 import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.GET

@@ -13,9 +13,8 @@ import school.sptech.zup.domain.model.DadosTelaCadastroCPF
 import school.sptech.zup.domain.model.RegisterRequest
 import school.sptech.zup.domain.model.Sessao
 import school.sptech.zup.network.ServiceProvider.service
-import school.sptech.zup.presenter.feed.Feed
 import school.sptech.zup.ui.PerfilUsuarioComum
-import school.sptech.zup.ui.PerfilUsuarioSemFormulario
+
 
 
 @Suppress("DEPRECATION")
