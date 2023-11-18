@@ -26,4 +26,8 @@ public interface ServiceApi {
 
     @POST("mobile/usuarios/perfil")
     fun SalvarPerfilUsuario(@Body perfilRequest: DadosEnvioApiFormularioPerfil) : Call<PerfilUsuarioResponse>
+
+    @GET("mobile/usuarios/perfil/influenciadores")
+    fun BuscaTodosUsuariosInfluencers(): Call<List<PerfilUsuarioResponse>>
+
 }
