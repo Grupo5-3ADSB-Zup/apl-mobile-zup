@@ -6,18 +6,28 @@ import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
-import school.sptech.zup.domain.model.FeedRequest
+import school.sptech.zup.data.model.FeedResponse
+import school.sptech.zup.data.model.PerfilUsuarioResponse
 import school.sptech.zup.data.model.RegisterResponse
 import school.sptech.zup.data.model.response.LoginResponse
+import school.sptech.zup.domain.model.DadosEnvioApiFormularioPerfil
+import school.sptech.zup.domain.model.RegisterRequest
 
 public interface ServiceApi {
 
-    @GET("/noticia/rss")
-    fun getFeed(): Call<List<FeedRequest>>
+    @GET("noticia/rss")
+    fun getFeed(): Call<List<FeedResponse>>
 
-    @POST("/cadastro/user/comum")
-    fun saveUser(@Body registerUser: RegisterResponse): Call<RegisterResponse>
+    @POST("cadastro/user/comum")
+    fun saveUser(@Body registerUser: RegisterRequest): Call<RegisterResponse>
 
     @POST("login/logar")
     fun login(@Body loginRequest: LoginRequest): Call<LoginResponse>
+
+    @POST("mobile/usuarios/perfil")
+    fun SalvarPerfilUsuario(@Body perfilRequest: DadosEnvioApiFormularioPerfil) : Call<PerfilUsuarioResponse>
+
+    @GET("mobile/usuarios/perfil/influenciadores")
+    fun BuscaTodosUsuariosInfluencers(): Call<List<PerfilUsuarioResponse>>
+
 }

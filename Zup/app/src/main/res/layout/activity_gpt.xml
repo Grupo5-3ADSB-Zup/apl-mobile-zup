@@ -5,125 +5,128 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/verdeZup"
-    tools:context=".ui.TelaConfiguracoes">
+    tools:context=".ui.Gpt">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-        <LinearLayout
+
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_alignParentTop="true"
-                android:background="@color/amareloZup"
-                android:orientation="horizontal">
-                <ImageView
-                    android:layout_width="18dp"
-                    android:layout_height="18dp"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="10dp"
-                    android:src="@mipmap/voltar_preto_sem_traco" />
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:layout_alignParentTop="true"
-                    android:background="@color/cinzaClaroZup"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginTop="8dp"
-                    android:orientation="horizontal">
-                    <ImageView
-                        android:layout_width="15dp"
-                        android:layout_height="15dp"
-                        android:layout_marginTop="7dp"
-                        android:layout_marginLeft="5dp"
-                        android:src="@mipmap/pesquisar">
-                    </ImageView>
-                    <EditText
-                        android:layout_width="280dp"
-                        android:layout_height="40dp"
-                        android:hint="|"
-                        android:inputType="textPassword">
-                    </EditText>
-                    <ImageView
-                        android:layout_width="15dp"
-                        android:layout_height="15dp"
-                        android:layout_marginTop="7dp"
-                        android:layout_marginLeft="25dp"
-                        android:src="@mipmap/close">
-                    </ImageView>
-                </LinearLayout>
-            </LinearLayout>
+            android:layout_height="match_parent">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
+
+                <!--        INICIO-->
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="120dp"
-                    android:paddingTop="30dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentTop="true"
+                    android:background="@color/amareloZup"
                     android:orientation="horizontal">
-                    <TextView
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:background="@color/cinzaClaroZup"
-                        android:text="Configurações"
-                        android:gravity="center"
-                        android:layout_weight="1">
-                    </TextView>
-                </LinearLayout>
 
+                    <ImageView
+                        android:id="@+id/buttonVoltar"
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="10dp"
+                        android:src="@mipmap/voltar_preto_sem_traco" />
+
+
+                </LinearLayout>
+                <!--MEIO-->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginHorizontal="30dp"
-                    android:paddingTop="50dp"
                     android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="20dp"
+                        android:background="#D7EAF0"
+                        android:text="IAZUP"
+                        android:textSize="30sp" />
+
+                    <View
+                        android:id="@+id/line_3"
+                        android:layout_width="390dp"
+                        android:layout_height="2dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/line_3" />
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="230dp"
-                        android:gravity="center"
-                        android:orientation="horizontal">
+                        android:layout_marginHorizontal="20dp"
+                        android:orientation="vertical">
+
                         <TextView
-                            android:id="@+id/refazerTeste"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:background="@color/amareloZup"
-                            android:textStyle="bold"
-                            android:layout_marginLeft="5dp"
-                            android:text="Refazer Teste de Perfil"
-                            android:padding="20dp"
-                            android:textSize="22dp">
-                        </TextView>
+                            android:text="Faça a sua pergunta para IAZUP sobre a noticia."
+                            android:textColor="#D7EAF0"
+                            android:textSize="30dp" />
+
+
                     </LinearLayout>
+
+                    <EditText
+                        android:id="@+id/etPerguntaGpt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginTop="5dp"
+                        android:backgroundTint="#D7EAF0"
+                        android:hint="|"
+                        android:shadowColor="@color/verdeZup"
+                        android:textColor="@color/verdeZup"
+                        android:textColorHint="#013440" />
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:layout_marginTop="250dp"
-                        android:orientation="horizontal">
-                        <TextView
-                            android:layout_width="100dp"
-                            android:layout_height="40dp"
-                            android:gravity="center"
-                            android:background="@color/vermelhoZup"
-                            android:textColor="@color/cinzaClaroZup"
-                            android:textStyle="bold"
-                            android:layout_marginLeft="5dp"
-                            android:text="sair"
-                            android:textSize="22dp">
-                        </TextView>
-                    </LinearLayout>
-                </LinearLayout>
+                        android:orientation="vertical">
 
+                        <TextView
+                            android:id="@+id/etConfirmarPergunta"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="10dp"
+                            android:text="Confirmar"
+                            android:textColor="@color/amareloZup"
+                            android:textSize="30sp" />
+
+                        <TextView
+                            android:id="@+id/tvRespostaGpt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginHorizontal="10dp"
+                            android:layout_marginTop="40dp"
+                            android:text="Você teve comprar isso, pq você é ruim demais"
+                            android:textColor="@color/amareloZup"
+                            android:textSize="25sp" />
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
             </LinearLayout>
-        </LinearLayout>
+
+        </ScrollView>
+        <!--FIM-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -137,6 +140,7 @@
                 android:layout_alignParentBottom="true"
                 android:gravity="center"
                 android:orientation="vertical">
+
                 <ImageView
                     android:layout_width="30dp"
                     android:layout_height="30dp"
@@ -145,12 +149,14 @@
                     android:src="@mipmap/icone_casa"
                     android:textStyle="bold" />
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="100dp"
                 android:layout_height="72dp"
                 android:layout_alignParentBottom="true"
                 android:gravity="center"
                 android:orientation="vertical">
+
                 <ImageView
                     android:layout_width="30dp"
                     android:layout_height="30dp"
@@ -159,12 +165,14 @@
                     android:src="@mipmap/icone_influencers"
                     android:textStyle="bold" />
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="100dp"
                 android:layout_height="72dp"
                 android:layout_alignParentBottom="true"
                 android:gravity="center"
                 android:orientation="vertical">
+
                 <ImageView
                     android:layout_width="30dp"
                     android:layout_height="30dp"
@@ -174,13 +182,14 @@
                     android:src="@mipmap/icone_notificacao"
                     android:textStyle="bold" />
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="72dp"
                 android:layout_alignParentBottom="true"
-                android:background="@color/cinzaClaroZup"
                 android:gravity="center"
                 android:orientation="vertical">
+
                 <ImageView
                     android:layout_width="30dp"
                     android:layout_height="30dp"

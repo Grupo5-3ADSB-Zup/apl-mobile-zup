@@ -12,6 +12,7 @@ import school.sptech.zup.TelaInicial
 import school.sptech.zup.data.model.response.LoginResponse
 import school.sptech.zup.domain.model.LoginRequest
 import school.sptech.zup.databinding.ActivityLoginEmailBinding
+import school.sptech.zup.domain.model.Sessao
 import school.sptech.zup.network.ServiceProvider.service
 
 class LoginEmail : AppCompatActivity() {
@@ -43,6 +44,11 @@ class LoginEmail : AppCompatActivity() {
                                 val loginResponse = response.body()
 
                                 if (loginResponse != null) {
+
+                                    val sessao = Sessao
+
+                                    sessao.nome = emailInput
+                                    sessao.idUsuario = loginResponse?.id.toString()
 
                                     iniciarLogin()
                                 } else {
@@ -82,6 +88,7 @@ class LoginEmail : AppCompatActivity() {
     }
 
     private fun iniciarLogin() {
+
         val intent = Intent(this, Feed::class.java)
         startActivity(intent)
     }

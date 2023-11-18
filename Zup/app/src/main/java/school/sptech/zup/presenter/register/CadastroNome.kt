@@ -8,6 +8,8 @@ import school.sptech.zup.R
 import school.sptech.zup.TelaInicial
 import school.sptech.zup.databinding.ActivityCadastroNomeBinding
 import school.sptech.zup.databinding.ActivityOnboarding1Binding
+import school.sptech.zup.domain.model.DadosTelaCadastroNomeRequest
+import school.sptech.zup.domain.model.DadosTelaFormularioPerfil1Request
 
 class CadastroNome : AppCompatActivity() {
 
@@ -27,11 +29,16 @@ class CadastroNome : AppCompatActivity() {
             val nome = binding.nomeEditText.text.toString()
             val sobrenome = binding.sobrenomeEditText.text.toString()
             val username = binding.usernameEditText.text.toString()
+            val checkBoxInfluencer = binding.checkBoxInfluencer.isChecked
 
-            cadastroSenha.putExtra("nome", nome)
-            cadastroSenha.putExtra("sobrenome", sobrenome)
-            cadastroSenha.putExtra("username", username)
+            val dados = DadosTelaCadastroNomeRequest(
+                nome = nome,
+                sobrenome = sobrenome,
+                username = username,
+                influencer = checkBoxInfluencer
+            )
 
+            cadastroSenha.putExtra("dados", dados)
             startActivity(cadastroSenha)
         }
 

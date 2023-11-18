@@ -3,10 +3,13 @@ package school.sptech.zup.presenter.register
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import school.sptech.zup.R
+import android.widget.Toast
 import school.sptech.zup.TelaInicial
 import school.sptech.zup.databinding.ActivityCadastroSenhaBinding
+import school.sptech.zup.domain.model.DadosTelaCadastroCPF
+import school.sptech.zup.domain.model.DadosTelaCadastroNomeRequest
 
+@Suppress("DEPRECATION")
 class CadastroSenha : AppCompatActivity() {
 
     val binding by lazy {
@@ -20,15 +23,28 @@ class CadastroSenha : AppCompatActivity() {
 
         binding.buttonContinuar.setOnClickListener {
 
-            val cadastroCPF = Intent(this, CadastroCPF::class.java)
+            val dadosCadastroNome =
+                intent.getSerializableExtra("dados") as? DadosTelaCadastroNomeRequest
 
             val senha = binding.senhaEditText.text.toString()
-            val confirmarSenha = binding.senhaEditText.text.toString()
+            val confirmarSenha = binding.confirmarSenhaEditText.text.toString()
 
-            cadastroCPF.putExtra("senha", senha)
-            cadastroCPF.putExtra("confirmarSenha", confirmarSenha)
+            if (senha.equals(confirmarSenha)){
+                val cadastroCPF = Intent(this, CadastroCPF::class.java)
 
-            startActivity(cadastroCPF)
+                val dados = DadosTelaCadastroCPF(
+                    nome = dadosCadastroNome?.nome.toString(),
+                    sobrenome = dadosCadastroNome?.sobrenome.toString(),
+                    username = dadosCadastroNome?.username.toString(),
+                    influencer = dadosCadastroNome?.influencer,
+                    senha = senha
+                )
+                cadastroCPF.putExtra("dados", dados)
+                startActivity(cadastroCPF)
+            }
+            else{
+                mostrarErroMensagem("Senhas Diferentes")
+            }
         }
 
         binding.buttonCancel.setOnClickListener {
@@ -38,5 +54,8 @@ class CadastroSenha : AppCompatActivity() {
 
         }
 
+    }
+    private fun mostrarErroMensagem(message: String) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 }

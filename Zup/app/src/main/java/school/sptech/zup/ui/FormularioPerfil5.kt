@@ -6,20 +6,19 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.RadioButton
 import android.widget.RadioGroup
+import android.widget.Toast
 import androidx.annotation.RequiresApi
-import com.google.gson.Gson
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import school.sptech.zup.R
-import school.sptech.zup.data.api.ServiceApi
-import school.sptech.zup.data.model.response.LoginResponse
-import school.sptech.zup.databinding.ActivityFormularioPerfil3Binding
+import school.sptech.zup.data.model.PerfilUsuarioResponse
 import school.sptech.zup.databinding.ActivityFormularioPerfil5Binding
 import school.sptech.zup.domain.model.DadosEnvioApiFormularioPerfil
-import school.sptech.zup.domain.model.DadosTelaFormularioPerfil1Request
-import school.sptech.zup.domain.model.DadosTelaFormularioPerfil2Request
-import school.sptech.zup.domain.model.DadosTelaFormularioPerfil3Request
 import school.sptech.zup.domain.model.DadosTelaFormularioPerfil4Request
-import school.sptech.zup.domain.model.DadosTelaFormularioPerfil5Request
-import java.io.IOException
+import school.sptech.zup.network.ServiceProvider
+import school.sptech.zup.network.ServiceProvider.service
+import school.sptech.zup.presenter.feed.Feed
 
 @Suppress("DEPRECATION")
 class FormularioPerfil5 : AppCompatActivity() {
@@ -64,7 +63,7 @@ class FormularioPerfil5 : AppCompatActivity() {
                 }
             }
 
-            val dadosEnvioApiFormularioPerfil = DadosEnvioApiFormularioPerfil(
+            val perfilRequest = DadosEnvioApiFormularioPerfil(
                 idUsuario = dadosFormularioParte4?.idUsuario.toString(),
                 tela1 = dadosFormularioParte4?.radioButtonTelaFormulario1.toString(),
                 tela2 = dadosFormularioParte4?.radioButtonTelaFormulario2.toString(),
@@ -74,7 +73,7 @@ class FormularioPerfil5 : AppCompatActivity() {
             )
 
             binding.buttonConcluir.setOnClickListener{
-                envioBaseDados(dadosEnvioApiFormularioPerfil)
+                envioBaseDados(perfilRequest)
             }
         }
     }
@@ -84,7 +83,43 @@ class FormularioPerfil5 : AppCompatActivity() {
         startActivity(intent)
     }
 
-    private fun envioBaseDados(dadosEnvioApiFormularioPerfil: DadosEnvioApiFormularioPerfil) {
-        // fazer nova chamada
+    private fun envioBaseDados(perfilRequest: DadosEnvioApiFormularioPerfil) {
+
+        val call = service.SalvarPerfilUsuario(perfilRequest)
+
+        call.enqueue(object : Callback<PerfilUsuarioResponse> {
+            override fun onResponse(
+                call: Call<PerfilUsuarioResponse>,
+                response: Response<PerfilUsuarioResponse>
+            ) {
+                if (response.isSuccessful) {
+                    val perfilResponse = response.body()
+
+                    // Chamar Sessão e Preencher com os dados do Usuário
+
+                    if (perfilResponse != null) {
+
+                        iniciarFeed()
+                    } else {
+                        mostrarErroMensagem("Credenciais inválidas")
+                    }
+                } else {
+                    mostrarErroMensagem("Erro na solicitação")
+                }
+            }
+
+            override fun onFailure(call: Call<PerfilUsuarioResponse>, t: Throwable) {
+                mostrarErroMensagem("Erro na rede: ${t.message}")
+            }
+        })
+    }
+
+    private fun iniciarFeed() {
+        val intent = Intent(this, Feed::class.java)
+        startActivity(intent)
+    }
+
+    private fun mostrarErroMensagem(message: String) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 }

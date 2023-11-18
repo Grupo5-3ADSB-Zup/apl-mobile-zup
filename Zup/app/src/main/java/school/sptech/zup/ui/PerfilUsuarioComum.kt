@@ -4,14 +4,11 @@ import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import androidx.annotation.RequiresApi
-import school.sptech.zup.R
+import androidx.lifecycle.ReportFragment.Companion.reportFragment
 import school.sptech.zup.data.model.response.LoginResponse
-import school.sptech.zup.databinding.ActivityLoginEmailBinding
 import school.sptech.zup.databinding.ActivityPerfilUsuarioComumBinding
-import school.sptech.zup.domain.model.DadosTelaFormularioPerfil1Request
-import school.sptech.zup.presenter.feed.Feed
+import school.sptech.zup.domain.model.Sessao
 
 
 @Suppress("DEPRECATION")
@@ -26,13 +23,17 @@ class PerfilUsuarioComum : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        val dadosLogin = intent.getSerializableExtra("dados") as? LoginResponse
-        if (dadosLogin != null) {
-            binding.nomeUsuario.text = dadosLogin.nome.toString()
-        }
+        val sessao = Sessao
 
+        var dadosLogin = intent.getSerializableExtra("dados") as? LoginResponse
+
+        if (sessao.nome == null){
+            binding.nomeUsuario.text = dadosLogin?.nome.toString()
+        }
+        else binding.nomeUsuario.text = sessao?.nome.toString()
 
         binding.buttonToFormularioPerfil.setOnClickListener{
+
             iniciarFormulario(dadosLogin)
         }
     }
