@@ -13,7 +13,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/verdeZup"
-        android:orientation="vertical">
+        android:orientation="vertical"
+
+        >
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -29,7 +31,7 @@
                 android:layout_height="wrap_content"
                 android:src="@drawable/baseline_person_24"
                 android:layout_weight="1"
-            />
+                />
 
             <EditText
                 android:layout_width="300dp"
@@ -41,39 +43,52 @@
                 android:drawableStart="@drawable/baseline_search_24"
                 android:paddingStart="8dp"
 
-            />
+                />
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/icon__chat"
                 android:layout_weight="1"
-            />
+                />
 
         </LinearLayout>
 
+
+
         <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/verdeZup"
-            android:orientation="vertical">
+            android:layout_height="match_parent"
+            >
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/recyclerViewFeed"
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/verdeZup"
+                >
+
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
 
-        </RelativeLayout>
-    </ScrollView>
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerViewFeed"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="8dp"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"/>
+
+                </LinearLayout>
+            </RelativeLayout>
+        </ScrollView>
 
     </LinearLayout>
 
-
-    <!-- TextView "Home" -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -81,83 +96,16 @@
         android:textColor="@color/amareloZup"
         android:textSize="36sp" />
 
-    <!-- RecyclerView -->
-
-    <!--FIM-->
-    <LinearLayout
-        android:layout_width="match_parent"
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="@color/amareloZup"
-        android:orientation="horizontal">
-
-        <LinearLayout
-            android:id="@+id/button_home"
-            android:layout_width="100dp"
-            android:layout_height="72dp"
-            android:layout_alignParentBottom="true"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:gravity="center"
-                android:onClick="pularOnboarding"
-                android:src="@mipmap/icone_casa"
-                android:textStyle="bold" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/button_pesquisar_influencers"
-            android:layout_width="100dp"
-            android:layout_height="72dp"
-            android:layout_alignParentBottom="true"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:gravity="center"
-                android:onClick="pularOnboarding"
-                android:src="@mipmap/icone_influencers"
-                android:textStyle="bold" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="100dp"
-            android:layout_height="72dp"
-            android:layout_alignParentBottom="true"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:background="@color/amareloZup"
-                android:gravity="center"
-                android:onClick="pularOnboarding"
-                android:src="@mipmap/icone_notificacao"
-                android:textStyle="bold" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/button_configuracoes"
-            android:layout_width="match_parent"
-            android:layout_height="72dp"
-            android:layout_alignParentBottom="true"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:gravity="center"
-                android:onClick="pularOnboarding"
-                android:src="@mipmap/icone_config"
-                android:textStyle="bold" />
-        </LinearLayout>
-    </LinearLayout>
+        android:background="@drawable/botao_backgroud"
+        android:elevation="2dp"
+        app:menu="@menu/botao_menu"
+        app:itemIconSize="30dp"
+        app:itemIconTint="@drawable/item_deslizar"
+        app:itemRippleColor="@android:color/transparent"
+        app:labelVisibilityMode="unlabeled"/>
 
 </RelativeLayout>
