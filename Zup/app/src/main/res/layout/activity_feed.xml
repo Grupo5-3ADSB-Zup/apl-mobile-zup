@@ -86,7 +86,6 @@
                 </LinearLayout>
             </RelativeLayout>
         </ScrollView>
-
     </LinearLayout>
 
     <TextView

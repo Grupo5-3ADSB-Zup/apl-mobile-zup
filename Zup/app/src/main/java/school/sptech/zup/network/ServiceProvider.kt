@@ -11,7 +11,8 @@ import java.util.concurrent.TimeUnit
 
 object ServiceProvider {
     //const val BASE_URL = "http://54.172.32.189:8080"
-    const val BASE_URL = "http://54.227.196.17:8080/"
+    const val BASE_URL = "http://52.91.118.13:8080/"
+
 
 
     val client = OkHttpClient.Builder()
