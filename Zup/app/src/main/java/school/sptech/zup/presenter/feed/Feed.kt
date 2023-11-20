@@ -28,8 +28,6 @@ class Feed : AppCompatActivity() {
         ActivityFeedBinding.inflate(layoutInflater)
     }
 
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
@@ -60,19 +58,5 @@ class Feed : AppCompatActivity() {
                 // Lidar com falhas de rede
             }
         })
-
-        binding.buttonHome.setOnClickListener{
-            call
         }
-
-        binding.buttonPesquisarInfluencers.setOnClickListener{
-            val intent = Intent(this, BuscarInfluenciadores::class.java)
-            startActivity(intent)
-        }
-
-        binding.buttonConfiguracoes.setOnClickListener{
-            val intent = Intent(this, TelaConfiguracoes::class.java)
-            startActivity(intent)
-        }
-    }
 }
