@@ -49,6 +49,7 @@ class LoginEmail : AppCompatActivity() {
 
                                     sessao.nome = emailInput
                                     sessao.idUsuario = loginResponse?.id.toString()
+                                    sessao.token = loginResponse?.token.toString()
 
                                     iniciarLogin()
                                 } else {

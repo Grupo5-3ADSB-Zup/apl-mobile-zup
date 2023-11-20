@@ -6,4 +6,5 @@ public object Sessao {
     var username:String = ""
     var idTpPerfil:Long = 0
     var primeiroAcesso:Boolean = true
+    var token: String = ""
 }

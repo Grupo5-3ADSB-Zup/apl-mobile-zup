@@ -21,8 +21,6 @@ class BuscarInfluenciadores : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        //val get = ServiceApi.buscarInfluenciadores()
-
 
         val call = ServiceProvider.service.BuscaTodosUsuariosInfluencers()
 

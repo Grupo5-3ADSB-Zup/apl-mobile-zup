@@ -12,6 +12,7 @@ import school.sptech.zup.domain.model.DadosTelaRefazerFormulario
 import school.sptech.zup.domain.model.Sessao
 import school.sptech.zup.presenter.register.CadastroNome
 
+@Suppress("DEPRECATION")
 class TelaConfiguracoes : AppCompatActivity() {
 
     private val binding by lazy {
