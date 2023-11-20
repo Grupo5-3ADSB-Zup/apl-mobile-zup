@@ -13,6 +13,7 @@ import school.sptech.zup.data.model.FeedResponse
 import school.sptech.zup.databinding.ActivityFeedBinding
 import school.sptech.zup.network.ServiceProvider.service
 import school.sptech.zup.ui.BuscarInfluenciadores
+import school.sptech.zup.ui.PerfilUsuarioSemFormulario
 import school.sptech.zup.ui.TelaConfiguracoes
 
 
@@ -58,5 +59,40 @@ class Feed : AppCompatActivity() {
                 // Lidar com falhas de rede
             }
         })
+
+        val botaoNavBar = binding.navBar
+
+        val menuInflate = menuInflater
+
+        menuInflate.inflate(R.menu.botao_menu, botaoNavBar.menu)
+
+        val menuItemHome = botaoNavBar.menu.findItem(R.id.botao_home)
+        val menuItemPesquisar = botaoNavBar.menu.findItem(R.id.botao_search)
+        val menuItemSettings = botaoNavBar.menu.findItem(R.id.botao_settings)
+        val menuItemPerfil = botaoNavBar.menu.findItem(R.id.botao_profile)
+
+        menuItemHome.setOnMenuItemClickListener  {
+            call
+            true
         }
+
+        menuItemPesquisar.setOnMenuItemClickListener{
+            val intent = Intent(this, BuscarInfluenciadores::class.java)
+            startActivity(intent)
+            true
+        }
+
+        menuItemSettings.setOnMenuItemClickListener{
+            val intent = Intent(this, TelaConfiguracoes::class.java)
+            startActivity(intent)
+            true
+        }
+
+        menuItemPerfil.setOnMenuItemClickListener{
+            val intent = Intent(this, PerfilUsuarioSemFormulario::class.java)
+            startActivity(intent)
+            true
+        }
+
+    }
 }
