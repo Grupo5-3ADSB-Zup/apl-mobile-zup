@@ -15,13 +15,13 @@ import school.sptech.zup.presenter.register.CadastroNome
 //@Suppress("DEPRECATION")
 class TelaConfiguracoes : AppCompatActivity() {
 
-    val binding by lazy {
-        ActivityTelaConfiguracoesBinding.inflate(layoutInflater)
-    }
+    //val binding by lazy {
+    //    ActivityTelaConfiguracoesBinding.inflate(layoutInflater)
+    //}
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(binding.root)
+        setContentView(R.layout.activity_tela_configuracoes)
 
 
         // val sessao = Sessao

@@ -5,73 +5,86 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/verdeZup"
-    tools:context=".ui.PerfilUsuarioSemFormulario">
+    tools:context=".ui.TelaConfiguracao2">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
-
-            <!--        INICIO-->
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="40dp"
                 android:layout_alignParentTop="true"
                 android:background="@color/amareloZup"
                 android:orientation="horizontal">
-
                 <ImageView
                     android:layout_width="18dp"
                     android:layout_height="18dp"
                     android:layout_gravity="center"
                     android:layout_marginLeft="10dp"
                     android:src="@mipmap/voltar_preto_sem_traco" />
-
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
                     android:layout_alignParentTop="true"
+                    android:background="@color/cinzaClaroZup"
+                    android:layout_marginRight="20dp"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="8dp"
-                    android:layout_marginRight="20dp"
-                    android:background="@color/cinzaClaroZup"
                     android:orientation="horizontal">
-
                     <ImageView
                         android:layout_width="15dp"
                         android:layout_height="15dp"
-                        android:layout_marginLeft="5dp"
                         android:layout_marginTop="7dp"
-                        android:src="@mipmap/pesquisar"></ImageView>
-
+                        android:layout_marginLeft="5dp"
+                        android:src="@mipmap/pesquisar">
+                    </ImageView>
                     <EditText
                         android:layout_width="280dp"
                         android:layout_height="40dp"
                         android:hint="|"
-                        android:inputType="textPassword"></EditText>
-
+                        android:inputType="textPassword">
+                    </EditText>
                     <ImageView
                         android:layout_width="15dp"
                         android:layout_height="15dp"
-                        android:layout_marginLeft="25dp"
                         android:layout_marginTop="7dp"
-                        android:src="@mipmap/close"></ImageView>
+                        android:layout_marginLeft="25dp"
+                        android:src="@mipmap/close">
+                    </ImageView>
                 </LinearLayout>
             </LinearLayout>
-            <!--MEIO-->
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
+                android:layout_height="match_parent"
+                android:orientation="vertical">
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="120dp"
+                    android:paddingTop="30dp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:background="@color/cinzaClaroZup"
+                        android:text="Configurações"
+                        android:gravity="center"
+                        android:layout_weight="1">
+                    </TextView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:layout_marginHorizontal="30dp"
                     android:orientation="vertical"
                     android:paddingTop="50dp">
@@ -79,71 +92,47 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="230dp"
+                        android:gravity="center"
                         android:orientation="horizontal">
 
-                        <ImageView
-                            android:layout_width="120dp"
-                            android:layout_height="120dp"
-                            android:background="@color/cinzaClaroZup"
-                            android:src="@mipmap/icone_perfil_usuario"></ImageView>
-
-                        <ImageView
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"
-                            android:layout_marginLeft="200dp"
-                            android:src="@mipmap/lapis_editar"></ImageView>
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:paddingTop="10dp">
-
                         <TextView
-                            android:id="@+id/nome_usuario"
+                            android:id="@+id/refazerTeste"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Nome Usuario"
-                            android:textColor="@color/amareloZup"
-                            android:textSize="25dp"></TextView>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:paddingTop="5dp"
-                            android:text="Nome e sobrenome"
-                            android:textColor="@color/amareloZup"
-                            android:textSize="16dp"></TextView>
+                            android:layout_marginLeft="5dp"
+                            android:background="@color/amareloZup"
+                            android:padding="20dp"
+                            android:text="Refazer Teste de Perfil"
+                            android:textSize="22dp"
+                            android:textStyle="bold"></TextView>
                     </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:paddingTop="30dp">
+                        android:layout_marginTop="45dp"
+                        android:gravity="center"
+                        android:orientation="horizontal">
 
                         <TextView
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
-                            android:layout_weight="1"
-                            android:background="@color/cinzaClaroZup"
+                            android:id="@+id/button_sair"
+                            android:layout_width="100dp"
+                            android:layout_height="40dp"
+                            android:layout_marginLeft="5dp"
+                            android:background="@color/vermelhoZup"
                             android:gravity="center"
-                            android:text="Seguindo"></TextView>
-
-                        <TextView
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
-                            android:layout_weight="1"
-                            android:background="@color/cinzaClaroZup"
-                            android:gravity="center"
-                            android:text="Seguidores"></TextView>
-
+                            android:text="sair"
+                            android:textColor="@color/cinzaClaroZup"
+                            android:textSize="22dp"
+                            android:textStyle="bold"></TextView>
                     </LinearLayout>
                 </LinearLayout>
+
             </LinearLayout>
         </LinearLayout>
-        <!--FIM-->
+        </ScrollView>
+
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/nav_bar"
             android:layout_width="wrap_content"

@@ -14,10 +14,12 @@ import school.sptech.zup.databinding.ActivityFeedBinding
 import school.sptech.zup.network.ServiceProvider.service
 import school.sptech.zup.ui.BuscarInfluenciadores
 import school.sptech.zup.ui.PerfilUsuarioSemFormulario
-import school.sptech.zup.ui.TelaConfiguracoes
+import school.sptech.zup.ui.TelaConfiguracao2
 
 
 class Feed : AppCompatActivity() {
+
+
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: FeedAdapter
@@ -72,14 +74,14 @@ class Feed : AppCompatActivity() {
             true
         }
 
-        menuItemPesquisar.setOnMenuItemClickListener {
+        menuItemPesquisar.setOnMenuItemClickListener{
             val intent = Intent(this, BuscarInfluenciadores::class.java)
             startActivity(intent)
             true
         }
 
-        menuItemSettings.setOnMenuItemClickListener {
-            val intent = Intent(this, TelaConfiguracoes::class.java)
+        menuItemSettings.setOnMenuItemClickListener{
+            val intent = Intent(this, TelaConfiguracao2::class.java)
             startActivity(intent)
             true
         }

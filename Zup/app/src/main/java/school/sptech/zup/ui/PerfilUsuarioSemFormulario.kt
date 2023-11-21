@@ -1,16 +1,16 @@
 package school.sptech.zup.ui
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import school.sptech.zup.R
-import school.sptech.zup.databinding.ActivityPerfilUsuarioInfluencerBinding
+import school.sptech.zup.data.model.response.LoginResponse
 import school.sptech.zup.databinding.ActivityPerfilUsuarioSemFormularioBinding
-import school.sptech.zup.presenter.feed.Feed
+import school.sptech.zup.databinding.ActivityTelaConfiguracao2Binding
+import school.sptech.zup.domain.model.Sessao
 
 class PerfilUsuarioSemFormulario : AppCompatActivity() {
 
-    private val binding by lazy {
+    val binding by lazy {
         ActivityPerfilUsuarioSemFormularioBinding.inflate(layoutInflater)
     }
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -47,5 +47,9 @@ class PerfilUsuarioSemFormulario : AppCompatActivity() {
             startActivity(intent)
             true
         }
+        setContentView(binding.root)
+
+        val sessao = Sessao
+        binding.nomeUsuario.text = sessao?.nome.toString()
     }
 }
