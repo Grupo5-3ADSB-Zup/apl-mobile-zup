@@ -26,12 +26,12 @@ public interface ServiceApi {
     fun login(@Body loginRequest: LoginRequest): Call<LoginResponse>
 
     @POST("mobile/usuarios/perfil")
-    fun SalvarPerfilUsuario(@Body perfilRequest: DadosEnvioApiFormularioPerfil) : Call<PerfilUsuarioResponse>
+    fun SalvarPerfilUsuario(@Body perfilRequest: DadosEnvioApiFormularioPerfil): Call<PerfilUsuarioResponse>
 
     @GET("mobile/usuarios/perfil/influenciadores")
     fun BuscaTodosUsuariosInfluencers(): Call<List<PerfilUsuarioResponse>>
 
     @POST("noticia/rss/info")
-    fun InserirNoticiasGPT(@Body gptRequest: GptRequest) : Call<GptResponse>
+    fun InserirNoticiasGPT(@Body gptRequest: GptRequest): Call<GptResponse>
 
 }

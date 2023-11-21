@@ -3,5 +3,5 @@ package school.sptech.zup.domain.model
 import java.io.Serializable
 
 data class DadosTelaRefazerFormulario(
-    val idUsuario : String
+    val idUsuario: String
 ) : Serializable

@@ -24,8 +24,8 @@ class TelaConfiguracoes : AppCompatActivity() {
         setContentView(binding.root)
 
 
-       // val sessao = Sessao
-       // val dadosLogin = intent.getSerializableExtra("dados") as? LoginResponse
+        // val sessao = Sessao
+        // val dadosLogin = intent.getSerializableExtra("dados") as? LoginResponse
 
         //val dados = DadosTelaRefazerFormulario(
         //    sessao?.idUsuario.toString()
@@ -35,6 +35,36 @@ class TelaConfiguracoes : AppCompatActivity() {
         //binding.refazerTeste.setOnClickListener {
         //    formularioParte1(dados)
         //}
+
+        val botaoNavBar = binding.navBar
+
+        val menuItemHome = botaoNavBar.menu.findItem(R.id.botao_home)
+        val menuItemPesquisar = botaoNavBar.menu.findItem(R.id.botao_search)
+        val menuItemSettings = botaoNavBar.menu.findItem(R.id.botao_settings)
+        val menuItemPerfil = botaoNavBar.menu.findItem(R.id.botao_profile)
+
+//        menuItemHome.setOnMenuItemClickListener {
+//            call
+//            true
+//        }
+
+        menuItemPesquisar.setOnMenuItemClickListener {
+            val intent = Intent(this, BuscarInfluenciadores::class.java)
+            startActivity(intent)
+            true
+        }
+
+        menuItemSettings.setOnMenuItemClickListener {
+            val intent = Intent(this, TelaConfiguracoes::class.java)
+            startActivity(intent)
+            true
+        }
+
+        menuItemPerfil.setOnMenuItemClickListener {
+            val intent = Intent(this, PerfilUsuarioSemFormulario::class.java)
+            startActivity(intent)
+            true
+        }
 
     }
 

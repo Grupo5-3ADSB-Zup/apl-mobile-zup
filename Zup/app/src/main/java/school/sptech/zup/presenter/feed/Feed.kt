@@ -19,8 +19,6 @@ import school.sptech.zup.ui.TelaConfiguracoes
 
 class Feed : AppCompatActivity() {
 
-
-
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: FeedAdapter
 
@@ -46,7 +44,9 @@ class Feed : AppCompatActivity() {
 
         val call = service.getFeed()
         call.enqueue(object : retrofit2.Callback<List<FeedResponse>> {
-            override fun onResponse(call: Call<List<FeedResponse>>, response: retrofit2.Response<List<FeedResponse>>) {
+            override fun onResponse(
+                call: Call<List<FeedResponse>>, response: retrofit2.Response<List<FeedResponse>>
+            ) {
                 if (response.isSuccessful) {
                     val posts = response.body() ?: emptyList()
                     adapter.updateData(posts)
@@ -67,24 +67,24 @@ class Feed : AppCompatActivity() {
         val menuItemSettings = botaoNavBar.menu.findItem(R.id.botao_settings)
         val menuItemPerfil = botaoNavBar.menu.findItem(R.id.botao_profile)
 
-        menuItemHome.setOnMenuItemClickListener  {
+        menuItemHome.setOnMenuItemClickListener {
             call
             true
         }
 
-        menuItemPesquisar.setOnMenuItemClickListener{
+        menuItemPesquisar.setOnMenuItemClickListener {
             val intent = Intent(this, BuscarInfluenciadores::class.java)
             startActivity(intent)
             true
         }
 
-        menuItemSettings.setOnMenuItemClickListener{
+        menuItemSettings.setOnMenuItemClickListener {
             val intent = Intent(this, TelaConfiguracoes::class.java)
             startActivity(intent)
             true
         }
 
-        menuItemPerfil.setOnMenuItemClickListener{
+        menuItemPerfil.setOnMenuItemClickListener {
             val intent = Intent(this, PerfilUsuarioSemFormulario::class.java)
             startActivity(intent)
             true

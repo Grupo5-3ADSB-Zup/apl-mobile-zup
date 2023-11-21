@@ -24,7 +24,7 @@ class FormularioPerfil3 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        binding.buttonVoltar.setOnClickListener{
+        binding.buttonVoltar.setOnClickListener {
             telaFormulario2()
         }
 
@@ -33,14 +33,15 @@ class FormularioPerfil3 : AppCompatActivity() {
 
         val radioGroup = findViewById<RadioGroup>(R.id.meuRadioGroup)
 
-        radioGroup.setOnCheckedChangeListener {group, checkedId ->
+        radioGroup.setOnCheckedChangeListener { group, checkedId ->
             var selecao = ""
-            when (checkedId){
+            when (checkedId) {
                 R.id.meu_RadioButton_valor1 -> {
                     val radioButton1 = findViewById<RadioButton>(R.id.meu_RadioButton_valor1)
                     val textoRadioButton1 = radioButton1.text.toString()
                     selecao = textoRadioButton1
                 }
+
                 R.id.meu_RadioButton_valor2 -> {
                     val radioButton2 = findViewById<RadioButton>(R.id.meu_RadioButton_valor2)
                     val textoRadioButton2 = radioButton2.text.toString()
@@ -52,6 +53,7 @@ class FormularioPerfil3 : AppCompatActivity() {
                     val textoRadioButton3 = radioButton3.text.toString()
                     selecao = textoRadioButton3
                 }
+
                 else -> {
                 }
             }
@@ -59,11 +61,42 @@ class FormularioPerfil3 : AppCompatActivity() {
                 idUsuario = dadosFormularioParte2?.idUsuario.toString(),
                 radioButtonTelaFormulario1 = dadosFormularioParte2?.radioButtonTelaFormulario1.toString(),
                 radioButtonTelaFormulario2 = dadosFormularioParte2?.radioButtonTelaFormulario2.toString(),
-                selecao)
+                selecao
+            )
 
-            binding.buttonPassarProximaEtapaFormulario4.setOnClickListener{
+            binding.buttonPassarProximaEtapaFormulario4.setOnClickListener {
                 formularioParte4(dados)
             }
+        }
+
+        val botaoNavBar = binding.navBar
+
+        val menuItemHome = botaoNavBar.menu.findItem(R.id.botao_home)
+        val menuItemPesquisar = botaoNavBar.menu.findItem(R.id.botao_search)
+        val menuItemSettings = botaoNavBar.menu.findItem(R.id.botao_settings)
+        val menuItemPerfil = botaoNavBar.menu.findItem(R.id.botao_profile)
+
+//        menuItemHome.setOnMenuItemClickListener {
+//            call
+//            true
+//        }
+
+        menuItemPesquisar.setOnMenuItemClickListener {
+            val intent = Intent(this, BuscarInfluenciadores::class.java)
+            startActivity(intent)
+            true
+        }
+
+        menuItemSettings.setOnMenuItemClickListener {
+            val intent = Intent(this, TelaConfiguracoes::class.java)
+            startActivity(intent)
+            true
+        }
+
+        menuItemPerfil.setOnMenuItemClickListener {
+            val intent = Intent(this, PerfilUsuarioSemFormulario::class.java)
+            startActivity(intent)
+            true
         }
     }
 

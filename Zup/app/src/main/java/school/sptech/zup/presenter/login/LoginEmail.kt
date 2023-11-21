@@ -22,49 +22,47 @@ class LoginEmail : AppCompatActivity() {
         ActivityLoginEmailBinding.inflate(layoutInflater)
     }
 
-        override fun onCreate(savedInstanceState: Bundle?) {
-            super.onCreate(savedInstanceState)
-            setContentView(binding.root)
-            binding.buttonContinuar.setOnClickListener{
-                val emailInput = binding.editTextEmail.text.toString()
-                val senhaInput = binding.editTextSenha.text.toString()
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(binding.root)
+        binding.buttonContinuar.setOnClickListener {
+            val emailInput = binding.editTextEmail.text.toString()
+            val senhaInput = binding.editTextSenha.text.toString()
 
 
+            val loginRequest = LoginRequest(emailInput, senhaInput)
 
-                val loginRequest = LoginRequest(emailInput, senhaInput)
+            val call = service.login(loginRequest)
 
-                val call = service.login(loginRequest)
+            call.enqueue(object : Callback<LoginResponse> {
+                override fun onResponse(
+                    call: Call<LoginResponse>, response: Response<LoginResponse>
+                ) {
+                    if (response.isSuccessful) {
+                        val loginResponse = response.body()
 
-                call.enqueue(object : Callback<LoginResponse> {
-                        override fun onResponse(
-                            call: Call<LoginResponse>,
-                            response: Response<LoginResponse>
-                        ) {
-                            if (response.isSuccessful) {
-                                val loginResponse = response.body()
+                        if (loginResponse != null) {
 
-                                if (loginResponse != null) {
+                            val sessao = Sessao
 
-                                    val sessao = Sessao
+                            sessao.nome = emailInput
+                            sessao.idUsuario = loginResponse?.id.toString()
+                            sessao.token = loginResponse?.token.toString()
 
-                                    sessao.nome = emailInput
-                                    sessao.idUsuario = loginResponse?.id.toString()
-                                    sessao.token = loginResponse?.token.toString()
-
-                                    iniciarLogin()
-                                } else {
-                                    mostrarErroMensagem("Credenciais inválidas")
-                                }
-                            } else {
-                                mostrarErroMensagem("Erro na solicitação")
-                            }
+                            iniciarLogin()
+                        } else {
+                            mostrarErroMensagem("Credenciais inválidas")
                         }
-
-                        override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
-                            mostrarErroMensagem("Erro na rede: ${t.message}")
-                        }
-                    })
+                    } else {
+                        mostrarErroMensagem("Erro na solicitação")
+                    }
                 }
+
+                override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
+                    mostrarErroMensagem("Erro na rede: ${t.message}")
+                }
+            })
+        }
 
 
 
