@@ -78,7 +78,7 @@ class FeedAdapter(private var feedItems: List<FeedResponse>) : RecyclerView.Adap
         val postTitulo: TextView = itemView.findViewById(R.id.PostTitulo)
         val postDescription: TextView = itemView.findViewById(R.id.PostDescricao)
         var postImage: ImageView = itemView.findViewById(R.id.PostImage)
-      //  var barraNoticia: Menu = itemView.findViewById(R.id.nav_item_noticia)
+        //var barraNoticia: Menu = itemView.findViewById(R.id.nav_item_noticia)
 
 
 
