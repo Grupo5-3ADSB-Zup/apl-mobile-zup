@@ -13,7 +13,6 @@ import school.sptech.zup.network.ServiceProvider
 class BuscarInfluenciadores : AppCompatActivity() {
 
     val binding by lazy {
-
         ActivityBuscarInfluenciadoresBinding.inflate(layoutInflater)
     }
 

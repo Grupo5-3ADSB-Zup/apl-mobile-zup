@@ -12,10 +12,10 @@ import school.sptech.zup.domain.model.DadosTelaRefazerFormulario
 import school.sptech.zup.domain.model.Sessao
 import school.sptech.zup.presenter.register.CadastroNome
 
-@Suppress("DEPRECATION")
+//@Suppress("DEPRECATION")
 class TelaConfiguracoes : AppCompatActivity() {
 
-    private val binding by lazy {
+    val binding by lazy {
         ActivityTelaConfiguracoesBinding.inflate(layoutInflater)
     }
 
@@ -24,25 +24,23 @@ class TelaConfiguracoes : AppCompatActivity() {
         setContentView(binding.root)
 
 
-        val sessao = Sessao
+       // val sessao = Sessao
+       // val dadosLogin = intent.getSerializableExtra("dados") as? LoginResponse
 
-        val dadosLogin = intent.getSerializableExtra("dados") as? LoginResponse
-
-        val dados = DadosTelaRefazerFormulario(
-            if (dadosLogin == null) sessao?.idUsuario.toString() else dadosLogin?.id.toString()
-        )
+        //val dados = DadosTelaRefazerFormulario(
+        //    sessao?.idUsuario.toString()
+        //)
 
 
-        binding.refazerTeste.setOnClickListener {
-
-            formularioParte1(dados)
-        }
+        //binding.refazerTeste.setOnClickListener {
+        //    formularioParte1(dados)
+        //}
 
     }
 
-    private fun formularioParte1(dados: DadosTelaRefazerFormulario) {
-        val intent = Intent(this, FormularioPerfil1::class.java)
-        intent.putExtra("dados", dados)
-        startActivity(intent)
-    }
+    //private fun formularioParte1(dados: DadosTelaRefazerFormulario) {
+    //    val intent = Intent(this, FormularioPerfil1::class.java)
+    //    intent.putExtra("dados", dados)
+    //    startActivity(intent)
+    //}
 }

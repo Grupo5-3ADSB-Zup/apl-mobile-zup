@@ -45,7 +45,7 @@ class Feed : AppCompatActivity() {
         recyclerView.adapter = adapter
 
         val call = service.getFeed()
-       val reponse = call.enqueue(object : retrofit2.Callback<List<FeedResponse>> {
+        call.enqueue(object : retrofit2.Callback<List<FeedResponse>> {
             override fun onResponse(call: Call<List<FeedResponse>>, response: retrofit2.Response<List<FeedResponse>>) {
                 if (response.isSuccessful) {
                     val posts = response.body() ?: emptyList()

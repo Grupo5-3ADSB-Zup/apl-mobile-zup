@@ -1,13 +1,18 @@
+import android.content.Intent
+import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
+import android.view.Menu
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import school.sptech.zup.R
 import school.sptech.zup.data.model.FeedResponse
+import school.sptech.zup.ui.Gpt
 
 class FeedAdapter(private var feedItems: List<FeedResponse>) : RecyclerView.Adapter<FeedAdapter.ViewHolder>() {
 
@@ -16,7 +21,7 @@ class FeedAdapter(private var feedItems: List<FeedResponse>) : RecyclerView.Adap
         return ViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+    public override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val post = feedItems[position]
 
         val (linkImagem, descricaoSemImagem) = tratarDescricao(post.descricao)
@@ -30,6 +35,15 @@ class FeedAdapter(private var feedItems: List<FeedResponse>) : RecyclerView.Adap
                 .into(holder.postImage)
             Log.d("FeedAdapter", "Loading image at position $position. Image URL: $it")
         }
+
+    //    val menuItemComentario = holder.barraNoticia.findItem(R.id.botao_comentario)
+    //    val menuItemGPT = holder.barraNoticia.findItem(R.id.botao_gpt)
+
+    //    menuItemGPT.setOnMenuItemClickListener{
+    //        val intent = Intent(holder.itemView.context, Gpt::class.java)
+    //        holder.itemView.context.startActivity(intent)
+    //        true
+    //    }
     }
 
     private fun tratarDescricao(descricao: String): Pair<String?, String> {
@@ -64,8 +78,11 @@ class FeedAdapter(private var feedItems: List<FeedResponse>) : RecyclerView.Adap
         val postTitulo: TextView = itemView.findViewById(R.id.PostTitulo)
         val postDescription: TextView = itemView.findViewById(R.id.PostDescricao)
         var postImage: ImageView = itemView.findViewById(R.id.PostImage)
+      //  var barraNoticia: Menu = itemView.findViewById(R.id.nav_item_noticia)
+
 
 
         // Adicione outros elementos do layout, se necessário
     }
+
 }

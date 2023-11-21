@@ -16,7 +16,6 @@ import school.sptech.zup.data.model.PerfilUsuarioResponse
 import school.sptech.zup.databinding.ActivityFormularioPerfil5Binding
 import school.sptech.zup.domain.model.DadosEnvioApiFormularioPerfil
 import school.sptech.zup.domain.model.DadosTelaFormularioPerfil4Request
-import school.sptech.zup.network.ServiceProvider
 import school.sptech.zup.network.ServiceProvider.service
 import school.sptech.zup.presenter.feed.Feed
 
