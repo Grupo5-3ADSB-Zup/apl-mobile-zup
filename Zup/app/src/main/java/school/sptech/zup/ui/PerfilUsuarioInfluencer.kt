@@ -36,8 +36,8 @@ class PerfilUsuarioInfluencer : AppCompatActivity() {
             true
         }
 
-        menuItemSettings.setOnMenuItemClickListener {
-            val intent = Intent(this, TelaConfiguracoes::class.java)
+        menuItemSettings.setOnMenuItemClickListener{
+            val intent = Intent(this, TelaConfiguracao2::class.java)
             startActivity(intent)
             true
         }

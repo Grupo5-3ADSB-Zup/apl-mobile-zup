@@ -1,5 +1,6 @@
 package school.sptech.zup.ui
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import school.sptech.zup.R
@@ -7,6 +8,7 @@ import school.sptech.zup.data.model.response.LoginResponse
 import school.sptech.zup.databinding.ActivityPerfilUsuarioSemFormularioBinding
 import school.sptech.zup.databinding.ActivityTelaConfiguracao2Binding
 import school.sptech.zup.domain.model.Sessao
+import school.sptech.zup.presenter.feed.Feed
 
 class PerfilUsuarioSemFormulario : AppCompatActivity() {
 
@@ -36,8 +38,8 @@ class PerfilUsuarioSemFormulario : AppCompatActivity() {
             true
         }
 
-        menuItemSettings.setOnMenuItemClickListener {
-            val intent = Intent(this, TelaConfiguracoes::class.java)
+        menuItemSettings.setOnMenuItemClickListener{
+            val intent = Intent(this, TelaConfiguracao2::class.java)
             startActivity(intent)
             true
         }
@@ -47,7 +49,12 @@ class PerfilUsuarioSemFormulario : AppCompatActivity() {
             startActivity(intent)
             true
         }
-        setContentView(binding.root)
+
+        menuItemPerfil.setOnMenuItemClickListener {
+            val intent = Intent(this, PerfilUsuarioSemFormulario::class.java)
+            startActivity(intent)
+            true
+        }
 
         val sessao = Sessao
         binding.nomeUsuario.text = sessao?.nome.toString()

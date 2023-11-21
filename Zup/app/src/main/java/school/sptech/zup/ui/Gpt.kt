@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import school.sptech.zup.R
 import school.sptech.zup.databinding.ActivityGptBinding
-import school.sptech.zup.databinding.ActivityLoginEmailBinding
 import school.sptech.zup.presenter.feed.Feed
 
 class Gpt : AppCompatActivity() {
@@ -37,8 +36,8 @@ class Gpt : AppCompatActivity() {
             true
         }
 
-        menuItemSettings.setOnMenuItemClickListener {
-            val intent = Intent(this, TelaConfiguracoes::class.java)
+        menuItemSettings.setOnMenuItemClickListener{
+            val intent = Intent(this, TelaConfiguracao2::class.java)
             startActivity(intent)
             true
         }

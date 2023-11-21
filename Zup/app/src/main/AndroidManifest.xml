@@ -100,7 +100,7 @@
             android:name=".presenter.login.LoginSenha"
             android:exported="false" />
         <activity
-            android:name=".presenter.login.LoginEmail"
+            android:name=".presenter.login.Login"
             android:exported="false" />
         <activity
             android:name=".TelaInicial"
