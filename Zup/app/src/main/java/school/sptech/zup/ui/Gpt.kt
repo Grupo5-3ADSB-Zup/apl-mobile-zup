@@ -6,6 +6,7 @@ import android.os.Bundle
 import school.sptech.zup.R
 import school.sptech.zup.databinding.ActivityGptBinding
 import school.sptech.zup.databinding.ActivityLoginEmailBinding
+import school.sptech.zup.presenter.feed.Feed
 
 class Gpt : AppCompatActivity() {
 
@@ -24,10 +25,11 @@ class Gpt : AppCompatActivity() {
         val menuItemSettings = botaoNavBar.menu.findItem(R.id.botao_settings)
         val menuItemPerfil = botaoNavBar.menu.findItem(R.id.botao_profile)
 
-//        menuItemHome.setOnMenuItemClickListener {
-//            call
-//            true
-//        }
+        menuItemHome.setOnMenuItemClickListener {
+            val intent = Intent(this, Feed::class.java)
+            startActivity(intent)
+            true
+        }
 
         menuItemPesquisar.setOnMenuItemClickListener {
             val intent = Intent(this, BuscarInfluenciadores::class.java)

@@ -85,10 +85,11 @@ class FormularioPerfil5 : AppCompatActivity() {
         val menuItemSettings = botaoNavBar.menu.findItem(R.id.botao_settings)
         val menuItemPerfil = botaoNavBar.menu.findItem(R.id.botao_profile)
 
-//        menuItemHome.setOnMenuItemClickListener {
-//            call
-//            true
-//        }
+        menuItemHome.setOnMenuItemClickListener {
+            val intent = Intent(this, Feed::class.java)
+            startActivity(intent)
+            true
+        }
 
         menuItemPesquisar.setOnMenuItemClickListener {
             val intent = Intent(this, BuscarInfluenciadores::class.java)

@@ -10,6 +10,7 @@ import school.sptech.zup.data.model.response.LoginResponse
 import school.sptech.zup.databinding.ActivityFormularioPerfil1Binding
 import school.sptech.zup.domain.model.DadosTelaFormularioPerfil1Request
 import school.sptech.zup.domain.model.Sessao
+import school.sptech.zup.presenter.feed.Feed
 
 @Suppress("DEPRECATION")
 class FormularioPerfil1 : AppCompatActivity() {
@@ -68,10 +69,11 @@ class FormularioPerfil1 : AppCompatActivity() {
         val menuItemPerfil = botaoNavBar.menu.findItem(R.id.botao_profile)
 
 
-//        menuItemHome.setOnMenuItemClickListener {
-//            call
-//            true
-//        }
+        menuItemHome.setOnMenuItemClickListener {
+            val intent = Intent(this, Feed::class.java)
+            startActivity(intent)
+            true
+        }
 
         menuItemPesquisar.setOnMenuItemClickListener {
             val intent = Intent(this, BuscarInfluenciadores::class.java)

@@ -6,6 +6,7 @@ import android.os.Bundle
 import school.sptech.zup.R
 import school.sptech.zup.databinding.ActivityFormularioPerfil4Binding
 import school.sptech.zup.databinding.ActivityPerfilUsuarioInfluencerBinding
+import school.sptech.zup.presenter.feed.Feed
 
 class PerfilUsuarioInfluencer : AppCompatActivity() {
 
@@ -23,10 +24,11 @@ class PerfilUsuarioInfluencer : AppCompatActivity() {
         val menuItemSettings = botaoNavBar.menu.findItem(R.id.botao_settings)
         val menuItemPerfil = botaoNavBar.menu.findItem(R.id.botao_profile)
 
-//        menuItemHome.setOnMenuItemClickListener {
-//            call
-//            true
-//        }
+        menuItemHome.setOnMenuItemClickListener {
+            val intent = Intent(this, Feed::class.java)
+            startActivity(intent)
+            true
+        }
 
         menuItemPesquisar.setOnMenuItemClickListener {
             val intent = Intent(this, BuscarInfluenciadores::class.java)

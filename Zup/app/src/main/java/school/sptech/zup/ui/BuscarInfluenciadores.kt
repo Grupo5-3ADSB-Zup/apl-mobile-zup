@@ -11,6 +11,7 @@ import school.sptech.zup.R
 import school.sptech.zup.data.model.PerfilUsuarioResponse
 import school.sptech.zup.databinding.ActivityBuscarInfluenciadoresBinding
 import school.sptech.zup.network.ServiceProvider
+import school.sptech.zup.presenter.feed.Feed
 
 class BuscarInfluenciadores : AppCompatActivity() {
 
@@ -59,10 +60,11 @@ class BuscarInfluenciadores : AppCompatActivity() {
         val menuItemSettings = botaoNavBar.menu.findItem(R.id.botao_settings)
         val menuItemPerfil = botaoNavBar.menu.findItem(R.id.botao_profile)
 
-//        menuItemHome.setOnMenuItemClickListener {
-//            call
-//            true
-//        }
+        menuItemHome.setOnMenuItemClickListener {
+            val intent = Intent(this, Feed::class.java)
+            startActivity(intent)
+            true
+        }
 
         menuItemPesquisar.setOnMenuItemClickListener {
             val intent = Intent(this, BuscarInfluenciadores::class.java)
