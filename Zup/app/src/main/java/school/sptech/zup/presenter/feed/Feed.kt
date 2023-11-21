@@ -14,7 +14,7 @@ import school.sptech.zup.databinding.ActivityFeedBinding
 import school.sptech.zup.network.ServiceProvider.service
 import school.sptech.zup.ui.BuscarInfluenciadores
 import school.sptech.zup.ui.PerfilUsuarioSemFormulario
-import school.sptech.zup.ui.TelaConfiguracoes
+import school.sptech.zup.ui.TelaConfiguracao2
 
 
 class Feed : AppCompatActivity() {
@@ -79,7 +79,7 @@ class Feed : AppCompatActivity() {
         }
 
         menuItemSettings.setOnMenuItemClickListener{
-            val intent = Intent(this, TelaConfiguracoes::class.java)
+            val intent = Intent(this, TelaConfiguracao2::class.java)
             startActivity(intent)
             true
         }
