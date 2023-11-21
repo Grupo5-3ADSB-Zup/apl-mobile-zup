@@ -116,6 +116,7 @@
                         android:orientation="horizontal">
 
                         <TextView
+                            android:id="@+id/button_sair"
                             android:layout_width="100dp"
                             android:layout_height="40dp"
                             android:layout_marginLeft="5dp"
