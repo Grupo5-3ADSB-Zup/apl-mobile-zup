@@ -23,33 +23,12 @@ class Login : AppCompatActivity() {
         ActivityLoginBinding.inflate(layoutInflater)
     }
 
-    // COLOCAR UMA FORMA DE DESLOGAR DA APLICAÇÃO (CONFIGURAÇÕES)
-
-    //val sharedPreferences = getSharedPreferences("NomeDaSuaSharedPreferences", Context.MODE_PRIVATE)
-
-    // Cria um editor para modificar o SharedPreferences
-    //val editor = sharedPreferences.edit()
-
-    // Limpa todos os dados
-    //editor.clear()
-
-    // Aplica as mudanças
-    //editor.apply()
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
         val sessao = Sessao
-
-        val sharedPreferences = getSharedPreferences("ZupShared", Context.MODE_PRIVATE)
-
-        val valorToken = sharedPreferences.getString("token", null)
-        val valorNome = sharedPreferences.getString("nome", null)
-
-        if(valorToken != null && valorNome != null)
-            iniciarLoginOffiline()
 
         binding.buttonContinuar.setOnClickListener {
             val emailInput = binding.editTextEmail.text.toString()
@@ -98,11 +77,6 @@ class Login : AppCompatActivity() {
             startActivity(intent)
 
         }
-    }
-
-    private fun iniciarLoginOffiline() {
-        val intent = Intent(this, Feed::class.java)
-        startActivity(intent)
     }
 
     private fun addsharedPreferences(loginResponse: LoginResponse) {
