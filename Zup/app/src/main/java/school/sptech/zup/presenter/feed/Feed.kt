@@ -13,7 +13,8 @@ import school.sptech.zup.data.model.FeedResponse
 import school.sptech.zup.databinding.ActivityFeedBinding
 import school.sptech.zup.network.ServiceProvider.service
 import school.sptech.zup.ui.BuscarInfluenciadores
-import school.sptech.zup.ui.TelaConfiguracoes
+import school.sptech.zup.ui.PerfilUsuarioSemFormulario
+import school.sptech.zup.ui.TelaConfiguracao2
 
 
 class Feed : AppCompatActivity() {
@@ -27,8 +28,6 @@ class Feed : AppCompatActivity() {
     private val binding by lazy {
         ActivityFeedBinding.inflate(layoutInflater)
     }
-
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -47,7 +46,9 @@ class Feed : AppCompatActivity() {
 
         val call = service.getFeed()
         call.enqueue(object : retrofit2.Callback<List<FeedResponse>> {
-            override fun onResponse(call: Call<List<FeedResponse>>, response: retrofit2.Response<List<FeedResponse>>) {
+            override fun onResponse(
+                call: Call<List<FeedResponse>>, response: retrofit2.Response<List<FeedResponse>>
+            ) {
                 if (response.isSuccessful) {
                     val posts = response.body() ?: emptyList()
                     adapter.updateData(posts)
@@ -61,18 +62,35 @@ class Feed : AppCompatActivity() {
             }
         })
 
-        binding.buttonHome.setOnClickListener{
+        val botaoNavBar = binding.navBar
+
+        val menuItemHome = botaoNavBar.menu.findItem(R.id.botao_home)
+        val menuItemPesquisar = botaoNavBar.menu.findItem(R.id.botao_search)
+        val menuItemSettings = botaoNavBar.menu.findItem(R.id.botao_settings)
+        val menuItemPerfil = botaoNavBar.menu.findItem(R.id.botao_profile)
+
+        menuItemHome.setOnMenuItemClickListener {
             call
+            true
         }
 
-        binding.buttonPesquisarInfluencers.setOnClickListener{
+        menuItemPesquisar.setOnMenuItemClickListener{
             val intent = Intent(this, BuscarInfluenciadores::class.java)
             startActivity(intent)
+            true
         }
 
-        binding.buttonConfiguracoes.setOnClickListener{
-            val intent = Intent(this, TelaConfiguracoes::class.java)
+        menuItemSettings.setOnMenuItemClickListener{
+            val intent = Intent(this, TelaConfiguracao2::class.java)
             startActivity(intent)
+            true
         }
+
+        menuItemPerfil.setOnMenuItemClickListener {
+            val intent = Intent(this, PerfilUsuarioSemFormulario::class.java)
+            startActivity(intent)
+            true
+        }
+
     }
 }

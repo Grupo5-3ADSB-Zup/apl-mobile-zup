@@ -1,16 +1,17 @@
 package school.sptech.zup.data.api
 
 import school.sptech.zup.domain.model.LoginRequest
-
 import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
 import school.sptech.zup.data.model.FeedResponse
+import school.sptech.zup.data.model.GptResponse
 import school.sptech.zup.data.model.PerfilUsuarioResponse
 import school.sptech.zup.data.model.RegisterResponse
 import school.sptech.zup.data.model.response.LoginResponse
 import school.sptech.zup.domain.model.DadosEnvioApiFormularioPerfil
+import school.sptech.zup.domain.model.GptRequest
 import school.sptech.zup.domain.model.RegisterRequest
 
 public interface ServiceApi {
@@ -25,9 +26,12 @@ public interface ServiceApi {
     fun login(@Body loginRequest: LoginRequest): Call<LoginResponse>
 
     @POST("mobile/usuarios/perfil")
-    fun SalvarPerfilUsuario(@Body perfilRequest: DadosEnvioApiFormularioPerfil) : Call<PerfilUsuarioResponse>
+    fun SalvarPerfilUsuario(@Body perfilRequest: DadosEnvioApiFormularioPerfil): Call<PerfilUsuarioResponse>
 
     @GET("mobile/usuarios/perfil/influenciadores")
     fun BuscaTodosUsuariosInfluencers(): Call<List<PerfilUsuarioResponse>>
+
+    @POST("noticia/rss/info")
+    fun InserirNoticiasGPT(@Body gptRequest: GptRequest): Call<GptResponse>
 
 }

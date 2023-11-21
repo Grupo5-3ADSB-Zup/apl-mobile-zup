@@ -4,7 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import school.sptech.zup.databinding.ActivityTelaInicialBinding
-import school.sptech.zup.presenter.login.LoginEmail
+import school.sptech.zup.presenter.login.Login
 
 class TelaInicial : AppCompatActivity() {
 
@@ -19,7 +19,7 @@ class TelaInicial : AppCompatActivity() {
 
         binding.buttonLogin.setOnClickListener {
 
-            val telaLogin = Intent(this, LoginEmail::class.java)
+            val telaLogin = Intent(this, Login::class.java)
 
             startActivity(telaLogin)
         }

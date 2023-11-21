@@ -16,7 +16,6 @@ import school.sptech.zup.data.model.PerfilUsuarioResponse
 import school.sptech.zup.databinding.ActivityFormularioPerfil5Binding
 import school.sptech.zup.domain.model.DadosEnvioApiFormularioPerfil
 import school.sptech.zup.domain.model.DadosTelaFormularioPerfil4Request
-import school.sptech.zup.network.ServiceProvider
 import school.sptech.zup.network.ServiceProvider.service
 import school.sptech.zup.presenter.feed.Feed
 
@@ -31,7 +30,7 @@ class FormularioPerfil5 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        binding.buttonVoltar.setOnClickListener{
+        binding.buttonVoltar.setOnClickListener {
             telaFormulario4()
         }
 
@@ -40,14 +39,15 @@ class FormularioPerfil5 : AppCompatActivity() {
 
         val radioGroup = findViewById<RadioGroup>(R.id.meuRadioGroup)
 
-        radioGroup.setOnCheckedChangeListener {group, checkedId ->
+        radioGroup.setOnCheckedChangeListener { group, checkedId ->
             var selecao = ""
-            when (checkedId){
+            when (checkedId) {
                 R.id.meu_RadioButton_valor1 -> {
                     val radioButton1 = findViewById<RadioButton>(R.id.meu_RadioButton_valor1)
                     val textoRadioButton1 = radioButton1.text.toString()
                     selecao = textoRadioButton1
                 }
+
                 R.id.meu_RadioButton_valor2 -> {
                     val radioButton2 = findViewById<RadioButton>(R.id.meu_RadioButton_valor2)
                     val textoRadioButton2 = radioButton2.text.toString()
@@ -59,6 +59,7 @@ class FormularioPerfil5 : AppCompatActivity() {
                     val textoRadioButton3 = radioButton3.text.toString()
                     selecao = textoRadioButton3
                 }
+
                 else -> {
                 }
             }
@@ -72,9 +73,40 @@ class FormularioPerfil5 : AppCompatActivity() {
                 tela5 = selecao
             )
 
-            binding.buttonConcluir.setOnClickListener{
+            binding.buttonConcluir.setOnClickListener {
                 envioBaseDados(perfilRequest)
             }
+        }
+
+        val botaoNavBar = binding.navBar
+
+        val menuItemHome = botaoNavBar.menu.findItem(R.id.botao_home)
+        val menuItemPesquisar = botaoNavBar.menu.findItem(R.id.botao_search)
+        val menuItemSettings = botaoNavBar.menu.findItem(R.id.botao_settings)
+        val menuItemPerfil = botaoNavBar.menu.findItem(R.id.botao_profile)
+
+        menuItemHome.setOnMenuItemClickListener {
+            val intent = Intent(this, Feed::class.java)
+            startActivity(intent)
+            true
+        }
+
+        menuItemPesquisar.setOnMenuItemClickListener {
+            val intent = Intent(this, BuscarInfluenciadores::class.java)
+            startActivity(intent)
+            true
+        }
+
+        menuItemSettings.setOnMenuItemClickListener{
+            val intent = Intent(this, TelaConfiguracao2::class.java)
+            startActivity(intent)
+            true
+        }
+
+        menuItemPerfil.setOnMenuItemClickListener {
+            val intent = Intent(this, PerfilUsuarioSemFormulario::class.java)
+            startActivity(intent)
+            true
         }
     }
 
@@ -89,8 +121,7 @@ class FormularioPerfil5 : AppCompatActivity() {
 
         call.enqueue(object : Callback<PerfilUsuarioResponse> {
             override fun onResponse(
-                call: Call<PerfilUsuarioResponse>,
-                response: Response<PerfilUsuarioResponse>
+                call: Call<PerfilUsuarioResponse>, response: Response<PerfilUsuarioResponse>
             ) {
                 if (response.isSuccessful) {
                     val perfilResponse = response.body()

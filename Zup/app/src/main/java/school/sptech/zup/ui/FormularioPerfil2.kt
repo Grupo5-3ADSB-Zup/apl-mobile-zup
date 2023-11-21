@@ -11,6 +11,7 @@ import school.sptech.zup.R
 import school.sptech.zup.databinding.ActivityFormularioPerfil2Binding
 import school.sptech.zup.domain.model.DadosTelaFormularioPerfil1Request
 import school.sptech.zup.domain.model.DadosTelaFormularioPerfil2Request
+import school.sptech.zup.presenter.feed.Feed
 
 @Suppress("DEPRECATION")
 class FormularioPerfil2 : AppCompatActivity() {
@@ -23,7 +24,7 @@ class FormularioPerfil2 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        binding.buttonVoltar.setOnClickListener{
+        binding.buttonVoltar.setOnClickListener {
             telaFormulario1()
         }
 
@@ -34,14 +35,15 @@ class FormularioPerfil2 : AppCompatActivity() {
 
         val radioGroup = findViewById<RadioGroup>(R.id.meuRadioGroup)
 
-        radioGroup.setOnCheckedChangeListener {group, checkedId ->
+        radioGroup.setOnCheckedChangeListener { group, checkedId ->
             var selecao = ""
-            when (checkedId){
+            when (checkedId) {
                 R.id.meu_RadioButton_valor1 -> {
                     val radioButton1 = findViewById<RadioButton>(R.id.meu_RadioButton_valor1)
                     val textoRadioButton1 = radioButton1.text.toString()
                     selecao = textoRadioButton1
                 }
+
                 R.id.meu_RadioButton_valor2 -> {
                     val radioButton2 = findViewById<RadioButton>(R.id.meu_RadioButton_valor2)
                     val textoRadioButton2 = radioButton2.text.toString()
@@ -53,6 +55,7 @@ class FormularioPerfil2 : AppCompatActivity() {
                     val textoRadioButton3 = radioButton3.text.toString()
                     selecao = textoRadioButton3
                 }
+
                 else -> {
                 }
             }
@@ -62,9 +65,40 @@ class FormularioPerfil2 : AppCompatActivity() {
                 selecao
             )
 
-            binding.buttonPassarProximaEtapaFormulario3.setOnClickListener{
+            binding.buttonPassarProximaEtapaFormulario3.setOnClickListener {
                 formularioParte3(dados)
             }
+        }
+
+        val botaoNavBar = binding.navBar
+
+        val menuItemHome = botaoNavBar.menu.findItem(R.id.botao_home)
+        val menuItemPesquisar = botaoNavBar.menu.findItem(R.id.botao_search)
+        val menuItemSettings = botaoNavBar.menu.findItem(R.id.botao_settings)
+        val menuItemPerfil = botaoNavBar.menu.findItem(R.id.botao_profile)
+
+        menuItemHome.setOnMenuItemClickListener {
+            val intent = Intent(this, Feed::class.java)
+            startActivity(intent)
+            true
+        }
+
+        menuItemPesquisar.setOnMenuItemClickListener {
+            val intent = Intent(this, BuscarInfluenciadores::class.java)
+            startActivity(intent)
+            true
+        }
+
+        menuItemSettings.setOnMenuItemClickListener{
+            val intent = Intent(this, TelaConfiguracao2::class.java)
+            startActivity(intent)
+            true
+        }
+
+        menuItemPerfil.setOnMenuItemClickListener {
+            val intent = Intent(this, PerfilUsuarioSemFormulario::class.java)
+            startActivity(intent)
+            true
         }
     }
 

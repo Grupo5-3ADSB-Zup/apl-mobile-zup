@@ -11,53 +11,58 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_alignParentTop="true"
                 android:background="@color/amareloZup"
                 android:orientation="horizontal">
+
                 <ImageView
                     android:layout_width="18dp"
                     android:layout_height="18dp"
                     android:layout_gravity="center"
                     android:layout_marginLeft="10dp"
                     android:src="@mipmap/voltar_preto_sem_traco" />
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
                     android:layout_alignParentTop="true"
-                    android:background="@color/cinzaClaroZup"
-                    android:layout_marginRight="20dp"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="8dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@color/cinzaClaroZup"
                     android:orientation="horizontal">
+
                     <ImageView
                         android:layout_width="15dp"
                         android:layout_height="15dp"
-                        android:layout_marginTop="7dp"
                         android:layout_marginLeft="5dp"
-                        android:src="@mipmap/pesquisar">
-                    </ImageView>
+                        android:layout_marginTop="7dp"
+                        android:src="@mipmap/pesquisar"></ImageView>
+
                     <EditText
                         android:layout_width="280dp"
                         android:layout_height="40dp"
                         android:hint="|"
-                        android:inputType="textPassword">
-                    </EditText>
+                        android:inputType="textPassword"></EditText>
+
                     <ImageView
                         android:layout_width="15dp"
                         android:layout_height="15dp"
-                        android:layout_marginTop="7dp"
                         android:layout_marginLeft="25dp"
-                        android:src="@mipmap/close">
-                    </ImageView>
+                        android:layout_marginTop="7dp"
+                        android:src="@mipmap/close"></ImageView>
                 </LinearLayout>
             </LinearLayout>
+
             <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
@@ -66,79 +71,84 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="30dp"
-                    android:paddingTop="50dp"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:paddingTop="50dp">
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
+
                         <ImageView
                             android:layout_width="120dp"
                             android:layout_height="120dp"
                             android:background="@color/cinzaClaroZup"
-                            android:src="@mipmap/icone_perfil_usuario">
-                        </ImageView>
+                            android:src="@mipmap/icone_perfil_usuario"></ImageView>
+
                         <ImageView
                             android:layout_width="20dp"
                             android:layout_height="20dp"
                             android:layout_marginLeft="200dp"
-                            android:src="@mipmap/lapis_editar">
-                        </ImageView>
+                            android:src="@mipmap/lapis_editar"></ImageView>
                     </LinearLayout>
+
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:paddingTop="10dp"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        android:paddingTop="10dp">
+
                         <TextView
                             android:id="@+id/nome_usuario"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Nome Usuario"
-                            android:textSize="25dp"
-                            android:textColor="@color/amareloZup">
-                        </TextView>
+                            android:textColor="@color/amareloZup"
+                            android:textSize="25dp"></TextView>
                     </LinearLayout>
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:paddingTop="30dp"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:paddingTop="30dp">
+
                         <TextView
                             android:layout_width="30dp"
                             android:layout_height="30dp"
+                            android:layout_weight="1"
                             android:background="@color/cinzaClaroZup"
-                            android:text="Seguindo"
                             android:gravity="center"
-                            android:layout_weight="1">
-                        </TextView>
+                            android:text="Seguindo"></TextView>
+
                         <TextView
                             android:layout_width="30dp"
                             android:layout_height="30dp"
-                            android:gravity="center"
+                            android:layout_weight="1"
                             android:background="@color/cinzaClaroZup"
-                            android:text="Seguidores"
-                            android:layout_weight="1">
-                        </TextView>
+                            android:gravity="center"
+                            android:text="Seguidores"></TextView>
                     </LinearLayout>
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="475dp"
                         android:gravity="center"
                         android:orientation="vertical">
+
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:orientation="vertical">
+
                             <TextView
                                 android:layout_width="200dp"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
+                                android:text="Descubra agora o seu tipo de perfil"
                                 android:textColor="@color/cinzaClaroZup"
                                 android:textSize="40dp"
-                                android:textStyle="bold"
-                                android:text="Descubra agora o seu tipo de perfil">
-                            </TextView>
+                                android:textStyle="bold"></TextView>
 
                             <TextView
                                 android:id="@+id/buttonToFormularioPerfil"
@@ -156,71 +166,19 @@
 
             </ScrollView>
         </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/nav_bar"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:background="@color/amareloZup"
-            android:orientation="horizontal">
-
-            <LinearLayout
-                android:layout_width="100dp"
-                android:layout_height="72dp"
-                android:layout_alignParentBottom="true"
-                android:gravity="center"
-                android:orientation="vertical">
-                <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:gravity="center"
-                    android:onClick="pularOnboarding"
-                    android:src="@mipmap/icone_casa"
-                    android:textStyle="bold" />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="100dp"
-                android:layout_height="72dp"
-                android:layout_alignParentBottom="true"
-                android:gravity="center"
-                android:orientation="vertical">
-                <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:gravity="center"
-                    android:onClick="pularOnboarding"
-                    android:src="@mipmap/icone_influencers"
-                    android:textStyle="bold" />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="100dp"
-                android:layout_height="72dp"
-                android:layout_alignParentBottom="true"
-                android:gravity="center"
-                android:orientation="vertical">
-                <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:background="@color/amareloZup"
-                    android:gravity="center"
-                    android:onClick="pularOnboarding"
-                    android:src="@mipmap/icone_notificacao"
-                    android:textStyle="bold" />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="72dp"
-                android:layout_alignParentBottom="true"
-                android:gravity="center"
-                android:orientation="vertical">
-                <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:gravity="center"
-                    android:onClick="pularOnboarding"
-                    android:src="@mipmap/icone_config"
-                    android:textStyle="bold" />
-            </LinearLayout>
-        </LinearLayout>
+            android:background="@drawable/botao_backgroud"
+            android:elevation="2dp"
+            app:itemIconSize="30dp"
+            app:itemIconTint="@drawable/item_deslizar"
+            app:itemRippleColor="@android:color/transparent"
+            app:labelVisibilityMode="unlabeled"
+            app:menu="@menu/botao_menu" />
     </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
