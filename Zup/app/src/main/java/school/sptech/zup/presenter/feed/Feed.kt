@@ -70,7 +70,8 @@ class Feed : AppCompatActivity() {
         val menuItemPerfil = botaoNavBar.menu.findItem(R.id.botao_profile)
 
         menuItemHome.setOnMenuItemClickListener {
-            call
+            val intent = Intent(this, Feed::class.java)
+            startActivity(intent)
             true
         }
 
