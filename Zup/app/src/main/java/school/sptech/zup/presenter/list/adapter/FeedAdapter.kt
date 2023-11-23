@@ -99,7 +99,7 @@ class FeedAdapter(private var feedItems: List<FeedResponse>) : RecyclerView.Adap
                         )
 
                         val intent = Intent(itemView.context, Gpt::class.java)
-                        intent.putExtra("publicacaoId", dados)
+                        intent.putExtra("dados", dados)
                         itemView.context.startActivity(intent)
                         true
                     }
