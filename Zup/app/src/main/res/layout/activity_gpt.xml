@@ -73,7 +73,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Faça a sua pergunta para IAZUP sobre a noticia."
+                            android:text="@string/fa_a_a_sua_pergunta_para_zupia_sobre_a_noticia"
                             android:textColor="#D7EAF0"
                             android:textSize="30dp" />
 
@@ -103,7 +103,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
                             android:layout_marginTop="10dp"
-                            android:text="Confirmar"
+                            android:text="@string/continuar"
                             android:textColor="@color/amareloZup"
                             android:textSize="30sp" />
 
