@@ -4,9 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import school.sptech.zup.R
-import school.sptech.zup.data.model.response.LoginResponse
 import school.sptech.zup.databinding.ActivityPerfilUsuarioSemFormularioBinding
-import school.sptech.zup.databinding.ActivityTelaConfiguracao2Binding
 import school.sptech.zup.domain.model.Sessao
 import school.sptech.zup.presenter.feed.Feed
 
@@ -18,6 +16,9 @@ class PerfilUsuarioSemFormulario : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+
+        val sessao = Sessao
+        binding.nomeUsuario.text = sessao?.nome.toString()
 
         val botaoNavBar = binding.navBar
 
@@ -55,8 +56,5 @@ class PerfilUsuarioSemFormulario : AppCompatActivity() {
             startActivity(intent)
             true
         }
-
-        val sessao = Sessao
-        binding.nomeUsuario.text = sessao?.nome.toString()
     }
 }

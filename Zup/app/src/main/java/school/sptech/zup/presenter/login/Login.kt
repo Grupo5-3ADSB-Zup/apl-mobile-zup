@@ -98,7 +98,7 @@ class Login : AppCompatActivity() {
     }
 
     private fun iniciarLogin(emailInput: String, sessao: Sessao, loginResponse: LoginResponse) {
-        sessao.nome = emailInput
+        sessao.nome = loginResponse?.nome.toString()
         sessao.idUsuario = loginResponse?.id.toString()
         sessao.token = loginResponse?.token.toString()
 
