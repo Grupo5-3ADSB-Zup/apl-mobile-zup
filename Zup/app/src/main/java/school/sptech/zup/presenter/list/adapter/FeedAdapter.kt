@@ -86,7 +86,6 @@ class FeedAdapter(private var feedItems: List<FeedResponse>) : RecyclerView.Adap
         var barraNoticia: BottomNavigationView = itemView.findViewById(R.id.nav_item_noticia)
 
         init {
-            // Configurar o clique no ícone de comentários
             barraNoticia.setOnNavigationItemSelectedListener { menuItem ->
                 when (menuItem.itemId) {
                     R.id.botao_gpt -> {
