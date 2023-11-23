@@ -14,6 +14,7 @@ import com.bumptech.glide.Glide
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import school.sptech.zup.R
 import school.sptech.zup.data.model.FeedResponse
+import school.sptech.zup.domain.model.DadosEnvioTelaGptRequest
 import school.sptech.zup.presenter.feed.Feed
 import school.sptech.zup.ui.Gpt
 
@@ -89,10 +90,16 @@ class FeedAdapter(private var feedItems: List<FeedResponse>) : RecyclerView.Adap
             barraNoticia.setOnNavigationItemSelectedListener { menuItem ->
                 when (menuItem.itemId) {
                     R.id.botao_gpt -> {
-                      //  val idNoticia = feedItems[adapterPosition].id
+                        val id = feedItems[adapterPosition].id
+                        val titulo = feedItems[adapterPosition].titulo
+
+                      val  dados = DadosEnvioTelaGptRequest(
+                            id = id,
+                            titulo = titulo
+                        )
 
                         val intent = Intent(itemView.context, Gpt::class.java)
-                      //  intent.putExtra("publicacaoId", idNoticia)
+                        intent.putExtra("publicacaoId", dados)
                         itemView.context.startActivity(intent)
                         true
                     }
