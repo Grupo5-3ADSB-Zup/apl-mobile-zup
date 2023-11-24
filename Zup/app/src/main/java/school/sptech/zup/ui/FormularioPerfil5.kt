@@ -16,6 +16,7 @@ import school.sptech.zup.data.model.PerfilUsuarioResponse
 import school.sptech.zup.databinding.ActivityFormularioPerfil5Binding
 import school.sptech.zup.domain.model.DadosEnvioApiFormularioPerfil
 import school.sptech.zup.domain.model.DadosTelaFormularioPerfil4Request
+import school.sptech.zup.domain.model.Sessao
 import school.sptech.zup.network.ServiceProvider.service
 import school.sptech.zup.presenter.feed.Feed
 
@@ -125,6 +126,10 @@ class FormularioPerfil5 : AppCompatActivity() {
             ) {
                 if (response.isSuccessful) {
                     val perfilResponse = response.body()
+
+                    var sessao = Sessao
+
+                    sessao.idTpPerfil = perfilResponse.IdPerfil.toLong()
 
                     // Chamar Sessão e Preencher com os dados do Usuário
 
