@@ -47,6 +47,8 @@ class Gpt : AppCompatActivity() {
                     if (response.isSuccessful) {
                         val response = response.body()
 
+                        binding.tvRespostaGpt.text = response?.resposta.toString()
+
                         if (response != null) {
                         } else {
                             mostrarErroMensagem("Credenciais inválidas")
