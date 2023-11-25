@@ -1,5 +1,6 @@
 package school.sptech.zup.presenter.login
 
+import android.content.Context
 import school.sptech.zup.presenter.feed.Feed
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -22,9 +23,13 @@ class Login : AppCompatActivity() {
         ActivityLoginBinding.inflate(layoutInflater)
     }
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+
+        val sessao = Sessao
+
         binding.buttonContinuar.setOnClickListener {
             val emailInput = binding.editTextEmail.text.toString()
             val senhaInput = binding.editTextSenha.text.toString()
@@ -42,14 +47,9 @@ class Login : AppCompatActivity() {
                         val loginResponse = response.body()
 
                         if (loginResponse != null) {
+                                addsharedPreferences(loginResponse)
+                                iniciarLogin(emailInput, sessao, loginResponse)
 
-                            val sessao = Sessao
-
-                            sessao.nome = emailInput
-                            sessao.idUsuario = loginResponse?.id.toString()
-                            sessao.token = loginResponse?.token.toString()
-
-                            iniciarLogin()
                         } else {
                             mostrarErroMensagem("Credenciais inválidas")
                         }
@@ -63,9 +63,6 @@ class Login : AppCompatActivity() {
                 }
             })
         }
-
-
-
 
         binding.buttonCancel.setOnClickListener {
 
@@ -82,11 +79,28 @@ class Login : AppCompatActivity() {
         }
     }
 
+    private fun addsharedPreferences(loginResponse: LoginResponse) {
+        val sharedPreferences = getSharedPreferences("ZupShared", Context.MODE_PRIVATE)
+
+        // Cria um editor para modificar o SharedPreferences
+        val editor = sharedPreferences.edit()
+
+        // Adiciona dados chave-valor
+        editor.putString("nome", loginResponse.nome)
+        editor.putString("token", loginResponse.token)
+
+        // Salva as mudanças
+        editor.apply()
+    }
+
     private fun credencial(email: String, senha: String): Boolean {
         return (email == "joao@email.com" && senha == "123123") || (email == "monteiro@email.com" && senha == "123")
     }
 
-    private fun iniciarLogin() {
+    private fun iniciarLogin(emailInput: String, sessao: Sessao, loginResponse: LoginResponse) {
+        sessao.nome = loginResponse?.nome.toString()
+        sessao.idUsuario = loginResponse?.id.toString()
+        sessao.token = loginResponse?.token.toString()
 
         val intent = Intent(this, Feed::class.java)
         startActivity(intent)

@@ -1,11 +1,11 @@
 package school.sptech.zup.ui
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import school.sptech.zup.R
 import school.sptech.zup.data.model.response.LoginResponse
-import school.sptech.zup.databinding.ActivityBuscarInfluenciadoresBinding
 import school.sptech.zup.databinding.ActivityTelaConfiguracao2Binding
 import school.sptech.zup.domain.model.DadosTelaRefazerFormulario
 import school.sptech.zup.domain.model.Sessao
@@ -34,7 +34,7 @@ class TelaConfiguracao2 : AppCompatActivity() {
         }
 
         binding.buttonSair.setOnClickListener {
-            retornarFeed()
+            sairZup()
         }
 
         val botaoNavBar = binding.navBar
@@ -70,9 +70,20 @@ class TelaConfiguracao2 : AppCompatActivity() {
 
     }
 
-    private fun retornarFeed() {
-        val intent = Intent(this, Feed::class.java)
-        startActivity(intent)
+    private fun sairZup() {
+
+        val sharedPreferences = getSharedPreferences("ZupShared", Context.MODE_PRIVATE)
+
+        // Cria um editor para modificar o SharedPreferences
+        val editor = sharedPreferences.edit()
+
+        // Limpa todos os dados
+        editor.clear()
+
+        // Aplica as mudanças
+        editor.apply()
+
+        finishAffinity()
     }
 
     private fun formularioParte1(dados: DadosTelaRefazerFormulario) {

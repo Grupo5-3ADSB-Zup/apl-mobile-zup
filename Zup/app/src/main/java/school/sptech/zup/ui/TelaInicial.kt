@@ -1,9 +1,11 @@
 package school.sptech.zup
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import school.sptech.zup.databinding.ActivityTelaInicialBinding
+import school.sptech.zup.presenter.feed.Feed
 import school.sptech.zup.presenter.login.Login
 
 class TelaInicial : AppCompatActivity() {
@@ -17,19 +19,33 @@ class TelaInicial : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        binding.buttonLogin.setOnClickListener {
+        val sharedPreferences = getSharedPreferences("ZupShared", Context.MODE_PRIVATE)
 
-            val telaLogin = Intent(this, Login::class.java)
+        val valorToken = sharedPreferences.getString("token", null)
+        val valorNome = sharedPreferences.getString("nome", null)
 
-            startActivity(telaLogin)
+        if(valorToken != null && valorNome != null)
+            iniciarLoginOffiline()
+        else {
+            binding.buttonLogin.setOnClickListener {
+
+                val telaLogin = Intent(this, Login::class.java)
+
+                startActivity(telaLogin)
+            }
+
+            binding.buttonCadastrar.setOnClickListener {
+
+                val onboarding1 = Intent(this, Onboarding1::class.java)
+
+                startActivity(onboarding1)
+            }
         }
+    }
 
-        binding.buttonCadastrar.setOnClickListener {
-
-            val onboarding1 = Intent(this, Onboarding1::class.java)
-
-            startActivity(onboarding1)
-        }
+    private fun iniciarLoginOffiline() {
+        val intent = Intent(this, Feed::class.java)
+        startActivity(intent)
     }
 
 //    fun entrarLogin(view: View) {

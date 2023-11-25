@@ -1,5 +1,6 @@
 package school.sptech.zup.presenter.register
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -61,9 +62,8 @@ class CadastroCPF : AppCompatActivity() {
 
                                     val sessao = Sessao
 
-                                    sessao.nome = nomeInteiro
-                                    sessao.username = username
-                                    sessao.idUsuario = RegistroResponse?.id.toString()
+                                    guardarDados(sessao, nomeInteiro, username, RegistroResponse)
+
 
                                     perfilUsuarioComum()
                                 } else {
@@ -82,6 +82,28 @@ class CadastroCPF : AppCompatActivity() {
             }
         }
     }
+
+    private fun guardarDados(sessao: Sessao, nomeInteiro: String, username: String, registroResponse: RegisterResponse) {
+        sessao.nome = nomeInteiro
+        sessao.username = username
+        sessao.idUsuario = registroResponse?.id.toString()
+
+        // Offiline
+        val sharedPreferences = getSharedPreferences("ZupShared", Context.MODE_PRIVATE)
+
+        val editor = sharedPreferences.edit()
+
+        // Adiciona dados chave-valor
+        editor.putInt("idUsuario", registroResponse.id.toInt())
+        editor.putString("nome", registroResponse.nome)
+        editor.putString("username", registroResponse.username)
+        editor.putBoolean("influencer", registroResponse.influencer)
+
+
+        // Salva as mudanças
+        editor.apply()
+    }
+
     private fun perfilUsuarioComum() {
         val intent = Intent(this, PerfilUsuarioComum::class.java)
         startActivity(intent)

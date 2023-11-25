@@ -1,5 +1,6 @@
 package school.sptech.zup.ui
 
+import android.content.Context
 import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
@@ -16,6 +17,7 @@ import school.sptech.zup.data.model.PerfilUsuarioResponse
 import school.sptech.zup.databinding.ActivityFormularioPerfil5Binding
 import school.sptech.zup.domain.model.DadosEnvioApiFormularioPerfil
 import school.sptech.zup.domain.model.DadosTelaFormularioPerfil4Request
+import school.sptech.zup.domain.model.Sessao
 import school.sptech.zup.network.ServiceProvider.service
 import school.sptech.zup.presenter.feed.Feed
 
@@ -126,9 +128,16 @@ class FormularioPerfil5 : AppCompatActivity() {
                 if (response.isSuccessful) {
                     val perfilResponse = response.body()
 
-                    // Chamar Sessão e Preencher com os dados do Usuário
+                    val sessao = Sessao
 
                     if (perfilResponse != null) {
+                        guardarDados(sessao, perfilResponse)
+
+                        val sharedPreferences = getSharedPreferences("ZupShared", Context.MODE_PRIVATE)
+
+                        val valorInfluencer = sharedPreferences.getBoolean("influencer", false)
+
+                        if (valorInfluencer == true) //Iniciar Activity de Cadastro Influencer
 
                         iniciarFeed()
                     } else {
@@ -143,6 +152,26 @@ class FormularioPerfil5 : AppCompatActivity() {
                 mostrarErroMensagem("Erro na rede: ${t.message}")
             }
         })
+    }
+
+    private fun guardarDados(sessao: Sessao, perfilResponse: PerfilUsuarioResponse?) {
+
+        sessao.idTpPerfil = perfilResponse?.IdPerfil!!
+
+
+        val sharedPreferences = getSharedPreferences("ZupShared", Context.MODE_PRIVATE)
+
+        val editor = sharedPreferences.edit()
+
+        // Adiciona dados chave-valor
+        editor.putLong("IdPerfil", perfilResponse?.IdPerfil!!)
+        editor.putString("DescPerfil", perfilResponse.DescPerfil)
+        editor.putString("LinkYoutube", perfilResponse.LinkYoutube)
+        editor.putString("LinkTikTok", perfilResponse.LinkTikTok)
+        editor.putString("LinkInstagram", perfilResponse.LinkInstagram)
+
+        // Salva as mudanças
+        editor.apply()
     }
 
     private fun iniciarFeed() {
