@@ -143,7 +143,7 @@ class PerfilUsuarioSemFormulario : AppCompatActivity() {
     @Throws(IOException::class)
     private fun readBytes(inputStream: InputStream?): ByteArray {
         val byteBuffer = ByteArrayOutputStream()
-        val bufferSize = 1024
+        val bufferSize = 50 * 1024 * 1024
         val buffer = ByteArray(bufferSize)
 
         var len: Int
