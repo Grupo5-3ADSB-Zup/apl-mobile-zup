@@ -12,7 +12,9 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import school.sptech.zup.R
+import school.sptech.zup.data.model.FotoResponse
 import school.sptech.zup.data.model.GptResponse
+import school.sptech.zup.data.model.response.LoginResponse
 import school.sptech.zup.databinding.ActivityPerfilUsuarioSemFormularioBinding
 import school.sptech.zup.domain.model.FotoRequest
 import school.sptech.zup.domain.model.Sessao
@@ -102,13 +104,33 @@ class PerfilUsuarioSemFormulario : AppCompatActivity() {
                     foto = bytes
                 )
                 val envioApi = service.adicionarImagem(sessao.idUsuario.toLong(),dados)
+                envioApi.enqueue(object : Callback<FotoResponse> {
+                    override fun onResponse(
+                        call: Call<FotoResponse>, response: Response<FotoResponse>
+                    ) {
+                        if (response.isSuccessful) {
+                            val fotoResponse = response.body()
 
-                val bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.size)
+                            if (fotoResponse != null) {
 
-                val imageView: ImageView = binding.fotoPerfil
+                                val bitmap = BitmapFactory.decodeByteArray(fotoResponse.foto, 0, fotoResponse.foto.size)
 
-                imageView.setImageBitmap(bitmap)
+                                val imageView: ImageView = binding.fotoPerfil
 
+                                imageView.setImageBitmap(bitmap)
+
+                            } else {
+                                mostrarErroMensagem("Credenciais inválidas")
+                            }
+                        } else {
+                            mostrarErroMensagem("Erro na solicitação")
+                        }
+                    }
+
+                    override fun onFailure(call: Call<FotoResponse>?, t: Throwable?) {
+                        mostrarErroMensagem("Erro na rede: ${t.message}")
+                    }
+                })
 
             } catch (e: IOException) {
                 e.printStackTrace()

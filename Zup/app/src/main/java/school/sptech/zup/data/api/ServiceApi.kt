@@ -8,6 +8,7 @@ import retrofit2.http.PATCH
 import retrofit2.http.POST
 import retrofit2.http.Path
 import school.sptech.zup.data.model.FeedResponse
+import school.sptech.zup.data.model.FotoResponse
 import school.sptech.zup.data.model.GptResponse
 import school.sptech.zup.data.model.PerfilUsuarioResponse
 import school.sptech.zup.data.model.RegisterResponse
@@ -38,6 +39,6 @@ public interface ServiceApi {
     fun InserirNoticiasGPT(@Body gptRequest: GptRequest): Call<GptResponse>
 
     @PATCH("/foto/{idUsuario}")
-    fun adicionarImagem(@Path("idUsuario") idUsuario: Long , @Body foto : FotoRequest)
+    fun adicionarImagem(@Path("idUsuario") idUsuario: Long , @Body foto : FotoRequest) : Call<FotoResponse>
 
 }
