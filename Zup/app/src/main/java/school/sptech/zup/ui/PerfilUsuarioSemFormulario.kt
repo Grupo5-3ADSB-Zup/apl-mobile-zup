@@ -128,7 +128,9 @@ class PerfilUsuarioSemFormulario : AppCompatActivity() {
                     }
 
                     override fun onFailure(call: Call<FotoResponse>?, t: Throwable?) {
-                        mostrarErroMensagem("Erro na rede: ${t.message}")
+                        if (t != null) {
+                            mostrarErroMensagem("Erro na rede: ${t.message}")
+                        }
                     }
                 })
 
