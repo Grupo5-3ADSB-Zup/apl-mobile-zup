@@ -1,11 +1,12 @@
 package school.sptech.zup.ui
 
-import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import android.graphics.BitmapFactory
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
+import android.util.Base64
 import android.widget.ImageView
 import android.widget.Toast
 import retrofit2.Call
@@ -13,7 +14,6 @@ import retrofit2.Callback
 import retrofit2.Response
 import school.sptech.zup.R
 import school.sptech.zup.data.model.FotoResponse
-import school.sptech.zup.data.model.GptResponse
 import school.sptech.zup.data.model.response.LoginResponse
 import school.sptech.zup.databinding.ActivityPerfilUsuarioSemFormularioBinding
 import school.sptech.zup.domain.model.FotoRequest
@@ -39,8 +39,18 @@ class PerfilUsuarioSemFormulario : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        binding.nomeUsuario.text = sessao?.nome.toString()
-        binding.usernameUsuario.text = sessao?.username.toString()
+        val sharedPreferences = getSharedPreferences("ZupShared", Context.MODE_PRIVATE)
+
+        val valorUsername = sharedPreferences.getString("username", null)
+        val valorNome = sharedPreferences.getString("nome", null)
+
+        if(sessao?.nome ==  ""){
+            binding.nomeUsuario.text = valorNome
+            binding.usernameUsuario.text = valorUsername
+        }else{
+            binding.nomeUsuario.text = sessao?.nome.toString()
+            binding.usernameUsuario.text = sessao?.username.toString()
+        }
 
         binding.editarFoto.setOnClickListener{
             abrirGaleria()
@@ -96,14 +106,21 @@ class PerfilUsuarioSemFormulario : AppCompatActivity() {
             // A imagem foi escolhida com sucesso
             val selectedImageUri = data.data
             try {
+
+                val sharedPreferences = getSharedPreferences("ZupShared", Context.MODE_PRIVATE)
+                val valorIdUsario = sharedPreferences.getLong("idUsuario", 0)
+
+
                 // Convertendo a imagem para bytes
                 val inputStream: InputStream? = contentResolver.openInputStream(selectedImageUri!!)
                 val bytes = readBytes(inputStream)
 
+                val base64String: String = Base64.encodeToString(bytes, Base64.DEFAULT)
+
                 val dados = FotoRequest(
-                    foto = bytes
+                    foto = base64String
                 )
-                val envioApi = service.adicionarImagem(sessao.idUsuario.toLong(),dados)
+                val envioApi = service.adicionarImagem(valorIdUsario, dados )
                 envioApi.enqueue(object : Callback<FotoResponse> {
                     override fun onResponse(
                         call: Call<FotoResponse>, response: Response<FotoResponse>
@@ -113,11 +130,7 @@ class PerfilUsuarioSemFormulario : AppCompatActivity() {
 
                             if (fotoResponse != null) {
 
-                                val bitmap = BitmapFactory.decodeByteArray(fotoResponse.foto, 0, fotoResponse.foto.size)
-
-                                val imageView: ImageView = binding.fotoPerfil
-
-                                imageView.setImageBitmap(bitmap)
+                                colocandoResponseNaFotoPerfil(fotoResponse)
 
                             } else {
                                 mostrarErroMensagem("Credenciais inválidas")
@@ -138,6 +151,15 @@ class PerfilUsuarioSemFormulario : AppCompatActivity() {
                 e.printStackTrace()
             }
         }
+    }
+
+    private fun colocandoResponseNaFotoPerfil(fotoResponse: FotoResponse) {
+
+        val bitmap = BitmapFactory.decodeByteArray(fotoResponse.foto, 0, fotoResponse.foto.size)
+
+        val imageView: ImageView = binding.fotoPerfil
+
+        imageView.setImageBitmap(bitmap)
     }
 
     @Throws(IOException::class)
