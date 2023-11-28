@@ -89,7 +89,7 @@
                         android:backgroundTint="#D7EAF0"
                         android:hint="|"
                         android:shadowColor="@color/verdeZup"
-                        android:textColor="@color/verdeZup"
+                        android:textColor="@color/white"
                         android:textColorHint="#013440" />
 
                     <LinearLayout

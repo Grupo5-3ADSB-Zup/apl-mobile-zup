@@ -1,20 +1,23 @@
 package school.sptech.zup.ui
 
-import android.app.Activity
+import android.content.Context
 import android.content.Intent
+import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
+import android.util.Base64
 import android.widget.ImageView
 import android.widget.Toast
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
+import com.bumptech.glide.request.RequestOptions
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import school.sptech.zup.R
 import school.sptech.zup.data.model.FotoResponse
-import school.sptech.zup.data.model.GptResponse
-import school.sptech.zup.data.model.response.LoginResponse
 import school.sptech.zup.databinding.ActivityPerfilUsuarioSemFormularioBinding
 import school.sptech.zup.domain.model.FotoRequest
 import school.sptech.zup.domain.model.Sessao
@@ -39,8 +42,18 @@ class PerfilUsuarioSemFormulario : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        binding.nomeUsuario.text = sessao?.nome.toString()
-        binding.usernameUsuario.text = sessao?.username.toString()
+        val sharedPreferences = getSharedPreferences("ZupShared", Context.MODE_PRIVATE)
+
+        val valorUsername = sharedPreferences.getString("username", null)
+        val valorNome = sharedPreferences.getString("nome", null)
+
+        if(sessao?.nome ==  ""){
+            binding.nomeUsuario.text = valorNome
+            binding.usernameUsuario.text = valorUsername
+        }else{
+            binding.nomeUsuario.text = sessao?.nome.toString()
+            binding.usernameUsuario.text = sessao?.username.toString()
+        }
 
         binding.editarFoto.setOnClickListener{
             abrirGaleria()
@@ -96,6 +109,11 @@ class PerfilUsuarioSemFormulario : AppCompatActivity() {
             // A imagem foi escolhida com sucesso
             val selectedImageUri = data.data
             try {
+
+                val sharedPreferences = getSharedPreferences("ZupShared", Context.MODE_PRIVATE)
+                val valorIdUsario = sharedPreferences.getLong("idUsuario", 0)
+
+
                 // Convertendo a imagem para bytes
                 val inputStream: InputStream? = contentResolver.openInputStream(selectedImageUri!!)
                 val bytes = readBytes(inputStream)
@@ -103,25 +121,18 @@ class PerfilUsuarioSemFormulario : AppCompatActivity() {
                 val dados = FotoRequest(
                     foto = bytes
                 )
-                val envioApi = service.adicionarImagem(sessao.idUsuario.toLong(),dados)
+                println("USUARIOOO  $valorIdUsario")
+                val envioApi = service.adicionarImagem(valorIdUsario, dados )
                 envioApi.enqueue(object : Callback<FotoResponse> {
                     override fun onResponse(
                         call: Call<FotoResponse>, response: Response<FotoResponse>
                     ) {
                         if (response.isSuccessful) {
-                            val fotoResponse = response.body()
 
-                            if (fotoResponse != null) {
-
-                                val bitmap = BitmapFactory.decodeByteArray(fotoResponse.foto, 0, fotoResponse.foto.size)
-
-                                val imageView: ImageView = binding.fotoPerfil
-
-                                imageView.setImageBitmap(bitmap)
-
-                            } else {
-                                mostrarErroMensagem("Credenciais inválidas")
+                            if(response.body() != null){
+                                colocandoResponseNaFotoPerfil(response.body().foto)
                             }
+
                         } else {
                             mostrarErroMensagem("Erro na solicitação")
                         }
@@ -130,6 +141,7 @@ class PerfilUsuarioSemFormulario : AppCompatActivity() {
                     override fun onFailure(call: Call<FotoResponse>?, t: Throwable?) {
                         if (t != null) {
                             mostrarErroMensagem("Erro na rede: ${t.message}")
+                            println("ERROOOOOOOOOOOOOOOOOOOOO  ${t.message}")
                         }
                     }
                 })
@@ -140,10 +152,18 @@ class PerfilUsuarioSemFormulario : AppCompatActivity() {
         }
     }
 
+    private fun colocandoResponseNaFotoPerfil(fotoResponse: String) {
+        val imageView: ImageView = binding.fotoPerfil
+
+        val decodedBytes: ByteArray = Base64.decode(fotoResponse, Base64.DEFAULT)
+        val bitmap: Bitmap = BitmapFactory.decodeByteArray(decodedBytes, 0, decodedBytes.size)
+        imageView.setImageBitmap(bitmap)
+    }
+
     @Throws(IOException::class)
     private fun readBytes(inputStream: InputStream?): ByteArray {
         val byteBuffer = ByteArrayOutputStream()
-        val bufferSize = 50 * 1024 * 1024
+        val bufferSize = 1024
         val buffer = ByteArray(bufferSize)
 
         var len: Int

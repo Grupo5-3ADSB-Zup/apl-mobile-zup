@@ -14,6 +14,7 @@ import school.sptech.zup.domain.model.DadosTelaCadastroCPF
 import school.sptech.zup.domain.model.RegisterRequest
 import school.sptech.zup.domain.model.Sessao
 import school.sptech.zup.network.ServiceProvider.service
+import school.sptech.zup.ui.CadastroInfluencer
 import school.sptech.zup.ui.PerfilUsuarioComum
 
 
@@ -64,6 +65,11 @@ class CadastroCPF : AppCompatActivity() {
 
                                     guardarDados(sessao, nomeInteiro, username, RegistroResponse)
 
+                                    val sharedPreferences = getSharedPreferences("ZupShared", Context.MODE_PRIVATE)
+
+                                    val valorInfluencer = sharedPreferences.getBoolean("token", false)
+
+                                    if(valorInfluencer) cadastroInfluencer(RegistroResponse)
 
                                     perfilUsuarioComum()
                                 } else {
@@ -81,6 +87,12 @@ class CadastroCPF : AppCompatActivity() {
                 mostrarErroMensagem("Não é possível prosseguir sem aceitar os termos")
             }
         }
+    }
+
+    private fun cadastroInfluencer(registroResponse: RegisterResponse) {
+        val intent = Intent(this, CadastroInfluencer::class.java)
+        intent.putExtra("dados", registroResponse.id)
+        startActivity(intent)
     }
 
     private fun guardarDados(sessao: Sessao, nomeInteiro: String, username: String, registroResponse: RegisterResponse) {

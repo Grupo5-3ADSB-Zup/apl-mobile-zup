@@ -88,6 +88,7 @@ class Login : AppCompatActivity() {
         // Adiciona dados chave-valor
         editor.putString("nome", loginResponse.nome)
         editor.putString("token", loginResponse.token)
+        editor.putLong("idUsuario", loginResponse.id)
 
         // Salva as mudanças
         editor.apply()

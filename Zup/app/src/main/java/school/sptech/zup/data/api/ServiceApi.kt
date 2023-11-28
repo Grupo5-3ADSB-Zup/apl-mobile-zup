@@ -13,6 +13,7 @@ import school.sptech.zup.data.model.GptResponse
 import school.sptech.zup.data.model.PerfilUsuarioResponse
 import school.sptech.zup.data.model.RegisterResponse
 import school.sptech.zup.data.model.response.LoginResponse
+import school.sptech.zup.domain.model.CadastroDadosInfluencerRequest
 import school.sptech.zup.domain.model.DadosEnvioApiFormularioPerfil
 import school.sptech.zup.domain.model.FotoRequest
 import school.sptech.zup.domain.model.GptRequest
@@ -38,7 +39,10 @@ public interface ServiceApi {
     @POST("noticia/rss/info")
     fun InserirNoticiasGPT(@Body gptRequest: GptRequest): Call<GptResponse>
 
-    @PATCH("/foto/{idUsuario}")
-    fun adicionarImagem(@Path("idUsuario") idUsuario: Long , @Body foto : FotoRequest) : Call<FotoResponse>
+    @PATCH("usuario/foto/{idUsuario}")
+    fun adicionarImagem(@Path("idUsuario") idUsuario: Long, @Body foto: FotoRequest) : Call<FotoResponse>
+
+    @POST("usuario/influencer/dados/cadastro")
+    fun cadastroInfluencerDados(@Body cadastroDadosInfluencerRequest : CadastroDadosInfluencerRequest) :Call<Boolean>
 
 }

@@ -84,7 +84,7 @@
                     android:text="Instagram" />
 
                 <EditText
-                    android:id="@+id/intaEditText"
+                    android:id="@+id/instaEditText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="25dp"
