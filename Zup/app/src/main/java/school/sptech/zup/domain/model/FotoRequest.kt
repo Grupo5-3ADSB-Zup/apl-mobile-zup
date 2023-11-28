@@ -3,5 +3,5 @@ package school.sptech.zup.domain.model
 import java.io.Serializable
 
 data class FotoRequest(
-    val foto: String
+    val foto: ByteArray
 ) : Serializable

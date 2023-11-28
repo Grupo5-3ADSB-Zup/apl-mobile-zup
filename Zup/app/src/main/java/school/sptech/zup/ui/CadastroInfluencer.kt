@@ -7,12 +7,9 @@ import android.widget.Toast
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import school.sptech.zup.R
-import school.sptech.zup.data.model.RegisterResponse
-import school.sptech.zup.data.model.response.LoginResponse
-import school.sptech.zup.databinding.ActivityCadastroCpfBinding
 import school.sptech.zup.databinding.ActivityCadastroInfluencerBinding
 import school.sptech.zup.domain.model.CadastroDadosInfluencerRequest
+import school.sptech.zup.domain.model.Sessao
 import school.sptech.zup.network.ServiceProvider
 import school.sptech.zup.presenter.feed.Feed
 
@@ -26,7 +23,11 @@ class CadastroInfluencer : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
+        val sessao = Sessao
+
         val IdUsuario = intent.getSerializableExtra("dados") as? Integer
+
+        val idUsuarioSessao = sessao.idUsuario.toInt()
 
         binding.buttonContinuar.setOnClickListener{
             val tiktok = binding.tkEditText.text.toString()
@@ -35,7 +36,7 @@ class CadastroInfluencer : AppCompatActivity() {
 
 
             val dadosEnvio = CadastroDadosInfluencerRequest(
-                idUsuario = IdUsuario,
+                idUsuario = idUsuarioSessao,
                 tiktok = tiktok,
                 youtube = youtube,
                 instagram = instagram

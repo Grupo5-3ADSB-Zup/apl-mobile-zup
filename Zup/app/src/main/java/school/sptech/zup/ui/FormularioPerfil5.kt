@@ -136,8 +136,11 @@ class FormularioPerfil5 : AppCompatActivity() {
                         val sharedPreferences = getSharedPreferences("ZupShared", Context.MODE_PRIVATE)
 
                         val valorInfluencer = sharedPreferences.getBoolean("influencer", false)
+                        val valorIdUsuario = sharedPreferences.getLong("idUsuario", 0)
 
-                        if (valorInfluencer == true) //Iniciar Activity de Cadastro Influencer
+                        if (valorInfluencer == true){
+                            cadastroInfluencer(valorIdUsuario)
+                        }
 
                         iniciarFeed()
                     } else {
@@ -152,6 +155,12 @@ class FormularioPerfil5 : AppCompatActivity() {
                 mostrarErroMensagem("Erro na rede: ${t.message}")
             }
         })
+    }
+
+    private fun cadastroInfluencer(valorIdUsuario: Long) {
+        val intent = Intent(this, CadastroInfluencer::class.java)
+        intent.putExtra("dados", valorIdUsuario.toInt())
+        startActivity(intent)
     }
 
     private fun guardarDados(sessao: Sessao, perfilResponse: PerfilUsuarioResponse?) {

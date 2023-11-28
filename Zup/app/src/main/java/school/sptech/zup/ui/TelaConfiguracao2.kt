@@ -24,8 +24,14 @@ class TelaConfiguracao2 : AppCompatActivity() {
         val sessao = Sessao
         val dadosLogin = intent.getSerializableExtra("dados") as? LoginResponse
 
+        val sharedPreferences = getSharedPreferences("ZupShared", Context.MODE_PRIVATE)
+
+        val valorUsername = sharedPreferences.getString("username", null)
+        val valorNome = sharedPreferences.getString("nome", null)
+        val valorIdUsuario = sharedPreferences.getLong("idUsuario", 0)
+
         val dados = DadosTelaRefazerFormulario(
-            sessao?.idUsuario.toString()
+            valorIdUsuario
         )
 
 

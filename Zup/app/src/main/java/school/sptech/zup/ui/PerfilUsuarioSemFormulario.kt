@@ -6,15 +6,16 @@ import android.graphics.BitmapFactory
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
-import android.util.Base64
 import android.widget.ImageView
 import android.widget.Toast
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
+import com.bumptech.glide.request.RequestOptions
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import school.sptech.zup.R
 import school.sptech.zup.data.model.FotoResponse
-import school.sptech.zup.data.model.response.LoginResponse
 import school.sptech.zup.databinding.ActivityPerfilUsuarioSemFormularioBinding
 import school.sptech.zup.domain.model.FotoRequest
 import school.sptech.zup.domain.model.Sessao
@@ -115,26 +116,21 @@ class PerfilUsuarioSemFormulario : AppCompatActivity() {
                 val inputStream: InputStream? = contentResolver.openInputStream(selectedImageUri!!)
                 val bytes = readBytes(inputStream)
 
-                val base64String: String = Base64.encodeToString(bytes, Base64.DEFAULT)
+                //val base64String: String = Base64.encodeToString(bytes, Base64.DEFAULT)
 
                 val dados = FotoRequest(
-                    foto = base64String
+                    foto = bytes
                 )
+                println("USUARIOOO  $valorIdUsario")
                 val envioApi = service.adicionarImagem(valorIdUsario, dados )
                 envioApi.enqueue(object : Callback<FotoResponse> {
                     override fun onResponse(
                         call: Call<FotoResponse>, response: Response<FotoResponse>
                     ) {
                         if (response.isSuccessful) {
-                            val fotoResponse = response.body()
 
-                            if (fotoResponse != null) {
+                            colocandoResponseNaFotoPerfil(response)
 
-                                colocandoResponseNaFotoPerfil(fotoResponse)
-
-                            } else {
-                                mostrarErroMensagem("Credenciais inválidas")
-                            }
                         } else {
                             mostrarErroMensagem("Erro na solicitação")
                         }
@@ -143,6 +139,7 @@ class PerfilUsuarioSemFormulario : AppCompatActivity() {
                     override fun onFailure(call: Call<FotoResponse>?, t: Throwable?) {
                         if (t != null) {
                             mostrarErroMensagem("Erro na rede: ${t.message}")
+                            println("ERROOOOOOOOOOOOOOOOOOOOO  ${t.message}")
                         }
                     }
                 })
@@ -153,19 +150,23 @@ class PerfilUsuarioSemFormulario : AppCompatActivity() {
         }
     }
 
-    private fun colocandoResponseNaFotoPerfil(fotoResponse: FotoResponse) {
+    private fun colocandoResponseNaFotoPerfil(fotoResponse: Response<FotoResponse>) {
 
-        val bitmap = BitmapFactory.decodeByteArray(fotoResponse.foto, 0, fotoResponse.foto.size)
+        val bitmap = BitmapFactory.decodeByteArray(fotoResponse.body().foto, 0, fotoResponse.body().foto.size)
 
         val imageView: ImageView = binding.fotoPerfil
 
-        imageView.setImageBitmap(bitmap)
+        Glide.with(this)
+            .load(bitmap)
+            .apply(RequestOptions.centerInsideTransform())
+            .transition(DrawableTransitionOptions.withCrossFade()) // Alterado para DrawableTransitionOptions
+            .into(imageView)
     }
 
     @Throws(IOException::class)
     private fun readBytes(inputStream: InputStream?): ByteArray {
         val byteBuffer = ByteArrayOutputStream()
-        val bufferSize = 50 * 1024 * 1024
+        val bufferSize = 1024
         val buffer = ByteArray(bufferSize)
 
         var len: Int
