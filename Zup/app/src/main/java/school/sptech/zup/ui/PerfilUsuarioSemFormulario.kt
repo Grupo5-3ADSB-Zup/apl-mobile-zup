@@ -6,6 +6,7 @@ import android.graphics.BitmapFactory
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
+import android.util.Base64
 import android.widget.ImageView
 import android.widget.Toast
 import com.bumptech.glide.Glide
@@ -116,8 +117,6 @@ class PerfilUsuarioSemFormulario : AppCompatActivity() {
                 val inputStream: InputStream? = contentResolver.openInputStream(selectedImageUri!!)
                 val bytes = readBytes(inputStream)
 
-                //val base64String: String = Base64.encodeToString(bytes, Base64.DEFAULT)
-
                 val dados = FotoRequest(
                     foto = bytes
                 )
@@ -128,8 +127,8 @@ class PerfilUsuarioSemFormulario : AppCompatActivity() {
                         call: Call<FotoResponse>, response: Response<FotoResponse>
                     ) {
                         if (response.isSuccessful) {
-
-                            colocandoResponseNaFotoPerfil(response)
+                            println("Retornouuuuuuu ${response.body()}")
+                            colocandoResponseNaFotoPerfil(response.body())
 
                         } else {
                             mostrarErroMensagem("Erro na solicitação")
@@ -150,9 +149,13 @@ class PerfilUsuarioSemFormulario : AppCompatActivity() {
         }
     }
 
-    private fun colocandoResponseNaFotoPerfil(fotoResponse: Response<FotoResponse>) {
+    private fun colocandoResponseNaFotoPerfil(fotoResponse: FotoResponse) {
 
-        val bitmap = BitmapFactory.decodeByteArray(fotoResponse.body().foto, 0, fotoResponse.body().foto.size)
+        print("Entrei aqui $fotoResponse")
+
+        val fotoByteArray: ByteArray = Base64.decode(fotoResponse.toString(), Base64.DEFAULT)
+
+        val bitmap = BitmapFactory.decodeByteArray(fotoByteArray, 0, fotoByteArray.size)
 
         val imageView: ImageView = binding.fotoPerfil
 
@@ -161,6 +164,8 @@ class PerfilUsuarioSemFormulario : AppCompatActivity() {
             .apply(RequestOptions.centerInsideTransform())
             .transition(DrawableTransitionOptions.withCrossFade()) // Alterado para DrawableTransitionOptions
             .into(imageView)
+
+        print("finalizei $imageView")
     }
 
     @Throws(IOException::class)
