@@ -2,6 +2,7 @@ package school.sptech.zup.ui
 
 import android.content.Context
 import android.content.Intent
+import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -127,8 +128,10 @@ class PerfilUsuarioSemFormulario : AppCompatActivity() {
                         call: Call<FotoResponse>, response: Response<FotoResponse>
                     ) {
                         if (response.isSuccessful) {
-                            println("Retornouuuuuuu ${response.body()}")
-                            colocandoResponseNaFotoPerfil(response.body())
+
+                            if(response.body() != null){
+                                colocandoResponseNaFotoPerfil(response.body().foto)
+                            }
 
                         } else {
                             mostrarErroMensagem("Erro na solicitação")
@@ -149,23 +152,12 @@ class PerfilUsuarioSemFormulario : AppCompatActivity() {
         }
     }
 
-    private fun colocandoResponseNaFotoPerfil(fotoResponse: FotoResponse) {
-
-        print("Entrei aqui $fotoResponse")
-
-        val fotoByteArray: ByteArray = Base64.decode(fotoResponse.toString(), Base64.DEFAULT)
-
-        val bitmap = BitmapFactory.decodeByteArray(fotoByteArray, 0, fotoByteArray.size)
-
+    private fun colocandoResponseNaFotoPerfil(fotoResponse: String) {
         val imageView: ImageView = binding.fotoPerfil
 
-        Glide.with(this)
-            .load(bitmap)
-            .apply(RequestOptions.centerInsideTransform())
-            .transition(DrawableTransitionOptions.withCrossFade()) // Alterado para DrawableTransitionOptions
-            .into(imageView)
-
-        print("finalizei $imageView")
+        val decodedBytes: ByteArray = Base64.decode(fotoResponse, Base64.DEFAULT)
+        val bitmap: Bitmap = BitmapFactory.decodeByteArray(decodedBytes, 0, decodedBytes.size)
+        imageView.setImageBitmap(bitmap)
     }
 
     @Throws(IOException::class)
