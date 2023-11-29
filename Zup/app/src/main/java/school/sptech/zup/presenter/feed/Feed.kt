@@ -13,6 +13,7 @@ import school.sptech.zup.data.model.FeedResponse
 import school.sptech.zup.databinding.ActivityFeedBinding
 import school.sptech.zup.network.ServiceProvider.service
 import school.sptech.zup.ui.BuscarInfluenciadores
+import school.sptech.zup.ui.FiltroPerfil
 import school.sptech.zup.ui.PerfilUsuarioSemFormulario
 import school.sptech.zup.ui.TelaConfiguracao2
 
@@ -35,12 +36,6 @@ class Feed : AppCompatActivity() {
 
         recyclerView = findViewById(R.id.recyclerViewFeed)
         recyclerView.layoutManager = LinearLayoutManager(this)
-
-        //Testar amanhã
-        //val layoutManager = LinearLayoutManager(this)
-        //layoutManager.orientation = LinearLayoutManager.VERTICAL
-        //recyclerView.layoutManager = layoutManager
-
         adapter = FeedAdapter(emptyList())
         recyclerView.adapter = adapter
 
@@ -76,7 +71,7 @@ class Feed : AppCompatActivity() {
         }
 
         menuItemPesquisar.setOnMenuItemClickListener{
-            val intent = Intent(this, BuscarInfluenciadores::class.java)
+            val intent = Intent(this, FiltroPerfil::class.java)
             startActivity(intent)
             true
         }

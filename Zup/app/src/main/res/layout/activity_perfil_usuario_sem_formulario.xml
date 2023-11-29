@@ -91,7 +91,7 @@
                             android:id="@+id/editar_foto1"
                             android:layout_width="25dp"
                             android:layout_height="20dp"
-                            android:layout_marginLeft="200dp"
+                            android:layout_marginLeft="50dp"
                             android:src="@mipmap/lapis_editar"></ImageView>
                     </LinearLayout>
 

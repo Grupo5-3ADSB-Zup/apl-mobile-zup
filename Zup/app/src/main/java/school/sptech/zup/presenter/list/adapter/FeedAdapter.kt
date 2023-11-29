@@ -40,15 +40,6 @@ class FeedAdapter(private var feedItems: List<FeedResponse>) : RecyclerView.Adap
                 .into(holder.postImage)
             Log.d("FeedAdapter", "Loading image at position $position. Image URL: $it")
         }
-
-        //    val menuItemComentario = holder.barraNoticia.findItem(R.id.botao_comentario)
-        //    val menuItemGPT = holder.barraNoticia.findItem(R.id.botao_gpt)
-
-        //    menuItemGPT.setOnMenuItemClickListener{
-        //        val intent = Intent(holder.itemView.context, Gpt::class.java)
-        //        holder.itemView.context.startActivity(intent)
-        //        true
-        //    }
     }
 
     private fun tratarDescricao(descricao: String): Pair<String?, String> {

@@ -45,4 +45,7 @@ public interface ServiceApi {
     @POST("usuario/influencer/dados/cadastro")
     fun cadastroInfluencerDados(@Body cadastroDadosInfluencerRequest : CadastroDadosInfluencerRequest) :Call<Boolean>
 
+    @GET("mobile/usuarios/perfil/{IdPerfil}")
+    fun BuscaTodosUsuariosInfluencersTpPerfil(@Path("IdPerfil") idPerfil: Long): Call<List<PerfilUsuarioResponse>>
+
 }
