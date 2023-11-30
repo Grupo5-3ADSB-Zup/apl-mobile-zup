@@ -47,9 +47,9 @@ class CadastroInfluencer : AppCompatActivity() {
                 override fun onResponse(call: Call<Boolean>?, response: Response<Boolean>?) {
                     if (response != null) {
                         if (response.isSuccessful) {
-                            val loginResponse = response?.body()
+                            val cadastroInfluencer = response?.body()
 
-                            if (loginResponse != null) {
+                            if (cadastroInfluencer != null) {
                                 IniciarFeed()
                             } else {
                                 mostrarErroMensagem("Credenciais inválidas")

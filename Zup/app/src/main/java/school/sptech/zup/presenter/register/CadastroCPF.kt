@@ -30,6 +30,8 @@ class CadastroCPF : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
+        var sessao = Sessao
+
         binding.buttonContinuar.setOnClickListener {
 
             val dadosCadastroNome =
@@ -45,6 +47,8 @@ class CadastroCPF : AppCompatActivity() {
                 val cpf = binding.cpfEditText.text.toString()
                 val cnpj = binding.cnpjEditText.text.toString()
                 val nomeInteiro = "$nome  $sobrenome"
+
+                    sessao.influencer = dadosCadastroNome?.influencer
 
                     val registerUser = RegisterRequest(nomeInteiro, null, username,senha,
                         influencer, false,
@@ -65,13 +69,8 @@ class CadastroCPF : AppCompatActivity() {
 
                                     guardarDados(sessao, nomeInteiro, username, RegistroResponse)
 
-                                    val sharedPreferences = getSharedPreferences("ZupShared", Context.MODE_PRIVATE)
-
-                                    val valorInfluencer = sharedPreferences.getBoolean("token", false)
-
-                                    if(valorInfluencer) cadastroInfluencer(RegistroResponse)
-
                                     perfilUsuarioComum()
+
                                 } else {
                                     mostrarErroMensagem("Credenciais inválidas")
                                 }

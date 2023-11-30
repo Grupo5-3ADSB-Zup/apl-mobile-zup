@@ -20,6 +20,7 @@ import school.sptech.zup.domain.model.DadosTelaFormularioPerfil4Request
 import school.sptech.zup.domain.model.Sessao
 import school.sptech.zup.network.ServiceProvider.service
 import school.sptech.zup.presenter.feed.Feed
+import school.sptech.zup.presenter.login.Login
 
 @Suppress("DEPRECATION")
 class FormularioPerfil5 : AppCompatActivity() {
@@ -136,13 +137,13 @@ class FormularioPerfil5 : AppCompatActivity() {
                         val sharedPreferences = getSharedPreferences("ZupShared", Context.MODE_PRIVATE)
 
                         val valorInfluencer = sharedPreferences.getBoolean("influencer", false)
-                        val valorIdUsuario = sharedPreferences.getLong("idUsuario", 0)
+                        val valorIdUsuario = sharedPreferences.getInt("idUsuario", 0)
 
-                        if (valorInfluencer == true){
-                            cadastroInfluencer(valorIdUsuario)
+                        if (valorInfluencer){
+                            cadastroInfluencer(valorIdUsuario.toLong())
+                        }else{
+                            iniciarLogin()
                         }
-
-                        iniciarFeed()
                     } else {
                         mostrarErroMensagem("Credenciais inválidas")
                     }
@@ -183,8 +184,8 @@ class FormularioPerfil5 : AppCompatActivity() {
         editor.apply()
     }
 
-    private fun iniciarFeed() {
-        val intent = Intent(this, Feed::class.java)
+    private fun iniciarLogin() {
+        val intent = Intent(this, Login::class.java)
         startActivity(intent)
     }
 

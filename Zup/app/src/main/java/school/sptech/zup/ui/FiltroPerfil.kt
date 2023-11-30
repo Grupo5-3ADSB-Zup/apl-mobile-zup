@@ -41,6 +41,9 @@ class FiltroPerfil : AppCompatActivity() {
             ) {
                 if (response.isSuccessful) {
                     val posts = response.body() ?: emptyList()
+
+                    //binding.idPerfilUsuario.text = posts[0].DescPerfil.toString()
+
                     adapter.updateData(posts)
                 } else {
                     // Lidar com erros, como falha na solicitação

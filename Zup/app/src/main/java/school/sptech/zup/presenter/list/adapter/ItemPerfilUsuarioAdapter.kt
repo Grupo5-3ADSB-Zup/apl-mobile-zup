@@ -31,23 +31,10 @@ class ItemPerfilUsuarioAdapter(private var perfisItems: List<PerfilUsuarioRespon
         //val (linkImagem, descricaoSemImagem) = tratarDescricao(post.descricao)
 
         //holder.postDescription.text = if (linkImagem == null) post.descricao else descricaoSemImagem
-        //holder.postTitulo.text = post.titulo
-
-        //linkImagem?.let {
-        //    Glide.with(holder.itemView.context) // Use o contexto do itemView
-        //        .load(it)
-        //        .into(holder.postImage)
-        //    Log.d("FeedAdapter", "Loading image at position $position. Image URL: $it")
-        //}
-
-        //    val menuItemComentario = holder.barraNoticia.findItem(R.id.botao_comentario)
-        //    val menuItemGPT = holder.barraNoticia.findItem(R.id.botao_gpt)
-
-        //    menuItemGPT.setOnMenuItemClickListener{
-        //        val intent = Intent(holder.itemView.context, Gpt::class.java)
-        //        holder.itemView.context.startActivity(intent)
-        //        true
-        //    }
+        holder.nomeUsuario.text = post.nome
+        holder.linkInstagram.text = post.LinkInstagram
+        holder.linkYoutube.text = post.LinkYoutube
+        holder.linkTikTok.text = post.LinkTikTok
     }
 
     override fun getItemCount(): Int {
@@ -65,7 +52,7 @@ class ItemPerfilUsuarioAdapter(private var perfisItems: List<PerfilUsuarioRespon
         val linkInstagram: TextView = itemView.findViewById(R.id.link_instagram)
         val linkYoutube: TextView = itemView.findViewById(R.id.link_youtube)
         val linkTikTok: TextView = itemView.findViewById(R.id.link_tiktok)
-        var barraNoticia: BottomNavigationView = itemView.findViewById(R.id.nav_item_noticia)
+        //var barraNoticia: BottomNavigationView = itemView.findViewById(R.id.nav_item_noticia)
 
 
        init {
@@ -77,10 +64,10 @@ class ItemPerfilUsuarioAdapter(private var perfisItems: List<PerfilUsuarioRespon
        }
 
 
-        init {
-            barraNoticia.setOnNavigationItemSelectedListener { menuItem ->
-                when (menuItem.itemId) {
-                    R.id.botao_gpt -> {
+        //init {
+       //     barraNoticia.setOnNavigationItemSelectedListener { menuItem ->
+       //         when (menuItem.itemId) {
+       //             R.id.botao_gpt -> {
                       //  val id = perfisItems[adapterPosition].id
                       //  val titulo = perfisItems[adapterPosition].titulo
 
@@ -92,11 +79,11 @@ class ItemPerfilUsuarioAdapter(private var perfisItems: List<PerfilUsuarioRespon
                       //  val intent = Intent(itemView.context, Gpt::class.java)
                       //  intent.putExtra("dados", dados)
                       //  itemView.context.startActivity(intent)
-                        true
-                    }
-                    else -> false
-                }
-            }
-        }
+       //                 true
+       //             }
+       //             else -> false
+       //         }
+       //     }
+       // }
     }
 }
