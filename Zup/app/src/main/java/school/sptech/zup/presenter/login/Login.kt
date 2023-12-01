@@ -82,7 +82,7 @@ class Login : AppCompatActivity() {
         }
     }
 
-     public fun guardarTodasAsInfosUsuarioPosCadastro(id: Long) {
+     private fun guardarTodasAsInfosUsuarioPosCadastro(id: Long) {
         val call = service.getUsuarioId(id)
          call.enqueue(object : Callback<UsuarioResponse> {
              override fun onResponse(
