@@ -1,8 +1,8 @@
-package school.sptech.zup.data.model
+package school.sptech.zup.domain.model
 
 import java.io.Serializable
 
-data class PerfilUsuarioResponse(
+data class DadosEnvioTelaInfluencer(
     val nome: String,
     val idPerfil: Long,
     val linkYoutube: String,
@@ -10,5 +10,4 @@ data class PerfilUsuarioResponse(
     val linkTikTok: String,
     val descPerfil: String,
     val foto: String?
-
 ) : Serializable

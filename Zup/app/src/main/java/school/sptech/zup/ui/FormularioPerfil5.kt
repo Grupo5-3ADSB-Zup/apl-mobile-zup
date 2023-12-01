@@ -166,7 +166,7 @@ class FormularioPerfil5 : AppCompatActivity() {
 
     private fun guardarDados(sessao: Sessao, perfilResponse: PerfilUsuarioResponse?) {
 
-        sessao.idTpPerfil = perfilResponse?.IdPerfil!!
+        sessao.idTpPerfil = perfilResponse?.idPerfil!!
 
 
         val sharedPreferences = getSharedPreferences("ZupShared", Context.MODE_PRIVATE)
@@ -174,11 +174,11 @@ class FormularioPerfil5 : AppCompatActivity() {
         val editor = sharedPreferences.edit()
 
         // Adiciona dados chave-valor
-        editor.putLong("IdPerfil", perfilResponse?.IdPerfil!!)
-        editor.putString("DescPerfil", perfilResponse.DescPerfil)
-        editor.putString("LinkYoutube", perfilResponse.LinkYoutube)
-        editor.putString("LinkTikTok", perfilResponse.LinkTikTok)
-        editor.putString("LinkInstagram", perfilResponse.LinkInstagram)
+        editor.putLong("IdPerfil", perfilResponse?.idPerfil!!)
+        editor.putString("DescPerfil", perfilResponse.descPerfil)
+        editor.putString("LinkYoutube", perfilResponse.linkYoutube)
+        editor.putString("LinkTikTok", perfilResponse.linkTikTok)
+        editor.putString("LinkInstagram", perfilResponse.linkInstagram)
 
         // Salva as mudanças
         editor.apply()

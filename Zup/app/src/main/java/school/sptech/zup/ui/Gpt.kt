@@ -77,7 +77,7 @@ class Gpt : AppCompatActivity() {
         }
 
         menuItemPesquisar.setOnMenuItemClickListener {
-            val intent = Intent(this, BuscarInfluenciadores::class.java)
+            val intent = Intent(this, FiltroPerfil::class.java)
             startActivity(intent)
             true
         }

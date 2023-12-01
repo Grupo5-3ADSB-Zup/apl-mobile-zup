@@ -5,12 +5,14 @@ import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import retrofit2.Call
+import retrofit2.Response
 import school.sptech.zup.R
 import school.sptech.zup.data.model.FeedResponse
 import school.sptech.zup.data.model.PerfilUsuarioResponse
 import school.sptech.zup.databinding.ActivityBuscarInfluenciadoresBinding
 import school.sptech.zup.databinding.ActivityFiltroPerfilBinding
 import school.sptech.zup.network.ServiceProvider
+import school.sptech.zup.network.ServiceProvider.service
 import school.sptech.zup.presenter.list.adapter.ItemPerfilUsuarioAdapter
 
 class FiltroPerfil : AppCompatActivity() {
@@ -34,17 +36,18 @@ class FiltroPerfil : AppCompatActivity() {
 
         //fazer fluxo no cadastro para redirecionamento e depois fazer chamada para salvar local
         //todas as informações
-        val call = ServiceProvider.service.BuscaTodosUsuariosInfluencersTpPerfil(2)
+        val call = service.BuscaUsuariosInfluencerTpPerfil(2)
         call.enqueue(object : retrofit2.Callback<List<PerfilUsuarioResponse>> {
             override fun onResponse(
-                call: Call<List<PerfilUsuarioResponse>>, response: retrofit2.Response<List<PerfilUsuarioResponse>>
+                call: Call<List<PerfilUsuarioResponse>>, response: Response<List<PerfilUsuarioResponse>>
             ) {
                 if (response.isSuccessful) {
-                    val posts = response.body() ?: emptyList()
+                    val posts = response?.body()
 
-                    //binding.idPerfilUsuario.text = posts[0].DescPerfil.toString()
-
-                    adapter.updateData(posts)
+                    if (posts != null) {
+                        binding.idPerfilUsuario.text = posts[0].descPerfil.toString()
+                        adapter.updateData(posts)
+                    }
                 } else {
                     // Lidar com erros, como falha na solicitação
                 }
