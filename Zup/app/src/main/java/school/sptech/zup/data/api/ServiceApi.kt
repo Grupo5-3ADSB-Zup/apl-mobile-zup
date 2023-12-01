@@ -12,6 +12,7 @@ import school.sptech.zup.data.model.FotoResponse
 import school.sptech.zup.data.model.GptResponse
 import school.sptech.zup.data.model.PerfilUsuarioResponse
 import school.sptech.zup.data.model.RegisterResponse
+import school.sptech.zup.data.model.UsuarioResponse
 import school.sptech.zup.data.model.response.LoginResponse
 import school.sptech.zup.domain.model.CadastroDadosInfluencerRequest
 import school.sptech.zup.domain.model.DadosEnvioApiFormularioPerfil
@@ -47,5 +48,8 @@ public interface ServiceApi {
 
     @GET("mobile/usuarios/perfil/{IdPerfil}")
     fun BuscaUsuariosInfluencerTpPerfil(@Path("IdPerfil") idPerfil: Long): Call<List<PerfilUsuarioResponse>>
+
+    @GET("usuario/{idUsuario}")
+    fun getUsuarioId(@Path("idUsuario") idUsuario: Long): Call<UsuarioResponse>
 
 }

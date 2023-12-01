@@ -10,6 +10,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import school.sptech.zup.TelaInicial
+import school.sptech.zup.data.model.UsuarioResponse
 import school.sptech.zup.data.model.response.LoginResponse
 import school.sptech.zup.databinding.ActivityLoginBinding
 import school.sptech.zup.domain.model.LoginRequest
@@ -47,7 +48,9 @@ class Login : AppCompatActivity() {
                         val loginResponse = response.body()
 
                         if (loginResponse != null) {
-                                addsharedPreferences(loginResponse)
+
+                                guardarTodasAsInfosUsuarioPosCadastro(loginResponse.id)
+
                                 iniciarLogin(emailInput, sessao, loginResponse)
 
                         } else {
@@ -79,16 +82,41 @@ class Login : AppCompatActivity() {
         }
     }
 
-    private fun addsharedPreferences(loginResponse: LoginResponse) {
+     public fun guardarTodasAsInfosUsuarioPosCadastro(id: Long) {
+        val call = service.getUsuarioId(id)
+         call.enqueue(object : Callback<UsuarioResponse> {
+             override fun onResponse(
+                 call: Call<UsuarioResponse>, response: Response<UsuarioResponse>
+             ) {
+                 if (response.isSuccessful) {
+                     val usuarioResponse = response.body()
+
+                     if (usuarioResponse != null) {
+                        adicionarGetShared(usuarioResponse)
+                        //adicionarSessao(usuarioResponse)
+                     } else {
+                         mostrarErroMensagem("Credenciais inválidas")
+                     }
+                 } else {
+                     mostrarErroMensagem("Erro na solicitação")
+                 }
+             }
+
+             override fun onFailure(call: Call<UsuarioResponse>?, t: Throwable?) {
+                 mostrarErroMensagem("Erro na rede: ${t?.message}")
+             }
+         })
+    }
+
+    private fun adicionarGetShared(usuarioResponse: UsuarioResponse) {
         val sharedPreferences = getSharedPreferences("ZupShared", Context.MODE_PRIVATE)
 
         // Cria um editor para modificar o SharedPreferences
         val editor = sharedPreferences.edit()
 
         // Adiciona dados chave-valor
-        editor.putString("nome", loginResponse.nome)
-        editor.putString("token", loginResponse.token)
-        editor.putLong("idUsuario", loginResponse.id)
+        editor.putString("nome", usuarioResponse.nome)
+        editor.putLong("idUsuario", usuarioResponse.idUsuario)
 
         // Salva as mudanças
         editor.apply()

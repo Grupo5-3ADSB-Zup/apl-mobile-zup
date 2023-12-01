@@ -12,6 +12,7 @@ import school.sptech.zup.domain.model.CadastroDadosInfluencerRequest
 import school.sptech.zup.domain.model.Sessao
 import school.sptech.zup.network.ServiceProvider
 import school.sptech.zup.presenter.feed.Feed
+import school.sptech.zup.presenter.login.Login
 
 @Suppress("DEPRECATION")
 class CadastroInfluencer : AppCompatActivity() {
@@ -50,7 +51,7 @@ class CadastroInfluencer : AppCompatActivity() {
                             val cadastroInfluencer = response?.body()
 
                             if (cadastroInfluencer != null) {
-                                IniciarFeed()
+                                IniciarLogin()
                             } else {
                                 mostrarErroMensagem("Credenciais inválidas")
                             }
@@ -69,8 +70,8 @@ class CadastroInfluencer : AppCompatActivity() {
         }
     }
 
-    private fun IniciarFeed() {
-        val intent = Intent(this, Feed::class.java)
+    private fun IniciarLogin() {
+        val intent = Intent(this, Login::class.java)
         startActivity(intent)
     }
 
