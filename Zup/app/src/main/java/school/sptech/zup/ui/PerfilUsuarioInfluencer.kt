@@ -132,9 +132,10 @@ class PerfilUsuarioInfluencer : AppCompatActivity() {
             }
         }
 
-        val linkInsta = "https://github.com/Grupo5-3ADSB-Zup/apl-mobile-zup/tree/feature/linkar-redes-sociais"
-        val linkYoutube = binding.youtubeUsuario.text.toString()
-        val linkTikTok = binding.tiktokUsuario.text.toString()
+        val linkInsta = "https://" + binding.instagramUsuario.text.toString()
+        val linkYoutube = "https://" + binding.youtubeUsuario.text.toString()
+        val linkTikTok = "https://" + binding.tiktokUsuario.text.toString()
+
 
         binding.instagramUsuario.setOnClickListener {
             abrirLinkSocial(linkInsta)
