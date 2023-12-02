@@ -17,51 +17,6 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_alignParentTop="true"
-                android:background="@color/amareloZup"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:layout_width="18dp"
-                    android:layout_height="18dp"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="10dp"
-                    android:src="@mipmap/voltar_preto_sem_traco" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginRight="20dp"
-                    android:background="@color/cinzaClaroZup"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:layout_width="15dp"
-                        android:layout_height="15dp"
-                        android:layout_marginLeft="5dp"
-                        android:layout_marginTop="7dp"
-                        android:src="@mipmap/pesquisar"></ImageView>
-
-                    <EditText
-                        android:layout_width="280dp"
-                        android:layout_height="40dp"
-                        android:hint="|"
-                        android:inputType="textPassword"></EditText>
-
-                    <ImageView
-                        android:layout_width="15dp"
-                        android:layout_height="15dp"
-                        android:layout_marginLeft="25dp"
-                        android:layout_marginTop="7dp"
-                        android:src="@mipmap/close"></ImageView>
-                </LinearLayout>
-            </LinearLayout>
 
             <ScrollView
                 android:layout_width="match_parent"
@@ -107,28 +62,7 @@
                             android:textSize="25dp"></TextView>
                     </LinearLayout>
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:paddingTop="30dp">
 
-                        <TextView
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
-                            android:layout_weight="1"
-                            android:background="@color/cinzaClaroZup"
-                            android:gravity="center"
-                            android:text="Seguindo"></TextView>
-
-                        <TextView
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
-                            android:layout_weight="1"
-                            android:background="@color/cinzaClaroZup"
-                            android:gravity="center"
-                            android:text="Seguidores"></TextView>
-                    </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -167,18 +101,6 @@
             </ScrollView>
         </LinearLayout>
 
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/nav_bar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:background="@drawable/botao_backgroud"
-            android:elevation="2dp"
-            app:itemIconSize="30dp"
-            app:itemIconTint="@drawable/item_deslizar"
-            app:itemRippleColor="@android:color/transparent"
-            app:labelVisibilityMode="unlabeled"
-            app:menu="@menu/botao_menu" />
     </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

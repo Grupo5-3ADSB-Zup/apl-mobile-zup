@@ -49,9 +49,9 @@ class Login : AppCompatActivity() {
 
                         if (loginResponse != null) {
 
-                                guardarTodasAsInfosUsuarioPosCadastro(loginResponse.id)
+                            guardarTodasAsInfosUsuarioPosCadastro(loginResponse.id)
 
-                                iniciarLogin(emailInput, sessao, loginResponse)
+                            iniciarLogin(emailInput, sessao, loginResponse)
 
                         } else {
                             mostrarErroMensagem("Credenciais inválidas")
@@ -82,30 +82,30 @@ class Login : AppCompatActivity() {
         }
     }
 
-     private fun guardarTodasAsInfosUsuarioPosCadastro(id: Long) {
+    private fun guardarTodasAsInfosUsuarioPosCadastro(id: Long) {
         val call = service.getUsuarioId(id)
-         call.enqueue(object : Callback<UsuarioResponse> {
-             override fun onResponse(
-                 call: Call<UsuarioResponse>, response: Response<UsuarioResponse>
-             ) {
-                 if (response.isSuccessful) {
-                     val usuarioResponse = response.body()
+        call.enqueue(object : Callback<UsuarioResponse> {
+            override fun onResponse(
+                call: Call<UsuarioResponse>, response: Response<UsuarioResponse>
+            ) {
+                if (response.isSuccessful) {
+                    val usuarioResponse = response.body()
 
-                     if (usuarioResponse != null) {
-                         adicionarSessao(usuarioResponse, id)
+                    if (usuarioResponse != null) {
+                        adicionarSessao(usuarioResponse, id)
                         adicionarGetShared(usuarioResponse, id)
-                     } else {
-                         mostrarErroMensagem("Credenciais inválidas")
-                     }
-                 } else {
-                     mostrarErroMensagem("Erro na solicitação")
-                 }
-             }
+                    } else {
+                        mostrarErroMensagem("Credenciais inválidas")
+                    }
+                } else {
+                    mostrarErroMensagem("Erro na solicitação")
+                }
+            }
 
-             override fun onFailure(call: Call<UsuarioResponse>?, t: Throwable?) {
-                 mostrarErroMensagem("Erro na rede: ${t?.message}")
-             }
-         })
+            override fun onFailure(call: Call<UsuarioResponse>?, t: Throwable?) {
+                mostrarErroMensagem("Erro na rede: ${t?.message}")
+            }
+        })
     }
 
     private fun adicionarSessao(usuarioResponse: UsuarioResponse, id: Long) {
@@ -120,10 +120,15 @@ class Login : AppCompatActivity() {
         sessao.cpf = usuarioResponse.cpf
         sessao.cnpj = null
         sessao.admin = 0
-        sessao.idTpPerfil = usuarioResponse.idPerfil
-        sessao.linkYoutube = if(usuarioResponse.linkYoutube == null) "" else usuarioResponse.linkYoutube
-        sessao.linkInstagram = if(usuarioResponse.linkInstagram == null) "" else usuarioResponse.linkInstagram
-        sessao.linkTikTok = if(usuarioResponse.linkTikTok == null) "" else usuarioResponse.linkTikTok
+        sessao.idTpPerfil = if (usuarioResponse.idPerfil == null) 0 else usuarioResponse.idPerfil
+        sessao.linkYoutube =
+            if (usuarioResponse.linkYoutube == null) "" else usuarioResponse.linkYoutube
+        sessao.linkInstagram =
+            if (usuarioResponse.linkInstagram == null) "" else usuarioResponse.linkInstagram
+        sessao.linkTikTok =
+            if (usuarioResponse.linkTikTok == null) "" else usuarioResponse.linkTikTok
+        sessao.descPerfil =
+            if (usuarioResponse.descPerfil == null) "" else usuarioResponse.descPerfil
     }
 
     private fun adicionarGetShared(usuarioResponse: UsuarioResponse, id: Long) {
@@ -143,13 +148,27 @@ class Login : AppCompatActivity() {
         editor.putString("cpf", usuarioResponse.cpf)
         editor.putString("cnpj", null)
         editor.putInt("admin", 0)
-        editor.putLong("idPerfil", usuarioResponse.idPerfil)
-        editor.putString("linkYoutube", if(usuarioResponse.linkYoutube == null) "" else usuarioResponse.linkYoutube)
-        editor.putString("linkInstagram", if(usuarioResponse.linkInstagram == null) "" else usuarioResponse.linkInstagram)
-        editor.putString("linkTikTok", if(usuarioResponse.linkTikTok == null) "" else usuarioResponse.linkTikTok)
-        editor.putString("descPerfil", usuarioResponse.descPerfil)
+        editor.putLong(
+            "idPerfil",
+            if (usuarioResponse.idPerfil == null) 0 else usuarioResponse.idPerfil
+        )
+        editor.putString(
+            "linkYoutube",
+            if (usuarioResponse.linkYoutube == null) "" else usuarioResponse.linkYoutube
+        )
+        editor.putString(
+            "linkInstagram",
+            if (usuarioResponse.linkInstagram == null) "" else usuarioResponse.linkInstagram
+        )
+        editor.putString(
+            "linkTikTok",
+            if (usuarioResponse.linkTikTok == null) "" else usuarioResponse.linkTikTok
+        )
+        editor.putString(
+            "descPerfil",
+            if (usuarioResponse.descPerfil == null) "" else usuarioResponse.descPerfil
+        )
         editor.putString("foto", usuarioResponse.foto)
-
 
         // Salva as mudanças
         editor.apply()
