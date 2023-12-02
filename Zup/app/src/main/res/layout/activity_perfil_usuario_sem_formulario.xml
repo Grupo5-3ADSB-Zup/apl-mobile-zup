@@ -88,7 +88,7 @@
                             android:background="@color/cinzaClaroZup"></ImageView>
 
                         <ImageView
-                            android:id="@+id/editar_foto1"
+                            android:id="@+id/editar_foto"
                             android:layout_width="25dp"
                             android:layout_height="20dp"
                             android:layout_marginLeft="50dp"
@@ -126,7 +126,7 @@
                         android:paddingTop="30dp">
 
                         <TextView
-                            android:id="@+id/editar_foto"
+                            android:id="@+id/editar_foto1"
                             android:layout_width="30dp"
                             android:layout_height="30dp"
                             android:layout_weight="1"

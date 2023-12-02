@@ -46,13 +46,23 @@ class PerfilUsuarioSemFormulario : AppCompatActivity() {
 
         val valorUsername = sharedPreferences.getString("username", null)
         val valorNome = sharedPreferences.getString("nome", null)
+        val valorFoto = sharedPreferences.getString("foto", null)
 
         if(sessao?.nome ==  ""){
             binding.nomeUsuario.text = valorNome
             binding.usernameUsuario.text = valorUsername
+
+            if(valorFoto != null){
+                colocarFotoUsuario(valorFoto)
+            }
+
         }else{
             binding.nomeUsuario.text = sessao?.nome.toString()
             binding.usernameUsuario.text = sessao?.username.toString()
+
+            if(sessao.foto != ""){
+                colocarFotoUsuario(sessao.foto)
+            }
         }
 
         binding.editarFoto.setOnClickListener{
@@ -91,10 +101,28 @@ class PerfilUsuarioSemFormulario : AppCompatActivity() {
         }
 
         menuItemPerfil.setOnMenuItemClickListener {
-            val intent = Intent(this, PerfilUsuarioSemFormulario::class.java)
-            startActivity(intent)
-            true
+            val sharedPreferences = getSharedPreferences("ZupShared", Context.MODE_PRIVATE)
+
+            val valorInfluencer = sharedPreferences.getBoolean("influencer", false)
+
+            if(sessao.influencer == true || valorInfluencer == true){
+                val intent = Intent(this, PerfilUsuarioInfluencer::class.java)
+                startActivity(intent)
+                true
+            }else {
+                val intent = Intent(this, PerfilUsuarioSemFormulario::class.java)
+                startActivity(intent)
+                true
+            }
         }
+    }
+
+    private fun colocarFotoUsuario(foto: String?) {
+        val imageView: ImageView = binding.fotoPerfil
+
+        val decodedBytes: ByteArray = Base64.decode(foto, Base64.DEFAULT)
+        val bitmap: Bitmap = BitmapFactory.decodeByteArray(decodedBytes, 0, decodedBytes.size)
+        imageView.setImageBitmap(bitmap)
     }
 
     private fun abrirGaleria() {

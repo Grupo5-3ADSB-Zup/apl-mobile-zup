@@ -1,5 +1,6 @@
 package school.sptech.zup.ui
 
+import android.content.Context
 import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
@@ -11,6 +12,7 @@ import school.sptech.zup.R
 import school.sptech.zup.databinding.ActivityFormularioPerfil3Binding
 import school.sptech.zup.domain.model.DadosTelaFormularioPerfil2Request
 import school.sptech.zup.domain.model.DadosTelaFormularioPerfil3Request
+import school.sptech.zup.domain.model.Sessao
 import school.sptech.zup.presenter.feed.Feed
 
 @Suppress("DEPRECATION")
@@ -19,6 +21,8 @@ class FormularioPerfil3 : AppCompatActivity() {
     private val binding by lazy {
         ActivityFormularioPerfil3Binding.inflate(layoutInflater)
     }
+
+    val sessao = Sessao
 
     @RequiresApi(Build.VERSION_CODES.TIRAMISU)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -96,9 +100,19 @@ class FormularioPerfil3 : AppCompatActivity() {
         }
 
         menuItemPerfil.setOnMenuItemClickListener {
-            val intent = Intent(this, PerfilUsuarioSemFormulario::class.java)
-            startActivity(intent)
-            true
+            val sharedPreferences = getSharedPreferences("ZupShared", Context.MODE_PRIVATE)
+
+            val valorInfluencer = sharedPreferences.getBoolean("influencer", false)
+
+            if(sessao.influencer == true || valorInfluencer == true){
+                val intent = Intent(this, PerfilUsuarioInfluencer::class.java)
+                startActivity(intent)
+                true
+            }else {
+                val intent = Intent(this, PerfilUsuarioSemFormulario::class.java)
+                startActivity(intent)
+                true
+            }
         }
     }
 

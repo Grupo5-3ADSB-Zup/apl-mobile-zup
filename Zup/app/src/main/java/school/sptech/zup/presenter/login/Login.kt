@@ -92,8 +92,8 @@ class Login : AppCompatActivity() {
                      val usuarioResponse = response.body()
 
                      if (usuarioResponse != null) {
+                         adicionarSessao(usuarioResponse, id)
                         adicionarGetShared(usuarioResponse, id)
-                        adicionarSessao(usuarioResponse, id)
                      } else {
                          mostrarErroMensagem("Credenciais inválidas")
                      }
@@ -135,20 +135,20 @@ class Login : AppCompatActivity() {
         // Adiciona dados chave-valor
         editor.putLong("idUsuario", id)
         editor.putString("nome", usuarioResponse.nome)
-        editor.putString("email", usuarioResponse.nome)
-        editor.putString("username", usuarioResponse.nome)
-        editor.putString("senha", usuarioResponse.nome)
-        editor.putString("influencer", usuarioResponse.nome)
-        editor.putString("autenticado", usuarioResponse.nome)
-        editor.putString("cpf", usuarioResponse.nome)
-        editor.putString("cnpj", usuarioResponse.nome)
-        editor.putString("admin", usuarioResponse.nome)
-        editor.putString("idPerfil", usuarioResponse.nome)
-        editor.putString("linkYoutube", usuarioResponse.nome)
-        editor.putString("linkInstagram", usuarioResponse.nome)
-        editor.putString("linkTikTok", usuarioResponse.nome)
-        editor.putString("descPerfil", usuarioResponse.nome)
-        editor.putString("foto", usuarioResponse.nome)
+        editor.putString("email", null)
+        editor.putString("username", usuarioResponse.username)
+        editor.putString("senha", usuarioResponse.senha)
+        editor.putBoolean("influencer", usuarioResponse.influencer)
+        editor.putBoolean("autenticado", usuarioResponse.autenticado)
+        editor.putString("cpf", usuarioResponse.cpf)
+        editor.putString("cnpj", null)
+        editor.putInt("admin", 0)
+        editor.putLong("idPerfil", usuarioResponse.idPerfil)
+        editor.putString("linkYoutube", usuarioResponse.linkYoutube)
+        editor.putString("linkInstagram", usuarioResponse.linkInstagram)
+        editor.putString("linkTikTok", usuarioResponse.linkTikTok)
+        editor.putString("descPerfil", usuarioResponse.descPerfil)
+        editor.putString("foto", usuarioResponse.foto)
 
 
         // Salva as mudanças

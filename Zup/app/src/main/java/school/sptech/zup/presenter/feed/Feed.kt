@@ -1,6 +1,7 @@
 package school.sptech.zup.presenter.feed
 
 import FeedAdapter
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -11,9 +12,11 @@ import retrofit2.Call
 import school.sptech.zup.R
 import school.sptech.zup.data.model.FeedResponse
 import school.sptech.zup.databinding.ActivityFeedBinding
+import school.sptech.zup.domain.model.Sessao
 import school.sptech.zup.network.ServiceProvider.service
 import school.sptech.zup.ui.BuscarInfluenciadores
 import school.sptech.zup.ui.FiltroPerfil
+import school.sptech.zup.ui.PerfilUsuarioInfluencer
 import school.sptech.zup.ui.PerfilUsuarioSemFormulario
 import school.sptech.zup.ui.TelaConfiguracao2
 
@@ -29,6 +32,8 @@ class Feed : AppCompatActivity() {
     private val binding by lazy {
         ActivityFeedBinding.inflate(layoutInflater)
     }
+
+    val sessao = Sessao
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -83,10 +88,18 @@ class Feed : AppCompatActivity() {
         }
 
         menuItemPerfil.setOnMenuItemClickListener {
-            val intent = Intent(this, PerfilUsuarioSemFormulario::class.java)
-            startActivity(intent)
+            val sharedPreferences = getSharedPreferences("ZupShared", Context.MODE_PRIVATE)
+
+            val valorInfluencer = sharedPreferences.getBoolean("influencer", false)
+
+            if(sessao.influencer == true || valorInfluencer == true){
+                val intent = Intent(this, PerfilUsuarioInfluencer::class.java)
+                startActivity(intent)
+            }else {
+                val intent = Intent(this, PerfilUsuarioSemFormulario::class.java)
+                startActivity(intent)
+            }
             true
         }
-
     }
 }

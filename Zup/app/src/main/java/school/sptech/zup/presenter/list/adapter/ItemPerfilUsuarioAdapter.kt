@@ -10,19 +10,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import school.sptech.zup.R
-import school.sptech.zup.data.model.FeedResponse
 import school.sptech.zup.data.model.PerfilUsuarioResponse
-import school.sptech.zup.databinding.ActivityPerfilUsuarioInfluencerBinding
-import school.sptech.zup.domain.model.DadosEnvioTelaGptRequest
 import school.sptech.zup.domain.model.DadosEnvioTelaInfluencer
-import school.sptech.zup.ui.Gpt
 import school.sptech.zup.ui.PerfilUsuarioInfluencer
-import school.sptech.zup.ui.PerfilUsuarioSemFormulario
 
 @Suppress("DEPRECATION")
 class ItemPerfilUsuarioAdapter(private var perfisItems: List<PerfilUsuarioResponse>) : RecyclerView.Adapter<ItemPerfilUsuarioAdapter.ViewHolder>() {
@@ -43,10 +36,29 @@ class ItemPerfilUsuarioAdapter(private var perfisItems: List<PerfilUsuarioRespon
         //val bitmap: Bitmap = BitmapFactory.decodeByteArray(decodedBytes, 0, decodedBytes.size)
         //imageView.setImageBitmap(bitmap)
 
+        //post.foto?.let {
+        //    Glide.with(holder.itemView.context) // Use o contexto do itemView
+        //        .load(it)
+        //        .into(holder.fotoUsuario)
+        //    Log.d("FeedAdapter", "Loading image at position ${post?.idPerfil}. Image URL: $it")
+        //}
+
+        if(post.foto != null){
+            colocarFotoUsuario(post.foto, holder)
+        }
+
         holder.nomeUsuario.text = post.nome
         holder.linkInstagram.text = post.linkInstagram
         holder.linkYoutube.text = post.linkYoutube
         holder.linkTikTok.text = post.linkTikTok
+    }
+
+    private fun colocarFotoUsuario(foto: String, holder: ViewHolder) {
+        val imageView: ImageView = holder.fotoUsuario
+
+        val decodedBytes: ByteArray = Base64.decode(foto, Base64.DEFAULT)
+        val bitmap: Bitmap = BitmapFactory.decodeByteArray(decodedBytes, 0, decodedBytes.size)
+        imageView.setImageBitmap(bitmap)
     }
 
     override fun getItemCount(): Int {

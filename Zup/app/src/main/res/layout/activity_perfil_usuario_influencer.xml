@@ -82,9 +82,10 @@
                         android:background="@color/cinzaClaroZup"></ImageView>
 
                     <ImageView
-                        android:layout_width="20dp"
+                        android:id="@+id/editar_foto"
+                        android:layout_width="16dp"
                         android:layout_height="20dp"
-                        android:layout_marginLeft="200dp"
+                        android:layout_marginLeft="50dp"
                         android:src="@mipmap/lapis_editar"></ImageView>
                 </LinearLayout>
 

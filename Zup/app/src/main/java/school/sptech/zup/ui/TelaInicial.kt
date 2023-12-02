@@ -21,10 +21,9 @@ class TelaInicial : AppCompatActivity() {
 
         val sharedPreferences = getSharedPreferences("ZupShared", Context.MODE_PRIVATE)
 
-        val valorToken = sharedPreferences.getString("token", null)
         val valorNome = sharedPreferences.getString("nome", null)
 
-        if(valorToken != null && valorNome != null)
+        if(valorNome != null)
             iniciarLoginOffiline()
         else {
             binding.buttonLogin.setOnClickListener {
