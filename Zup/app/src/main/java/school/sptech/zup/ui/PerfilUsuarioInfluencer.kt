@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Base64
+import android.view.View
 import android.widget.ImageView
 import android.widget.Toast
 import retrofit2.Call
@@ -78,6 +79,9 @@ class PerfilUsuarioInfluencer : AppCompatActivity() {
                 if (dadosTelaInfluenciadoresPerfil.foto != null){
                     colocarFotoUsuario(dadosTelaInfluenciadoresPerfil.foto)
                 }
+
+                val imageView: ImageView = findViewById(R.id.editar_foto)
+                imageView.visibility = View.GONE
             }
         }
 
