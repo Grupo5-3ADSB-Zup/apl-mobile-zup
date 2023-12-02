@@ -147,10 +147,10 @@ class FormularioPerfil5 : AppCompatActivity() {
                         val sharedPreferences = getSharedPreferences("ZupShared", Context.MODE_PRIVATE)
 
                         val valorInfluencer = sharedPreferences.getBoolean("influencer", false)
-                        val valorIdUsuario = sharedPreferences.getInt("idUsuario", 0)
+                        //val valorIdUsuario = sharedPreferences.getInt("idUsuario", 0)
 
                         if (valorInfluencer){
-                            cadastroInfluencer(valorIdUsuario.toLong())
+                            cadastroInfluencer(perfilRequest.idUsuario.toLong())
                         }else{
                             iniciarLogin()
                         }

@@ -30,8 +30,11 @@ class TelaConfiguracao2 : AppCompatActivity() {
         val valorNome = sharedPreferences.getString("nome", null)
         val valorIdUsuario = sharedPreferences.getLong("idUsuario", 0)
 
-        val dados = DadosTelaRefazerFormulario(
-            valorIdUsuario
+        val dados = LoginResponse(
+            id = if (valorIdUsuario == null) sessao.idUsuario.toLong() else valorIdUsuario,
+            nome = "",
+            email = "",
+            token = ""
         )
 
 
@@ -102,7 +105,7 @@ class TelaConfiguracao2 : AppCompatActivity() {
         finishAffinity()
     }
 
-    private fun formularioParte1(dados: DadosTelaRefazerFormulario) {
+    private fun formularioParte1(dados: LoginResponse) {
         val intent = Intent(this, FormularioPerfil1::class.java)
         intent.putExtra("dados", dados)
         startActivity(intent)
