@@ -53,7 +53,7 @@ class PerfilUsuarioInfluencer : AppCompatActivity() {
         val valorFoto = sharedPreferences.getString("foto", null)
         val valorInfluencer = sharedPreferences.getBoolean("influencer", false)
 
-        if (sessao.nome != "") {
+        if (sessao.nome != "" && dadosTelaInfluenciadoresPerfil == null) {
             binding.nomeUsuario.text = sessao.nome
             binding.instagramUsuario.text = sessao.linkInstagram
             binding.youtubeUsuario.text = sessao.linkYoutube

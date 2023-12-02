@@ -43,13 +43,13 @@ class FiltroPerfil : AppCompatActivity() {
 
         val valorIdPerfil = sharedPreferences.getLong("idPerfil", 0)
 
-
-        //fazer fluxo no cadastro para redirecionamento e depois fazer chamada para salvar local
-        //todas as informações
-        val call = service.BuscaUsuariosInfluencerTpPerfil(valorIdPerfil)
+        val call = service.BuscaUsuariosInfluencerTpPerfil(
+            if (valorIdPerfil.toInt() == 0) sessao.idTpPerfil else valorIdPerfil
+        )
         call.enqueue(object : retrofit2.Callback<List<PerfilUsuarioResponse>> {
             override fun onResponse(
-                call: Call<List<PerfilUsuarioResponse>>, response: Response<List<PerfilUsuarioResponse>>
+                call: Call<List<PerfilUsuarioResponse>>,
+                response: Response<List<PerfilUsuarioResponse>>
             ) {
                 if (response.isSuccessful) {
                     val posts = response?.body()
@@ -81,13 +81,13 @@ class FiltroPerfil : AppCompatActivity() {
             true
         }
 
-        menuItemPesquisar.setOnMenuItemClickListener{
+        menuItemPesquisar.setOnMenuItemClickListener {
             val intent = Intent(this, FiltroPerfil::class.java)
             startActivity(intent)
             true
         }
 
-        menuItemSettings.setOnMenuItemClickListener{
+        menuItemSettings.setOnMenuItemClickListener {
             val intent = Intent(this, TelaConfiguracao2::class.java)
             startActivity(intent)
             true
@@ -98,11 +98,11 @@ class FiltroPerfil : AppCompatActivity() {
 
             val valorInfluencer = sharedPreferences.getBoolean("influencer", false)
 
-            if(valorInfluencer){
+            if (valorInfluencer) {
                 val intent = Intent(this, PerfilUsuarioInfluencer::class.java)
                 startActivity(intent)
                 true
-            }else {
+            } else {
                 val intent = Intent(this, PerfilUsuarioSemFormulario::class.java)
                 startActivity(intent)
                 true
