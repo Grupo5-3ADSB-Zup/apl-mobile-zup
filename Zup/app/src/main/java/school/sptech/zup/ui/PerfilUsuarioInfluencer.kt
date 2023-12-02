@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
@@ -40,7 +41,8 @@ class PerfilUsuarioInfluencer : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        val dadosTelaInfluenciadoresPerfil = intent.getSerializableExtra("dados") as? DadosEnvioTelaInfluencer
+        val dadosTelaInfluenciadoresPerfil =
+            intent.getSerializableExtra("dados") as? DadosEnvioTelaInfluencer
 
         val sharedPreferences = getSharedPreferences("ZupShared", Context.MODE_PRIVATE)
 
@@ -51,32 +53,32 @@ class PerfilUsuarioInfluencer : AppCompatActivity() {
         val valorFoto = sharedPreferences.getString("foto", null)
         val valorInfluencer = sharedPreferences.getBoolean("influencer", false)
 
-        if(sessao.nome != ""){
+        if (sessao.nome != "") {
             binding.nomeUsuario.text = sessao.nome
             binding.instagramUsuario.text = sessao.linkInstagram
             binding.youtubeUsuario.text = sessao.linkYoutube
             binding.tiktokUsuario.text = sessao.linkTikTok
 
-            if (sessao.foto != ""){
+            if (sessao.foto != "") {
                 colocarFotoUsuario(sessao.foto)
             }
-        }else if (valorNome != null && dadosTelaInfluenciadoresPerfil == null) {
+        } else if (valorNome != null && dadosTelaInfluenciadoresPerfil == null) {
             binding.nomeUsuario.text = valorNome
             binding.instagramUsuario.text = valorLinkInsta
             binding.youtubeUsuario.text = valorLinkYoutube
             binding.tiktokUsuario.text = valorLinkTikTok
 
-            if (valorFoto != null){
+            if (valorFoto != null) {
                 colocarFotoUsuario(valorFoto)
             }
-        }else {
-            if (dadosTelaInfluenciadoresPerfil != null){
+        } else {
+            if (dadosTelaInfluenciadoresPerfil != null) {
                 binding.nomeUsuario.text = dadosTelaInfluenciadoresPerfil.nome
                 binding.instagramUsuario.text = dadosTelaInfluenciadoresPerfil.linkInstagram
                 binding.youtubeUsuario.text = dadosTelaInfluenciadoresPerfil.linkYoutube
                 binding.tiktokUsuario.text = dadosTelaInfluenciadoresPerfil.linkTikTok
 
-                if (dadosTelaInfluenciadoresPerfil.foto != null){
+                if (dadosTelaInfluenciadoresPerfil.foto != null) {
                     colocarFotoUsuario(dadosTelaInfluenciadoresPerfil.foto)
                 }
 
@@ -85,7 +87,7 @@ class PerfilUsuarioInfluencer : AppCompatActivity() {
             }
         }
 
-        binding.editarFoto.setOnClickListener{
+        binding.editarFoto.setOnClickListener {
             abrirGaleria()
         }
 
@@ -108,7 +110,7 @@ class PerfilUsuarioInfluencer : AppCompatActivity() {
             true
         }
 
-        menuItemSettings.setOnMenuItemClickListener{
+        menuItemSettings.setOnMenuItemClickListener {
             val intent = Intent(this, TelaConfiguracao2::class.java)
             startActivity(intent)
             true
@@ -119,15 +121,31 @@ class PerfilUsuarioInfluencer : AppCompatActivity() {
 
             val valorInfluencer = sharedPreferences.getBoolean("influencer", false)
 
-            if(sessao.influencer == true || valorInfluencer == true){
+            if (sessao.influencer == true || valorInfluencer == true) {
                 val intent = Intent(this, PerfilUsuarioInfluencer::class.java)
                 startActivity(intent)
                 true
-            }else {
+            } else {
                 val intent = Intent(this, PerfilUsuarioSemFormulario::class.java)
                 startActivity(intent)
                 true
             }
+        }
+
+        val linkInsta = binding.instagramUsuario.text.toString()
+        val linkYoutube = binding.youtubeUsuario.text.toString()
+        val linkTikTok = binding.tiktokUsuario.text.toString()
+
+        binding.instagramUsuario.setOnClickListener {
+            abrirLinkSocial(linkInsta)
+        }
+
+        binding.youtubeUsuario.setOnClickListener {
+            abrirLinkSocial(linkYoutube)
+        }
+
+        binding.tiktokUsuario.setOnClickListener {
+            abrirLinkSocial(linkTikTok)
         }
     }
 
@@ -156,14 +174,14 @@ class PerfilUsuarioInfluencer : AppCompatActivity() {
                     foto = bytes
                 )
                 println("USUARIOOO  $valorIdUsario")
-                val envioApi = ServiceProvider.service.adicionarImagem(valorIdUsario, dados )
+                val envioApi = ServiceProvider.service.adicionarImagem(valorIdUsario, dados)
                 envioApi.enqueue(object : Callback<FotoResponse> {
                     override fun onResponse(
                         call: Call<FotoResponse>, response: Response<FotoResponse>
                     ) {
                         if (response.isSuccessful) {
 
-                            if(response.body() != null){
+                            if (response.body() != null) {
                                 colocarFotoUsuario(response.body().foto)
                             }
 
@@ -210,5 +228,14 @@ class PerfilUsuarioInfluencer : AppCompatActivity() {
 
     private fun mostrarErroMensagem(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+    }
+
+    private fun abrirLinkSocial(link: String) {
+        if (link.isNotEmpty()) {
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(link))
+            startActivity(intent)
+        } else {
+            Toast.makeText(this, "Link não disponível", Toast.LENGTH_SHORT).show()
+        }
     }
 }
