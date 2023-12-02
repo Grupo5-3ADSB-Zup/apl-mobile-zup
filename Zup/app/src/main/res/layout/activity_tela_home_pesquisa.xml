@@ -11,169 +11,137 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_alignParentTop="true"
-                android:background="@color/amareloZup"
-                android:orientation="horizontal">
-                <ImageView
-                    android:layout_width="18dp"
-                    android:layout_height="18dp"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="10dp"
-                    android:src="@mipmap/voltar_preto_sem_traco" />
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:layout_alignParentTop="true"
-                    android:background="@color/cinzaClaroZup"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginTop="8dp"
-                    android:orientation="horizontal">
-                    <ImageView
-                        android:layout_width="15dp"
-                        android:layout_height="15dp"
-                        android:layout_marginTop="7dp"
-                        android:layout_marginLeft="5dp"
-                        android:src="@mipmap/pesquisar">
-                    </ImageView>
-                    <EditText
-                        android:layout_width="280dp"
-                        android:layout_height="40dp"
-                        android:hint="|"
-                        android:inputType="textPassword">
-                    </EditText>
-                    <ImageView
-                        android:layout_width="15dp"
-                        android:layout_height="15dp"
-                        android:layout_marginTop="7dp"
-                        android:layout_marginLeft="25dp"
-                        android:src="@mipmap/close">
-                    </ImageView>
-                </LinearLayout>
-            </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginTop="50dp"
                 android:orientation="vertical">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="30dp"
-                    android:paddingTop="20dp"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:paddingTop="20dp">
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:paddingTop="5dp"
                             android:text="Últimas buscas: "
-                            android:textSize="28dp"
-                            android:textColor="@color/cinzaClaroZup">
-                        </TextView>
+                            android:textColor="@color/cinzaClaroZup"
+                            android:textSize="28dp"></TextView>
                     </LinearLayout>
+
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
+
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="40dp"
                             android:orientation="horizontal">
+
                             <ImageView
                                 android:layout_width="10dp"
                                 android:layout_height="10dp"
                                 android:layout_gravity="center"
-                                android:src="@mipmap/icone_pesquisa_tempo">
-                            </ImageView>
+                                android:src="@mipmap/icone_pesquisa_tempo"></ImageView>
+
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
                                 android:layout_marginLeft="5dp"
                                 android:text="Exemplo pesquisa"
-                                android:textSize="18dp"
-                                android:textColor="@color/cinzaClaroZup">
-                            </TextView>
+                                android:textColor="@color/cinzaClaroZup"
+                                android:textSize="18dp"></TextView>
                         </LinearLayout>
+
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp"
                             android:orientation="horizontal">
+
                             <ImageView
                                 android:layout_width="10dp"
                                 android:layout_height="10dp"
                                 android:layout_gravity="center"
-                                android:src="@mipmap/icone_pesquisa_tempo">
-                            </ImageView>
+                                android:src="@mipmap/icone_pesquisa_tempo"></ImageView>
+
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
                                 android:layout_marginLeft="5dp"
                                 android:text="Exemplo pesquisa"
-                                android:textSize="18dp"
-                                android:textColor="@color/cinzaClaroZup">
-                            </TextView>
+                                android:textColor="@color/cinzaClaroZup"
+                                android:textSize="18dp"></TextView>
                         </LinearLayout>
+
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp"
                             android:orientation="horizontal">
+
                             <ImageView
                                 android:layout_width="10dp"
                                 android:layout_height="10dp"
                                 android:layout_gravity="center"
-                                android:src="@mipmap/icone_pesquisa_tempo">
-                            </ImageView>
+                                android:src="@mipmap/icone_pesquisa_tempo"></ImageView>
+
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
                                 android:layout_marginLeft="5dp"
                                 android:text="Exemplo pesquisa"
-                                android:textSize="18dp"
-                                android:textColor="@color/cinzaClaroZup">
-                            </TextView>
+                                android:textColor="@color/cinzaClaroZup"
+                                android:textSize="18dp"></TextView>
                         </LinearLayout>
+
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp"
                             android:orientation="horizontal">
+
                             <ImageView
                                 android:layout_width="10dp"
                                 android:layout_height="10dp"
                                 android:layout_gravity="center"
-                                android:src="@mipmap/icone_pesquisa_tempo">
-                            </ImageView>
+                                android:src="@mipmap/icone_pesquisa_tempo"></ImageView>
+
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
                                 android:layout_marginLeft="5dp"
                                 android:text="Exemplo pesquisa"
-                                android:textSize="18dp"
-                                android:textColor="@color/cinzaClaroZup">
-                            </TextView>
+                                android:textColor="@color/cinzaClaroZup"
+                                android:textSize="18dp"></TextView>
                         </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
 
             </LinearLayout>
         </LinearLayout>
+
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/nav_bar"
             android:layout_width="wrap_content"
@@ -181,11 +149,11 @@
             android:layout_alignParentBottom="true"
             android:background="@drawable/botao_backgroud"
             android:elevation="2dp"
-            app:menu="@menu/botao_menu"
             app:itemIconSize="30dp"
             app:itemIconTint="@drawable/item_deslizar"
             app:itemRippleColor="@android:color/transparent"
-            app:labelVisibilityMode="unlabeled"/>
+            app:labelVisibilityMode="unlabeled"
+            app:menu="@menu/botao_menu" />
     </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
