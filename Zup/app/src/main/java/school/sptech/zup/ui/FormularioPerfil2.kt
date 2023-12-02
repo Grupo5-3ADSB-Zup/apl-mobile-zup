@@ -28,9 +28,6 @@ class FormularioPerfil2 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        binding.buttonVoltar.setOnClickListener {
-            telaFormulario1()
-        }
 
 
         val dadosFormularioParte1 =

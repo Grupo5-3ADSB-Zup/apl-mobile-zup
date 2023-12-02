@@ -81,7 +81,6 @@ class ItemPerfilUsuarioAdapter(private var perfisItems: List<PerfilUsuarioRespon
 
        init {
            fotoUsuario.setOnClickListener {
-               val intent = Intent(itemView.context, PerfilUsuarioInfluencer::class.java)
                val nome = perfisItems[adapterPosition].nome
                val idPerfil = perfisItems[adapterPosition].idPerfil
                val linkYoutube = perfisItems[adapterPosition].linkYoutube
@@ -93,13 +92,14 @@ class ItemPerfilUsuarioAdapter(private var perfisItems: List<PerfilUsuarioRespon
                val dados = DadosEnvioTelaInfluencer(
                    nome = nome,
                    idPerfil = idPerfil,
-                   linkYoutube = linkYoutube,
-                   linkInstagram = linkInstagram,
-                   linkTikTok = linkTikTok,
+                   linkYoutube = if (linkYoutube == null) "" else linkYoutube,
+                   linkInstagram = if(linkInstagram == null) "" else linkInstagram,
+                   linkTikTok = if(linkTikTok == null) "" else linkTikTok,
                    descPerfil = descPerfil,
                    foto = foto
                )
-                intent.putExtra("dados", dados)
+               val intent = Intent(itemView.context, PerfilUsuarioInfluencer::class.java)
+               intent.putExtra("dados", dados)
                itemView.context.startActivity(intent)
            }
        }

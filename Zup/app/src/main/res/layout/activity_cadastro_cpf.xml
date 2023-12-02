@@ -91,7 +91,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
                     android:layout_gravity="center_horizontal"
-                    android:text="A sua privacidade é importante para nós. O [nome do aplicativo] está comprometido em proteger seus dados pessoais de acordo com a Lei Geral de Proteção de Dados (LGPD)."
+                    android:text="A sua privacidade é importante para nós. A Zup está comprometido em proteger seus dados pessoais de acordo com a Lei Geral de Proteção de Dados (LGPD)."
                     android:textColor="@color/black"
                     android:textSize="20dp"/>
 

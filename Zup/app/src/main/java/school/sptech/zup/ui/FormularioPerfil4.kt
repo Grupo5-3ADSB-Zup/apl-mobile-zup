@@ -29,9 +29,7 @@ class FormularioPerfil4 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        binding.buttonVoltar.setOnClickListener {
-            telaFormulario3()
-        }
+
 
         val dadosFormularioParte3 =
             intent.getSerializableExtra("dados") as? DadosTelaFormularioPerfil3Request

@@ -26,9 +26,6 @@ class FormularioPerfil1 : AppCompatActivity() {
 
         val dadosLogin = intent.getSerializableExtra("dados") as? LoginResponse
 
-        binding.buttonVoltar.setOnClickListener {
-            telaInicio()
-        }
 
         val sessao = Sessao
 
