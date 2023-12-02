@@ -59,7 +59,7 @@ class PerfilUsuarioInfluencer : AppCompatActivity() {
             if (sessao.foto != ""){
                 colocarFotoUsuario(sessao.foto)
             }
-        }else if (valorNome != null) {
+        }else if (valorNome != null && dadosTelaInfluenciadoresPerfil == null) {
             binding.nomeUsuario.text = valorNome
             binding.instagramUsuario.text = valorLinkInsta
             binding.youtubeUsuario.text = valorLinkYoutube
