@@ -132,7 +132,7 @@ class PerfilUsuarioInfluencer : AppCompatActivity() {
             }
         }
 
-        val linkInsta = binding.instagramUsuario.text.toString()
+        val linkInsta = "https://github.com/Grupo5-3ADSB-Zup/apl-mobile-zup/tree/feature/linkar-redes-sociais"
         val linkYoutube = binding.youtubeUsuario.text.toString()
         val linkTikTok = binding.tiktokUsuario.text.toString()
 
