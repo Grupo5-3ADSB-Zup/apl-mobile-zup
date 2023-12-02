@@ -121,9 +121,9 @@ class Login : AppCompatActivity() {
         sessao.cnpj = null
         sessao.admin = 0
         sessao.idTpPerfil = usuarioResponse.idPerfil
-        sessao.linkYoutube = usuarioResponse.linkYoutube
-        sessao.linkInstagram = usuarioResponse.linkInstagram
-        sessao.linkTikTok = usuarioResponse.linkTikTok
+        sessao.linkYoutube = if(usuarioResponse.linkYoutube == null) "" else usuarioResponse.linkYoutube
+        sessao.linkInstagram = if(usuarioResponse.linkInstagram == null) "" else usuarioResponse.linkInstagram
+        sessao.linkTikTok = if(usuarioResponse.linkTikTok == null) "" else usuarioResponse.linkTikTok
     }
 
     private fun adicionarGetShared(usuarioResponse: UsuarioResponse, id: Long) {
@@ -144,9 +144,9 @@ class Login : AppCompatActivity() {
         editor.putString("cnpj", null)
         editor.putInt("admin", 0)
         editor.putLong("idPerfil", usuarioResponse.idPerfil)
-        editor.putString("linkYoutube", usuarioResponse.linkYoutube)
-        editor.putString("linkInstagram", usuarioResponse.linkInstagram)
-        editor.putString("linkTikTok", usuarioResponse.linkTikTok)
+        editor.putString("linkYoutube", if(usuarioResponse.linkYoutube == null) "" else usuarioResponse.linkYoutube)
+        editor.putString("linkInstagram", if(usuarioResponse.linkInstagram == null) "" else usuarioResponse.linkInstagram)
+        editor.putString("linkTikTok", if(usuarioResponse.linkTikTok == null) "" else usuarioResponse.linkTikTok)
         editor.putString("descPerfil", usuarioResponse.descPerfil)
         editor.putString("foto", usuarioResponse.foto)
 
