@@ -1,22 +1,19 @@
 import android.content.Intent
-import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
-import android.view.Menu
-import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import school.sptech.zup.R
 import school.sptech.zup.data.model.FeedResponse
 import school.sptech.zup.domain.model.DadosEnvioTelaGptRequest
-import school.sptech.zup.presenter.feed.Feed
+import school.sptech.zup.domain.model.DadosEnvioTelaMlRequest
 import school.sptech.zup.ui.Gpt
+import school.sptech.zup.ui.TelaExibicaoDadosMl
 
 @Suppress("DEPRECATION")
 class FeedAdapter(private var feedItems: List<FeedResponse>) : RecyclerView.Adapter<FeedAdapter.ViewHolder>() {
@@ -89,6 +86,32 @@ class FeedAdapter(private var feedItems: List<FeedResponse>) : RecyclerView.Adap
                         )
 
                         val intent = Intent(itemView.context, Gpt::class.java)
+                        intent.putExtra("dados", dados)
+                        itemView.context.startActivity(intent)
+                        true
+                    }
+                    R.id.botao_like -> {
+                        val id = feedItems[adapterPosition].id
+                        val titulo = feedItems[adapterPosition].titulo
+
+                        val (linkImagem, descricaoSemImagem) = tratarDescricao(feedItems[adapterPosition].descricao)
+                        val descricaoNoticia = if (linkImagem == null) feedItems[adapterPosition].descricao else descricaoSemImagem
+                        val fotoNoticia = linkImagem
+                        val link = feedItems[adapterPosition].link
+                        val emissora = feedItems[adapterPosition].emissora
+                        val dtNoticia = feedItems[adapterPosition].dtNoticia
+
+                        val dados = DadosEnvioTelaMlRequest(
+                            id = id,
+                            titulo = titulo,
+                            descricao = descricaoNoticia,
+                            link = link,
+                            emissora = emissora,
+                            dtNoticia = dtNoticia,
+                            fotoNoticia = fotoNoticia
+                        )
+
+                        val intent = Intent(itemView.context, TelaExibicaoDadosMl::class.java)
                         intent.putExtra("dados", dados)
                         itemView.context.startActivity(intent)
                         true

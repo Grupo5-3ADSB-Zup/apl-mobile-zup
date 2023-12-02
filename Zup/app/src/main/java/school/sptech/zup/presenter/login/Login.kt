@@ -92,8 +92,8 @@ class Login : AppCompatActivity() {
                      val usuarioResponse = response.body()
 
                      if (usuarioResponse != null) {
-                        adicionarGetShared(usuarioResponse)
-                        //adicionarSessao(usuarioResponse)
+                        adicionarGetShared(usuarioResponse, id)
+                        adicionarSessao(usuarioResponse, id)
                      } else {
                          mostrarErroMensagem("Credenciais inválidas")
                      }
@@ -108,15 +108,48 @@ class Login : AppCompatActivity() {
          })
     }
 
-    private fun adicionarGetShared(usuarioResponse: UsuarioResponse) {
+    private fun adicionarSessao(usuarioResponse: UsuarioResponse, id: Long) {
+        var sessao = Sessao
+
+        sessao.idUsuario = id.toString()
+        sessao.nome = usuarioResponse.nome
+        sessao.email = null
+        sessao.username = usuarioResponse.username
+        sessao.influencer = usuarioResponse.influencer
+        sessao.autenticaddo = usuarioResponse.autenticado
+        sessao.cpf = usuarioResponse.cpf
+        sessao.cnpj = null
+        sessao.admin = 0
+        sessao.idTpPerfil = usuarioResponse.idPerfil
+        sessao.linkYoutube = usuarioResponse.linkYoutube
+        sessao.linkInstagram = usuarioResponse.linkInstagram
+        sessao.linkTikTok = usuarioResponse.linkTikTok
+    }
+
+    private fun adicionarGetShared(usuarioResponse: UsuarioResponse, id: Long) {
         val sharedPreferences = getSharedPreferences("ZupShared", Context.MODE_PRIVATE)
 
         // Cria um editor para modificar o SharedPreferences
         val editor = sharedPreferences.edit()
 
         // Adiciona dados chave-valor
+        editor.putLong("idUsuario", id)
         editor.putString("nome", usuarioResponse.nome)
-        editor.putLong("idUsuario", usuarioResponse.idUsuario)
+        editor.putString("email", usuarioResponse.nome)
+        editor.putString("username", usuarioResponse.nome)
+        editor.putString("senha", usuarioResponse.nome)
+        editor.putString("influencer", usuarioResponse.nome)
+        editor.putString("autenticado", usuarioResponse.nome)
+        editor.putString("cpf", usuarioResponse.nome)
+        editor.putString("cnpj", usuarioResponse.nome)
+        editor.putString("admin", usuarioResponse.nome)
+        editor.putString("idPerfil", usuarioResponse.nome)
+        editor.putString("linkYoutube", usuarioResponse.nome)
+        editor.putString("linkInstagram", usuarioResponse.nome)
+        editor.putString("linkTikTok", usuarioResponse.nome)
+        editor.putString("descPerfil", usuarioResponse.nome)
+        editor.putString("foto", usuarioResponse.nome)
+
 
         // Salva as mudanças
         editor.apply()
