@@ -5,13 +5,19 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
+import android.widget.Toast
 import com.bumptech.glide.Glide
+import retrofit2.Call
 import school.sptech.zup.R
-import school.sptech.zup.data.model.response.LoginResponse
+import school.sptech.zup.data.model.CalculoPesoPorNoticiaIAResponse
 import school.sptech.zup.databinding.ActivityTelaExibicaoDadosMlBinding
 import school.sptech.zup.domain.model.DadosEnvioTelaMlRequest
 import school.sptech.zup.domain.model.Sessao
+import school.sptech.zup.network.ServiceProvider.service
 import school.sptech.zup.presenter.feed.Feed
+import retrofit2.Callback
+import retrofit2.Response
 
 @Suppress("DEPRECATION")
 class TelaExibicaoDadosMl : AppCompatActivity() {
@@ -40,6 +46,30 @@ class TelaExibicaoDadosMl : AppCompatActivity() {
 
         binding.PostDescricao.text = dadosFeed?.descricao.toString()
 
+
+        val call = service.GetPorcentagemPeso(dadosFeed?.id)
+        call.enqueue(object : Callback<CalculoPesoPorNoticiaIAResponse> {
+            override fun onResponse(
+                call: Call<CalculoPesoPorNoticiaIAResponse>, response: Response<CalculoPesoPorNoticiaIAResponse>
+            ) {
+                if (response.isSuccessful) {
+                    val pesos = response.body()
+
+                    binding.porcentagemPesoCompra.text = if(pesos.porcentagemPesoCompra.toString() == null) "Sem dados" else pesos.porcentagemPesoCompra.toString()
+                    binding.porcentagemPesoPensaEmCompra.text = if(pesos.porcentagemPesoPensaEmCompra.toString() == null) "Sem dados" else pesos.porcentagemPesoPensaEmCompra.toString()
+                    binding.porcentagemPesoNeutro.text = if(pesos.porcentagemPesoNeutro.toString() == null) "Sem dados" else pesos.porcentagemPesoNeutro.toString()
+                    binding.porcentagemPesoPenseEmVender.text = if(pesos.porcentagemPesoPenseEmVender.toString() == null) "Sem dados" else pesos.porcentagemPesoPenseEmVender.toString()
+                    binding.porcentagemPesoVenda.text = if(pesos.porcentagemPesoVenda.toString() == null) "Sem dados" else pesos.porcentagemPesoVenda.toString()
+
+                } else {
+                    mostrarErroMensagem("Sem Comentários para essa notícia")
+                    binding.divDadosML.visibility = View.GONE
+                }
+            }
+            override fun onFailure(call: Call<CalculoPesoPorNoticiaIAResponse>?, t: Throwable?) {
+                // Lidar com falhas de rede
+            }
+        })
 
         val botaoNavBar = binding.navBar
 
@@ -81,5 +111,9 @@ class TelaExibicaoDadosMl : AppCompatActivity() {
                 true
             }
         }
+    }
+
+    private fun mostrarErroMensagem(message: String) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 }

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/verdeZup"
     tools:context=".ui.TelaExibicaoDadosMl">
 
     <RelativeLayout
@@ -27,8 +28,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/cinzaMedioZup"
-                    android:orientation="vertical"
-                    android:layout_marginTop="50dp">
+                    android:orientation="vertical">
 
                     <TextView
                         android:id="@+id/PostEmissora"
@@ -67,6 +67,134 @@
                         android:layout_marginBottom="15dp"
                         android:textColor="@color/white"
                         android:textSize="15sp" />
+
+                    <LinearLayout
+                        android:id="@+id/divDadosML"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="50dp"
+                        android:background="@color/amareloZup"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:textSize="20dp"
+                            android:text="Análise da ZUP Machine Learning">
+                        </TextView>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp">
+
+                            <TextView
+                                android:layout_width="250dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:textSize="20dp"
+                                android:text=" Porcentagem Compra">
+                            </TextView>
+
+                            <TextView
+                                android:id="@+id/porcentagemPesoCompra"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:textSize="20dp">
+                            </TextView>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp">
+
+                            <TextView
+                                android:layout_width="250dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:textSize="20dp"
+                                android:text=" Porcentagem Pensa em  Compra">
+                            </TextView>
+
+                            <TextView
+                                android:id="@+id/porcentagemPesoPensaEmCompra"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:textSize="20dp">
+                            </TextView>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp">
+
+                            <TextView
+                                android:layout_width="250dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:textSize="20dp"
+                                android:text=" Porcentagem Neutro">
+                            </TextView>
+
+                            <TextView
+                                android:id="@+id/porcentagemPesoNeutro"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:textSize="20dp">
+                            </TextView>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp">
+
+                            <TextView
+                                android:layout_width="250dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:textSize="20dp"
+                                android:text=" Porcentagem Pense em Vender">
+                            </TextView>
+
+                            <TextView
+                                android:id="@+id/porcentagemPesoPenseEmVender"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:textSize="20dp">
+                            </TextView>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp">
+
+                            <TextView
+                                android:layout_width="250dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:textSize="20dp"
+                                android:text=" Porcentagem Venda">
+                            </TextView>
+
+                            <TextView
+                                android:id="@+id/porcentagemPesoVenda"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:textSize="20dp">
+                            </TextView>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
 
                 </LinearLayout>
 

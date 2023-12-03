@@ -7,6 +7,8 @@ import retrofit2.http.GET
 import retrofit2.http.PATCH
 import retrofit2.http.POST
 import retrofit2.http.Path
+import school.sptech.zup.data.model.CalculoPesoPorNoticiaIAResponse
+import school.sptech.zup.data.model.ComentarioResponse
 import school.sptech.zup.data.model.FeedResponse
 import school.sptech.zup.data.model.FotoResponse
 import school.sptech.zup.data.model.GptResponse
@@ -15,6 +17,7 @@ import school.sptech.zup.data.model.RegisterResponse
 import school.sptech.zup.data.model.UsuarioResponse
 import school.sptech.zup.data.model.response.LoginResponse
 import school.sptech.zup.domain.model.CadastroDadosInfluencerRequest
+import school.sptech.zup.domain.model.ComentarioRequest
 import school.sptech.zup.domain.model.DadosEnvioApiFormularioPerfil
 import school.sptech.zup.domain.model.FotoRequest
 import school.sptech.zup.domain.model.GptRequest
@@ -51,5 +54,16 @@ public interface ServiceApi {
 
     @GET("usuario/{idUsuario}")
     fun getUsuarioId(@Path("idUsuario") idUsuario: Long): Call<UsuarioResponse>
+
+    @GET("IA/pesos/analise/porcentagem/{idNoticia}")
+    fun GetPorcentagemPeso(@Path("idNoticia") idNoticia: Integer?) : Call<CalculoPesoPorNoticiaIAResponse>
+
+    @POST("noticia/comentarios/{idUsuario}/{idNoticia}")
+    fun adicionarComentario(@Body comentarioRequest: ComentarioRequest,
+                            @Path("idUsuario") idUsuario: Long,
+                            @Path("idNoticia") idNoticia: Long): Call<ComentarioResponse>
+
+    @GET("/noticias/feed/comentarios/{idNoticia}")
+    fun getComentarioMobile(@Path("idNoticia") idNoticia: Int): Call<List<ComentarioResponse>?>
 
 }
