@@ -61,9 +61,9 @@ public interface ServiceApi {
     @POST("noticia/comentarios/{idUsuario}/{idNoticia}")
     fun adicionarComentario(@Body comentarioRequest: ComentarioRequest,
                             @Path("idUsuario") idUsuario: Long,
-                            @Path("idNoticia") idNoticia: Long): Call<ComentarioResponse>
+                            @Path("idNoticia") idNoticia: Long?): Call<ComentarioResponse>
 
-    @GET("/noticias/feed/comentarios/{idNoticia}")
-    fun getComentarioMobile(@Path("idNoticia") idNoticia: Int): Call<List<ComentarioResponse>?>
+    @GET("noticia/comentarios-id-noticia/{idNoticia}")
+    fun getComentarioMobile(@Path("idNoticia") idNoticia: Integer?): Call<List<ComentarioResponse>>
 
 }

@@ -18,6 +18,9 @@ import school.sptech.zup.network.ServiceProvider.service
 import school.sptech.zup.presenter.feed.Feed
 import retrofit2.Callback
 import retrofit2.Response
+import school.sptech.zup.data.model.ComentarioResponse
+import school.sptech.zup.data.model.FeedResponse
+import school.sptech.zup.domain.model.ComentarioRequest
 
 @Suppress("DEPRECATION")
 class TelaExibicaoDadosMl : AppCompatActivity() {
@@ -36,6 +39,10 @@ class TelaExibicaoDadosMl : AppCompatActivity() {
 
         binding.PostEmissora.text = dadosFeed?.emissora.toString()
         binding.PostTitulo.text = dadosFeed?.titulo.toString()
+
+        val sharedPreferences = getSharedPreferences("ZupShared", Context.MODE_PRIVATE)
+
+        val valorIdUsuario = sharedPreferences.getLong("idUsuario", 0)
 
         dadosFeed?.fotoNoticia?.let {
             Glide.with(this@TelaExibicaoDadosMl) // Use o contexto do itemView
@@ -63,13 +70,73 @@ class TelaExibicaoDadosMl : AppCompatActivity() {
 
                 } else {
                     mostrarErroMensagem("Sem Comentários para essa notícia")
-                    binding.divDadosML.visibility = View.GONE
+                    //binding.divDadosML.visibility = View.GONE
                 }
             }
             override fun onFailure(call: Call<CalculoPesoPorNoticiaIAResponse>?, t: Throwable?) {
                 // Lidar com falhas de rede
             }
         })
+
+        val callGetComentario = service.getComentarioMobile(dadosFeed?.id)
+        callGetComentario.enqueue(object : Callback<List<ComentarioResponse>> {
+            override fun onResponse(
+                call: Call<List<ComentarioResponse>>,
+                response: Response<List<ComentarioResponse>>
+            ) {
+                if (response.isSuccessful) {
+                    val comentarioResponse = response.body()
+
+                    if (comentarioResponse != null) {
+
+                        binding.commentList.text = comentarioResponse.get(0).descricao
+
+                    } else {
+                        mostrarErroMensagem("Credenciais inválidas")
+                    }
+                } else {
+                    mostrarErroMensagem("Erro na solicitação")
+                }
+            }
+
+            override fun onFailure(call: Call<List<ComentarioResponse>>?, t: Throwable?) {
+                mostrarErroMensagem("Erro na rede: ${t?.message}")
+            }
+        })
+        binding.submitCommentButton.setOnClickListener{
+
+            val comentario = binding.commentInput.text.toString()
+
+            val comentarioEnvio = ComentarioRequest(
+                comentario = comentario
+            )
+
+            val callAdicionarComentario = service.adicionarComentario(comentarioEnvio, valorIdUsuario, dadosFeed?.id?.toLong())
+            callAdicionarComentario.enqueue(object : Callback<ComentarioResponse> {
+                override fun onResponse(
+                    call: Call<ComentarioResponse>,
+                    response: Response<ComentarioResponse>
+                ) {
+                    if (response.isSuccessful) {
+                        val comentarioResponse = response.body()
+
+                        if (comentarioResponse != null) {
+
+                            binding.commentList.text = comentarioResponse.descricao.toString()
+
+                        } else {
+                            mostrarErroMensagem("Credenciais inválidas")
+                        }
+                    } else {
+                        mostrarErroMensagem("Erro na solicitação")
+                    }
+                }
+
+                override fun onFailure(call: Call<ComentarioResponse>?, t: Throwable?) {
+                    mostrarErroMensagem("Erro na rede: ${t?.message}")
+                }
+            })
+        }
 
         val botaoNavBar = binding.navBar
 
