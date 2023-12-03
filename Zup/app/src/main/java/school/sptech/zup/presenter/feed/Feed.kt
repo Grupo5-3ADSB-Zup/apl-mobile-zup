@@ -4,10 +4,12 @@ import FeedAdapter
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
+import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import retrofit2.Call
 import school.sptech.zup.R
 import school.sptech.zup.data.model.FeedResponse
@@ -41,6 +43,12 @@ class Feed : AppCompatActivity() {
 
         recyclerView = findViewById(R.id.recyclerViewFeed)
         recyclerView.layoutManager = LinearLayoutManager(this)
+
+        //Testar amanhã
+        //val layoutManager = LinearLayoutManager(this)
+        //layoutManager.orientation = LinearLayoutManager.VERTICAL
+        //recyclerView.layoutManager = layoutManager
+
         adapter = FeedAdapter(emptyList())
         recyclerView.adapter = adapter
 
