@@ -75,14 +75,14 @@ class TelaExibicaoDadosMl : AppCompatActivity() {
                     val pesos = response.body()
 
                     binding.porcentagemPesoCompra.text = if(pesos.porcentagemPesoCompra.toString() == null) "Sem dados" else pesos.porcentagemPesoCompra.toString()
-                    //binding.porcentagemPesoPensaEmCompra.text = if(pesos.porcentagemPesoPensaEmCompra.toString() == null) "Sem dados" else pesos.porcentagemPesoPensaEmCompra.toString()
-                    //binding.porcentagemPesoNeutro.text = if(pesos.porcentagemPesoNeutro.toString() == null) "Sem dados" else pesos.porcentagemPesoNeutro.toString()
-                    //binding.porcentagemPesoPenseEmVender.text = if(pesos.porcentagemPesoPenseEmVender.toString() == null) "Sem dados" else pesos.porcentagemPesoPenseEmVender.toString()
+                    binding.porcentagemPesoPensaEmCompra.text = if(pesos.porcentagemPesoPensaEmCompra.toString() == null) "Sem dados" else pesos.porcentagemPesoPensaEmCompra.toString()
+                    binding.porcentagemPesoNeutro.text = if(pesos.porcentagemPesoNeutro.toString() == null) "Sem dados" else pesos.porcentagemPesoNeutro.toString()
+                    binding.porcentagemPesoPenseEmVender.text = if(pesos.porcentagemPesoPenseEmVender.toString() == null) "Sem dados" else pesos.porcentagemPesoPenseEmVender.toString()
                     binding.porcentagemPesoVenda.text = if(pesos.porcentagemPesoVenda.toString() == null) "Sem dados" else pesos.porcentagemPesoVenda.toString()
 
                 } else {
                     mostrarErroMensagem("Sem Comentários para essa notícia")
-                    //binding.divDadosML.visibility = View.GONE
+                    binding.divDadosML.visibility = View.GONE
                 }
             }
             override fun onFailure(call: Call<CalculoPesoPorNoticiaIAResponse>?, t: Throwable?) {
@@ -132,7 +132,29 @@ class TelaExibicaoDadosMl : AppCompatActivity() {
 
                         if (comentarioResponse != null) {
 
-                           // binding.commentList.text = comentarioResponse.descricao.toString()
+                           val callGetComentario2 = service.getComentarioMobile(dadosFeed?.id)
+                            callGetComentario2.enqueue(object : Callback<List<ComentarioResponse>> {
+                                override fun onResponse(
+                                    call: Call<List<ComentarioResponse>>,
+                                    response: Response<List<ComentarioResponse>>
+                                ) {
+                                    if (response.isSuccessful) {
+                                        val comentarioResponse = response.body()
+
+                                        if (comentarioResponse != null) {
+                                            adapter.updateData(comentarioResponse)
+                                        } else {
+                                            mostrarErroMensagem("Credenciais inválidas")
+                                        }
+                                    } else {
+                                        mostrarErroMensagem("Erro na solicitação")
+                                    }
+                                }
+
+                                override fun onFailure(call: Call<List<ComentarioResponse>>?, t: Throwable?) {
+                                    mostrarErroMensagem("Erro na rede: ${t?.message}")
+                                }
+                            })
 
                         } else {
                             mostrarErroMensagem("Credenciais inválidas")
