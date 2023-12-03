@@ -39,6 +39,7 @@ class TelaExibicaoDadosMl : AppCompatActivity() {
 
     private val sessao = Sessao
     private var comentarioResponse: List<ComentarioResponse>? = null
+    private var isActivityRunning = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -189,19 +190,27 @@ class TelaExibicaoDadosMl : AppCompatActivity() {
     }
 
     private fun exibirComentarios(comentarios: List<ComentarioResponse>) {
-        val comentariosOrdenados = comentarios.sortedByDescending { it.id }
+        val comentariosOrdenados = comentarios.sortedByDescending { it.dtComentario }
         val comentariosText = comentariosOrdenados.joinToString("\n") { comentario ->
-            "${colocarFotoUsuario(comentario.usuario.foto)} ${comentario.usuario.nome}: ${comentario.descricao}"
+            " ${comentario.usuario.nome}: ${comentario.descricao}"
         }
-        binding.commentList.text = comentariosText
+
+        // Verifica se a atividade ainda está em execução antes de atualizar a interface do usuário
+        if (isActivityRunning) {
+            binding.commentList.text = comentariosText
+        }
     }
 
-    private fun colocarFotoUsuario(foto: String): SpannableString {
+    private fun colocarFotoUsuario(foto: String?): SpannableString {
+        if (foto.isNullOrEmpty()) {
+            return SpannableString(" ")
+        }
         val spannableString = SpannableString(" ")
         val imageSpan = ImageSpan(getBitmapFromBase64(foto), ImageSpan.ALIGN_BASELINE)
         spannableString.setSpan(imageSpan, 0, 1, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
         return spannableString
     }
+
 
     private fun getBitmapFromBase64(base64: String): Bitmap {
         val decodedBytes: ByteArray = Base64.decode(base64, Base64.DEFAULT)
