@@ -7,6 +7,8 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import retrofit2.Call
 import school.sptech.zup.R
@@ -21,9 +23,13 @@ import retrofit2.Response
 import school.sptech.zup.data.model.ComentarioResponse
 import school.sptech.zup.data.model.FeedResponse
 import school.sptech.zup.domain.model.ComentarioRequest
+import school.sptech.zup.presenter.list.adapter.ComentarioAdapter
 
 @Suppress("DEPRECATION")
 class TelaExibicaoDadosMl : AppCompatActivity() {
+
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var adapter: ComentarioAdapter
 
     private val binding by lazy {
         ActivityTelaExibicaoDadosMlBinding.inflate(layoutInflater)
@@ -34,6 +40,12 @@ class TelaExibicaoDadosMl : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+
+        recyclerView = findViewById(R.id.recyclerViewFeed)
+        recyclerView.layoutManager = LinearLayoutManager(this)
+
+        adapter = ComentarioAdapter(emptyList())
+        recyclerView.adapter = adapter
 
         val dadosFeed = intent.getSerializableExtra("dados") as? DadosEnvioTelaMlRequest
 
@@ -63,9 +75,9 @@ class TelaExibicaoDadosMl : AppCompatActivity() {
                     val pesos = response.body()
 
                     binding.porcentagemPesoCompra.text = if(pesos.porcentagemPesoCompra.toString() == null) "Sem dados" else pesos.porcentagemPesoCompra.toString()
-                    binding.porcentagemPesoPensaEmCompra.text = if(pesos.porcentagemPesoPensaEmCompra.toString() == null) "Sem dados" else pesos.porcentagemPesoPensaEmCompra.toString()
-                    binding.porcentagemPesoNeutro.text = if(pesos.porcentagemPesoNeutro.toString() == null) "Sem dados" else pesos.porcentagemPesoNeutro.toString()
-                    binding.porcentagemPesoPenseEmVender.text = if(pesos.porcentagemPesoPenseEmVender.toString() == null) "Sem dados" else pesos.porcentagemPesoPenseEmVender.toString()
+                    //binding.porcentagemPesoPensaEmCompra.text = if(pesos.porcentagemPesoPensaEmCompra.toString() == null) "Sem dados" else pesos.porcentagemPesoPensaEmCompra.toString()
+                    //binding.porcentagemPesoNeutro.text = if(pesos.porcentagemPesoNeutro.toString() == null) "Sem dados" else pesos.porcentagemPesoNeutro.toString()
+                    //binding.porcentagemPesoPenseEmVender.text = if(pesos.porcentagemPesoPenseEmVender.toString() == null) "Sem dados" else pesos.porcentagemPesoPenseEmVender.toString()
                     binding.porcentagemPesoVenda.text = if(pesos.porcentagemPesoVenda.toString() == null) "Sem dados" else pesos.porcentagemPesoVenda.toString()
 
                 } else {
@@ -88,9 +100,7 @@ class TelaExibicaoDadosMl : AppCompatActivity() {
                     val comentarioResponse = response.body()
 
                     if (comentarioResponse != null) {
-
-                        binding.commentList.text = comentarioResponse.get(0).descricao
-
+                        adapter.updateData(comentarioResponse)
                     } else {
                         mostrarErroMensagem("Credenciais inválidas")
                     }
@@ -122,7 +132,7 @@ class TelaExibicaoDadosMl : AppCompatActivity() {
 
                         if (comentarioResponse != null) {
 
-                            binding.commentList.text = comentarioResponse.descricao.toString()
+                           // binding.commentList.text = comentarioResponse.descricao.toString()
 
                         } else {
                             mostrarErroMensagem("Credenciais inválidas")
