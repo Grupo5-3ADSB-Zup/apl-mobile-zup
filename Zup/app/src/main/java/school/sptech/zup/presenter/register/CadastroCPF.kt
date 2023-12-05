@@ -46,7 +46,7 @@ class CadastroCPF : AppCompatActivity() {
                 val influencer = dadosCadastroNome?.influencer
                 val cpf = binding.cpfEditText.text.toString()
                 val cnpj = binding.cnpjEditText.text.toString()
-                val nomeInteiro = "$nome  $sobrenome"
+                val nomeInteiro = "$nome $sobrenome"
 
                     sessao.influencer = dadosCadastroNome?.influencer
 
