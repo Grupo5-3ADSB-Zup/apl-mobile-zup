@@ -102,7 +102,7 @@ class FeedAdapter(private var feedItems: List<FeedResponse>) : RecyclerView.Adap
                         itemView.context.startActivity(intent)
                         true
                     }
-                    R.id.botao_like -> {
+                    R.id.botao_comentario -> {
                         val id = feedItems[adapterPosition].id
                         val titulo = feedItems[adapterPosition].titulo
 
