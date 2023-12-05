@@ -48,9 +48,9 @@ class ItemPerfilUsuarioAdapter(private var perfisItems: List<PerfilUsuarioRespon
         }
 
         holder.nomeUsuario.text = post.nome
-        holder.linkInstagram.text = post.linkInstagram
-        holder.linkYoutube.text = post.linkYoutube
-        holder.linkTikTok.text = post.linkTikTok
+        //holder.linkInstagram.text = post.linkInstagram
+        //holder.linkYoutube.text = post.linkYoutube
+        //holder.linkTikTok.text = post.linkTikTok
     }
 
     private fun colocarFotoUsuario(foto: String, holder: ViewHolder) {

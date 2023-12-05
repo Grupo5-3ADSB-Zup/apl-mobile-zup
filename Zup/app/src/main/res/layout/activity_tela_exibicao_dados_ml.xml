@@ -12,14 +12,14 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <ScrollView
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-            <LinearLayout
+            <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:layout_height="match_parent">
 
                 <!--        INICIO-->
                 <!--MEIO-->
@@ -27,36 +27,38 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@color/cinzaMedioZup"
+                    android:background="@color/azulClaroZup"
                     android:orientation="vertical">
 
                     <TextView
                         android:id="@+id/PostEmissora"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center"
                         android:layout_marginLeft="15dp"
                         android:layout_marginRight="15dp"
-                        android:layout_gravity="center"
-                        android:textColor="@color/amareloZup"
-                        android:textSize="25sp" />
+                        android:gravity="center"
+                        android:textColor="@color/verdeZup"
+                        android:textSize="25sp"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/PostTitulo"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="15dp"
-                        android:layout_marginRight="15dp"
                         android:layout_marginTop="20dp"
-                        android:textColor="@color/amareloZup"
-                        android:textSize="20sp" />
+                        android:layout_marginRight="15dp"
+                        android:textColor="@color/verdeZup"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
 
                     <ImageView
                         android:id="@+id/PostImage"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
-                        android:layout_marginBottom="5dp"
-                        />
+                        android:layout_marginBottom="5dp" />
 
                     <TextView
                         android:id="@+id/PostDescricao"
@@ -65,7 +67,7 @@
                         android:layout_marginLeft="15dp"
                         android:layout_marginRight="15dp"
                         android:layout_marginBottom="15dp"
-                        android:textColor="@color/white"
+                        android:textColor="@color/verdeZup"
                         android:textSize="15sp" />
 
                     <!--Comentários-->
@@ -73,8 +75,8 @@
                         android:id="@+id/commentSection"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:background="@android:color/white">
+                        android:background="@color/azulClaroZup"
+                        android:orientation="vertical">
 
                         <!-- Adicione elementos para a entrada do comentário e a exibição dos comentários aqui -->
 
@@ -82,13 +84,18 @@
                             android:id="@+id/commentInput"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="Digite seu comentário"/>
+                            android:hint="Digite seu comentário" />
 
-                        <Button
+                        <TextView
                             android:id="@+id/submitCommentButton"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Comentar"/>
+                            android:layout_width="100dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="center"
+                            android:background="@color/verdeZup"
+                            android:gravity="center"
+                            android:text="Comentar"
+                            android:textColor="@color/cinzaClaroZup"
+                            android:textSize="15dp" />
 
                         <androidx.recyclerview.widget.RecyclerView
                             android:id="@+id/recyclerViewFeed"
@@ -115,10 +122,10 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:gravity="center"
-                            android:textColor="@color/white"
+                            android:text="Análise da ZUP Machine Learning"
+                            android:textColor="@color/verdeZup"
                             android:textSize="20dp"
-                            android:text="Análise da ZUP Machine Learning">
-                        </TextView>
+                            android:textStyle="bold"></TextView>
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -128,19 +135,17 @@
                                 android:layout_width="250dp"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
-                                android:textColor="@color/white"
-                                android:textSize="15dp"
-                                android:text=" Porcentagem Compra">
-                            </TextView>
+                                android:text=" Porcentagem Compra"
+                                android:textColor="@color/verdeZup"
+                                android:textSize="15dp"></TextView>
 
                             <TextView
                                 android:id="@+id/porcentagemPesoCompra"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
-                                android:textColor="@color/white"
-                                android:textSize="20dp">
-                            </TextView>
+                                android:textColor="@color/verdeZup"
+                                android:textSize="20dp"></TextView>
 
                         </LinearLayout>
 
@@ -152,19 +157,17 @@
                                 android:layout_width="250dp"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
-                                android:textSize="15dp"
-                                android:textColor="@color/white"
-                                android:text=" Porcentagem Pensa em  Compra">
-                            </TextView>
+                                android:text=" Porcentagem Pensa em  Compra"
+                                android:textColor="@color/verdeZup"
+                                android:textSize="15dp"></TextView>
 
                             <TextView
                                 android:id="@+id/porcentagemPesoPensaEmCompra"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
-                                android:textColor="@color/white"
-                                android:textSize="20dp">
-                            </TextView>
+                                android:textColor="@color/verdeZup"
+                                android:textSize="20dp"></TextView>
                         </LinearLayout>
 
                         <LinearLayout
@@ -175,19 +178,17 @@
                                 android:layout_width="250dp"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
-                                android:textColor="@color/white"
-                                android:textSize="15dp"
-                                android:text=" Porcentagem Neutro">
-                            </TextView>
+                                android:text=" Porcentagem Neutro"
+                                android:textColor="@color/verdeZup"
+                                android:textSize="15dp"></TextView>
 
                             <TextView
                                 android:id="@+id/porcentagemPesoNeutro"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
-                                android:textColor="@color/white"
-                                android:textSize="20dp">
-                            </TextView>
+                                android:textColor="@color/verdeZup"
+                                android:textSize="20dp"></TextView>
 
                         </LinearLayout>
 
@@ -199,43 +200,40 @@
                                 android:layout_width="250dp"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
-                                android:textSize="15dp"
-                                android:textColor="@color/white"
-                                android:text=" Porcentagem Pense em Vender">
-                            </TextView>
+                                android:text=" Porcentagem Pense em Vender"
+                                android:textColor="@color/verdeZup"
+                                android:textSize="15dp"></TextView>
 
                             <TextView
                                 android:id="@+id/porcentagemPesoPenseEmVender"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
-                                android:textColor="@color/white"
-                                android:textSize="20dp">
-                            </TextView>
+                                android:textColor="@color/verdeZup"
+                                android:textSize="20dp"></TextView>
 
                         </LinearLayout>
 
                         <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="50dp">
+                            android:layout_height="50dp"
+                            android:layout_marginBottom="100dp">
 
                             <TextView
                                 android:layout_width="250dp"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
-                                android:textColor="@color/white"
-                                android:textSize="15dp"
-                                android:text=" Porcentagem Venda">
-                            </TextView>
+                                android:text=" Porcentagem Venda"
+                                android:textColor="@color/verdeZup"
+                                android:textSize="15dp"></TextView>
 
                             <TextView
                                 android:id="@+id/porcentagemPesoVenda"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:textColor="@color/white"
                                 android:layout_gravity="center"
-                                android:textSize="20dp">
-                            </TextView>
+                                android:textColor="@color/verdeZup"
+                                android:textSize="20dp"></TextView>
 
                         </LinearLayout>
 
@@ -243,10 +241,11 @@
 
                 </LinearLayout>
 
-            </LinearLayout>
+            </ScrollView>
 
-        </ScrollView>
+        </LinearLayout>
         <!--FIM-->
+
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/nav_bar"
             android:layout_width="wrap_content"
@@ -254,11 +253,11 @@
             android:layout_alignParentBottom="true"
             android:background="@drawable/botao_backgroud"
             android:elevation="2dp"
-            app:menu="@menu/botao_menu"
             app:itemIconSize="30dp"
             app:itemIconTint="@drawable/item_deslizar"
             app:itemRippleColor="@android:color/transparent"
-            app:labelVisibilityMode="unlabeled"/>
+            app:labelVisibilityMode="unlabeled"
+            app:menu="@menu/botao_menu" />
     </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
