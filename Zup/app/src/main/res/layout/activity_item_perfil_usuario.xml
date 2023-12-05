@@ -7,7 +7,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="30dp"
+        android:layout_marginHorizontal="10dp"
         android:orientation="vertical"
         android:paddingTop="50dp">
 
@@ -37,6 +37,10 @@
                     android:textColor="@color/amareloZup"
                     android:textSize="16dp"></TextView>
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -46,9 +50,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="5dp"
                         android:paddingTop="5dp"
-                        android:text="Instagram:"
                         android:textColor="@color/white"
                         android:textSize="14sp"></TextView>
 
@@ -56,9 +58,7 @@
                         android:id="@+id/link_instagram"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="5dp"
                         android:paddingTop="5dp"
-                        android:text=" @Zé"
                         android:textColor="@color/white"
                         android:textSize="14sp"></TextView>
 
@@ -72,9 +72,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="5dp"
                         android:paddingTop="5dp"
-                        android:text="Youtube:"
                         android:textColor="@color/white"
                         android:textSize="14sp"></TextView>
 
@@ -82,9 +80,7 @@
                         android:id="@+id/link_youtube"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="5dp"
                         android:paddingTop="5dp"
-                        android:text=" @Zé"
                         android:textColor="@color/white"
                         android:textSize="14sp"></TextView>
 
@@ -99,9 +95,7 @@
 
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="5dp"
                         android:paddingTop="5dp"
-                        android:text="Tiktok:"
                         android:textColor="@color/white"
                         android:textSize="14sp"></TextView>
 
@@ -109,11 +103,11 @@
                         android:id="@+id/link_tiktok"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="5dp"
                         android:paddingTop="5dp"
-                        android:text=" @Zé"
                         android:textColor="@color/white"
                         android:textSize="14sp"></TextView>
+
+                </LinearLayout>
 
                 </LinearLayout>
 

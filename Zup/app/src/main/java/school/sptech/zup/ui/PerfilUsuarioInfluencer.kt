@@ -55,18 +55,18 @@ class PerfilUsuarioInfluencer : AppCompatActivity() {
 
         if (sessao.nome != "" && dadosTelaInfluenciadoresPerfil == null) {
             binding.nomeUsuario.text = sessao.nome
-            binding.instagramUsuario.text = sessao.linkInstagram
-            binding.youtubeUsuario.text = sessao.linkYoutube
-            binding.tiktokUsuario.text = sessao.linkTikTok
+            //binding.instagramUsuario = sessao.linkInstagram
+            //binding.youtubeUsuario = sessao.linkYoutube
+            //binding.tiktokUsuario = sessao.linkTikTok
 
             if (sessao.foto != "") {
                 colocarFotoUsuario(sessao.foto)
             }
         } else if (valorNome != null && dadosTelaInfluenciadoresPerfil == null) {
             binding.nomeUsuario.text = valorNome
-            binding.instagramUsuario.text = valorLinkInsta
-            binding.youtubeUsuario.text = valorLinkYoutube
-            binding.tiktokUsuario.text = valorLinkTikTok
+            //binding.instagramUsuario = valorLinkInsta
+            //binding.youtubeUsuario = valorLinkYoutube
+            //binding.tiktokUsuario = valorLinkTikTok
 
             if (valorFoto != null) {
                 colocarFotoUsuario(valorFoto)
@@ -74,9 +74,9 @@ class PerfilUsuarioInfluencer : AppCompatActivity() {
         } else {
             if (dadosTelaInfluenciadoresPerfil != null) {
                 binding.nomeUsuario.text = dadosTelaInfluenciadoresPerfil.nome
-                binding.instagramUsuario.text = dadosTelaInfluenciadoresPerfil.linkInstagram
-                binding.youtubeUsuario.text = dadosTelaInfluenciadoresPerfil.linkYoutube
-                binding.tiktokUsuario.text = dadosTelaInfluenciadoresPerfil.linkTikTok
+                //binding.instagramUsuario = dadosTelaInfluenciadoresPerfil.linkInstagram
+                //binding.youtubeUsuario = dadosTelaInfluenciadoresPerfil.linkYoutube
+                //binding.tiktokUsuario = dadosTelaInfluenciadoresPerfil.linkTikTok
 
                 if (dadosTelaInfluenciadoresPerfil.foto != null) {
                     colocarFotoUsuario(dadosTelaInfluenciadoresPerfil.foto)
@@ -131,10 +131,25 @@ class PerfilUsuarioInfluencer : AppCompatActivity() {
                 true
             }
         }
+        var linkInsta = ""
+        var linkYoutube = ""
+        var linkTikTok = ""
 
-        val linkInsta = "https://" + binding.instagramUsuario.text.toString()
-        val linkYoutube = "https://" + binding.youtubeUsuario.text.toString()
-        val linkTikTok = "https://" + binding.tiktokUsuario.text.toString()
+
+        if(sessao.nome != "" && dadosTelaInfluenciadoresPerfil == null){
+            linkInsta = "https://" + sessao.linkInstagram.toString()
+            linkYoutube = "https://" + sessao.linkYoutube.toString()
+            linkTikTok = "https://" + sessao.linkTikTok.toString()
+
+        }else if (valorNome != null && dadosTelaInfluenciadoresPerfil == null){
+            linkInsta = "https://" + valorLinkInsta
+            linkYoutube = "https://" + valorLinkYoutube
+            linkTikTok = "https://" + valorLinkTikTok
+        }  else {
+            linkInsta = "https://" + dadosTelaInfluenciadoresPerfil?.linkInstagram
+            linkYoutube = "https://" + dadosTelaInfluenciadoresPerfil?.linkYoutube
+            linkTikTok = "https://" + dadosTelaInfluenciadoresPerfil?.linkTikTok
+        }
 
 
         binding.instagramUsuario.setOnClickListener {
